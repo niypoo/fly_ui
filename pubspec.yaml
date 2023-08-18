@@ -18,8 +18,9 @@ dependencies:
   flutter_svg: ^2.0.7
   animations: ^2.0.7
   flutter_zoom_drawer: ^3.1.1
-  app_config:
-    path: ../../services/app_config
+  app_configuration_service:
+    git: https://github.com/niypoo/app_configuration_service.git
+    
 
 dev_dependencies:
   flutter_test:
