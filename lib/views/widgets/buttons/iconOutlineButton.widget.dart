@@ -1,4 +1,4 @@
-import 'package:app_config/appInfo.config.dart';
+import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +25,8 @@ class FlyIconOutlineButton extends StatelessWidget {
         border: Border.all(color: Get.theme.primaryColor),
       ),
       child: IconButton(
-        padding: padding ?? EdgeInsets.only(left: AppConfigService.to.space!.xs),
+        padding:
+            padding ?? EdgeInsets.only(left: AppConfigService.to.space!.xs),
         constraints: const BoxConstraints(),
         icon: Icon(icon),
         onPressed: onPressed as void Function()?,

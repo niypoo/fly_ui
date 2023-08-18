@@ -1,4 +1,4 @@
-// import 'package:app_config/appInfo.config.dart';
+// import 'package:app_configuration_service/appInfo.config.dart';
 // import 'package:auto_size_text/auto_size_text.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';

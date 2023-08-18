@@ -1,4 +1,4 @@
-import 'package:app_config/appInfo.config.dart';
+import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepBottomHint.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepHint.widget.dart';
