@@ -14,7 +14,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "110b767323ce788da2fe728d051d9689050287a0"
+      resolved-ref: aef4dbcf3efc234d29b09c773fa122f7dde5416b
       url: "https://github.com/niypoo/app_configuration_service.git"
     source: git
     version: "1.0.0+1"
