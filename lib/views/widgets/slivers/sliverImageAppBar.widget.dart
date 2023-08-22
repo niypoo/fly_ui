@@ -5,10 +5,13 @@ class FlySliverImageAppBar extends StatelessWidget {
   const FlySliverImageAppBar({
     super.key,
     required this.photoUrl,
+    required this.title,
     this.expandedHeight = 300,
-    this.floating = true,
+    this.floating = false,
     this.pinned = true,
-    this.snap = true,
+    this.snap = false,
+    this.radius,
+    this.backgroundColor,
     this.stackChildren = const [],
   });
 
@@ -16,24 +19,28 @@ class FlySliverImageAppBar extends StatelessWidget {
   final List<Widget> stackChildren;
   final double expandedHeight;
   final bool floating;
+  final double? radius;
+  final String title;
   final bool pinned;
   final bool snap;
+  final Color? backgroundColor;
+
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: backgroundColor,
       expandedHeight: expandedHeight,
-      floating: true,
-      pinned: true,
-      snap: true,
-      flexibleSpace: Stack(
-        children: <Widget>[
-          Positioned.fill(
-            child: FlyImage(
-              url: photoUrl,
-            ),
-          ),
-          ...stackChildren,
-        ],
+      floating: floating,
+      pinned: pinned,
+      snap: snap,
+      flexibleSpace: FlexibleSpaceBar(
+        background: FlyImage(
+          url: photoUrl,
+          radius: radius,
+        ),
+        title: Text(title),
+        stretchModes: const [StretchMode.zoomBackground],
+        expandedTitleScale: 2,
       ),
     );
   }
