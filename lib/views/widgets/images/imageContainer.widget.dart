@@ -10,11 +10,13 @@ class FlyImageContainer extends StatelessWidget {
     this.padding,
     this.child,
     this.border,
+    this.radius,
     required this.image,
   }) : super(key: key);
 
   final double? height;
   final double? width;
+  final double? radius;
   final EdgeInsets? margin;
   final EdgeInsets? padding;
   final dynamic image;
@@ -32,7 +34,7 @@ class FlyImageContainer extends StatelessWidget {
         // color: Get.theme.primaryColor,
         border: border,
         borderRadius: BorderRadius.circular(
-          AppConfigService.to.radius,
+          radius ?? AppConfigService.to.radius,
         ),
         image: DecorationImage(
           image: image,

@@ -1,3 +1,4 @@
+import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,10 +16,12 @@ class FlyImage extends StatelessWidget {
     this.padding,
     this.border,
     this.child,
+    this.radius,
   }) : super(key: key);
 
   final double? height;
   final double? width;
+  final double? radius;
   final String? url;
   final String placeholder;
   final EdgeInsets? padding;
@@ -38,6 +41,7 @@ class FlyImage extends StatelessWidget {
         padding: padding,
         image: AssetImage(placeholder),
         border: border,
+        radius: radius,
         child: child,
       );
     }
@@ -49,6 +53,13 @@ class FlyImage extends StatelessWidget {
         width: width,
         margin: margin,
         padding: padding,
+        decoration: BoxDecoration(
+          // color: Get.theme.primaryColor,
+          border: border,
+          borderRadius: BorderRadius.circular(
+            radius ?? AppConfigService.to.radius,
+          ),
+        ),
         child: SvgPicture.asset(url!),
       );
     }
@@ -61,6 +72,7 @@ class FlyImage extends StatelessWidget {
         padding: padding,
         border: border,
         image: AssetImage(url!),
+        radius: radius,
         child: child,
       );
     }
@@ -76,6 +88,7 @@ class FlyImage extends StatelessWidget {
             padding: padding,
             border: border,
             image: imageProvider,
+            radius: radius,
             child: child,
           );
         },
@@ -87,6 +100,7 @@ class FlyImage extends StatelessWidget {
           padding: padding,
           border: border,
           image: AssetImage(placeholder),
+          radius: radius,
           child: const SizedBox.shrink(),
         ),
         errorWidget: (context, url, error) => FlyImageContainer(
@@ -96,6 +110,7 @@ class FlyImage extends StatelessWidget {
           padding: padding,
           border: border,
           image: AssetImage(placeholder),
+          radius: radius,
           child: child,
         ),
       );
