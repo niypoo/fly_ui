@@ -9,9 +9,11 @@ class FlySliverImageAppBar extends StatelessWidget {
     this.floating = true,
     this.pinned = true,
     this.snap = true,
+    this.stackChildren = const [],
   });
 
   final String photoUrl;
+  final List<Widget> stackChildren;
   final double expandedHeight;
   final bool floating;
   final bool pinned;
@@ -29,7 +31,8 @@ class FlySliverImageAppBar extends StatelessWidget {
             child: FlyImage(
               url: photoUrl,
             ),
-          )
+          ),
+          ...stackChildren,
         ],
       ),
     );
