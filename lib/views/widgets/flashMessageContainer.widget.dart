@@ -30,7 +30,7 @@ class FlyFlashMessageContainer extends StatelessWidget {
           // Title
           Row(
             children: [
-              if (icon != null) Icon(icon),
+              if (icon != null) Icon(icon, color: textColor),
               Expanded(
                 child: AutoSizeText(
                   title,
