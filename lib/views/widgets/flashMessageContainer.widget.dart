@@ -23,7 +23,7 @@ class FlyFlashMessageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      color: bgColor ?? Get.theme.cardColor,
+      color: bgColor,
       margin: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
       child: Column(
         children: [
@@ -42,7 +42,12 @@ class FlyFlashMessageContainer extends StatelessWidget {
             ],
           ),
 
-          AutoSizeText(child)
+          AutoSizeText(
+            child,
+            style: Get.textTheme.bodyMedium!.copyWith(
+              color: textColor,
+            ),
+          )
         ],
       ),
     );
