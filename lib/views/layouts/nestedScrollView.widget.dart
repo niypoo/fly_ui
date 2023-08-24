@@ -8,7 +8,7 @@ class FlyNestedScrollView extends StatelessWidget {
     this.controller,
   }) : super(key: key);
 
-  final List<Widget> Function(BuildContext, bool) headerSliverBuilder;
+  final List<Widget> headerSliverBuilder;
   final Widget body;
   final ScrollController? controller;
 
@@ -17,7 +17,8 @@ class FlyNestedScrollView extends StatelessWidget {
     return NestedScrollView(
       controller: controller,
       physics: const BouncingScrollPhysics(),
-      headerSliverBuilder: headerSliverBuilder,
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) =>
+          headerSliverBuilder,
       body: body,
     );
   }
