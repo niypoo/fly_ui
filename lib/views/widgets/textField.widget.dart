@@ -161,12 +161,13 @@ class FlyTextField extends StatelessWidget {
             color: Colors.red,
           ),
           hintText: hintText,
-          hintStyle: textStyle ?? Get.textTheme.bodySmall,
-          contentPadding: EdgeInsets.symmetric(
-            vertical: verticalContentPadding ?? AppConfigService.to.space!.xs,
-            horizontal:
-                horizontalContentPadding ?? AppConfigService.to.space!.xs,
-          ),
+          hintStyle: textStyle ??
+              Get.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w100),
+          // contentPadding: EdgeInsets.symmetric(
+          //   vertical: verticalContentPadding ?? AppConfigService.to.space!.xs,
+          //   horizontal:
+          //       horizontalContentPadding ?? AppConfigService.to.space!.xs,
+          // ),
           errorStyle: Get.textTheme.bodySmall!.copyWith(color: Colors.red),
           labelStyle: Get.textTheme.titleSmall,
         ),

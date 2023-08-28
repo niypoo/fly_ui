@@ -23,7 +23,6 @@ class FlySearchInput extends StatelessWidget {
             focusNode: controller.searchFocusNode,
             textInputAction: TextInputAction.search,
             textInputType: TextInputType.text,
-            padding: AppConfigService.to.space!.xxs,
             controller: controller.searchTextController,
             onFieldSubmitted: controller.onFieldSubmitted,
             color: Get.theme.cardColor,
@@ -32,13 +31,15 @@ class FlySearchInput extends StatelessWidget {
             suffix: controller.searchIsEmpty.value
                 ? Icon(
                     UniconsLine.search,
-                    color: Get.iconColor,
+                    color: Get.iconColor!.withOpacity(0.3),
+                    size: 30,
                   )
                 : IconButton(
                     onPressed: controller.onSearchFieldClear,
                     icon: Icon(
                       UniconsLine.times,
-                      color: Get.iconColor,
+                      color: Get.iconColor!.withOpacity(0.3),
+                      size: 30,
                     ),
                   )
             // focusNode: focusNode,
