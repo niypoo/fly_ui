@@ -1,6 +1,4 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fly_ui/views/widgets/inkWell.widget.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FlyTextButton extends StatelessWidget {
@@ -9,20 +7,21 @@ class FlyTextButton extends StatelessWidget {
     required this.title,
     this.onTap,
     this.onLongPress,
+    this.style,
   }) : super(key: key);
 
   final String title;
-  final Function? onTap;
-  final Function? onLongPress;
+  final Function()? onTap;
+  final Function()? onLongPress;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
-    return FlyInkWell(
-      onTap: onTap,
-      onLongPress: onLongPress,
-      child: AutoSizeText(
+    return TextButton(
+      onPressed: onTap,
+      child: Text(
         title,
-        style: Get.textTheme.titleLarge!.copyWith(
+        style: Get.textTheme.titleMedium!.copyWith(
           color: Get.theme.primaryColor,
         ),
       ),
