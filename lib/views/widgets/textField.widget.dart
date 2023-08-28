@@ -85,7 +85,7 @@ class FlyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: AppConfigService.to.space!.xxs),
+      margin: EdgeInsets.only(bottom: AppConfigService.to.space!.xs),
       padding: EdgeInsets.symmetric(horizontal: AppConfigService.to.space!.m),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppConfigService.to.radius),
