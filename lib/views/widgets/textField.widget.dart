@@ -89,8 +89,8 @@ class FlyTextField extends StatelessWidget {
         top: marginTop ?? AppConfigService.to.space!.xs,
         bottom: marginBottom ?? AppConfigService.to.space!.xs,
       ),
-      padding: EdgeInsets.symmetric(
-        horizontal: padding ?? AppConfigService.to.space!.s,
+      padding: EdgeInsets.all(
+        padding ?? AppConfigService.to.space!.s,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppConfigService.to.radius),
