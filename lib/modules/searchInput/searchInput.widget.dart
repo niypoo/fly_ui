@@ -10,10 +10,12 @@ class FlySearchInput extends StatelessWidget {
     Key? key,
     required this.controller,
     this.placeholder = 'Search...',
+    this.textInputType = TextInputType.text,
   }) : super(key: key);
 
   final HasSearchInput controller;
   final String placeholder;
+  final TextInputType textInputType;
 
   @override
   Widget build(BuildContext context) {
