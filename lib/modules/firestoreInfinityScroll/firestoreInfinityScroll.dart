@@ -11,6 +11,7 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
     required this.itemBuilder,
     this.itemsPerPage = 10,
     this.isLive = false,
+    this.valueKey,
     this.itemBuilderType = PaginateBuilderType.listView,
   });
 
@@ -20,10 +21,12 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
   final int itemsPerPage;
   final bool isLive;
   final PaginateBuilderType itemBuilderType;
+  final ValueKey? valueKey;
 
   @override
   Widget build(BuildContext context) {
     return KrPaginateFirestore(
+      key: key,
       padding: const EdgeInsets.only(bottom: 50),
       //item builder type is compulsory.
       itemBuilder: (context, documentSnapshots, index) =>
