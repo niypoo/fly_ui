@@ -16,9 +16,7 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
 
   final Widget emptyWidget;
   final dynamic query;
-  final Widget Function(
-          BuildContext context, List<dynamic> documentSnapshots, int index)
-      itemBuilder;
+  final Widget Function(dynamic data, int index) itemBuilder;
   final int itemsPerPage;
   final bool isLive;
   final PaginateBuilderType itemBuilderType;
@@ -30,7 +28,8 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
       key: key,
       padding: const EdgeInsets.only(bottom: 50),
       //item builder type is compulsory.
-      itemBuilder: itemBuilder,
+      itemBuilder: (context, documentSnapshots, index) =>
+          itemBuilder(documentSnapshots[index].data(), index),
       // orderBy is compulsory to enable pagination
       query: query,
       //Change types accordingly
