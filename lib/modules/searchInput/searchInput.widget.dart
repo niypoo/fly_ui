@@ -1,6 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/modules/searchInput/abstracts/foodBookPage.abstract.dart';
+import 'package:fly_ui/modules/searchInput/abstracts/hasSearchInput.abstract.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
