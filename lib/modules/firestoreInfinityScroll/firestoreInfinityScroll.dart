@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/modules/firestoreInfinityScroll/abstracts/hasFirestoreInfinityScroll.abstract.dart';
 import 'package:kr_paginate_firestore/paginate_firestore.dart';
 import 'package:loading_service/helpers/spinner.helper.dart';
 
@@ -17,7 +16,9 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
 
   final Widget emptyWidget;
   final dynamic query;
-  final Widget Function(dynamic data, int index) itemBuilder;
+  final Widget Function(
+          BuildContext context, List<dynamic> documentSnapshots, int index)
+      itemBuilder;
   final int itemsPerPage;
   final bool isLive;
   final PaginateBuilderType itemBuilderType;
@@ -29,8 +30,7 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
       key: key,
       padding: const EdgeInsets.only(bottom: 50),
       //item builder type is compulsory.
-      itemBuilder: (context, documentSnapshots, index) =>
-          itemBuilder(documentSnapshots[index].data(), index),
+      itemBuilder: itemBuilder,
       // orderBy is compulsory to enable pagination
       query: query,
       //Change types accordingly
