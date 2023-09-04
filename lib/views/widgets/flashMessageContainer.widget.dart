@@ -19,7 +19,7 @@ class FlyFlashMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: color.withOpacity(0.2),
+        color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(
           AppConfigService.to.radius,
         ),
@@ -27,9 +27,11 @@ class FlyFlashMessage extends StatelessWidget {
           color: color,
         ),
       ),
-      padding: EdgeInsets.all(AppConfigService.to.space!.m),
-      margin: EdgeInsets.all(AppConfigService.to.space!.s),
+      padding: EdgeInsets.all(AppConfigService.to.space!.xs),
+      margin: EdgeInsets.symmetric(vertical: AppConfigService.to.space!.s),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (icon != null) Icon(icon, color: color),
           Expanded(
