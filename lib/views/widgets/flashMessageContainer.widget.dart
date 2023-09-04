@@ -24,7 +24,7 @@ class FlyFlashMessage extends StatelessWidget {
           AppConfigService.to.radius,
         ),
         border: Border.all(
-          color: color,
+          color: color.withOpacity(0.4),
         ),
       ),
       padding: EdgeInsets.symmetric(
@@ -45,7 +45,7 @@ class FlyFlashMessage extends StatelessWidget {
               text,
               style: Get.textTheme.bodyMedium!.copyWith(
                 color: color,
-                height: 1.3,
+                height: 1.5,
               ),
             ),
           ),
