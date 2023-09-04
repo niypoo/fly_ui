@@ -33,7 +33,10 @@ class FlyFlashMessage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (icon != null) Icon(icon, color: color),
+          if (icon != null) Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(icon, color: color),
+          ),
           Expanded(
             child: AutoSizeText(
               text,
