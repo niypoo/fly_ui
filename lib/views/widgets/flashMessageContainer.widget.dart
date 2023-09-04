@@ -40,8 +40,9 @@ class FlyFlashMessage extends StatelessWidget {
           Expanded(
             child: AutoSizeText(
               text,
-              style: Get.textTheme.labelLarge!.copyWith(
+              style: Get.textTheme.bodyMedium!.copyWith(
                 color: color,
+                height: 1.2,
               ),
             ),
           ),
