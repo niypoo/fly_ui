@@ -27,8 +27,11 @@ class FlyFlashMessage extends StatelessWidget {
           color: color,
         ),
       ),
-      padding: EdgeInsets.all(AppConfigService.to.space!.xs),
-      margin: EdgeInsets.symmetric(vertical: AppConfigService.to.space!.s),
+      padding: EdgeInsets.symmetric(
+        vertical: AppConfigService.to.space!.s,
+        horizontal: AppConfigService.to.space!.xs,
+      ),
+      margin: EdgeInsets.only(top: AppConfigService.to.space!.s),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +45,7 @@ class FlyFlashMessage extends StatelessWidget {
               text,
               style: Get.textTheme.bodyMedium!.copyWith(
                 color: color,
-                height: 1.2,
+                height: 1.3,
               ),
             ),
           ),
