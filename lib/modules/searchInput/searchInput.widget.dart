@@ -9,7 +9,7 @@ class FlySearchInput extends StatelessWidget {
   const FlySearchInput({
     Key? key,
     required this.controller,
-    this.placeholder = 'Search...',
+    required this.placeholder,
     this.textInputType = TextInputType.text,
   }) : super(key: key);
 
@@ -29,7 +29,7 @@ class FlySearchInput extends StatelessWidget {
             onFieldSubmitted: controller.onFieldSubmitted,
             color: Get.theme.cardColor,
             borderColor: Colors.transparent,
-            hintText: placeholder.tr,
+            hintText: placeholder,
             suffix: controller.searchIsEmpty.value
                 ? Icon(
                     UniconsLine.search,
