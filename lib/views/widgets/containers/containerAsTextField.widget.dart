@@ -11,18 +11,16 @@ class FlyContainerAsTextField extends StatelessWidget {
     Key? key,
     this.textColor,
     required this.onChangeValueTap,
-    required this.placeholder,
-    this.value,
+    required this.value,
     this.suffix,
     this.bgColor,
   }) : super(key: key);
 
   final Function onChangeValueTap;
-  final String placeholder;
   final dynamic suffix;
   final Color? textColor;
   final Color? bgColor;
-  final String? value;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +34,7 @@ class FlyContainerAsTextField extends StatelessWidget {
           children: [
             Expanded(
               child: AutoSizeText(
-                value ?? placeholder,
+                value,
                 style: Get.textTheme.labelLarge,
               ),
             ),
