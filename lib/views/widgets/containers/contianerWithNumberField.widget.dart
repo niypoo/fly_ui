@@ -10,6 +10,8 @@ class FlyContainerWithNumberField extends StatelessWidget {
     Key? key,
     this.title,
     required this.value,
+    required this.onChangeValueTap,
+    required this.placeholder,
     this.hint,
     this.enableDivider = false,
     this.trailing,
@@ -18,10 +20,10 @@ class FlyContainerWithNumberField extends StatelessWidget {
     this.textColor,
     this.image,
     this.checkbox,
-    this.onChangeValueTap,
   }) : super(key: key);
 
   final String? title;
+  final String placeholder;
   final Widget? checkbox;
   final dynamic hint;
   final bool enableDivider;
@@ -31,7 +33,7 @@ class FlyContainerWithNumberField extends StatelessWidget {
   final Color? textColor;
   final Widget? trailing;
   final dynamic suffix;
-  final Function? onChangeValueTap;
+  final Function onChangeValueTap;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +83,7 @@ class FlyContainerWithNumberField extends StatelessWidget {
             textColor: textColor,
             onChangeValueTap: onChangeValueTap,
             value: value,
+            placeholder: placeholder,
             suffix: suffix,
           ),
 
