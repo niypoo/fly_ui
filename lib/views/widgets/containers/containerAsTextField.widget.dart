@@ -14,6 +14,7 @@ class FlyContainerAsTextField extends StatelessWidget {
     required this.value,
     this.suffix,
     this.bgColor,
+    this.disabled = false,
   }) : super(key: key);
 
   final Function onChangeValueTap;
@@ -21,6 +22,7 @@ class FlyContainerAsTextField extends StatelessWidget {
   final Color? textColor;
   final Color? bgColor;
   final String value;
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +31,17 @@ class FlyContainerAsTextField extends StatelessWidget {
       child: FlyContainerColored(
         padding: EdgeInsets.all(AppConfigService.to.space!.m),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
-        colorBorder: textColor ?? Get.theme.iconTheme.color!.withOpacity(0.3),
+        colorBorder: textColor ?? Get.theme.cardColor,
         child: Row(
           children: [
             Expanded(
               child: AutoSizeText(
                 value,
-                style: Get.textTheme.labelLarge,
+                style: Get.textTheme.labelLarge!.copyWith(
+                  color: disabled
+                      ? Get.textTheme.labelLarge!.color!.withOpacity(0.4)
+                      : null,
+                ),
               ),
             ),
             if (suffix != null && suffix is Widget)
@@ -45,6 +51,9 @@ class FlyContainerAsTextField extends StatelessWidget {
                 suffix,
                 style: Get.textTheme.bodyMedium!.copyWith(
                   fontWeight: FontWeight.w600,
+                  color: disabled
+                      ? Get.textTheme.bodyMedium!.color!.withOpacity(0.4)
+                      : null,
                 ),
               ),
           ],
