@@ -21,7 +21,7 @@ class FlyTextButton extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         title,
-        style: Get.textTheme.labelLarge!.copyWith(
+        style: Get.textTheme.titleMedium!.copyWith(
           color: Get.theme.primaryColor,
         ),
       ),
