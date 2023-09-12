@@ -31,7 +31,6 @@ class FlyContainerMessage extends StatelessWidget {
                 height: context.width * 0.4,
               ),
             ),
-          const SizedBox(height: 20),
           Text(
             title,
             style: Get.textTheme.titleLarge,
