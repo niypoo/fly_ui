@@ -39,7 +39,7 @@ class FlyOutlineButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed as void Function()?,
         style: OutlinedButton.styleFrom(
-          side: BorderSide(color: color!),
+          side: color != null ? BorderSide(color: color!) : null ,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppConfigService.to.radius),
