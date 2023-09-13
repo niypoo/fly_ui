@@ -5,14 +5,12 @@ class FlySliverTabsBar extends SliverPersistentHeaderDelegate {
   FlySliverTabsBar({
     required this.tabController,
     required this.tabs,
-    this.enablePadding = true,
     this.initMinExtent = 60,
     this.initMaxExtent = 80,
   });
 
   final TabController tabController;
   final List<Widget> tabs;
-  final bool enablePadding;
   final double initMinExtent;
   final double initMaxExtent;
 
@@ -21,7 +19,6 @@ class FlySliverTabsBar extends SliverPersistentHeaderDelegate {
     return FlyTabsBar(
       tabController: tabController,
       tabs: tabs,
-      enablePadding: enablePadding,
     );
   }
 
