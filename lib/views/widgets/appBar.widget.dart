@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:get/get.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -15,7 +14,6 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingWidth,
     this.isShrink = false,
     this.centerTitle = false,
-    this.enablePadding = false,
     this.padding,
   }) : super(key: key);
 
@@ -25,7 +23,6 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
   final bool isShrink;
   final double? leadingWidth;
-  final bool enablePadding;
   final bool centerTitle;
   final double? padding;
   final TextStyle? titleTextStyle;
@@ -33,23 +30,20 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyScaffoldPadding(
-      enablePadding: enablePadding,
-      child: AppBar(
-        // leadingWidth: leadingWidth,
-        backgroundColor: backgroundColor,
-        title: title != null
-            ? AutoSizeText(
-                title!.toUpperCase(),
-                style: titleTextStyle ?? Get.textTheme.titleLarge,
-              )
-            : const SizedBox.shrink(),
-        titleSpacing: padding ?? 0,
-        leading: leading,
-        actions: actions,
-        bottom: bottom,
-        // centerTitle: centerTitle,
-      ),
+    return AppBar(
+      // leadingWidth: leadingWidth,
+      backgroundColor: backgroundColor,
+      title: title != null
+          ? AutoSizeText(
+              title!.toUpperCase(),
+              style: titleTextStyle ?? Get.textTheme.titleLarge,
+            )
+          : const SizedBox.shrink(),
+      titleSpacing: padding ?? 0,
+      leading: leading,
+      actions: actions,
+      bottom: bottom,
+      // centerTitle: centerTitle,
     );
   }
 
