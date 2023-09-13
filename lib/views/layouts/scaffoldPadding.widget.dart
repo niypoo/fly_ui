@@ -5,11 +5,9 @@ class FlyScaffoldPadding extends StatelessWidget {
   const FlyScaffoldPadding({
     Key? key,
     this.child,
-    this.enablePadding = true,
   }) : super(key: key);
 
   final Widget? child;
-  final bool enablePadding;
 
   @override
   Widget build(BuildContext context) {

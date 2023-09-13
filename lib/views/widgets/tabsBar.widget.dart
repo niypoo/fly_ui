@@ -6,12 +6,10 @@ class FlyTabsBar extends StatelessWidget {
     Key? key,
     required this.tabController,
     required this.tabs,
-    this.enablePadding = true,
   }) : super(key: key);
 
   final TabController tabController;
   final List<Widget> tabs;
-  final bool enablePadding;
 
   @override
   Widget build(BuildContext context) {
