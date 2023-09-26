@@ -10,12 +10,14 @@ class FlySearchInput extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.placeholder,
+    this.suffix,
     this.textInputType = TextInputType.text,
   }) : super(key: key);
 
   final HasSearchInput controller;
   final String placeholder;
   final TextInputType textInputType;
+  final Widget? suffix;
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +33,11 @@ class FlySearchInput extends StatelessWidget {
             borderColor: Colors.transparent,
             hintText: placeholder,
             suffix: controller.searchIsEmpty.value
-                ? Icon(
-                    UniconsLine.search,
-                    color: Get.iconColor!.withOpacity(0.3),
-                  )
+                ? suffix ??
+                    Icon(
+                      UniconsLine.search,
+                      color: Get.iconColor!.withOpacity(0.3),
+                    )
                 : IconButton(
                     onPressed: controller.onSearchFieldClear,
                     icon: Icon(
