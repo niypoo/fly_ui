@@ -20,9 +20,11 @@ dependencies:
   flutter_zoom_drawer: ^3.1.1
   kr_paginate_firestore: ^1.0.3
   app_configuration_service:
-    git: https://github.com/niypoo/app_configuration_service.git
+    git:
+      url: git@github.com:niypoo/app_configuration_service.git
   loading_service:
-    git: https://github.com/niypoo/loading_service.git
+    git:
+      url: git@github.com:niypoo/loading_service.git
 
 dev_dependencies:
   flutter_test:
