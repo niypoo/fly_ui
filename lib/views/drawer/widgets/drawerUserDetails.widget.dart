@@ -9,15 +9,15 @@ class FlyDrawerUserDetails extends StatelessWidget {
   const FlyDrawerUserDetails({
     Key? key,
     this.onTap,
-    required this.photoUrl,
-    required this.displayName,
-    required this.id,
+     this.photoUrl,
+     this.displayName,
+     this.id,
   }) : super(key: key);
 
   final Function? onTap;
-  final String photoUrl;
-  final String displayName;
-  final String id;
+  final String? photoUrl;
+  final String? displayName;
+  final String? id;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
         children: [
           // Image
           Hero(
-            tag: 'drawer-user-image-$id',
+            tag: 'drawer-user-image-${id ?? '100'}',
             child: FlyImage(
               height: 120,
               width: 100,
@@ -44,7 +44,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
               bottom: AppConfigService.to.space!.l,
             ),
             child: AutoSizeText(
-              displayName,
+              displayName ?? 'Unknown'.tr,
               style: Get.textTheme.titleLarge,
               maxLines: 2,
             ),

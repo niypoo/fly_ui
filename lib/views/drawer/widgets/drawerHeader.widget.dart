@@ -10,14 +10,14 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
     Key? key,
     this.onTap,
     this.primaryButton,
-    required this.photoUrl,
-    required this.displayName,
-    required this.id,
+    this.photoUrl,
+    this.displayName,
+    this.id,
   }) : super(key: key);
 
-  final String photoUrl;
-  final String displayName;
-  final String id;
+  final String? photoUrl;
+  final String? displayName;
+  final String? id;
   final Function? onTap;
   final Widget? primaryButton;
 
