@@ -44,7 +44,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
               bottom: AppConfigService.to.space!.l,
             ),
             child: AutoSizeText(
-              displayName ?? 'Unknown'.tr,
+              displayName ?? 'Guest'.tr,
               style: Get.textTheme.titleLarge,
               maxLines: 2,
             ),
