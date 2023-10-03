@@ -20,3 +20,19 @@ class FlyResponsiveView extends StatelessWidget {
     );
   }
 }
+
+class FlyLayoutResponsiveView extends StatelessWidget {
+  const FlyLayoutResponsiveView({
+    super.key,
+    required this.portrait,
+    required this.landscape,
+  });
+
+  final Widget landscape;
+  final Widget portrait;
+
+  @override
+  Widget build(BuildContext context) {
+    return context.isLandscape ? landscape : portrait;
+  }
+}
