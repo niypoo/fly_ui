@@ -28,20 +28,10 @@ class FlyMultiStepsProgress extends StatelessWidget {
         if (step > 1)
           FadeIn(
             key: const ValueKey('BackButton'),
-            child: IconButton(
-              onPressed: onTapBack as void Function()?,
-              icon: const BackButtonIcon(),
-            ),
-          ),
-
-        // if first page show cancel button
-        if (step == 1)
-          FadeIn(
-            key: const ValueKey('CancelButton'),
             child: TextButton(
-              onPressed: onTapCancel as void Function()?,
+              onPressed: onTapBack as void Function()?,
               child: Text(
-                'Cancel'.tr,
+                'Previous'.tr,
                 style: Get.textTheme.titleSmall!.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -49,15 +39,30 @@ class FlyMultiStepsProgress extends StatelessWidget {
             ),
           ),
 
-        if (step <= (total - 1))
-          Expanded(
-            child: FadeIn(
-              child: FlyProgressBar(
-                percentage: step / total,
-                color: color ?? Get.theme.primaryColor,
+        // if (step <= (total - 1))
+        Expanded(
+          child: FadeIn(
+            child: FlyProgressBar(
+              percentage: step / total,
+              color: color ?? Get.theme.primaryColor,
+            ),
+          ),
+        ),
+
+        // if first page show cancel button
+        // if (step == 1)
+        FadeIn(
+          key: const ValueKey('CancelButton'),
+          child: TextButton(
+            onPressed: onTapCancel as void Function()?,
+            child: Text(
+              'Cancel'.tr,
+              style: Get.textTheme.titleSmall!.copyWith(
+                fontWeight: FontWeight.w700,
               ),
             ),
           ),
+        ),
       ],
     );
   }
