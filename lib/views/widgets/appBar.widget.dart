@@ -6,7 +6,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FlyAppBar({
     Key? key,
     this.title,
-    this.actions,
+    this.actions = const [],
     this.leading,
     this.bottom,
     this.backgroundColor,
@@ -18,7 +18,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   final String? title;
-  final List<Widget>? actions;
+  final List<Widget> actions;
   final Widget? leading;
   final Color? backgroundColor;
   final bool isShrink;
@@ -41,7 +41,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
           : const SizedBox.shrink(),
       titleSpacing: padding ?? 0,
       leading: leading,
-      actions: actions,
+      actions: [Wrap(children: actions)],
       bottom: bottom,
       // centerTitle: centerTitle,
     );
