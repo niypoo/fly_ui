@@ -41,7 +41,15 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
           : const SizedBox.shrink(),
       titleSpacing: padding ?? 0,
       leading: leading,
-      actions: [Wrap(children: actions)],
+      actions: [
+        Wrap(
+          spacing: 5,
+          runSpacing: 5,
+          alignment: WrapAlignment.end,
+          runAlignment: WrapAlignment.end,
+          children: actions,
+        )
+      ],
       bottom: bottom,
       // centerTitle: centerTitle,
     );
