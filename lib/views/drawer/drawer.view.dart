@@ -24,7 +24,7 @@ class FlyDrawerView extends GetView<FlyDrawerController> {
       mainScreen: mainScreen,
       borderRadius: 24.0,
       showShadow: true,
-      angle: -12.0,
+      angle: context.isLandscape ? 0.0 : -12.0,
       drawerShadowsBackgroundColor: Colors.grey[300]!,
       slideWidth: (context.isLandscape ? context.height : context.width) * .7,
       openCurve: Curves.fastOutSlowIn,
