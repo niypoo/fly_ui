@@ -63,8 +63,8 @@ class FlyContainerAsTextField extends StatelessWidget {
                 else if (suffix != null)
                   AutoSizeText(
                     suffix,
-                    style: Get.textTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.w600,
+                    style: Get.textTheme.labelSmall!.copyWith(
+                      fontWeight: FontWeight.w300,
                       color: disabled
                           ? Get.textTheme.bodyMedium!.color!.withOpacity(0.4)
                           : null,
