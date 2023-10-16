@@ -13,11 +13,13 @@ class FlyContainerAsTextField extends StatelessWidget {
     required this.onChangeValueTap,
     required this.value,
     this.suffix,
+    this.title,
     this.bgColor,
     this.disabled = false,
   }) : super(key: key);
 
   final Function onChangeValueTap;
+  final String? title;
   final dynamic suffix;
   final Color? textColor;
   final Color? bgColor;
@@ -32,30 +34,45 @@ class FlyContainerAsTextField extends StatelessWidget {
         padding: EdgeInsets.all(AppConfigService.to.space!.m),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
         colorBorder: textColor ?? Get.theme.cardColor,
-        child: Row(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: AutoSizeText(
-                value,
-                style: Get.textTheme.labelLarge!.copyWith(
-                  color: disabled
-                      ? Get.textTheme.labelLarge!.color!.withOpacity(0.4)
-                      : null,
-                ),
-              ),
-            ),
-            if (suffix != null && suffix is Widget)
-              suffix
-            else if (suffix != null)
+            // title
+            if (title != null)
               AutoSizeText(
-                suffix,
-                style: Get.textTheme.bodyMedium!.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: disabled
-                      ? Get.textTheme.bodyMedium!.color!.withOpacity(0.4)
-                      : null,
-                ),
+                title!,
+                style: Get.textTheme.titleLarge!
+                    .copyWith(fontWeight: FontWeight.w100),
               ),
+
+            // value and suffix
+            Row(
+              children: [
+                Expanded(
+                  child: AutoSizeText(
+                    value,
+                    style: Get.textTheme.labelLarge!.copyWith(
+                      color: disabled
+                          ? Get.textTheme.labelLarge!.color!.withOpacity(0.4)
+                          : null,
+                    ),
+                  ),
+                ),
+                if (suffix != null && suffix is Widget)
+                  suffix
+                else if (suffix != null)
+                  AutoSizeText(
+                    suffix,
+                    style: Get.textTheme.bodySmall!.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: disabled
+                          ? Get.textTheme.bodyMedium!.color!.withOpacity(0.4)
+                          : null,
+                    ),
+                  ),
+              ],
+            ),
           ],
         ),
       ),

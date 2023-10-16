@@ -15,12 +15,13 @@ class FlyMultiStepBottomHint extends StatelessWidget {
   Widget build(BuildContext context) {
     return endHint == null
         ? const SizedBox.shrink()
-        : Center(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
+        : Padding(
+            padding: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
+            child: Center(
               child: AutoSizeText(
                 endHint!,
                 style: Get.textTheme.bodySmall,
+                textAlign: TextAlign.center,
               ),
             ),
           );
