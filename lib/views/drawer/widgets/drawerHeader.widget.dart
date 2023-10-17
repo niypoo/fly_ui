@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
 import 'package:fly_ui/views/drawer/widgets/drawerUserDetails.widget.dart';
-import 'package:fly_ui/views/widgets/buttons/circalButton.widget.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
@@ -38,9 +38,8 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FlyCircleButton(
+            FlyIconButton(
               icon: UniconsLine.times,
-              padding: const EdgeInsets.all(10),
               onPressed: controller.toggleDrawer,
               color: Get.theme.scaffoldBackgroundColor,
             ),
