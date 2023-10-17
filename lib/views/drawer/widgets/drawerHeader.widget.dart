@@ -41,7 +41,7 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
             FlyIconButton(
               icon: UniconsLine.times,
               onPressed: controller.toggleDrawer,
-              bgColor: Get.theme.cardColor,
+              bgColor: Get.theme.scaffoldBackgroundColor,
             ),
           ],
         ),
