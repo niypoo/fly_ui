@@ -13,18 +13,21 @@ class FlyMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // header
-          if (header != null) header!,
+    return FlyScaffoldPadding(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // header
+            if (header != null) header!,
 
-          // menu items
-          ...items,
-        ],
+            // menu items
+            ...items,
+          ],
+        ),
       ),
     );
   }
