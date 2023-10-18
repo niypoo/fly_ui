@@ -25,6 +25,9 @@ dependencies:
   loading_service:
     git:
       url: git@github.com:niypoo/loading_service.git
+  launch_url_helper:
+    git: 
+      url: git@github.com:niypoo/launch_url_helper.git
 
 dev_dependencies:
   flutter_test:
