@@ -36,7 +36,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title != null
           ? AutoSizeText(
               title!.toUpperCase(),
-              style: titleTextStyle ?? Get.textTheme.titleLarge,
+              // style: titleTextStyle ?? Get.textTheme.titleLarge,
             )
           : const SizedBox.shrink(),
       titleSpacing: padding ?? 0,
