@@ -17,7 +17,7 @@ class FlyDrawerDeveloperWatermark extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Developed by'.tr,
+              'Developing by'.tr,
               style: Get.textTheme.labelMedium!.copyWith(
                   color: Get.textTheme.labelSmall!.color!.withOpacity(0.3)),
               textAlign: TextAlign.start,
