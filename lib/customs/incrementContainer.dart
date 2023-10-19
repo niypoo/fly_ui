@@ -1,7 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/widgets/buttons/circalButton.widget.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
@@ -33,8 +33,8 @@ class FlyIncrementContainer extends StatelessWidget {
       child: Row(
         children: [
           // Decrement
-          FlyCircleButton(
-            color: textColor ?? Get.theme.scaffoldBackgroundColor,
+          FlyIconButton(
+            bgColor: textColor ?? Get.theme.scaffoldBackgroundColor,
             icon: UniconsLine.minus,
             onPressed: decrementTap,
           ),
@@ -49,8 +49,8 @@ class FlyIncrementContainer extends StatelessWidget {
           ),
 
           // increment
-          FlyCircleButton(
-            color: textColor ?? Get.theme.scaffoldBackgroundColor,
+          FlyIconButton(
+            bgColor: textColor ?? Get.theme.scaffoldBackgroundColor,
             icon: UniconsLine.plus,
             onPressed: incrementTap,
           ),

@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fly_ui/models/SelectorOption.dart';
-import 'package:fly_ui/views/widgets/buttons/circalButton.widget.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/containers/continerColored.widget.dart';
 import 'package:get/get.dart';
@@ -173,8 +173,8 @@ class FlySelectorOption extends StatelessWidget {
         if (moreInformation != null)
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-            child: FlyCircleButton(
-              color: Get.theme.cardColor,
+            child: FlyIconButton(
+              bgColor: Get.theme.cardColor,
               padding: const EdgeInsets.all(0),
               icon: UniconsLine.exclamation,
               onPressed: moreInformation,

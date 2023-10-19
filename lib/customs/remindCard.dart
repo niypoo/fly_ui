@@ -52,7 +52,7 @@ class FlyReminderCard extends StatelessWidget {
               FlyIconButton(
                 onPressed: onOptionTap,
                 icon: UniconsLine.trash,
-                color: Get.theme.iconTheme.color,
+                bgColor: Get.theme.iconTheme.color,
                 padding: const EdgeInsets.all(0),
               )
             ],

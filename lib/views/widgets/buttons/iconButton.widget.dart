@@ -1,37 +1,74 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/widgets/containers/container.widget.dart';
+import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:get/get.dart';
 
 class FlyIconButton extends StatelessWidget {
   const FlyIconButton({
     Key? key,
-    required this.icon,
-    this.color,
+    this.icon,
     this.bgColor,
+    this.borderColor,
+    this.colorIcon,
     this.onPressed,
-    this.margin = const EdgeInsets.all(0),
-    this.padding = const EdgeInsets.all(0),
+    this.iconSize,
+    this.padding,
+    this.shape = BoxShape.rectangle,
   }) : super(key: key);
 
+  factory FlyIconButton.primary({
+    IconData? icon,
+    Function? onPressed,
+  }) =>
+      FlyIconButton(
+        borderColor: Get.theme.primaryColor,
+        bgColor: Get.theme.primaryColor,
+        colorIcon: Get.theme.secondaryHeaderColor,
+        icon: icon,
+        onPressed: onPressed,
+      );
+
   final Color? bgColor;
-  final Color? color;
-  final IconData icon;
+  final Color? colorIcon;
+  final Color? borderColor;
+  final IconData? icon;
   final Function? onPressed;
-  final EdgeInsets padding;
-  final EdgeInsets margin;
+  final EdgeInsets? padding;
+  final double? iconSize;
+  final BoxShape shape;
 
   @override
   Widget build(BuildContext context) {
-    return FlyContainer(
-      padding: padding,
-      margin: margin,
-      radius: AppConfigService.to.radius,
-      color: bgColor ?? Get.theme.cardColor,
-      child: IconButton(
-        constraints: const BoxConstraints(),
-        onPressed: onPressed as void Function()?,
-        icon: Icon(icon, color: color ?? Get.theme.iconTheme.color),
+    return FlyAnimatedRandomFade(
+      child: AnimatedContainer(
+        duration: AppConfigService.to.duration,
+        curve: AppConfigService.to.curve,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppConfigService.to.radius),
+          shape: shape,
+          color: onPressed == null
+              ? Get.theme.cardColor
+              : bgColor ?? Get.theme.cardColor,
+          border: onPressed == null
+              ? null
+              : borderColor != null
+                  ? Border.all(color: borderColor!)
+                  : null,
+        ),
+        child: IconButton(
+          constraints: const BoxConstraints(),
+          padding: padding,
+          onPressed: onPressed as void Function()?,
+          color: Colors.white,
+          disabledColor: Colors.white60,
+          icon: Icon(
+            icon,
+            size: iconSize,
+            color: onPressed == null
+                ? Get.theme.iconTheme.color!.withOpacity(0.2)
+                : colorIcon ?? Get.theme.iconTheme.color,
+          ),
+        ),
       ),
     );
   }

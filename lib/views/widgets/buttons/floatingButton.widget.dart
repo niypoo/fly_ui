@@ -24,7 +24,7 @@ class FlyFloatingButton extends StatelessWidget {
         padding: EdgeInsets.all(AppConfigService.to.space!.xs),
         icon: icon,
         bgColor: bgColor,
-        color: iconColor,
+        colorIcon: iconColor,
         onPressed: onTap,
       ),
     );
