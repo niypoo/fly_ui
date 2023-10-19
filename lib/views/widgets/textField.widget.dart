@@ -86,86 +86,88 @@ class FlyTextField extends StatelessWidget {
         ),
         color: color,
       ),
-      child: TextFormField(
-        autofocus: autoFocus,
-        focusNode: focusNode,
-        maxLength: maxLength,
-        obscureText: obscureText,
-        enableSuggestions: obscureText ? false : enableSuggestions,
-        autocorrect: obscureText ? false : autoCorrect,
-        controller: controller,
-        validator: validator,
-        maxLines: maxLines,
-        decoration: InputDecoration(
-          alignLabelWithHint: alignLabelWithHint,
-          filled: filled,
-          border: border,
-          labelText: labelText,
-          suffixIcon: suffix != null && suffix is Widget
-              ? suffix
-              : suffix != null
-                  ? Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: AppConfigService.to.space!.s,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            suffix,
-                            style: Get.textTheme.bodySmall!.copyWith(
-                              fontWeight: FontWeight.w600,
+      child: Center(
+        child: TextFormField(
+          autofocus: autoFocus,
+          focusNode: focusNode,
+          maxLength: maxLength,
+          obscureText: obscureText,
+          enableSuggestions: obscureText ? false : enableSuggestions,
+          autocorrect: obscureText ? false : autoCorrect,
+          controller: controller,
+          validator: validator,
+          maxLines: maxLines,
+          decoration: InputDecoration(
+            alignLabelWithHint: alignLabelWithHint,
+            filled: filled,
+            border: border,
+            labelText: labelText,
+            suffixIcon: suffix != null && suffix is Widget
+                ? suffix
+                : suffix != null
+                    ? Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppConfigService.to.space!.s,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              suffix,
+                              style: Get.textTheme.bodySmall!.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    )
-                  : null,
-          prefixIcon: prefix != null && prefix is Widget
-              ? prefix
-              : prefix != null
-                  ? Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: AppConfigService.to.space!.s,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            prefix,
-                            style: Get.textTheme.bodySmall!.copyWith(
-                              fontWeight: FontWeight.w600,
+                          ],
+                        ),
+                      )
+                    : null,
+            prefixIcon: prefix != null && prefix is Widget
+                ? prefix
+                : prefix != null
+                    ? Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppConfigService.to.space!.s,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              prefix,
+                              style: Get.textTheme.bodySmall!.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    )
-                  : null,
-          suffixStyle: Get.textTheme.bodySmall!.copyWith(
-            color: Colors.red,
+                          ],
+                        ),
+                      )
+                    : null,
+            suffixStyle: Get.textTheme.bodySmall!.copyWith(
+              color: Colors.red,
+            ),
+            prefixStyle: Get.textTheme.bodySmall!.copyWith(
+              color: Colors.red,
+            ),
+            hintText: hintText,
+            hintStyle: textStyle ??
+                Get.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w100),
+            errorStyle: Get.textTheme.bodySmall!.copyWith(color: Colors.red),
+            labelStyle: Get.textTheme.titleSmall,
           ),
-          prefixStyle: Get.textTheme.bodySmall!.copyWith(
-            color: Colors.red,
-          ),
-          hintText: hintText,
-          hintStyle: textStyle ??
-              Get.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w100),
-          errorStyle: Get.textTheme.bodySmall!.copyWith(color: Colors.red),
-          labelStyle: Get.textTheme.titleSmall,
+          style: textStyle ?? Get.textTheme.titleMedium,
+          textAlign: textAlign,
+          textAlignVertical:  textAlignVertical,
+          onFieldSubmitted: onFieldSubmitted as void Function(String)?,
+          onChanged: onChanged as void Function(String)?,
+          onEditingComplete: onEditingComplete as void Function()?,
+          onSaved: onSaved as void Function(String?)?,
+          onTap: onTap as void Function()?,
+          readOnly: readOnly,
+          textInputAction: textInputAction,
+          keyboardType: textInputType,
+          inputFormatters: inputFormatters,
+          cursorColor: Colors.amberAccent,
         ),
-        style: textStyle ?? Get.textTheme.titleMedium,
-        textAlign: textAlign,
-        textAlignVertical:  textAlignVertical,
-        onFieldSubmitted: onFieldSubmitted as void Function(String)?,
-        onChanged: onChanged as void Function(String)?,
-        onEditingComplete: onEditingComplete as void Function()?,
-        onSaved: onSaved as void Function(String?)?,
-        onTap: onTap as void Function()?,
-        readOnly: readOnly,
-        textInputAction: textInputAction,
-        keyboardType: textInputType,
-        inputFormatters: inputFormatters,
-        cursorColor: Colors.amberAccent,
       ),
     );
   }
