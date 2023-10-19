@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:get/get.dart';
