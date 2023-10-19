@@ -28,10 +28,9 @@ class FlyTextField extends StatelessWidget {
     this.enableSuggestions = false,
     this.autoCorrect = false,
     this.padding,
-    this.marginTop,
-    this.marginBottom,
-    this.horizontalContentPadding,
-    this.verticalContentPadding,
+    this.margin,
+    this.horizontalContentPadding = 0,
+    this.verticalContentPadding = 0,
     this.textInputType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
     this.suffix,
@@ -65,12 +64,11 @@ class FlyTextField extends StatelessWidget {
   final Color? color;
   final Color? cursorColor;
   final Color? borderColor;
-  final double? padding;
-  final double? horizontalContentPadding;
-  final double? verticalContentPadding;
+  final EdgeInsets? padding;
+  final EdgeInsets? margin;
+  final double horizontalContentPadding;
+  final double verticalContentPadding;
   final double? height;
-  final double? marginTop;
-  final double? marginBottom;
   final TextStyle? textStyle;
   final TextInputType textInputType;
   final TextInputAction textInputAction;
@@ -85,8 +83,9 @@ class FlyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: AppConfigService.to.space!.xs),
-      padding: EdgeInsets.symmetric(horizontal: AppConfigService.to.space!.m),
+      margin: margin ?? EdgeInsets.only(bottom: AppConfigService.to.space!.xs),
+      padding: padding ??
+          EdgeInsets.symmetric(horizontal: AppConfigService.to.space!.m),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppConfigService.to.radius),
         border: Border.all(
@@ -158,11 +157,10 @@ class FlyTextField extends StatelessWidget {
           hintText: hintText,
           hintStyle: textStyle ??
               Get.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w100),
-          // contentPadding: EdgeInsets.symmetric(
-          //   vertical: verticalContentPadding ?? AppConfigService.to.space!.xs,
-          //   horizontal:
-          //       horizontalContentPadding ?? AppConfigService.to.space!.xs,
-          // ),
+          contentPadding: EdgeInsets.symmetric(
+            vertical: verticalContentPadding,
+            horizontal: verticalContentPadding,
+          ),
           errorStyle: Get.textTheme.bodySmall!.copyWith(color: Colors.red),
           labelStyle: Get.textTheme.titleSmall,
         ),
