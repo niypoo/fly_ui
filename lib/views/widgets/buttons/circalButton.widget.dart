@@ -41,7 +41,6 @@ class FlyCircleButton extends StatelessWidget {
         duration: AppConfigService.to.duration,
         curve: AppConfigService.to.curve,
         decoration: BoxDecoration(
-          shape: BoxShape.circle,
           color: onPressed == null
               ? Get.theme.cardColor
               : color ?? Get.theme.cardColor,
