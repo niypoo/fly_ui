@@ -39,8 +39,9 @@ class FlyDrawerUserDetails extends StatelessWidget {
 
           // Display Name
           Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: AppConfigService.to.space!.xl,
+            padding: EdgeInsets.only(
+              top: AppConfigService.to.space!.m,
+              bottom: AppConfigService.to.space!.l,
             ),
             child: AutoSizeText(
               displayName ?? 'Guest'.tr,
