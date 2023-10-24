@@ -131,8 +131,8 @@ class FlyImageActionsButtons extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Wrap(
-        alignment: WrapAlignment.end,
-        runAlignment: WrapAlignment.start,
+        alignment: WrapAlignment.start,
+        runAlignment: WrapAlignment.end,
         runSpacing: 8,
         spacing: 8,
         children: children,
