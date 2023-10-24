@@ -15,7 +15,7 @@ class FlyImage extends StatelessWidget {
     this.placeholder = 'assets/images/placeholder.png',
     this.padding,
     this.border,
-    this.child,
+    this.actions = const [],
     this.radius,
   }) : super(key: key);
 
@@ -28,7 +28,7 @@ class FlyImage extends StatelessWidget {
   final EdgeInsets? margin;
   final BoxBorder? border;
 
-  final Widget? child;
+  final List<Widget> actions;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class FlyImage extends StatelessWidget {
         image: AssetImage(placeholder),
         border: border,
         radius: radius,
-        child: child,
+        child: FlyImageActionsButtons(children: actions),
       );
     }
 
@@ -73,7 +73,7 @@ class FlyImage extends StatelessWidget {
         border: border,
         image: AssetImage(url!),
         radius: radius,
-        child: child,
+        child: FlyImageActionsButtons(children: actions),
       );
     }
     // if url is url from outside
@@ -89,7 +89,7 @@ class FlyImage extends StatelessWidget {
             border: border,
             image: imageProvider,
             radius: radius,
-            child: child,
+            child: FlyImageActionsButtons(children: actions),
           );
         },
         progressIndicatorBuilder: (context, url, downloadProgress) =>
@@ -111,9 +111,26 @@ class FlyImage extends StatelessWidget {
           border: border,
           image: AssetImage(placeholder),
           radius: radius,
-          child: child,
+          child: FlyImageActionsButtons(children: actions),
         ),
       );
     }
+  }
+}
+
+class FlyImageActionsButtons extends StatelessWidget {
+  const FlyImageActionsButtons({
+    super.key,
+    required this.children,
+  });
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Wrap(runSpacing: 8, spacing: 8,children: children,),
+    );
   }
 }
