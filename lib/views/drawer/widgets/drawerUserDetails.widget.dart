@@ -29,7 +29,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
         children: [
           // Image
           Hero(
-            tag: 'drawer-user-image-${id ?? '100'}',
+            tag: 'user-photo-$id',
             child: FlyImage(
               height: 120,
               width: 100,
