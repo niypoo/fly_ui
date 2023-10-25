@@ -15,10 +15,10 @@ class FlyScaffoldPadding extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(
         left: context.isTablet
-            ? AppConfigService.to.space!.xxl
+            ? (AppConfigService.to.space!.xxl * 2)
             : AppConfigService.to.space!.m,
         right: context.isTablet
-            ? AppConfigService.to.space!.xxl
+            ? (AppConfigService.to.space!.xxl * 2)
             : AppConfigService.to.space!.m,
       ),
       child: child,
