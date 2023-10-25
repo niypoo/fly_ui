@@ -11,19 +11,15 @@ class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () {
-        if (controller.status.isFalse) {
-          return SlideInDown(
-            key:const ValueKey('FlyDrawerToggleButton-SlideInDown'),
-            child: const DrawerButton(),
-          );
-        } else {
-          return SlideOutUp(
-            key:const ValueKey('FlyDrawerToggleButton-SlideOutUp'),
-            child: const DrawerButton(),
-          );
-        }
-      },
+      () => SlideInDown(
+        preferences: AnimationPreferences(
+          autoPlay: controller.status.isFalse
+              ? AnimationPlayStates.Forward
+              : AnimationPlayStates.Reverse,
+        ),
+        key: const ValueKey('FlyDrawerToggleButton-button'),
+        child: const DrawerButton(),
+      ),
     );
   }
 }

@@ -40,19 +40,15 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Obx(
-              () {
-                if (controller.status.isTrue) {
-                  return SlideInDown(
-                    key: const ValueKey('FlyDrawerHeader-SlideInDown'),
-                    child: const DrawerButton(),
-                  );
-                } else {
-                  return SlideOutUp(
-                    key: const ValueKey('FlyDrawerHeader-SlideOutUp'),
-                    child: const DrawerButton(),
-                  );
-                }
-              },
+              () => SlideInDown(
+                preferences: AnimationPreferences(
+                  autoPlay: controller.status.isTrue
+                      ? AnimationPlayStates.Forward
+                      : AnimationPlayStates.Reverse,
+                ),
+                key: const ValueKey('FlyDrawerHeader-drawer-button'),
+                child: const DrawerButton(),
+              ),
             ),
           ],
         ),
