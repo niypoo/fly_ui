@@ -46,7 +46,7 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
                       ? AnimationPlayStates.Forward
                       : AnimationPlayStates.Reverse,
                 ),
-                key: const ValueKey('FlyDrawerHeader-drawer-button'),
+                key:  ValueKey('FlyDrawerHeader-drawer-button-${controller.status.value}'),
                 child: const DrawerButton(),
               ),
             ),

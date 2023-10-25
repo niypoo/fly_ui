@@ -17,7 +17,7 @@ class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
               ? AnimationPlayStates.Forward
               : AnimationPlayStates.Reverse,
         ),
-        key: const ValueKey('FlyDrawerToggleButton-button'),
+        key:  ValueKey('FlyDrawerToggleButton-button-${controller.status.value}'),
         child: const DrawerButton(),
       ),
     );
