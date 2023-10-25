@@ -14,7 +14,7 @@ class FlyDrawerController extends GetxController {
 
   void toggleDrawer() async {
     status.value = !status.value;
-    await Future.delayed(const Duration(milliseconds: 400));
+    await Future.delayed(const Duration(milliseconds: 300));
     zoomDrawerController.toggle?.call();
   }
 }

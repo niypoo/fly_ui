@@ -13,12 +13,12 @@ class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
     return Obx(
       () {
         if (controller.status.isFalse) {
-          return BounceIn(
+          return SlideInDown(
             key: ValueKey('FlyDrawerToggleButton-${controller.status.isTrue}'),
             child: const DrawerButton(),
           );
         } else {
-          return BounceOut(
+          return SlideOutUp(
             key: ValueKey('FlyDrawerToggleButton-${controller.status.isTrue}'),
             child: const DrawerButton(),
           );

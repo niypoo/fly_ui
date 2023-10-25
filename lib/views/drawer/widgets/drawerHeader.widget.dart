@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_animator/widgets/bouncing_entrances/bounce_in.dart';
 import 'package:flutter_animator/widgets/bouncing_exits/bounce_out.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
@@ -43,13 +44,13 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
             Obx(
               () {
                 if (controller.status.isTrue) {
-                  return BounceIn(
+                  return SlideInDown(
                     key: ValueKey(
                         'FlyDrawerToggleButton-${controller.status.isTrue}'),
                     child: const DrawerButton(),
                   );
                 } else {
-                  return BounceOut(
+                  return SlideOutUp(
                     key: ValueKey(
                         'FlyDrawerToggleButton-${controller.status.isTrue}'),
                     child: const DrawerButton(),
