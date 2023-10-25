@@ -1,7 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:flutter_animator/widgets/bouncing_entrances/bounce_in.dart';
-import 'package:flutter_animator/widgets/bouncing_exits/bounce_out.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
 import 'package:fly_ui/views/drawer/widgets/drawerUserDetails.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
@@ -45,14 +43,12 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
               () {
                 if (controller.status.isTrue) {
                   return SlideInDown(
-                    key: ValueKey(
-                        'FlyDrawerToggleButton-${controller.status.value}'),
+                    key: const ValueKey('FlyDrawerHeader-SlideInDown'),
                     child: const DrawerButton(),
                   );
                 } else {
                   return SlideOutUp(
-                    key: ValueKey(
-                        'FlyDrawerToggleButton-${controller.status.value}'),
+                    key: const ValueKey('FlyDrawerHeader-SlideOutUp'),
                     child: const DrawerButton(),
                   );
                 }
