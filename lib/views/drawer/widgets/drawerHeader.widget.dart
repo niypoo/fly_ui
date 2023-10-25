@@ -1,4 +1,6 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animator/widgets/bouncing_entrances/bounce_in.dart';
+import 'package:flutter_animator/widgets/bouncing_exits/bounce_out.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
 import 'package:fly_ui/views/drawer/widgets/drawerUserDetails.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
@@ -38,10 +40,22 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FlyIconButton(
-              icon: UniconsLine.times,
-              onPressed: controller.toggleDrawer,
-              bgColor: Get.theme.scaffoldBackgroundColor,
+            Obx(
+              () {
+                if (controller.status.isTrue) {
+                  return BounceIn(
+                    key: ValueKey(
+                        'FlyDrawerToggleButton-${controller.status.isTrue}'),
+                    child: const DrawerButton(),
+                  );
+                } else {
+                  return BounceOut(
+                    key: ValueKey(
+                        'FlyDrawerToggleButton-${controller.status.isTrue}'),
+                    child: const DrawerButton(),
+                  );
+                }
+              },
             ),
           ],
         ),
@@ -52,6 +66,21 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
             child: SizedBox(height: 40, child: primaryButton),
           )
       ],
+    );
+  }
+}
+
+class DrawerButton extends GetView<FlyDrawerController> {
+  const DrawerButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FlyIconButton(
+      icon: UniconsLine.times,
+      onPressed: controller.toggleDrawer,
+      bgColor: Get.theme.scaffoldBackgroundColor,
     );
   }
 }
