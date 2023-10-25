@@ -14,12 +14,12 @@ class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
       () {
         if (controller.status.isFalse) {
           return SlideInDown(
-            key: ValueKey('FlyDrawerToggleButton-${controller.status.isTrue}'),
+            key: ValueKey('FlyDrawerToggleButton-${controller.status.value}'),
             child: const DrawerButton(),
           );
         } else {
           return SlideOutUp(
-            key: ValueKey('FlyDrawerToggleButton-${controller.status.isTrue}'),
+            key: ValueKey('FlyDrawerToggleButton-${controller.status.value}'),
             child: const DrawerButton(),
           );
         }
