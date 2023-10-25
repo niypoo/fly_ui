@@ -33,10 +33,8 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       // leadingWidth: leadingWidth,
       backgroundColor: backgroundColor,
-      title: AutoSizeText(
+      title: Text(
         title ?? '',
-        style: titleTextStyle ?? Get.textTheme.headlineSmall,
-        textAlign: TextAlign.start,
       ),
       titleSpacing: padding ?? 0,
       leading: leading,
