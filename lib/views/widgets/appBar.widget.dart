@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sizer/sizer.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FlyAppBar({
@@ -39,7 +38,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: titleTextStyle ??
             Get.textTheme.titleLarge!.copyWith(
               fontWeight: FontWeight.bold,
-              fontSize: 22.sp,
+              // fontSize: 22.sp,
             ),
         textAlign: TextAlign.start,
       ),
