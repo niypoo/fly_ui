@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class FlyScaffoldPadding extends StatelessWidget {
@@ -14,8 +13,8 @@ class FlyScaffoldPadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: context.isTablet ? 15.w : 5.w,
-        right: context.isTablet ? 15.w : 5.w,
+        left: 6.w,
+        right: 6.w,
       ),
       child: child,
     );
