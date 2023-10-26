@@ -17,5 +17,5 @@ extension Responsive on num {
   bool get isLandscape => Get.context!.isLandscape;
 
   // define what a ratio that I will divided font
-  int get fontSizeDividedRation => Get.context!.isPhone ?  3 : 6;
+  int get fontSizeDividedRation => Get.context!.isPhone ?  3 : 5;
 }
