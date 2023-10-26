@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 extension Responsive on num {
@@ -13,7 +12,10 @@ extension Responsive on num {
   double get w => this *  (isLandscape ? (Get.width / 2) : Get.width) / 100;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
-  double get sp => this * ((isLandscape ? Get.height : Get.width) / 3) / 100;
+  double get sp => this * ((isLandscape ? Get.height : Get.width) / fontSizeDividedRation) / 100;
 
-  bool get isLandscape => Get.mediaQuery.orientation == Orientation.landscape;
+  bool get isLandscape => Get.context!.isLandscape;
+
+  // define what a ratio that I will divided font
+  int get fontSizeDividedRation => Get.context!.isPhone ?  3 : 6;
 }
