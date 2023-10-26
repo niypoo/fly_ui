@@ -16,7 +16,7 @@ class FlyDrawerSectionTitle extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: FlyTitle(
         text: title,
-        textStyle: Get.textTheme.titleSmall,
+        textStyle: Get.textTheme.titleMedium,
       ),
     );
   }
