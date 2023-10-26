@@ -47,7 +47,7 @@ class FlyDrawerButton extends StatelessWidget {
                 ),
                 child: AutoSizeText(
                   title,
-                  style: Get.textTheme.titleMedium!.copyWith(height: 1.3),
+                  style: Get.textTheme.bodyMedium!.copyWith(height: 1.3),
                   maxLines: 1,
                 ),
               ),
