@@ -13,7 +13,7 @@ extension Responsive on num {
   double get w => this *  (isLandscape ? (Get.width / 2) : Get.width) / 100;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
-  double get sp => this * (Get.width / 3) / 100;
+  double get sp => this * ((isLandscape ? Get.height : Get.width) / 3) / 100;
 
   bool get isLandscape => Get.mediaQuery.orientation == Orientation.landscape;
 }
