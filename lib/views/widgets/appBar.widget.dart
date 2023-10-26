@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:get/get.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FlyAppBar({
@@ -30,27 +32,33 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      // leadingWidth: leadingWidth,
-      backgroundColor: backgroundColor,
-      title: AutoSizeText(
-        title ?? '',
-        style: titleTextStyle ?? Get.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold),
-        textAlign: TextAlign.start,
+    return FlyScaffoldPadding(
+      child: AppBar(
+        // leadingWidth: leadingWidth,
+        backgroundColor: backgroundColor,
+        title: AutoSizeText(
+          title ?? '',
+          style: titleTextStyle ??
+              Get.textTheme.titleLarge!.copyWith(
+                fontWeight: FontWeight.bold,
+                fontSize: 20.sp,
+              ),
+          textAlign: TextAlign.start,
+        ),
+        titleSpacing: padding ?? 0,
+        leading: leading,
+        actions: [
+          Wrap(
+            spacing: 5,
+            runSpacing: 5,
+            alignment: WrapAlignment.end,
+            runAlignment: WrapAlignment.end,
+            children: actions,
+          )
+        ],
+        bottom: bottom,
+        // centerTitle: centerTitle,
       ),
-      titleSpacing: padding ?? 0,
-      leading: leading,
-      actions: [
-        Wrap(
-          spacing: 5,
-          runSpacing: 5,
-          alignment: WrapAlignment.end,
-          runAlignment: WrapAlignment.end,
-          children: actions,
-        )
-      ],
-      bottom: bottom,
-      // centerTitle: centerTitle,
     );
   }
 
