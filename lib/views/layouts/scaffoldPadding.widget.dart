@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FlyScaffoldPadding extends StatelessWidget {
   const FlyScaffoldPadding({
@@ -13,8 +13,8 @@ class FlyScaffoldPadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: context.width * 0.05,
-        right: context.width * 0.05,
+        left: 1.w,
+        right: 1.w,
       ),
       child: child,
     );
