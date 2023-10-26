@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FlyAppBar({
@@ -34,6 +35,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: backgroundColor,
       title: AutoSizeText(
         title ?? '',
+        style: titleTextStyle ?? Get.textTheme.headlineLarge!.copyWith(fontWeight: FontWeight.bold),
         textAlign: TextAlign.start,
       ),
       titleSpacing: padding ?? 0,
