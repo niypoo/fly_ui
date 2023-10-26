@@ -15,5 +15,5 @@ extension Responsive on num {
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
   double get sp => this * (Get.width / 3) / 100;
 
-  bool get isLandscape => Get.mediaQuery.orientation == Orientation.portrait;
+  bool get isLandscape => Get.mediaQuery.orientation == Orientation.landscape;
 }
