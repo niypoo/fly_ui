@@ -40,8 +40,8 @@ class FlyIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyAnimatedRandomFade(
       child: AnimatedContainer(
-        width: 6.w,
-        height: 6.w,
+        width: 5.w,
+        height: 5.w,
         duration: AppConfigService.to.duration,
         curve: AppConfigService.to.curve,
         decoration: BoxDecoration(
@@ -56,20 +56,18 @@ class FlyIconButton extends StatelessWidget {
                   ? Border.all(color: borderColor!)
                   : null,
         ),
-        child: Center(
-          child: IconButton(
-            // constraints: const BoxConstraints(),
-            padding: padding,
-            onPressed: onPressed as void Function()?,
-            color: Colors.white,
-            disabledColor: Colors.white60,
-            icon: Icon(
-              icon,
-              size: 20.sp,
-              color: onPressed == null
-                  ? Get.theme.iconTheme.color!.withOpacity(0.2)
-                  : colorIcon ?? Get.theme.iconTheme.color,
-            ),
+        child: IconButton(
+          // constraints: const BoxConstraints(),
+          padding: padding,
+          onPressed: onPressed as void Function()?,
+          color: Colors.white,
+          disabledColor: Colors.white60,
+          icon: Icon(
+            icon,
+            size: 20.sp,
+            color: onPressed == null
+                ? Get.theme.iconTheme.color!.withOpacity(0.2)
+                : colorIcon ?? Get.theme.iconTheme.color,
           ),
         ),
       ),
