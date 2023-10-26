@@ -1,5 +1,6 @@
+import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:get/get.dart';
 
 class FlyScaffoldPadding extends StatelessWidget {
   const FlyScaffoldPadding({
@@ -13,8 +14,12 @@ class FlyScaffoldPadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: 5.w,
-        right: 5.w,
+        left: context.isTablet
+            ? (AppConfigService.to.space!.xxl * 2)
+            : AppConfigService.to.space!.m,
+        right: context.isTablet
+            ? (AppConfigService.to.space!.xxl * 2)
+            : AppConfigService.to.space!.m,
       ),
       child: child,
     );
