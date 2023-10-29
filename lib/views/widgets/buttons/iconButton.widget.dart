@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:get/get.dart';
 
@@ -63,7 +64,7 @@ class FlyIconButton extends StatelessWidget {
           disabledColor: Colors.white60,
           icon: Icon(
             icon,
-            size: iconSize,
+            size: iconSize ?? 14.sp,
             color: onPressed == null
                 ? Get.theme.iconTheme.color!.withOpacity(0.2)
                 : colorIcon ?? Get.theme.iconTheme.color,

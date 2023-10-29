@@ -32,8 +32,8 @@ class FlyDrawerUserDetails extends StatelessWidget {
           Hero(
             tag: 'user-photo-$id',
             child: FlyImage(
-              height: 25.w,
-              width: 18.w,
+              height: 30.w,
+              width: 20.w,
               url: photoUrl,
             ),
           ),
@@ -47,7 +47,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
             child: AutoSizeText(
               displayName ?? 'Guest'.tr,
               style: Get.textTheme.headlineMedium!.copyWith(
-                fontSize: 24.sp,
+                fontSize: 22.sp,
               ),
               maxLines: 2,
             ),
