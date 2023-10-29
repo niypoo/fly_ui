@@ -39,7 +39,7 @@ class FlyDrawerButton extends StatelessWidget {
             Icon(
               icon,
               color: color,
-              size: 20.sp,
+              size: 15.sp,
             ),
             Expanded(
               child: Padding(
@@ -49,7 +49,7 @@ class FlyDrawerButton extends StatelessWidget {
                 child: AutoSizeText(
                   title,
                   style: Get.textTheme.titleSmall!
-                      .copyWith(height: 1.3, fontSize: 15.sp),
+                      .copyWith(height: 1.3, fontSize: 12.sp),
                   maxLines: 1,
                 ),
               ),
@@ -59,7 +59,7 @@ class FlyDrawerButton extends StatelessWidget {
                 value!,
                 style: Get.textTheme.bodySmall!.copyWith(
                   fontWeight: FontWeight.w100,
-                  fontSize: 12.sp,
+                  fontSize: 10.sp,
                 ),
               ),
           ],

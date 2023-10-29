@@ -19,7 +19,7 @@ class FlyDrawerSectionTitle extends StatelessWidget {
         text: title,
         textStyle: Get.textTheme.titleMedium!.copyWith(
           fontWeight: FontWeight.bold,
-          fontSize: 20.sp,
+          fontSize: 13.sp,
         ),
       ),
     );
