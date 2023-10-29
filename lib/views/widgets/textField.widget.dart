@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyTextField extends StatelessWidget {
@@ -150,13 +151,24 @@ class FlyTextField extends StatelessWidget {
             ),
             hintText: hintText,
             hintStyle: textStyle ??
-                Get.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w100),
-            errorStyle: Get.textTheme.bodySmall!.copyWith(color: Colors.red),
-            labelStyle: Get.textTheme.titleSmall,
+                Get.textTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 9.sp,
+                ),
+            errorStyle: Get.textTheme.bodySmall!.copyWith(
+              color: Colors.red,
+              fontSize: 9.sp,
+            ),
+            labelStyle: Get.textTheme.titleSmall!.copyWith(
+              fontSize: 9.sp,
+            ),
           ),
-          style: textStyle ?? Get.textTheme.titleMedium,
+          style: textStyle ??
+              Get.textTheme.titleMedium!.copyWith(
+                fontSize: 11.sp,
+              ),
           textAlign: textAlign,
-          textAlignVertical:  textAlignVertical,
+          textAlignVertical: textAlignVertical,
           onFieldSubmitted: onFieldSubmitted as void Function(String)?,
           onChanged: onChanged as void Function(String)?,
           onEditingComplete: onEditingComplete as void Function()?,
