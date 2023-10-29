@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:get/get.dart';
 
-
 class FlyTextCircleButton extends StatelessWidget {
   const FlyTextCircleButton({
     Key? key,
@@ -48,11 +47,12 @@ class FlyTextCircleButton extends StatelessWidget {
                   : null,
         ),
         child: TextButton(
-            style: TextButton.styleFrom(
-              padding: padding,
-            ),
-            onPressed: onPressed as void Function()?,
-            child: child),
+          style: TextButton.styleFrom(
+            padding: padding,
+          ),
+          onPressed: onPressed as void Function()?,
+          child: child,
+        ),
       ),
     );
   }

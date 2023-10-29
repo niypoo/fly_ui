@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyTextButton extends StatelessWidget {
@@ -23,6 +24,7 @@ class FlyTextButton extends StatelessWidget {
         title,
         style: Get.textTheme.titleMedium!.copyWith(
           color: Get.theme.primaryColor,
+          fontSize: 13.sp,
         ),
       ),
     );

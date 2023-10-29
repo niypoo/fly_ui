@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyElevatedFlexibleButton extends StatelessWidget {
@@ -64,6 +65,7 @@ class FlyElevatedFlexibleButton extends StatelessWidget {
         title,
         style: Get.textTheme.labelLarge!.copyWith(
           color: textColor ?? Get.textTheme.bodyLarge!.color,
+           fontSize: 13.sp,
         ),
       ),
     );

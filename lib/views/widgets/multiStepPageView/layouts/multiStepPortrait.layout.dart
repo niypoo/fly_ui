@@ -39,8 +39,10 @@ class FlyMultiStepPortraitLayout extends StatelessWidget {
                 // Title
                 // Title
                 FlyMultiStepTitle(title: title),
+                SizedBox(height: AppConfigService.to.space!.s),
                 // HINT
                 FlyMultiStepHint(hint: hint),
+                SizedBox(height: AppConfigService.to.space!.xs),
                 // Sub Hint
                 FlyMultiStepSubHint(subHint: subHint),
 

@@ -1,8 +1,8 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:get/get.dart';
-
 
 class FlyOutlineButton extends StatelessWidget {
   const FlyOutlineButton({
@@ -11,7 +11,6 @@ class FlyOutlineButton extends StatelessWidget {
     this.onPressed,
     this.color,
   }) : super(key: key);
-
 
   factory FlyOutlineButton.secondary(
           {String? title, Function? onPressed, EdgeInsets? margin}) =>
@@ -40,7 +39,7 @@ class FlyOutlineButton extends StatelessWidget {
         onPressed: onPressed as void Function()?,
         style: OutlinedButton.styleFrom(
           foregroundColor: Get.theme.primaryColor,
-          side: color != null ? BorderSide(color: color!) : null ,
+          side: color != null ? BorderSide(color: color!) : null,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppConfigService.to.radius),
@@ -48,7 +47,10 @@ class FlyOutlineButton extends StatelessWidget {
         ),
         child: Text(
           title!,
-          style: Get.textTheme.titleMedium!.copyWith(color: color),
+          style: Get.textTheme.titleMedium!.copyWith(
+            color: color,
+            fontSize: 13.sp,
+          ),
         ),
       ),
     );

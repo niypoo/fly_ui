@@ -15,8 +15,12 @@ class FlyMultiStepHint extends StatelessWidget {
   Widget build(BuildContext context) {
     return hint == null
         ? const SizedBox.shrink()
-        : AutoSizeText(hint!, style: Get.textTheme.bodyMedium!.copyWith(
-          fontSize: 14.sp,
-        ));
+        : AutoSizeText(
+            hint!,
+            style: Get.textTheme.bodyMedium!.copyWith(
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400
+            ),
+          );
   }
 }

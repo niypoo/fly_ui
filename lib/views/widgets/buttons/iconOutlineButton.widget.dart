@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyIconOutlineButton extends StatelessWidget {
@@ -28,7 +29,7 @@ class FlyIconOutlineButton extends StatelessWidget {
         padding:
             padding ?? EdgeInsets.only(left: AppConfigService.to.space!.xs),
         constraints: const BoxConstraints(),
-        icon: Icon(icon),
+        icon: Icon(icon, size: 14.sp),
         onPressed: onPressed as void Function()?,
         color: Get.theme.primaryColor,
       ),

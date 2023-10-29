@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
@@ -46,7 +47,10 @@ class FlySquareButton extends StatelessWidget {
             SizedBox(height: AppConfigService.to.space!.s),
             AutoSizeText(
               title.tr,
-              style: Get.textTheme.titleMedium!.copyWith(color: textColor),
+              style: Get.textTheme.titleMedium!.copyWith(
+                color: textColor,
+                fontSize: 13.sp,
+              ),
             ),
           ],
         ),

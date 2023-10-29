@@ -16,7 +16,7 @@ class FlyMultiStepTitle extends StatelessWidget {
     return AutoSizeText(
       title,
       style: Get.textTheme.titleLarge!.copyWith(
-        fontSize: 18.sp,
+        fontSize: 16.sp,
       ),
     );
   }

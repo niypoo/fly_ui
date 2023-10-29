@@ -22,7 +22,7 @@ class FlyMultiStepSubHint extends StatelessWidget {
             child: AutoSizeText(
               subHint!,
               style: Get.textTheme.bodyMedium!.copyWith(
-                fontSize: 12.sp,
+                fontSize: 10.sp,
               ),
             ),
           );
