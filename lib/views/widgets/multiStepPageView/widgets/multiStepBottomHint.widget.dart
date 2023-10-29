@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyMultiStepBottomHint extends StatelessWidget {
@@ -20,7 +21,9 @@ class FlyMultiStepBottomHint extends StatelessWidget {
             child: Center(
               child: AutoSizeText(
                 endHint!,
-                style: Get.textTheme.bodySmall,
+                style: Get.textTheme.bodySmall!.copyWith(
+                  fontSize: 10.sp,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
