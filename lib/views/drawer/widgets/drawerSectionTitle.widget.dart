@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/titleHeadline.widget.dart';
 import 'package:get/get.dart';
 
@@ -16,8 +17,10 @@ class FlyDrawerSectionTitle extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: FlyTitle(
         text: title,
-        textStyle:
-            Get.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+        textStyle: Get.textTheme.titleMedium!.copyWith(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.sp,
+        ),
       ),
     );
   }
