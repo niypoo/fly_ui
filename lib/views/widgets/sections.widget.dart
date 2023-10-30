@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlySection extends StatelessWidget {
@@ -24,7 +25,9 @@ class FlySection extends StatelessWidget {
         children: [
           Text(
             name,
-            style: Get.textTheme.titleLarge,
+            style: Get.textTheme.titleLarge!.copyWith(
+              fontSize: 18.sp,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
