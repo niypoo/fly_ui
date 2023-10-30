@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animator/flutter_animator.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
 import 'package:fly_ui/views/drawer/widgets/drawerUserDetails.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
@@ -55,8 +56,8 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
         ),
 
         if (primaryButton != null)
-          Positioned(
-            bottom: 10,
+          Positioned( 
+            bottom: 30.sp, //font-size of name
             child: primaryButton!,
           )
       ],
