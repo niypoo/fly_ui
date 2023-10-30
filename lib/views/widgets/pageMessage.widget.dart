@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:get/get.dart';
 
@@ -26,19 +27,23 @@ class FlyContainerMessage extends StatelessWidget {
             Center(
               child: FlyImage(
                 url: image,
-                width: context.width * 0.2,
-                height: context.width * 0.2,
+                width: 20.w,
+                height: 20.w,
               ),
             ),
           Text(
             title,
-            style: Get.textTheme.titleLarge,
+            style: Get.textTheme.titleLarge!.copyWith(
+              fontSize: 12.sp,
+            ),
             textAlign: TextAlign.center,
             maxLines: 2,
           ),
           Text(
             body,
-            style: Get.textTheme.bodyMedium,
+            style: Get.textTheme.bodyMedium!.copyWith(
+              fontSize: 10.sp,
+            ),
             textAlign: TextAlign.center,
           ),
         ],
