@@ -22,7 +22,7 @@ class FlyMultiStepBottomHint extends StatelessWidget {
               child: AutoSizeText(
                 endHint!,
                 style: Get.textTheme.bodySmall!.copyWith(
-                  fontSize: 8.sp,
+                  fontSize: 7.sp,
                 ),
                 textAlign: TextAlign.center,
               ),

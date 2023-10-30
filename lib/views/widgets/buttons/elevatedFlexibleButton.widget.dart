@@ -63,8 +63,8 @@ class FlyElevatedFlexibleButton extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: Get.textTheme.labelLarge!.copyWith(
-          color: textColor ?? Get.textTheme.bodyLarge!.color,
+        style: Get.textTheme.titleMedium!.copyWith(
+          color: textColor,
            fontSize: 13.sp,
         ),
       ),

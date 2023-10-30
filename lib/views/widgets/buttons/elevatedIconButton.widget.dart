@@ -86,14 +86,14 @@ class FlyElevatedIconButton extends StatelessWidget {
           ),
           label: Text(
             title!,
-            style: Get.textTheme.labelLarge!.copyWith(
-              color: textColor ?? Get.textTheme.bodyLarge!.color,
-               fontSize: 13.sp,
+            style: Get.textTheme.titleMedium!.copyWith(
+              color: textColor,
+              fontSize: 13.sp,
             ),
           ),
           icon: Icon(
             icon,
-            color: textColor ?? Get.textTheme.bodyLarge!.color,
+            color: textColor,
             size: 14.sp,
           ),
         ),
