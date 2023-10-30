@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 
 class FlyMenuScreen extends StatelessWidget {
@@ -14,19 +13,21 @@ class FlyMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding:  EdgeInsets.symmetric(vertical: 10.h),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // header
-          if (header != null) header!,
+    return FlyScaffoldPadding(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // header
+            if (header != null) header!,
 
-          // menu items
-          ...items,
-        ],
+            // menu items
+            ...items,
+          ],
+        ),
       ),
     );
   }
