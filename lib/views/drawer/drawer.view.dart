@@ -27,7 +27,7 @@ class FlyDrawerView extends GetView<FlyDrawerController> {
       showShadow: true,
       angle: context.isLandscape ? 0.0 : -12.0,
       drawerShadowsBackgroundColor: Colors.grey[300]!,
-      slideWidth: (context.isLandscape ? 30.w : 70.w) ,
+      slideWidth: 70.w ,
       openCurve: Curves.fastOutSlowIn,
       closeCurve: Curves.bounceIn,
       menuBackgroundColor: Get.theme.cardColor,
