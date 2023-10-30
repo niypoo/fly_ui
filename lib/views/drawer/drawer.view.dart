@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +27,7 @@ class FlyDrawerView extends GetView<FlyDrawerController> {
       showShadow: true,
       angle: context.isLandscape ? 0.0 : -12.0,
       drawerShadowsBackgroundColor: Colors.grey[300]!,
-      slideWidth: (context.isLandscape ? context.height * 1: context.width * 0.7) ,
+      slideWidth: (context.isLandscape ? 30.w : 70.w) ,
       openCurve: Curves.fastOutSlowIn,
       closeCurve: Curves.bounceIn,
       menuBackgroundColor: Get.theme.cardColor,

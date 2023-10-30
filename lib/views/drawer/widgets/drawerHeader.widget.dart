@@ -46,7 +46,8 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
                       ? AnimationPlayStates.Forward
                       : AnimationPlayStates.Reverse,
                 ),
-                key:  ValueKey('FlyDrawerHeader-drawer-button-${controller.status.value}'),
+                key: ValueKey(
+                    'FlyDrawerHeader-drawer-button-${controller.status.value}'),
                 child: const DrawerButton(),
               ),
             ),
@@ -55,8 +56,8 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
 
         if (primaryButton != null)
           Positioned(
-            top: 95,
-            child: SizedBox(height: 40, child: primaryButton),
+            bottom: 10,
+            child: primaryButton!,
           )
       ],
     );
