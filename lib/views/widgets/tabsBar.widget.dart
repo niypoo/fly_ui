@@ -19,14 +19,14 @@ class FlyTabsBar extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: TabBar(
         controller: tabController,
-        indicatorColor: Get.theme.primaryColor,
+        indicatorColor: Get.theme.colorScheme.secondary,
         indicatorSize: TabBarIndicatorSize.label,
         indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
         labelStyle: Get.textTheme.titleMedium!.copyWith(
           fontWeight: FontWeight.bold,
           fontSize: 12.sp,
         ),
-        labelColor: Get.theme.primaryColor,
+        labelColor: Get.theme.colorScheme.secondary,
         unselectedLabelColor: Get.textTheme.titleLarge!.color!.withOpacity(0.3),
         isScrollable: true,
         labelPadding: const EdgeInsets.symmetric(
