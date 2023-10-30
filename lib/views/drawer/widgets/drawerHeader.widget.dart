@@ -56,8 +56,8 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
         ),
 
         if (primaryButton != null)
-          Positioned( 
-            bottom: 30.sp, //font-size of name
+          Positioned(
+            bottom: 10.w,
             child: primaryButton!,
           )
       ],

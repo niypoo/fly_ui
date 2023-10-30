@@ -60,6 +60,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize {
-    return const Size.fromHeight(kToolbarHeight);
+    // return const Size.fromHeight(kToolbarHeight);
+    return  Size.fromHeight(20.w);
   }
 }
