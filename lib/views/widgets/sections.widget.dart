@@ -26,7 +26,7 @@ class FlySection extends StatelessWidget {
           Text(
             name,
             style: Get.textTheme.titleLarge!.copyWith(
-              fontSize: 18.sp,
+              fontSize: 15.sp,
             ),
           ),
           Padding(
