@@ -25,8 +25,9 @@ class FlyTabsBar extends StatelessWidget {
         labelStyle: Get.textTheme.titleMedium!.copyWith(
           fontWeight: FontWeight.w900,
           fontSize: 12.sp,
+          color: Get.theme.primaryColor,
         ),
-        labelColor: Get.theme.colorScheme.secondary,
+        labelColor: Get.theme.primaryColor,
         unselectedLabelColor: Get.textTheme.titleLarge!.color!.withOpacity(0.3),
         isScrollable: true,
         labelPadding: const EdgeInsets.symmetric(
