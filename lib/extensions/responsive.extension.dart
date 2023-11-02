@@ -9,7 +9,7 @@ extension Responsive on num {
   /// Calculates the width depending on the device's screen size
   ///
   /// Eg: 20.w -> will take 20% of the screen's width
-  double get w => this *  (isLandscape ? Get.height : Get.width) / 100;
+  double get w => this *  (isLandscape ? (Get.width/2) : Get.width) / 100;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
   double get sp => this * ((isLandscape ? Get.height : Get.width) / fontSizeDividedRation) / 100;
