@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 
 class FlyMenuScreen extends StatelessWidget {
   final Widget? header;
@@ -12,17 +13,20 @@ class FlyMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        // header
-        if (header != null) header!,
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(vertical: 10.h),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // header
+          if (header != null) header!,
 
-        // menu items
-        ...items,
-      ],
+          // menu items
+          ...items,
+        ],
+      ),
     );
   }
 }
