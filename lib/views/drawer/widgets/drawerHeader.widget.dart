@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
 import 'package:fly_ui/views/drawer/widgets/drawerUserDetails.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
@@ -11,7 +10,7 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
   const FlyDrawerHeader({
     Key? key,
     this.onTap,
-    this.primaryButton,
+    this.actionButton,
     this.photoUrl,
     this.displayName,
     this.id,
@@ -21,21 +20,13 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
   final String? displayName;
   final String? id;
   final Function? onTap;
-  final Widget? primaryButton;
+  final Widget? actionButton;
 
   @override
   Widget build(BuildContext context) {
     // DIA INFORMATION With CLOSE BUTTON
-    return Stack(
+    return Column(
       children: [
-        // DIA INFORMATION
-        FlyDrawerUserDetails(
-          displayName: displayName,
-          photoUrl: photoUrl,
-          id: id,
-          onTap: onTap,
-        ),
-
         // CLOSE BUTTON
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -55,11 +46,16 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
           ],
         ),
 
-        if (primaryButton != null)
-          Positioned(
-            bottom: 10.w,
-            child: primaryButton!,
-          )
+        // DIA INFORMATION
+        FlyDrawerUserDetails(
+          displayName: displayName,
+          photoUrl: photoUrl,
+          id: id,
+          onTap: onTap,
+          actionButton:actionButton,
+        ),
+
+  
       ],
     );
   }

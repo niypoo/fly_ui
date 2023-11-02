@@ -13,12 +13,14 @@ class FlyDrawerUserDetails extends StatelessWidget {
     this.photoUrl,
     this.displayName,
     this.id,
+    this.actionButton,
   }) : super(key: key);
 
   final Function? onTap;
   final String? photoUrl;
   final String? displayName;
   final String? id;
+  final Widget? actionButton;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +30,31 @@ class FlyDrawerUserDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+
+
           // Image
-          Hero(
-            tag: 'user-photo-$id',
-            child: FlyImage(
-              height: 30.w,
-              width: 22.w,
-              url: photoUrl,
-            ),
+          Stack(
+            children: [
+
+              // image
+              Hero(
+                tag: 'user-photo-$id',
+                child: FlyImage(
+                  height: 35.w,
+                  width: 27.w,
+                  url: photoUrl,
+                ),
+              ),
+
+              // action button
+              if (actionButton != null)
+                Positioned(
+                  bottom: 0,
+                  left: 5,
+                  right: 5,
+                  child: actionButton!,
+                )
+            ],
           ),
 
           // Display Name
