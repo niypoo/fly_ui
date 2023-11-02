@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyFlashMessage extends StatelessWidget {
@@ -20,9 +21,7 @@ class FlyFlashMessage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(
-          AppConfigService.to.radius,
-        ),
+        borderRadius: BorderRadius.circular(15.sp),
         border: Border.all(
           color: color.withOpacity(0.4),
         ),
@@ -36,10 +35,11 @@ class FlyFlashMessage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (icon != null) Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(icon, color: color),
-          ),
+          if (icon != null)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(icon, color: color),
+            ),
           Expanded(
             child: AutoSizeText(
               text,

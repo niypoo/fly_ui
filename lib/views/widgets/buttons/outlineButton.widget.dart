@@ -42,7 +42,7 @@ class FlyOutlineButton extends StatelessWidget {
           side: color != null ? BorderSide(color: color!) : null,
           elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppConfigService.to.radius),
+            borderRadius: BorderRadius.circular(15.sp),
           ),
         ),
         child: Text(

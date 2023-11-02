@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 
 class FlyImageContainer extends StatelessWidget {
   const FlyImageContainer({
@@ -33,9 +34,7 @@ class FlyImageContainer extends StatelessWidget {
       decoration: BoxDecoration(
         // color: Get.theme.primaryColor,
         border: border,
-        borderRadius: BorderRadius.circular(
-          radius ?? AppConfigService.to.radius,
-        ),
+        borderRadius: BorderRadius.circular(radius ?? 15.sp),
         image: DecorationImage(
           image: image,
           fit: BoxFit.cover,

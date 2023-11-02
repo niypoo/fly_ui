@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyContainerOutline extends StatelessWidget {
@@ -27,7 +28,7 @@ class FlyContainerOutline extends StatelessWidget {
             horizontal: AppConfigService.to.space!.m,
           ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(AppConfigService.to.radius),
+        borderRadius: BorderRadius.circular(15.sp),
         border: Border.all(color: color ?? Get.theme.cardColor),
       ),
       child: child,

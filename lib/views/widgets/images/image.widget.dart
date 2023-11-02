@@ -2,6 +2,7 @@ import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/images/imageContainer.widget.dart';
 import 'package:get/get.dart';
 
@@ -56,14 +57,12 @@ class FlyImage extends StatelessWidget {
         decoration: BoxDecoration(
           // color: Get.theme.primaryColor,
           border: border,
-          borderRadius: BorderRadius.circular(
-            radius ?? AppConfigService.to.radius,
-          ),
+          borderRadius: BorderRadius.circular(radius ?? 15.sp),
         ),
         child: SvgPicture.asset(url!),
       );
     }
-    // 3- check url if from inside device show asset image not cach
+    // 3- check url if from inside device show asset image not cache
     else if (!GetUtils.isURL(url!) && !url!.contains('https://')) {
       return FlyImageContainer(
         height: height,

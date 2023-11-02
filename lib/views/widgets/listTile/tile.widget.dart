@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyListTile extends StatelessWidget {
@@ -27,9 +28,7 @@ class FlyListTile extends StatelessWidget {
         ListTile(
           onTap: onTap as void Function()?,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              AppConfigService.to.radius,
-            ),
+            borderRadius: BorderRadius.circular(15.sp),
           ),
           contentPadding: EdgeInsets.all(AppConfigService.to.space!.s),
           leading: leading,

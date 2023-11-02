@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyProgressBar extends StatelessWidget {
@@ -134,7 +135,7 @@ class FlyProgressContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(AppConfigService.to.radius),
+      borderRadius: BorderRadius.circular(15.sp),
       onTap: onTap as void Function()?,
       child: AnimatedContainer(
         padding: padding ?? EdgeInsets.all(AppConfigService.to.space!.m),
@@ -148,7 +149,7 @@ class FlyProgressContainer extends StatelessWidget {
           shape: circle ? BoxShape.circle : BoxShape.rectangle,
           gradient: linearGradient,
           borderRadius:
-              circle ? null : BorderRadius.circular(AppConfigService.to.radius),
+              circle ? null : BorderRadius.circular(15.sp),
           color: disabled ? Colors.grey[300] : color ?? Get.theme.cardColor,
         ),
         child: child,

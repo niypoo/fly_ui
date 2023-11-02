@@ -1,5 +1,5 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 
 class FlyInkWell extends StatelessWidget {
   const FlyInkWell({
@@ -16,9 +16,7 @@ class FlyInkWell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(
-        AppConfigService.to.radius,
-      ),
+      borderRadius: BorderRadius.circular(15.sp),
       onTap: () {
         if (onTap != null) onTap!();
       },

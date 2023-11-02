@@ -1,5 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 // TODO: merge containers in less is the best
@@ -38,7 +39,7 @@ class FlyContainerColored extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(AppConfigService.to.radius),
+        borderRadius: BorderRadius.circular(15.sp),
         border: Border.all(
             color: colorBorder ?? Get.theme.iconTheme.color!.withOpacity(0.2)),
         color: color ?? Get.theme.cardColor,

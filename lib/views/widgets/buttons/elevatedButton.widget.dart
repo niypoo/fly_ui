@@ -65,7 +65,7 @@ class FlyElevatedButton extends StatelessWidget {
             backgroundColor: color ?? Get.theme.primaryColor,
             elevation: 0,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppConfigService.to.radius),
+              borderRadius: BorderRadius.circular(15.sp),
             ),
             padding: EdgeInsets.symmetric(
               vertical: AppConfigService.to.space!.s,
