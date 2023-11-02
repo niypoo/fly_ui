@@ -28,7 +28,7 @@ class FlyContainerOutline extends StatelessWidget {
             horizontal: AppConfigService.to.space!.m,
           ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.sp),
+        borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(color: color ?? Get.theme.cardColor),
       ),
       child: child,

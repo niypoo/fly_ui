@@ -58,7 +58,7 @@ class FlyElevatedFlexibleButton extends StatelessWidget {
         backgroundColor: color ?? Get.theme.primaryColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.sp),
+          borderRadius: BorderRadius.circular(10.sp),
         ),
       ),
       child: Text(

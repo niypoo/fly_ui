@@ -76,7 +76,7 @@ class FlyElevatedIconButton extends StatelessWidget {
             backgroundColor: bgColor ?? Get.theme.cardColor,
             elevation: 0,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.sp),
+              borderRadius: BorderRadius.circular(10.sp),
             ),
             padding: EdgeInsets.symmetric(
               vertical: AppConfigService.to.space!.s,

@@ -21,7 +21,7 @@ class FlyFlashMessage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(8.sp),
+        borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(
           color: color.withOpacity(0.4),
         ),

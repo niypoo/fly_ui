@@ -77,10 +77,10 @@ class FlyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 2.h),
+      margin: EdgeInsets.only(bottom: 0.7.h),
       padding: EdgeInsets.symmetric(horizontal: 2.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.sp),
+        borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(
           color: borderColor ?? Get.theme.cardColor,
         ),
