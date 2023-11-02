@@ -78,10 +78,10 @@ class FlyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: AppConfigService.to.space!.xs),
-      padding: EdgeInsets.symmetric(horizontal: AppConfigService.to.space!.m),
+      margin: EdgeInsets.only(bottom: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 2.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(AppConfigService.to.radius),
+        borderRadius: BorderRadius.circular(15.sp),
         border: Border.all(
           color: borderColor ?? Get.theme.cardColor,
         ),
@@ -108,7 +108,7 @@ class FlyTextField extends StatelessWidget {
                 : suffix != null
                     ? Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: AppConfigService.to.space!.s,
+                          horizontal: 2.w,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -127,9 +127,7 @@ class FlyTextField extends StatelessWidget {
                 ? prefix
                 : prefix != null
                     ? Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: AppConfigService.to.space!.s,
-                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 2.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -153,19 +151,22 @@ class FlyTextField extends StatelessWidget {
             hintStyle: textStyle ??
                 Get.textTheme.titleMedium!.copyWith(
                   fontWeight: FontWeight.w100,
-                  fontSize: 9.sp,
+                  fontSize: 12.sp,
                 ),
             errorStyle: Get.textTheme.bodySmall!.copyWith(
               color: Colors.red,
-              fontSize: 9.sp,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w100,
             ),
             labelStyle: Get.textTheme.titleSmall!.copyWith(
-              fontSize: 9.sp,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w200,
             ),
           ),
           style: textStyle ??
               Get.textTheme.titleMedium!.copyWith(
-                fontSize: 11.sp,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
               ),
           textAlign: textAlign,
           textAlignVertical: textAlignVertical,
