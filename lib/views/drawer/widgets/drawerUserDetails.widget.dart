@@ -30,12 +30,9 @@ class FlyDrawerUserDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
-
           // Image
           Stack(
             children: [
-
               // image
               Hero(
                 tag: 'user-photo-$id',
@@ -49,25 +46,20 @@ class FlyDrawerUserDetails extends StatelessWidget {
               // action button
               if (actionButton != null)
                 Positioned(
-                  bottom: 5,
+                  bottom: 0,
                   child: actionButton!,
                 )
             ],
           ),
 
           // Display Name
-          Padding(
-            padding: EdgeInsets.only(
-              top: AppConfigService.to.space!.m,
-              bottom: AppConfigService.to.space!.l,
+          AutoSizeText(
+            displayName ?? 'Guest'.tr,
+            style: Get.textTheme.headlineMedium!.copyWith(
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w900,
             ),
-            child: AutoSizeText(
-              displayName ?? 'Guest'.tr,
-              style: Get.textTheme.headlineMedium!.copyWith(
-                fontSize: 24.sp,
-              ),
-              maxLines: 1,
-            ),
+            maxLines: 1,
           ),
         ],
       ),
