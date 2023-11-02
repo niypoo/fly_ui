@@ -21,7 +21,7 @@ class FlyDrawerView extends GetView<FlyDrawerController> {
     return ZoomDrawer(
       controller: controller.zoomDrawerController,
       style: DrawerStyle.defaultStyle,
-      menuScreen: SafeArea(child: menuScreen),
+      menuScreen: menuScreen,
       mainScreen: mainScreen,
       borderRadius: 24.0,
       showShadow: true,
