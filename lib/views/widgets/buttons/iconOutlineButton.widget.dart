@@ -22,7 +22,7 @@ class FlyIconOutlineButton extends StatelessWidget {
     return Container(
       margin: margin ?? EdgeInsets.only(left: AppConfigService.to.space!.xs),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.sp),
+        borderRadius: BorderRadius.circular(8.sp),
         border: Border.all(color: Get.theme.primaryColor),
       ),
       child: IconButton(

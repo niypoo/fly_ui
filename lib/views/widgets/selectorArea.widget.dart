@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/models/SelectorOption.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
@@ -126,7 +127,7 @@ class FlySelectorOption extends StatelessWidget {
     return Stack(
       children: [
         InkWell(
-          borderRadius: BorderRadius.circular(AppConfigService.to.space!.m),
+          borderRadius: BorderRadius.circular(8.sp),
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
             width: 110,

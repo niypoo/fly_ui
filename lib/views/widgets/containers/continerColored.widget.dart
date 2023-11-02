@@ -39,7 +39,7 @@ class FlyContainerColored extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.sp),
+        borderRadius: BorderRadius.circular(8.sp),
         border: Border.all(
             color: colorBorder ?? Get.theme.iconTheme.color!.withOpacity(0.2)),
         color: color ?? Get.theme.cardColor,

@@ -80,7 +80,7 @@ class FlyTextField extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 2.h),
       padding: EdgeInsets.symmetric(horizontal: 2.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.sp),
+        borderRadius: BorderRadius.circular(8.sp),
         border: Border.all(
           color: borderColor ?? Get.theme.cardColor,
         ),
