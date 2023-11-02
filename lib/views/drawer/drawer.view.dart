@@ -23,7 +23,7 @@ class FlyDrawerView extends GetView<FlyDrawerController> {
       style: DrawerStyle.defaultStyle,
       menuScreen: menuScreen,
       mainScreen: mainScreen,
-      borderRadius: 24.0,
+      borderRadius: 10.sp,
       showShadow: true,
       angle: context.isLandscape ? 0.0 : -12.0,
       drawerShadowsBackgroundColor: Colors.grey[300]!,
