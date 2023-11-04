@@ -13,10 +13,10 @@ class FlyLandscapeDivider extends StatelessWidget {
     return Center(
       child: SizedBox(
         width: 2.w,
-        height: 7.h,
+        height: 9.h,
         child: VerticalDivider(
           color: Get.theme.cardColor,
-          thickness: 9.sp,
+          thickness: 2,
         ),
       ),
     );
