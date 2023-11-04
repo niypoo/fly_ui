@@ -78,7 +78,7 @@ class FlyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 0.5.h),
-      padding: EdgeInsets.symmetric(horizontal: 2.w),
+      padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 0,),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(
@@ -150,21 +150,21 @@ class FlyTextField extends StatelessWidget {
             hintStyle: textStyle ??
                 Get.textTheme.titleMedium!.copyWith(
                   fontWeight: FontWeight.w100,
-                  fontSize: 12.sp,
+                  fontSize: 10.sp,
                 ),
             errorStyle: Get.textTheme.bodySmall!.copyWith(
               color: Colors.red,
-              fontSize: 12.sp,
+              fontSize: 10.sp,
               fontWeight: FontWeight.w100,
             ),
             labelStyle: Get.textTheme.titleSmall!.copyWith(
-              fontSize: 12.sp,
+              fontSize: 10.sp,
               fontWeight: FontWeight.w200,
             ),
           ),
           style: textStyle ??
               Get.textTheme.titleMedium!.copyWith(
-                fontSize: 14.sp,
+                fontSize: 11.sp,
                 fontWeight: FontWeight.w500,
               ),
           textAlign: textAlign,
