@@ -1,7 +1,7 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/continerColored.widget.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
@@ -31,7 +31,12 @@ class FlyContainerAsTextField extends StatelessWidget {
     return FlyInkWell(
       onTap: onChangeValueTap,
       child: FlyContainerColored(
-        padding: EdgeInsets.all(AppConfigService.to.space!.m),
+        // padding: EdgeInsets.all(AppConfigService.to.space!.m),
+        margin: EdgeInsets.only(bottom: 0.5.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: 3.w,
+          vertical: 0,
+        ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
         colorBorder: textColor ?? Get.theme.cardColor,
         child: Column(
