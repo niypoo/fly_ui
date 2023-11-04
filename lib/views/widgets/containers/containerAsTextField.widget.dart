@@ -35,7 +35,7 @@ class FlyContainerAsTextField extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 0.5.h),
         padding: EdgeInsets.symmetric(
           horizontal: 3.w,
-          vertical: 0,
+          vertical: 3.w,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
         colorBorder: textColor ?? Get.theme.cardColor,
