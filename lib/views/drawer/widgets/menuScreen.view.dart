@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:get/get.dart';
 
 class FlyMenuScreen extends StatelessWidget {
   final Widget? header;
@@ -15,11 +16,12 @@ class FlyMenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 3.h),
+        padding:
+            EdgeInsets.symmetric(vertical: context.isLandscape ? 5.h : 3.h),
         child: Row(
           children: [
             // as padding
-            SizedBox(width: 3.w),
+            SizedBox(width: context.isLandscape ? 5.h : 3.h),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -28,7 +30,7 @@ class FlyMenuScreen extends StatelessWidget {
                 children: [
                   // header
                   if (header != null) header!,
-                
+
                   // menu items
                   ...items,
                 ],
