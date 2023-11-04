@@ -9,7 +9,12 @@ class FlyDrawerController extends GetxController {
 
   @override
   void onInit() {
-    zoomDrawerController.stateNotifier?.addListener(() {
+    super.onInit();
+  }
+
+  @override
+  void onReady() {
+    zoomDrawerController.stateNotifier!.addListener(() {
       print('[[[[[[[[zoomDrawerController]]]]]]]]');
       print(zoomDrawerController.stateNotifier!.value);
       print(zoomDrawerController.isOpen);
@@ -17,7 +22,7 @@ class FlyDrawerController extends GetxController {
       print('[[[[[[[[zoomDrawerController]]]]]]]]');
     });
 
-    super.onInit();
+    super.onReady();
   }
 
   void toggleDrawer() async {
