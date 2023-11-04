@@ -28,7 +28,7 @@ class FlyScaffold extends StatelessWidget {
       backgroundColor: backgroundColor,
       body: SafeArea(
         maintainBottomViewPadding: false,
-        child: FlyScaffoldPadding(child: child),
+        child: child,
       ),
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
