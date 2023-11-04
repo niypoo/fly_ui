@@ -35,7 +35,7 @@ class FlyContainerAsTextField extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 0.5.h),
         padding: EdgeInsets.symmetric(
           horizontal: 3.w,
-          vertical: 3.w,
+          vertical: 2.w,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
         colorBorder: textColor ?? Get.theme.cardColor,
@@ -47,7 +47,10 @@ class FlyContainerAsTextField extends StatelessWidget {
             if (title != null)
               AutoSizeText(
                 title!,
-                style: Get.textTheme.bodySmall,
+                style: Get.textTheme.titleSmall!.copyWith(
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w200,
+                ),
               ),
 
             // value and suffix
@@ -56,7 +59,9 @@ class FlyContainerAsTextField extends StatelessWidget {
                 Expanded(
                   child: AutoSizeText(
                     value,
-                    style: Get.textTheme.labelLarge!.copyWith(
+                    style: Get.textTheme.titleMedium!.copyWith(
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
                       color: disabled
                           ? Get.textTheme.labelLarge!.color!.withOpacity(0.4)
                           : null,
@@ -68,8 +73,8 @@ class FlyContainerAsTextField extends StatelessWidget {
                 else if (suffix != null)
                   AutoSizeText(
                     suffix,
-                    style: Get.textTheme.labelSmall!.copyWith(
-                      fontWeight: FontWeight.w300,
+                    style: Get.textTheme.bodySmall!.copyWith(
+                      fontWeight: FontWeight.w600,
                       color: disabled
                           ? Get.textTheme.bodyMedium!.color!.withOpacity(0.4)
                           : null,
