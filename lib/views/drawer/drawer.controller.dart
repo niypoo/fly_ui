@@ -16,9 +16,9 @@ class FlyDrawerController extends GetxController {
   void onReady() {
     zoomDrawerController.stateNotifier!.addListener(() {
       print('[[[[[[[[zoomDrawerController]]]]]]]]');
-      print(zoomDrawerController.stateNotifier!.value);
-      print(zoomDrawerController.isOpen);
-      print(zoomDrawerController.close);
+      print(zoomDrawerController.stateNotifier!.value == DrawerState.open);
+      print(zoomDrawerController.isOpen!());
+      print(zoomDrawerController.close!());
       print('[[[[[[[[zoomDrawerController]]]]]]]]');
     });
 
