@@ -40,9 +40,6 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
 
             // Sub Hint
             FlyMultiStepSubHint(subHint: subHint),
-
-            // BUTTONS
-            FluMultiStepPrimaryButton(buttonTitle: buttonTitle, onTap: onTap!),
           ],
         ),
       ),
@@ -54,6 +51,9 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
 
             // END HINT
             FlyMultiStepBottomHint(endHint: endHint),
+
+            // BUTTONS
+            FluMultiStepPrimaryButton(buttonTitle: buttonTitle, onTap: onTap!),
           ],
         ),
       ),
