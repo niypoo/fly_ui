@@ -37,23 +37,23 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
 
             // HINT
             FlyMultiStepHint(hint: hint),
+
+            // Sub Hint
+            FlyMultiStepSubHint(subHint: subHint),
+
+            // BUTTONS
+            FluMultiStepPrimaryButton(buttonTitle: buttonTitle, onTap: onTap!),
           ],
         ),
       ),
       childB: SingleChildScrollView(
         child: Column(
           children: [
-            // Sub Hint
-            FlyMultiStepSubHint(subHint: subHint),
-
             // OPTIONS
             ...children,
 
             // END HINT
             FlyMultiStepBottomHint(endHint: endHint),
-
-            // BUTTONS
-            FluMultiStepPrimaryButton(buttonTitle: buttonTitle, onTap: onTap!),
           ],
         ),
       ),

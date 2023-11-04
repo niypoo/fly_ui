@@ -38,7 +38,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         title ?? '',
         style: titleTextStyle ??
             Get.textTheme.headlineMedium!.copyWith(
-              fontSize: 25.sp,
+              fontSize: 22.sp,
               color: Get.theme.primaryColor,
               fontWeight: FontWeight.w900,
             ),

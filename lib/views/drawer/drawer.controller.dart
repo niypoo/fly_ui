@@ -9,12 +9,16 @@ class FlyDrawerController extends GetxController {
 
   @override
   void onInit() {
+
+    zoomDrawerController.stateNotifier?.addListener(() { 
+          status.value = zoomDrawerController.isOpen as bool;
+    });
+
     super.onInit();
   }
 
   void toggleDrawer() async {
-    status.value = !status.value;
-    await Future.delayed(const Duration(milliseconds: 300));
+    await Future.delayed(const Duration(milliseconds: 390));
     zoomDrawerController.toggle?.call();
   }
 }

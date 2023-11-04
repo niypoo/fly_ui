@@ -55,7 +55,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
           AutoSizeText(
             displayName ?? 'Guest'.tr,
             style: Get.textTheme.headlineMedium!.copyWith(
-              fontSize: 24.sp,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w900,
             ),
             maxLines: 1,
