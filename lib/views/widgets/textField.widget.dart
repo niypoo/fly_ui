@@ -96,7 +96,6 @@ class FlyTextField extends StatelessWidget {
           validator: validator,
           maxLines: maxLines,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.all(0) ,
             alignLabelWithHint: alignLabelWithHint,
             filled: filled,
             border: border,
