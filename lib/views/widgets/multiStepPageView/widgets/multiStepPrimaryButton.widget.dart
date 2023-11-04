@@ -15,7 +15,7 @@ class FluMultiStepPrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(top: 8.h),
+      padding:  EdgeInsets.only(top: 3.h),
       child: FlyElevatedButton.primary(
         title: buttonTitle,
         onPressed: onTap,
