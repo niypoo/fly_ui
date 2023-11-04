@@ -23,7 +23,7 @@ class FlyTabsBar extends StatelessWidget {
         indicatorSize: TabBarIndicatorSize.label,
         indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
         labelStyle: Get.textTheme.titleMedium!.copyWith(
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.bold,
           fontSize: 11.sp,
           color: Get.theme.primaryColor,
         ),
