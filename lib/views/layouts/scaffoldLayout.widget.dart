@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 
 class FlyScaffold extends StatelessWidget {
   const FlyScaffold({
@@ -27,7 +28,7 @@ class FlyScaffold extends StatelessWidget {
       backgroundColor: backgroundColor,
       body: SafeArea(
         maintainBottomViewPadding: false,
-        child: child,
+        child: FlyScaffoldPadding(child: child),
       ),
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
