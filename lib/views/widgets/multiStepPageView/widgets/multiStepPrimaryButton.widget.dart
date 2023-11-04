@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 
 class FluMultiStepPrimaryButton extends StatelessWidget {
@@ -13,9 +14,12 @@ class FluMultiStepPrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyElevatedButton.primary(
-      title: buttonTitle,
-      onPressed: onTap,
+    return Padding(
+      padding:  EdgeInsets.only(top: 8.h),
+      child: FlyElevatedButton.primary(
+        title: buttonTitle,
+        onPressed: onTap,
+      ),
     );
   }
 }
