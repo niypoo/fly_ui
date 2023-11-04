@@ -27,7 +27,6 @@ class FlyTextField extends StatelessWidget {
     this.obscureText = false,
     this.enableSuggestions = false,
     this.autoCorrect = false,
-    this.padding,
     this.textInputType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
     this.suffix,
@@ -61,7 +60,6 @@ class FlyTextField extends StatelessWidget {
   final Color? color;
   final Color? cursorColor;
   final Color? borderColor;
-  final double? padding;
   final TextStyle? textStyle;
   final TextInputType textInputType;
   final TextInputAction textInputAction;
@@ -98,6 +96,7 @@ class FlyTextField extends StatelessWidget {
           validator: validator,
           maxLines: maxLines,
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(0) ,
             alignLabelWithHint: alignLabelWithHint,
             filled: filled,
             border: border,
