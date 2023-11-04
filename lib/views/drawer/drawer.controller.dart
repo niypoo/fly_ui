@@ -5,6 +5,8 @@ class FlyDrawerController extends GetxController {
   static FlyDrawerController get to => Get.find();
 
   final zoomDrawerController = ZoomDrawerController();
+
+  // true = open | false = close
   final RxBool status = RxBool(false);
 
   @override
@@ -14,13 +16,12 @@ class FlyDrawerController extends GetxController {
 
   @override
   void onReady() {
-    zoomDrawerController.stateNotifier!.addListener(() {
-      print('[[[[[[[[zoomDrawerController]]]]]]]]');
-      print(zoomDrawerController.stateNotifier!.value == DrawerState.open);
-      print(zoomDrawerController.isOpen!());
-      print(zoomDrawerController.close!());
-      print('[[[[[[[[zoomDrawerController]]]]]]]]');
-    });
+    zoomDrawerController.stateNotifier!.addListener(
+      () {
+        status.value =
+            zoomDrawerController.stateNotifier!.value == DrawerState.open;
+      },
+    );
 
     super.onReady();
   }
