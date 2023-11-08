@@ -32,10 +32,10 @@ class FlyContainerAsTextField extends StatelessWidget {
       onTap: onChangeValueTap,
       child: FlyContainerColored(
         // padding: EdgeInsets.all(AppConfigService.to.space!.m),
-        margin: EdgeInsets.only(bottom: 0.5.h),
+        margin: EdgeInsets.only(bottom: 10.sp),
         padding: EdgeInsets.symmetric(
-          horizontal: 3.sw,
-          vertical: 2.sw,
+          horizontal: 12.sp,
+          vertical: 10.sp,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
         colorBorder: textColor ?? Get.theme.cardColor,
