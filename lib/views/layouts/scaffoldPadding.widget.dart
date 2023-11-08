@@ -14,8 +14,8 @@ class FlyScaffoldPadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: context.isPhone ? 3.w : 5.w,
-        right: context.isPhone ? 3.w : 5.w,
+        left: context.isPhone ? 3.sw : 5.sw,
+        right: context.isPhone ? 3.sw : 5.sw,
       ),
       child: child,
     );

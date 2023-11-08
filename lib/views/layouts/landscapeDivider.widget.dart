@@ -11,7 +11,7 @@ class FlyLandscapeDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 8.w,
+        width: 8.sw,
         height: 70.h,
         child: VerticalDivider(
           color: Get.theme.cardColor,

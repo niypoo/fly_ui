@@ -27,8 +27,8 @@ class FlyContainerMessage extends StatelessWidget {
             Center(
               child: FlyImage(
                 url: image,
-                width: 20.w,
-                height: 20.w,
+                width: 20.h,
+                height: 20.h,
               ),
             ),
           Text(
