@@ -30,7 +30,15 @@ class FlyScaffold extends StatelessWidget {
     FloatingActionButtonLocation? floatingActionButtonLocation,
     FloatingActionButtonAnimator? floatingActionButtonAnimator,
   }) =>
-      FlyScaffold(child: FlyScaffoldPadding(child: child));
+      FlyScaffold(
+        appBar: appBar as PreferredSizeWidget?,
+        backgroundColor: backgroundColor,
+        bottomNavigationBar: bottomNavigationBar,
+        floatingActionButton: floatingActionButton,
+        floatingActionButtonLocation: floatingActionButtonLocation,
+        floatingActionButtonAnimator: floatingActionButtonAnimator,
+        child: FlyScaffoldPadding(child: child),
+      );
 
   @override
   Widget build(BuildContext context) {
