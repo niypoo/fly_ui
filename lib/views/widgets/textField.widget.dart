@@ -87,7 +87,7 @@ class FlyTextField extends StatelessWidget {
         ),
         color: color,
       ),
-      child: Center(
+      child: Expanded(
         child: TextFormField(
           autofocus: autoFocus,
           focusNode: focusNode,
