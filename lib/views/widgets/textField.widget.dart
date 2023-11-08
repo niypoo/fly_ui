@@ -110,7 +110,7 @@ class FlyTextField extends StatelessWidget {
         suffixIcon: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (suffix != null)
+            if (suffix == null)
               const SizedBox.shrink()
             else if (suffix is Widget)
               suffix
@@ -126,7 +126,7 @@ class FlyTextField extends StatelessWidget {
         prefixIcon: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (prefix != null)
+            if (prefix == null)
               const SizedBox.shrink()
             else if (prefix is Widget)
               prefix
