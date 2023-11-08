@@ -16,7 +16,7 @@ class FlyTextField extends StatelessWidget {
     this.onSaved,
     this.onTap,
     this.validator,
-    this.filled,
+    this.filled = true,
     this.color,
     this.cursorColor,
     this.borderColor,
@@ -35,7 +35,6 @@ class FlyTextField extends StatelessWidget {
     this.focusNode,
     this.autoFocus = false,
     this.textAlign = TextAlign.start,
-    this.border = InputBorder.none,
     this.textAlignVertical = TextAlignVertical.center,
   }) : super(key: key);
 
@@ -51,7 +50,7 @@ class FlyTextField extends StatelessWidget {
   final bool readOnly;
   final int maxLines;
   final int? maxLength;
-  final bool? filled;
+  final bool filled;
   final bool alignLabelWithHint;
   final bool obscureText;
   final bool autoCorrect;
@@ -66,7 +65,6 @@ class FlyTextField extends StatelessWidget {
   final dynamic prefix;
   final dynamic suffix;
 
-  final InputBorder border;
   final TextAlign textAlign;
   final TextAlignVertical textAlignVertical;
   final List<TextInputFormatter>? inputFormatters;
@@ -74,106 +72,112 @@ class FlyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 10.sp),
-      padding: EdgeInsets.symmetric(
-        horizontal: 10.sp,
-        vertical: 10.sp,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.sp),
-        border: Border.all(
-          color: borderColor ?? Get.theme.cardColor,
-        ),
-        color: color,
-      ),
-      child: Expanded(
-        child: TextFormField(
-          autofocus: autoFocus,
-          focusNode: focusNode,
-          maxLength: maxLength,
-          obscureText: obscureText,
-          enableSuggestions: obscureText ? false : enableSuggestions,
-          autocorrect: obscureText ? false : autoCorrect,
-          controller: controller,
-          validator: validator,
-          maxLines: maxLines,
-          decoration: InputDecoration(
-            alignLabelWithHint: alignLabelWithHint,
-            filled: filled,
-            border: border,
-            labelText: labelText,
-            suffixIcon: suffix != null && suffix is Widget
-                ? suffix
-                : suffix != null
-                    ? Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            suffix,
-                            style: Get.textTheme.bodySmall!.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      )
-                    : null,
-            prefixIcon: prefix != null && prefix is Widget
-                ? prefix
-                : prefix != null
-                    ? Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            prefix,
-                            style: Get.textTheme.bodySmall!.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      )
-                    : null,
-            suffixStyle: Get.textTheme.bodySmall!.copyWith(
-              color: Colors.red,
-            ),
-            prefixStyle: Get.textTheme.bodySmall!.copyWith(
-              color: Colors.red,
-            ),
-            hintText: hintText,
-            hintStyle: textStyle ??
-                Get.textTheme.titleMedium!.copyWith(
-                  fontWeight: FontWeight.w100,
-                  fontSize: 10.sp,
-                ),
-            errorStyle: Get.textTheme.bodySmall!.copyWith(
-              color: Colors.red,
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w100,
-            ),
-            labelStyle: Get.textTheme.titleSmall!.copyWith(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w200,
-            ),
+    return TextFormField(
+      autofocus: autoFocus,
+      focusNode: focusNode,
+      maxLength: maxLength,
+      obscureText: obscureText,
+      enableSuggestions: obscureText ? false : enableSuggestions,
+      autocorrect: obscureText ? false : autoCorrect,
+      controller: controller,
+      validator: validator,
+      maxLines: maxLines,
+      decoration: InputDecoration(
+        alignLabelWithHint: alignLabelWithHint,
+        filled: filled,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.sp),
+          borderSide: BorderSide(
+            color: borderColor ?? Get.theme.cardColor,
           ),
-          style: textStyle ??
-              Get.textTheme.titleMedium!.copyWith(
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w500,
-              ),
-          textAlign: textAlign,
-          textAlignVertical: textAlignVertical,
-          onFieldSubmitted: onFieldSubmitted as void Function(String)?,
-          onChanged: onChanged as void Function(String)?,
-          onEditingComplete: onEditingComplete as void Function()?,
-          onSaved: onSaved as void Function(String?)?,
-          onTap: onTap as void Function()?,
-          readOnly: readOnly,
-          textInputAction: textInputAction,
-          keyboardType: textInputType,
-          inputFormatters: inputFormatters,
-          cursorColor: Colors.amberAccent,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.sp),
+          borderSide: BorderSide(
+            color: borderColor ?? Get.theme.cardColor,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.sp),
+          borderSide: BorderSide(
+            color: borderColor ?? Get.theme.cardColor,
+            width: 2.0,
+          ),
+        ),
+        fillColor: color ?? Get.theme.cardColor,
+        labelText: labelText,
+        contentPadding: EdgeInsetsDirectional.all(10.sp),
+        suffixIcon: suffix != null && suffix is Widget
+            ? Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.sp),
+                child: suffix,
+              )
+            : suffix != null
+                ? Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.sp),
+                    child: Text(
+                      suffix,
+                      style: Get.textTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  )
+                : null,
+        prefixIcon: prefix != null && prefix is Widget
+            ? Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.sp),
+                child: prefix,
+              )
+            : prefix != null
+                ? Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.sp),
+                    child: Text(
+                      prefix,
+                      style: Get.textTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  )
+                : null,
+        suffixStyle: Get.textTheme.bodySmall!.copyWith(
+          color: Colors.red,
+        ),
+        prefixStyle: Get.textTheme.bodySmall!.copyWith(
+          color: Colors.red,
+        ),
+        hintText: hintText,
+        hintStyle: textStyle ??
+            Get.textTheme.titleMedium!.copyWith(
+              fontWeight: FontWeight.w100,
+              fontSize: 10.sp,
+            ),
+        errorStyle: Get.textTheme.bodySmall!.copyWith(
+          color: Colors.red,
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w100,
+        ),
+        labelStyle: Get.textTheme.titleSmall!.copyWith(
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w200,
         ),
       ),
+      style: textStyle ??
+          Get.textTheme.titleMedium!.copyWith(
+            fontSize: 11.sp,
+            fontWeight: FontWeight.w500,
+          ),
+      textAlign: textAlign,
+      textAlignVertical: textAlignVertical,
+      onFieldSubmitted: onFieldSubmitted as void Function(String)?,
+      onChanged: onChanged as void Function(String)?,
+      onEditingComplete: onEditingComplete as void Function()?,
+      onSaved: onSaved as void Function(String?)?,
+      onTap: onTap as void Function()?,
+      readOnly: readOnly,
+      textInputAction: textInputAction,
+      keyboardType: textInputType,
+      inputFormatters: inputFormatters,
+      cursorColor: cursorColor,
     );
   }
 }
