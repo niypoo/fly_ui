@@ -115,7 +115,8 @@ class FlyTextField extends StatelessWidget {
             : suffix != null
                 ? Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                    child: Center(
+                    child: Align(
+                      alignment: Alignment.center,
                       child: Text(
                         suffix,
                         style: Get.textTheme.bodySmall!.copyWith(
@@ -133,7 +134,8 @@ class FlyTextField extends StatelessWidget {
             : prefix != null
                 ? Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                    child: Center(
+                    child: Align(
+                      alignment: Alignment.center,
                       child: Text(
                         prefix,
                         style: Get.textTheme.bodySmall!.copyWith(
