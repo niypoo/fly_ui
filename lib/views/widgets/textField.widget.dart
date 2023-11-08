@@ -107,37 +107,43 @@ class FlyTextField extends StatelessWidget {
         fillColor: color ?? Get.theme.cardColor,
         labelText: labelText,
         contentPadding: EdgeInsetsDirectional.all(10.sp),
-        suffixIcon: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (suffix == null)
-              const SizedBox.shrink()
-            else if (suffix is Widget)
-              suffix
-            else if (suffix is String)
-              Text(
-                suffix,
-                style: Get.textTheme.bodySmall!.copyWith(
-                  fontWeight: FontWeight.w400,
+        suffixIcon: Padding(
+         padding: EdgeInsetsDirectional.only(end: 10.sp),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (suffix == null)
+                const SizedBox.shrink()
+              else if (suffix is Widget)
+                suffix
+              else if (suffix is String)
+                Text(
+                  suffix,
+                  style: Get.textTheme.bodySmall!.copyWith(
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-              ),
-          ],
+            ],
+          ),
         ),
-        prefixIcon: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (prefix == null)
-              const SizedBox.shrink()
-            else if (prefix is Widget)
-              prefix
-            else if (prefix is String)
-              Text(
-                prefix,
-                style: Get.textTheme.bodySmall!.copyWith(
-                  fontWeight: FontWeight.w400,
+        prefixIcon: Padding(
+          padding: EdgeInsetsDirectional.only(end: 10.sp),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (prefix == null)
+                const SizedBox.shrink()
+              else if (prefix is Widget)
+                prefix
+              else if (prefix is String)
+                Text(
+                  prefix,
+                  style: Get.textTheme.bodySmall!.copyWith(
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-              ),
-          ],
+            ],
+          ),
         ),
         suffixStyle: Get.textTheme.bodySmall!.copyWith(
           color: Colors.red,
