@@ -42,8 +42,8 @@ class FlyIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyAnimatedRandomFade(
       child: AnimatedContainer(
-        width: context.isPhone ? 10.w : 5.5.w,
-        height: context.isPhone ? 10.w : 5.5.w,
+        width: 10.w ,
+        height:10.w ,
         duration: AppConfigService.to.duration,
         curve: AppConfigService.to.curve,
         decoration: BoxDecoration(
