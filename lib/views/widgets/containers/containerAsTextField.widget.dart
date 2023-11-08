@@ -32,12 +32,12 @@ class FlyContainerAsTextField extends StatelessWidget {
       onTap: onChangeValueTap,
       child: FlyContainerColored(
         // padding: EdgeInsets.all(AppConfigService.to.space!.m),
-        margin: EdgeInsets.only(bottom: 10.sp),
+        margin: EdgeInsets.only(bottom: 8.sp),
         padding: EdgeInsets.symmetric(
           horizontal: 12.sp,
-          vertical: 10.sp,
+          vertical: 2.sp,
         ),
-        color: bgColor ?? Get.theme.scaffoldBackgroundColor,
+        color: bgColor ?? Get.theme.cardColor,
         colorBorder: textColor ?? Get.theme.cardColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -48,8 +48,8 @@ class FlyContainerAsTextField extends StatelessWidget {
               AutoSizeText(
                 title!,
                 style: Get.textTheme.titleSmall!.copyWith(
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w200,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
 
@@ -61,7 +61,7 @@ class FlyContainerAsTextField extends StatelessWidget {
                     value,
                     style: Get.textTheme.titleMedium!.copyWith(
                       fontSize: 11.sp,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w300,
                       color: disabled
                           ? Get.textTheme.labelLarge!.color!.withOpacity(0.4)
                           : null,
@@ -73,8 +73,8 @@ class FlyContainerAsTextField extends StatelessWidget {
                 else if (suffix != null)
                   AutoSizeText(
                     suffix,
-                    style: Get.textTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.w600,
+                    style: Get.textTheme.bodyMedium!.copyWith(
+                      fontWeight: FontWeight.w300,
                       color: disabled
                           ? Get.textTheme.bodyMedium!.color!.withOpacity(0.4)
                           : null,

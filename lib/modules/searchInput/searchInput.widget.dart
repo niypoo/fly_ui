@@ -26,7 +26,6 @@ class FlySearchInput extends StatelessWidget {
         return FlyTextField(
             focusNode: controller.searchFocusNode,
             textInputAction: TextInputAction.search,
-            textInputType: TextInputType.text,
             controller: controller.searchTextController,
             onFieldSubmitted: controller.onFieldSubmitted,
             color: Get.theme.cardColor,

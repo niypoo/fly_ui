@@ -77,7 +77,7 @@ class FlyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: marginBottom.sp,  top: marginTop.sp),
+      padding: EdgeInsets.only(bottom: marginBottom.sp, top: marginTop.sp),
       child: TextFormField(
         autofocus: autoFocus,
         focusNode: focusNode,
@@ -91,19 +91,19 @@ class FlyTextField extends StatelessWidget {
         decoration: InputDecoration(
           alignLabelWithHint: alignLabelWithHint,
           filled: filled,
-          border: OutlineInputBorder(
+          border: UnderlineInputBorder(
             borderRadius: BorderRadius.circular(10.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
             ),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: UnderlineInputBorder(
             borderRadius: BorderRadius.circular(10.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
             ),
           ),
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: UnderlineInputBorder(
             borderRadius: BorderRadius.circular(10.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
@@ -125,8 +125,9 @@ class FlyTextField extends StatelessWidget {
                 else if (suffix is String)
                   Text(
                     suffix,
-                    style: Get.textTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.w400,
+                    style: Get.textTheme.bodyMedium!.copyWith(
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
               ],
@@ -144,8 +145,9 @@ class FlyTextField extends StatelessWidget {
                 else if (prefix is String)
                   Text(
                     prefix,
-                    style: Get.textTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.w400,
+                    style: Get.textTheme.bodyMedium!.copyWith(
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
               ],
@@ -175,8 +177,8 @@ class FlyTextField extends StatelessWidget {
         ),
         style: textStyle ??
             Get.textTheme.titleMedium!.copyWith(
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w500,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400,
             ),
         textAlign: textAlign,
         textAlignVertical: textAlignVertical,
