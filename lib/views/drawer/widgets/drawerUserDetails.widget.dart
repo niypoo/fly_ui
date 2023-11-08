@@ -27,7 +27,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
       onTap: onTap,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Image
           Stack(
