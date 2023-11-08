@@ -19,4 +19,5 @@ extension Responsive on num {
 
   // define what a ratio that I will divided font
   int get fontSizeDividedRation => Get.context!.isPhone ?  3 : 5;
+  
 }
