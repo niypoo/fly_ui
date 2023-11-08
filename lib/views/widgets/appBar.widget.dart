@@ -69,7 +69,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
         textAlign: TextAlign.start,
       ),
-      titleSpacing: padding ?? 0,
+      // titleSpacing: padding ?? 0,
       leading: leading,
       actions: [
         Wrap(
