@@ -76,7 +76,10 @@ class FlyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 10.sp),
-      padding: EdgeInsets.symmetric(horizontal: 10.sp, vertical: 0,),
+      padding: EdgeInsets.symmetric(
+        horizontal: 10.sp,
+        vertical: 10.sp,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(
@@ -103,39 +106,31 @@ class FlyTextField extends StatelessWidget {
             suffixIcon: suffix != null && suffix is Widget
                 ? suffix
                 : suffix != null
-                    ? Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.sp,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              suffix,
-                              style: Get.textTheme.bodySmall!.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            suffix,
+                            style: Get.textTheme.bodySmall!.copyWith(
+                              fontWeight: FontWeight.w600,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       )
                     : null,
             prefixIcon: prefix != null && prefix is Widget
                 ? prefix
                 : prefix != null
-                    ? Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              prefix,
-                              style: Get.textTheme.bodySmall!.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            prefix,
+                            style: Get.textTheme.bodySmall!.copyWith(
+                              fontWeight: FontWeight.w600,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       )
                     : null,
             suffixStyle: Get.textTheme.bodySmall!.copyWith(
