@@ -75,8 +75,8 @@ class FlyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 0.5.h),
-      padding: EdgeInsets.symmetric(horizontal: 3.sw, vertical: 0,),
+      margin: EdgeInsets.only(bottom: 10.sp),
+      padding: EdgeInsets.symmetric(horizontal: 10.sp, vertical: 0,),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(
@@ -105,7 +105,7 @@ class FlyTextField extends StatelessWidget {
                 : suffix != null
                     ? Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 2.sw,
+                          horizontal: 10.sp,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -124,7 +124,7 @@ class FlyTextField extends StatelessWidget {
                 ? prefix
                 : prefix != null
                     ? Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 2.sw),
+                        padding: EdgeInsets.symmetric(horizontal: 10.sp),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
