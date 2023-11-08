@@ -115,10 +115,12 @@ class FlyTextField extends StatelessWidget {
             : suffix != null
                 ? Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                    child: Text(
-                      suffix,
-                      style: Get.textTheme.bodySmall!.copyWith(
-                        fontWeight: FontWeight.w600,
+                    child: Center(
+                      child: Text(
+                        suffix,
+                        style: Get.textTheme.bodySmall!.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   )
@@ -131,10 +133,12 @@ class FlyTextField extends StatelessWidget {
             : prefix != null
                 ? Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                    child: Text(
-                      prefix,
-                      style: Get.textTheme.bodySmall!.copyWith(
-                        fontWeight: FontWeight.w600,
+                    child: Center(
+                      child: Text(
+                        prefix,
+                        style: Get.textTheme.bodySmall!.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   )
