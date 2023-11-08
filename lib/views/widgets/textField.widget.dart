@@ -107,44 +107,38 @@ class FlyTextField extends StatelessWidget {
         fillColor: color ?? Get.theme.cardColor,
         labelText: labelText,
         contentPadding: EdgeInsetsDirectional.all(10.sp),
-        suffixIcon: suffix != null && suffix is Widget
-            ? Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                child: suffix,
-              )
-            : suffix != null
-                ? Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        suffix,
-                        style: Get.textTheme.bodySmall!.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  )
-                : null,
-        prefixIcon: prefix != null && prefix is Widget
-            ? Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                child: prefix,
-              )
-            : prefix != null
-                ? Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.sp),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        prefix,
-                        style: Get.textTheme.bodySmall!.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  )
-                : null,
+        suffixIcon: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (suffix != null)
+              const SizedBox.shrink()
+            else if (suffix is Widget)
+              suffix
+            else if (suffix is String)
+              Text(
+                suffix,
+                style: Get.textTheme.bodySmall!.copyWith(
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+          ],
+        ),
+        prefixIcon: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (prefix != null)
+              const SizedBox.shrink()
+            else if (prefix is Widget)
+              prefix
+            else if (prefix is String)
+              Text(
+                prefix,
+                style: Get.textTheme.bodySmall!.copyWith(
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+          ],
+        ),
         suffixStyle: Get.textTheme.bodySmall!.copyWith(
           color: Colors.red,
         ),
