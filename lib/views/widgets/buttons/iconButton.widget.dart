@@ -42,8 +42,8 @@ class FlyIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyAnimatedRandomFade(
       child: AnimatedContainer(
-        width: 34.sp,
-        height: 34.sp,
+        width: 28.sp,
+        height: 28.sp,
         duration: AppConfigService.to.duration,
         curve: AppConfigService.to.curve,
         decoration: BoxDecoration(
@@ -66,7 +66,7 @@ class FlyIconButton extends StatelessWidget {
           disabledColor: Colors.white60,
           icon: Icon(
             icon,
-            size: iconSize ?? 17.sp,
+            size: iconSize ?? 15.sp,
             color: onPressed == null
                 ? Get.theme.iconTheme.color!.withOpacity(0.2)
                 : colorIcon ?? Get.theme.iconTheme.color,
