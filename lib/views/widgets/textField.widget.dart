@@ -112,9 +112,9 @@ class FlyTextField extends StatelessWidget {
           ),
           fillColor: color ?? Get.theme.cardColor,
           labelText: labelText,
-          contentPadding: EdgeInsetsDirectional.all(10.sp),
+          contentPadding: EdgeInsetsDirectional.all(2.sp),
           suffixIcon: Padding(
-            padding: EdgeInsetsDirectional.only(end: 10.sp),
+            padding: EdgeInsetsDirectional.only(end: 2.sp),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -134,7 +134,7 @@ class FlyTextField extends StatelessWidget {
             ),
           ),
           prefixIcon: Padding(
-            padding: EdgeInsetsDirectional.only(end: 10.sp),
+            padding: EdgeInsetsDirectional.only(end: 2.sp),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
