@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -28,32 +27,12 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final TextStyle? titleTextStyle;
   final PreferredSizeWidget? bottom;
 
-  factory FlyAppBar.backButton({
-    String? title,
-    List<Widget> actions = const [],
-    Color? backgroundColor,
-    double? leadingWidth,
-    bool centerTitle = false,
-    double? padding,
-    TextStyle? titleTextStyle,
-    PreferredSizeWidget? bottom,
-  }) =>
-      FlyAppBar(
-        title:title,
-        actions:actions,
-        backgroundColor:backgroundColor,
-        leadingWidth:leadingWidth,
-        centerTitle:centerTitle,
-        padding:padding,
-        titleTextStyle:titleTextStyle,
-        bottom:bottom,
-      );
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
       // leadingWidth: leadingWidth,
       backgroundColor: backgroundColor,
+      titleSpacing: 0.0,
       title: AutoSizeText(
         title ?? '',
         style: titleTextStyle ??
@@ -82,7 +61,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize {
-    // return const Size.fromHeight(kToolbarHeight);
-    return  Size.fromHeight(8.h);
+    return const Size.fromHeight(kToolbarHeight);
+    // return  Size.fromHeight(8.h);
   }
 }

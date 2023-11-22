@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
