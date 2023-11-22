@@ -47,11 +47,6 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding:padding,
         titleTextStyle:titleTextStyle,
         bottom:bottom,
-        leading: FlyIconButton(
-          icon: Icons.arrow_back_ios_new,
-          onPressed: () => Get.back(),
-
-        ),
       );
 
   @override
