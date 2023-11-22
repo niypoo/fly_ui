@@ -112,47 +112,51 @@ class FlyTextField extends StatelessWidget {
           ),
           fillColor: color ?? Get.theme.cardColor,
           labelText: labelText,
-          contentPadding: EdgeInsetsDirectional.all(2.sp),
-          suffixIcon: Padding(
-            padding: EdgeInsetsDirectional.only(end: 2.sp),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                if (suffix == null)
-                  const SizedBox.shrink()
-                else if (suffix is Widget)
-                  suffix
-                else if (suffix is String)
-                  Text(
-                    suffix,
-                    style: Get.textTheme.bodyMedium!.copyWith(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          prefixIcon: Padding(
-            padding: EdgeInsetsDirectional.only(end: 2.sp),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                if (prefix == null)
-                  const SizedBox.shrink()
-                else if (prefix is Widget)
-                  prefix
-                else if (prefix is String)
-                  Text(
-                    prefix,
-                    style: Get.textTheme.bodyMedium!.copyWith(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-              ],
-            ),
-          ),
+          contentPadding: EdgeInsetsDirectional.all(10.sp),
+          suffixIcon: suffix == null
+              ? null
+              : Padding(
+                  padding: EdgeInsetsDirectional.only(end: 10.sp),
+                  child: suffix is Widget
+                      ? Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [suffix],
+                        )
+                      : Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              suffix,
+                              style: Get.textTheme.bodyMedium!.copyWith(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ],
+                        ),
+                ),
+          prefixIcon: prefix == null
+              ? null
+              : Padding(
+                  padding: EdgeInsetsDirectional.only(end: 10.sp),
+                  child: prefix is Widget
+                      ? Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [prefix],
+                        )
+                      : Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              prefix,
+                              style: Get.textTheme.bodyMedium!.copyWith(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ],
+                        ),
+                ),
           suffixStyle: Get.textTheme.bodySmall!.copyWith(
             color: Colors.red,
           ),
