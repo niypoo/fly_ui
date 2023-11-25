@@ -34,7 +34,7 @@ class FlySearchInput extends StatelessWidget {
             suffix: controller.searchIsEmpty.value
                 ? suffix ??
                     IconButton(
-                      onPressed: controller.onFieldSubmitted,
+                      onPressed:()=> controller.onFieldSubmitted(''),
                       icon: Icon(
                         UniconsLine.search,
                         color: Get.iconColor!.withOpacity(0.3),

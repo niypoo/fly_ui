@@ -10,6 +10,6 @@ abstract class HasSearchInput {
   // search input is empty
   late RxBool searchIsEmpty;
 
-  void onFieldSubmitted();
+  void onFieldSubmitted(String value);
   void onSearchFieldClear();
 }
