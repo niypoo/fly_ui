@@ -36,6 +36,7 @@ class FlyTextField extends StatelessWidget {
     this.autoFocus = false,
     this.marginBottom = 8,
     this.marginTop = 0,
+    this.isCollapsed = true,
     this.textAlign = TextAlign.start,
     this.textAlignVertical = TextAlignVertical.center,
   }) : super(key: key);
@@ -57,6 +58,7 @@ class FlyTextField extends StatelessWidget {
   final bool obscureText;
   final bool autoCorrect;
   final bool autoFocus;
+  final bool isCollapsed;
   final bool enableSuggestions;
   final Color? color;
   final Color? cursorColor;
@@ -112,7 +114,8 @@ class FlyTextField extends StatelessWidget {
           ),
           fillColor: color ?? Get.theme.cardColor,
           labelText: labelText,
-          contentPadding: EdgeInsetsDirectional.all(10.sp),
+          isCollapsed: isCollapsed,
+          contentPadding: EdgeInsetsDirectional.symmetric(horizontal:10.sp),
           suffixIcon: suffix == null
               ? null
               : Padding(
@@ -120,7 +123,7 @@ class FlyTextField extends StatelessWidget {
                   child: suffix is Widget
                       ? Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [suffix],
+                          children: [Flexible(child: suffix)],
                         )
                       : Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -142,7 +145,7 @@ class FlyTextField extends StatelessWidget {
                   child: prefix is Widget
                       ? Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [prefix],
+                          children: [Flexible(child: prefix)],
                         )
                       : Column(
                           mainAxisAlignment: MainAxisAlignment.center,

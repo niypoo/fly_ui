@@ -33,15 +33,18 @@ class FlySearchInput extends StatelessWidget {
             hintText: placeholder,
             suffix: controller.searchIsEmpty.value
                 ? suffix ??
-                    Icon(
-                      UniconsLine.search,
-                      color: Get.iconColor!.withOpacity(0.3),
-                      size: 20.sp,
+                    IconButton(
+                      onPressed: controller.onFieldSubmitted,
+                      icon: Icon(
+                        UniconsLine.search,
+                        color: Get.iconColor!.withOpacity(0.3),
+                        size: 16.sp,
+                      ),
                     )
                 : IconButton(
                     onPressed: controller.onSearchFieldClear,
                     icon: Icon(
-                      size: 20.sp,
+                      size: 16.sp,
                       UniconsLine.times,
                       color: Get.iconColor!.withOpacity(0.3),
                     ),
