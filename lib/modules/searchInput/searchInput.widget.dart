@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/modules/searchInput/abstracts/hasSearchInput.abstract.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
@@ -33,21 +34,13 @@ class FlySearchInput extends StatelessWidget {
             hintText: placeholder,
             suffix: controller.searchIsEmpty.value
                 ? suffix ??
-                    IconButton(
-                      onPressed:()=> controller.onFieldSubmitted(''),
-                      icon: Icon(
-                        UniconsLine.search,
-                        color: Get.iconColor!.withOpacity(0.3),
-                        size: 16.sp,
-                      ),
+                    FlyIconButton(
+                      onPressed: () => controller.onFieldSubmitted(''),
+                      icon: UniconsLine.search,
                     )
-                : IconButton(
+                : FlyIconButton(
                     onPressed: controller.onSearchFieldClear,
-                    icon: Icon(
-                      size: 16.sp,
-                      UniconsLine.times,
-                      color: Get.iconColor!.withOpacity(0.3),
-                    ),
+                    icon: UniconsLine.search,
                   )
             // focusNode: focusNode,
             );
