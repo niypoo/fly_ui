@@ -82,16 +82,7 @@ class FlyContainerWithTextField extends StatelessWidget {
                 : Get.theme.iconTheme.color!.withOpacity(0.3),
             validator: validator,
             controller: controller,
-            suffix: [
-              if (suffix != null)
-                Text(
-                  suffix!,
-                  style: Get.textTheme.bodyMedium!.copyWith(
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
-            ],
+            suffix: [if (suffix != null) SuffixText(text: suffix!)],
           ),
 
           if (trailing != null) trailing!,
