@@ -180,3 +180,23 @@ class FlyTextField extends StatelessWidget {
     );
   }
 }
+
+class SuffixText extends StatelessWidget {
+  const SuffixText({
+    super.key,
+    required this.text,
+  });
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: Get.textTheme.bodyMedium!.copyWith(
+        fontSize: 11.sp,
+        fontWeight: FontWeight.w300,
+      ),
+    );
+  }
+}
