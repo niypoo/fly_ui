@@ -24,7 +24,8 @@ class FlyTextButton extends StatelessWidget {
         title,
         style: Get.textTheme.titleMedium!.copyWith(
           color: Get.theme.primaryColor,
-          fontSize: 13.sp,
+          fontSize: 11.sp,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
