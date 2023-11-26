@@ -93,19 +93,19 @@ class FlyTextField extends StatelessWidget {
         decoration: InputDecoration(
           alignLabelWithHint: alignLabelWithHint,
           filled: filled,
-          border: UnderlineInputBorder(
+          border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
             ),
           ),
-          focusedBorder: UnderlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
             ),
           ),
-          enabledBorder: UnderlineInputBorder(
+          enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
@@ -147,21 +147,21 @@ class FlyTextField extends StatelessWidget {
           hintStyle: textStyle ??
               Get.textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w300,
-                fontSize: 13.sp,
+                fontSize: 11.sp,
               ),
           errorStyle: Get.textTheme.bodySmall!.copyWith(
             color: Colors.red,
-            fontSize: 13.sp,
+            fontSize: 11.sp,
             fontWeight: FontWeight.w300,
           ),
           labelStyle: Get.textTheme.titleSmall!.copyWith(
-            fontSize: 13.sp,
+            fontSize: 11.sp,
             fontWeight: FontWeight.w300,
           ),
         ),
         style: textStyle ??
             Get.textTheme.titleMedium!.copyWith(
-              fontSize: 13.sp,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w500,
             ),
         textAlign: textAlign,
@@ -194,7 +194,7 @@ class SuffixText extends StatelessWidget {
     return Text(
       text,
       style: Get.textTheme.bodyMedium!.copyWith(
-        fontSize: 11.sp,
+        fontSize: 9.sp,
         fontWeight: FontWeight.w300,
       ),
     );
