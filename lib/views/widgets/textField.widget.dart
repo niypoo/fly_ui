@@ -147,7 +147,7 @@ class FlyTextField extends StatelessWidget {
           hintStyle: textStyle ??
               Get.textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w300,
-                fontSize: 9.sp,
+                fontSize: 12.sp,
               ),
           errorStyle: Get.textTheme.bodySmall!.copyWith(
             color: Colors.red,
