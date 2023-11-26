@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/continerColored.widget.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
+import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
 class FlyContainerAsTextField extends StatelessWidget {
@@ -33,9 +34,11 @@ class FlyContainerAsTextField extends StatelessWidget {
       child: FlyContainerColored(
         // padding: EdgeInsets.all(AppConfigService.to.space!.m),
         margin: EdgeInsets.only(bottom: 8.sp),
-        padding: EdgeInsets.symmetric(
-          horizontal: 12.sp,
-          vertical: 2.sp,
+        padding: EdgeInsets.only(
+          left: 10.sp,
+          right: 10.sp,
+          top: 2.sp,
+          bottom: 4.sp,
         ),
         color: bgColor ?? Get.theme.cardColor,
         colorBorder: textColor ?? Get.theme.cardColor,
@@ -71,15 +74,7 @@ class FlyContainerAsTextField extends StatelessWidget {
                 if (suffix != null && suffix is Widget)
                   suffix
                 else if (suffix != null)
-                  AutoSizeText(
-                    suffix,
-                    style: Get.textTheme.bodyMedium!.copyWith(
-                      fontWeight: FontWeight.w300,
-                      color: disabled
-                          ? Get.textTheme.bodyMedium!.color!.withOpacity(0.4)
-                          : null,
-                    ),
-                  ),
+                  SuffixText(text: suffix)
               ],
             ),
           ],
