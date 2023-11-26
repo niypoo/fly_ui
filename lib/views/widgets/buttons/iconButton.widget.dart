@@ -28,6 +28,37 @@ class FlyIconButton extends StatelessWidget {
         icon: icon,
         onPressed: onPressed,
       );
+  factory FlyIconButton.card({
+    IconData? icon,
+    Function? onPressed,
+  }) =>
+      FlyIconButton(
+        borderColor: Get.theme.cardColor,
+        bgColor: Get.theme.cardColor,
+        icon: icon,
+        onPressed: onPressed,
+      );
+  factory FlyIconButton.scaffold({
+    IconData? icon,
+    Function? onPressed,
+  }) =>
+      FlyIconButton(
+        borderColor: Get.theme.scaffoldBackgroundColor,
+        bgColor: Get.theme.scaffoldBackgroundColor,
+        icon: icon,
+        onPressed: onPressed,
+      );
+  factory FlyIconButton.secondary({
+    IconData? icon,
+    Function? onPressed,
+  }) =>
+      FlyIconButton(
+        borderColor: Get.theme.colorScheme.secondary,
+        bgColor: Get.theme.colorScheme.secondary,
+        colorIcon: Get.theme.secondaryHeaderColor,
+        icon: icon,
+        onPressed: onPressed,
+      );
 
   final Color? bgColor;
   final Color? colorIcon;
@@ -40,39 +71,43 @@ class FlyIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyAnimatedRandomFade(
-      child: AnimatedContainer(
-        width: 30.sp,
-        height: 30.sp,
-        duration: AppConfigService.to.duration,
-        curve: AppConfigService.to.curve,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.sp),
-          shape: shape,
+    return
+        // FlyAnimatedRandomFade(
+        //   child:
+        Container(
+      width: 30.sp,
+      height: 30.sp,
+      // duration: AppConfigService.to.duration,
+      // curve: AppConfigService.to.curve,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.sp),
+        shape: shape,
+        color: onPressed == null
+            ? Get.theme.cardColor
+            : bgColor ?? Get.theme.cardColor,
+        border: onPressed == null
+            ? null
+            : borderColor != null
+                ? Border.all(color: borderColor!)
+                : null,
+      ),
+      child: IconButton(
+        constraints: const BoxConstraints(),
+        padding: padding,
+        onPressed: onPressed as void Function()?,
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        color: Colors.white,
+        disabledColor: Colors.white60,
+        icon: Icon(
+          icon,
+          size: iconSize ?? 15.sp,
           color: onPressed == null
-              ? Get.theme.cardColor
-              : bgColor ?? Get.theme.cardColor,
-          border: onPressed == null
-              ? null
-              : borderColor != null
-                  ? Border.all(color: borderColor!)
-                  : null,
-        ),
-        child: IconButton(
-          constraints: const BoxConstraints(),
-          padding: padding,
-          onPressed: onPressed as void Function()?,
-          color: Colors.white,
-          disabledColor: Colors.white60,
-          icon: Icon(
-            icon,
-            size: iconSize ?? 15.sp,
-            color: onPressed == null
-                ? Get.theme.iconTheme.color!.withOpacity(0.2)
-                : colorIcon ?? Get.theme.iconTheme.color,
-          ),
+              ? Get.theme.iconTheme.color!.withOpacity(0.2)
+              : colorIcon ?? Get.theme.iconTheme.color,
         ),
       ),
+      // ),
     );
   }
 }

@@ -29,8 +29,8 @@ class FlyTextField extends StatelessWidget {
     this.autoCorrect = false,
     this.textInputType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
-    this.suffix,
-    this.prefix,
+    this.suffix = const [],
+    this.prefix = const [],
     this.inputFormatters,
     this.focusNode,
     this.autoFocus = false,
@@ -66,8 +66,8 @@ class FlyTextField extends StatelessWidget {
   final TextStyle? textStyle;
   final TextInputType textInputType;
   final TextInputAction textInputAction;
-  final dynamic prefix;
-  final dynamic suffix;
+  final List<Widget> prefix;
+  final List<Widget> suffix;
   final double marginBottom;
   final double marginTop;
 
@@ -115,50 +115,27 @@ class FlyTextField extends StatelessWidget {
           fillColor: color ?? Get.theme.cardColor,
           labelText: labelText,
           isCollapsed: isCollapsed,
-          contentPadding: EdgeInsetsDirectional.symmetric(horizontal:10.sp),
-          suffixIcon: suffix == null
+          contentPadding: EdgeInsetsDirectional.symmetric(
+            horizontal: 10.sp,
+          ),
+          suffixIcon: suffix.isEmpty
               ? null
               : Padding(
-                  padding: EdgeInsetsDirectional.only(end: 10.sp),
-                  child: suffix is Widget
-                      ? Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [Flexible(child: suffix)],
-                        )
-                      : Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              suffix,
-                              style: Get.textTheme.bodyMedium!.copyWith(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                          ],
-                        ),
+                  padding: EdgeInsetsDirectional.only(end: 4.sp),
+                  child: Wrap(
+                    alignment: WrapAlignment.center,
+                    runAlignment: WrapAlignment.center,
+                    runSpacing: 4.sp,
+                    spacing: 4.sp,
+                    children: suffix,
+                  ),
                 ),
-          prefixIcon: prefix == null
+          prefixIcon: prefix.isEmpty
               ? null
-              : Padding(
-                  padding: EdgeInsetsDirectional.only(end: 10.sp),
-                  child: prefix is Widget
-                      ? Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [Flexible(child: prefix)],
-                        )
-                      : Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              prefix,
-                              style: Get.textTheme.bodyMedium!.copyWith(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                          ],
-                        ),
+              : Wrap(
+                  alignment: WrapAlignment.center,
+                  runAlignment: WrapAlignment.center,
+                  children: prefix,
                 ),
           suffixStyle: Get.textTheme.bodySmall!.copyWith(
             color: Colors.red,

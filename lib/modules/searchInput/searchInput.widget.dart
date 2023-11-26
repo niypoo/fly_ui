@@ -25,25 +25,31 @@ class FlySearchInput extends StatelessWidget {
     return Obx(
       () {
         return FlyTextField(
-            focusNode: controller.searchFocusNode,
-            textInputAction: TextInputAction.search,
-            controller: controller.searchTextController,
-            onFieldSubmitted: controller.onFieldSubmitted,
-            color: Get.theme.cardColor,
-            borderColor: Colors.transparent,
-            hintText: placeholder,
-            suffix: controller.searchIsEmpty.isTrue
-                ? suffix ??
-                    const FlyIconButton(
-                      onPressed: null,
-                      icon: UniconsLine.search,
-                    )
-                : FlyIconButton(
-                    onPressed: controller.onSearchFieldClear,
-                    icon: UniconsLine.search,
-                  )
-            // focusNode: focusNode,
-            );
+          focusNode: controller.searchFocusNode,
+          textInputAction: TextInputAction.search,
+          controller: controller.searchTextController,
+          onFieldSubmitted: controller.onFieldSubmitted,
+          color: Get.theme.cardColor,
+          borderColor: Colors.transparent,
+          hintText: placeholder,
+          suffix: [
+            if (suffix != null) suffix!,
+            FlyIconButton.primary(
+              onPressed: controller.searchIsEmpty.isFalse
+                  ? () => controller
+                      .onFieldSubmitted(controller.searchTextController.text)
+                  : null,
+              icon: UniconsLine.search,
+            ),
+          ],
+          prefix: [
+            if (controller.searchIsEmpty.isFalse)
+              FlyIconButton(
+                onPressed: controller.onSearchFieldClear,
+                icon: UniconsLine.times,
+              )
+          ],
+        );
       },
     );
   }

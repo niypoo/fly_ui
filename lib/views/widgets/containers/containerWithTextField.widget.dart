@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/services/color.service.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
@@ -81,7 +82,16 @@ class FlyContainerWithTextField extends StatelessWidget {
                 : Get.theme.iconTheme.color!.withOpacity(0.3),
             validator: validator,
             controller: controller,
-            suffix: suffix,
+            suffix: [
+              if (suffix != null)
+                Text(
+                  suffix!,
+                  style: Get.textTheme.bodyMedium!.copyWith(
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+            ],
           ),
 
           if (trailing != null) trailing!,
