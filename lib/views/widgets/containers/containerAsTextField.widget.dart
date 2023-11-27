@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/services/color.service.dart';
 import 'package:fly_ui/views/widgets/containers/continerColored.widget.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
@@ -41,7 +42,7 @@ class FlyContainerAsTextField extends StatelessWidget {
           bottom: 4.sp,
         ),
         color: bgColor ?? Get.theme.cardColor,
-        colorBorder: textColor ?? Get.theme.cardColor,
+        colorBorder: ColorService.colorDark(bgColor ?? Get.theme.cardColor),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,

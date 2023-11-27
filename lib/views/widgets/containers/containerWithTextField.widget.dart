@@ -75,11 +75,12 @@ class FlyContainerWithTextField extends StatelessWidget {
           if (more != null) more!,
 
           FlyTextField(
+            maxLines: 4,
+            contentPaddingVertical: 10.sp,
             hintText: value,
             color: Get.theme.scaffoldBackgroundColor,
-            borderColor: textColor != null
-                ? ColorService.colorLight(textColor!)
-                : Get.theme.iconTheme.color!.withOpacity(0.3),
+            borderColor:
+                bgColor != null ? ColorService.colorDarken(bgColor!) : null,
             validator: validator,
             controller: controller,
             suffix: [if (suffix != null) SuffixText(text: suffix!)],

@@ -36,6 +36,7 @@ class FlyTextField extends StatelessWidget {
     this.autoFocus = false,
     this.marginBottom = 8,
     this.marginTop = 0,
+    this.contentPaddingVertical = 0,
     this.isCollapsed = true,
     this.textAlign = TextAlign.start,
     this.textAlignVertical = TextAlignVertical.center,
@@ -70,6 +71,7 @@ class FlyTextField extends StatelessWidget {
   final List<Widget> suffix;
   final double marginBottom;
   final double marginTop;
+  final double contentPaddingVertical;
 
   final TextAlign textAlign;
   final TextAlignVertical textAlignVertical;
@@ -117,6 +119,7 @@ class FlyTextField extends StatelessWidget {
           isCollapsed: isCollapsed,
           contentPadding: EdgeInsetsDirectional.symmetric(
             horizontal: 10.sp,
+            vertical: contentPaddingVertical,
           ),
           suffixIcon: suffix.isEmpty
               ? null
