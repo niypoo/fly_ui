@@ -30,7 +30,7 @@ class FlyListTile extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.sp),
           ),
-          contentPadding: EdgeInsets.all(AppConfigService.to.space!.s),
+          contentPadding: EdgeInsets.all(10.sp),
           leading: leading,
           title: Text(
             title,

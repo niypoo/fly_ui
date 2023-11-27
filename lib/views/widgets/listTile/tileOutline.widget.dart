@@ -1,5 +1,5 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/containerOutline.widget.dart';
 import 'package:get/get.dart';
 
@@ -30,8 +30,7 @@ class FlyListTileOutline extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsets.only(bottom: AppConfigService.to.space!.xs),
+                    padding: EdgeInsets.only(bottom: 5.sp),
                     child: Text(title.toUpperCase(),
                         style: Get.textTheme.labelLarge),
                   ),

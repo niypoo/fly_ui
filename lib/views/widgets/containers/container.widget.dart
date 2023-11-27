@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
@@ -27,8 +26,8 @@ class FlyContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin ??
-          EdgeInsets.symmetric(vertical: AppConfigService.to.space!.xs),
-      padding: padding ?? EdgeInsets.all(AppConfigService.to.space!.m),
+          EdgeInsets.symmetric(vertical: 10.sp),
+      padding: padding ?? EdgeInsets.all(10.sp),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
         radius ?? 15.sp

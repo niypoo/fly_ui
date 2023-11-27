@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/tableRow.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
@@ -60,7 +61,7 @@ class FlyListTitleTableRow extends StatelessWidget {
 
         Padding(
           padding:
-              EdgeInsets.symmetric(horizontal: AppConfigService.to.space!.s),
+              EdgeInsets.symmetric(horizontal: 5.sp),
           child: AutoSizeText(
             date,
             maxLines: 1,
