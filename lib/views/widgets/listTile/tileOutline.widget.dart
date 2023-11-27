@@ -30,7 +30,7 @@ class FlyListTileOutline extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 3.sp),
+                    padding: EdgeInsets.only(bottom: 2.sp),
                     child: Text(
                       title.toUpperCase(),
                       style: Get.textTheme.labelLarge,
