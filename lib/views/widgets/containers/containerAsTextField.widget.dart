@@ -42,7 +42,7 @@ class FlyContainerAsTextField extends StatelessWidget {
           bottom: 4.sp,
         ),
         color: bgColor ?? Get.theme.cardColor,
-        colorBorder: ColorService.colorDark(bgColor ?? Get.theme.cardColor),
+        colorBorder: ColorService.colorDarken(bgColor ?? Get.theme.cardColor),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,

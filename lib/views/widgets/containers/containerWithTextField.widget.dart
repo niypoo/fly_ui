@@ -75,10 +75,10 @@ class FlyContainerWithTextField extends StatelessWidget {
           if (more != null) more!,
 
           FlyTextField(
-            maxLines: 4,
+            maxLines: 2,
             contentPaddingVertical: 10.sp,
             hintText: value,
-            color: Get.theme.scaffoldBackgroundColor,
+            color: bgColor,
             borderColor:
                 bgColor != null ? ColorService.colorDarken(bgColor!) : null,
             validator: validator,
