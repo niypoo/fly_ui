@@ -30,21 +30,15 @@ class FlyListTileOutline extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 5.sp),
+                    padding: EdgeInsets.only(bottom: 3.sp),
                     child: Text(
                       title.toUpperCase(),
-                      style: Get.textTheme.titleMedium!.copyWith(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: Get.textTheme.labelLarge,
                     ),
                   ),
                   Text(
                     '$value ${suffix ?? ''}',
-                    style: Get.textTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 12.sp,
-                    ),
+                    style: Get.textTheme.labelMedium,
                   ),
                 ],
               ),
