@@ -26,7 +26,7 @@ class FlyContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin ??
-          EdgeInsets.symmetric(vertical: 10.sp),
+          EdgeInsets.symmetric(vertical: 2.sp),
       padding: padding ?? EdgeInsets.all(10.sp),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
