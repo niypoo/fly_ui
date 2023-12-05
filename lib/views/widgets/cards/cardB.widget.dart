@@ -71,7 +71,7 @@ class FlyCardB extends StatelessWidget {
                           TextSpan(
                             text: value,
                             style: Get.textTheme.titleLarge!.copyWith(
-                              fontSize: 30.sp,
+                              fontSize: 25.sp,
                               color: textColor,
                               fontWeight: FontWeight.w900,
                               height: 1.2,
@@ -98,7 +98,8 @@ class FlyCardB extends StatelessWidget {
               ),
               if (icon != null)
                 Positioned(
-                  top: 0,
+                  top: child != null ? 0 : null,
+                  bottom: child == null ? 0 : null,
                   left: 0,
                   right: 0,
                   child: Opacity(
