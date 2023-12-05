@@ -49,7 +49,7 @@ class FlyHeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(vertical: 5.sp),
+      padding: padding ?? EdgeInsets.symmetric(vertical: 10.sp),
       child: Row(
         children: [
           if (image != null)
