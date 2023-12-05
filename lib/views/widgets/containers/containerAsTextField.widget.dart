@@ -35,14 +35,10 @@ class FlyContainerAsTextField extends StatelessWidget {
       onTap: onChangeValueTap,
       child: FlyContainerColored(
         margin: EdgeInsets.only(bottom: 8.sp),
-        padding: EdgeInsets.only(
-          left: 10.sp,
-          right: 10.sp,
-          top: 4.sp,
-          bottom: 4.sp,
-        ),
+        padding: EdgeInsets.all(10.sp),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
-        colorBorder: colorBorder ?? Get.theme.textTheme.bodyLarge!.color!.withOpacity(0.2),
+        colorBorder: colorBorder ??
+            Get.theme.textTheme.bodyLarge!.color!.withOpacity(0.2),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +49,7 @@ class FlyContainerAsTextField extends StatelessWidget {
                 title!,
                 style: Get.textTheme.titleSmall!.copyWith(
                   fontSize: 12.sp,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
 
@@ -64,7 +60,7 @@ class FlyContainerAsTextField extends StatelessWidget {
                   child: AutoSizeText(
                     value,
                     style: Get.textTheme.titleMedium!.copyWith(
-                      fontSize: 11.sp,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w300,
                       color: disabled
                           ? Get.textTheme.labelLarge!.color!.withOpacity(0.4)
