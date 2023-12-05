@@ -49,7 +49,7 @@ class FlyContainerAsTextField extends StatelessWidget {
                 title!,
                 style: Get.textTheme.titleSmall!.copyWith(
                   fontSize: 12.sp,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
 
