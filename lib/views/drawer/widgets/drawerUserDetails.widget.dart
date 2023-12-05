@@ -44,11 +44,12 @@ class FlyDrawerUserDetails extends StatelessWidget {
 
               // action button
               if (actionButton != null)
-                Positioned(
-                  right: 5.sp,
-                  left: 5.sp,
-                  bottom: 5.sp,
-                  child: actionButton!,
+                Padding(
+                  padding: EdgeInsets.all(5.sp),
+                  child: Positioned(
+                    bottom: 0,
+                    child: actionButton!,
+                  ),
                 )
             ],
           ),
