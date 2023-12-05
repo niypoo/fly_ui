@@ -1,6 +1,6 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:get/get.dart';
 
@@ -49,11 +49,7 @@ class FlyHeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding ??
-          EdgeInsets.symmetric(
-            horizontal: AppConfigService.to.space!.m,
-            vertical: AppConfigService.to.space!.m,
-          ),
+      padding: padding ?? EdgeInsets.symmetric(vertical: 5.sp),
       child: Row(
         children: [
           if (image != null)
@@ -64,7 +60,7 @@ class FlyHeadline extends StatelessWidget {
                   width: 38,
                   url: image,
                 ),
-                SizedBox(width: AppConfigService.to.space!.xs)
+                SizedBox(width: 5.sp)
               ],
             ),
           Expanded(
