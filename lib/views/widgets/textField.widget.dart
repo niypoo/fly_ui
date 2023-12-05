@@ -114,7 +114,7 @@ class FlyTextField extends StatelessWidget {
               width: 2.0,
             ),
           ),
-          fillColor: color ?? Get.theme.cardColor,
+          fillColor: color ?? Get.theme.scaffoldBackgroundColor,
           labelText: labelText,
           isCollapsed: isCollapsed,
           contentPadding: EdgeInsetsDirectional.symmetric(
