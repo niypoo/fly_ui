@@ -74,16 +74,19 @@ class FlyContainerWithTextField extends StatelessWidget {
 
           if (more != null) more!,
 
-          FlyTextField(
-            maxLines: 2,
-            contentPaddingVertical: 10.sp,
-            hintText: value,
-            color: bgColor,
-            borderColor:
-                bgColor != null ? ColorService.colorDarken(bgColor!) : null,
-            validator: validator,
-            controller: controller,
-            suffix: [if (suffix != null) SuffixText(text: suffix!)],
+          Padding(
+            padding: EdgeInsets.only(top: 5.sp),
+            child: FlyTextField(
+              maxLines: 2,
+              contentPaddingVertical: 10.sp,
+              hintText: value,
+              color: bgColor,
+              borderColor:
+                  bgColor != null ? ColorService.colorDarken(bgColor!) : null,
+              validator: validator,
+              controller: controller,
+              suffix: [if (suffix != null) SuffixText(text: suffix!)],
+            ),
           ),
 
           if (trailing != null) trailing!,
