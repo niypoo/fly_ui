@@ -1,6 +1,6 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
@@ -15,10 +15,9 @@ class FlyCardB extends StatelessWidget {
     required this.value,
     required this.label,
     this.icon,
-    this.radius,
     this.textSpans,
-    this.valueTextStyle,
     this.onTap,
+    this.child,
     this.onLongPress,
   }) : super(key: key);
 
@@ -27,12 +26,11 @@ class FlyCardB extends StatelessWidget {
   final Color? textColor;
   final String value;
   final String label;
-  final dynamic icon;
-  final double? radius;
+  final IconData? icon;
+  final Widget? child;
   final List<TextSpan>? textSpans;
   final Function? onTap;
   final Function? onLongPress;
-  final TextStyle? valueTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -42,72 +40,84 @@ class FlyCardB extends StatelessWidget {
         onLongPress: onLongPress,
         child: FlyContainer(
           margin: const EdgeInsets.all(0),
-          padding: EdgeInsets.only(
-            top: AppConfigService.to.space!.m,
-            bottom: AppConfigService.to.space!.m,
-            right: AppConfigService.to.space!.s,
-            left: AppConfigService.to.space!.s,
+          padding: EdgeInsets.symmetric(
+            vertical: 5.sp,
+            horizontal: 8.sp,
           ),
           color: bgColor,
-          radius: radius ?? AppConfigService.to.radius,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          radius: 15.sp,
+          child: Stack(
             children: [
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: AutoSizeText(
-                        title,
-                        style: Get.textTheme.labelLarge!.copyWith(
-                          color: textColor,
-                        ),
-                        maxLines: 2,
-                      ),
-                    ),
-
-                    // if icon is icon data
-                    if (icon != null && icon is IconData)
-                      Icon(
-                        icon,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Title
+                  Flexible(
+                    child: AutoSizeText(
+                      title,
+                      style: Get.textTheme.titleMedium!.copyWith(
                         color: textColor,
-                        size: 20,
-                      )
-
-                    // if widget
-                    else if (icon != null && icon is Widget)
-                      icon,
-                  ],
-                ),
-              ),
-              Expanded(
-                child: AutoSizeText.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: value,
-                        style: valueTextStyle ??
-                            Get.textTheme.titleLarge!.copyWith(
-                              color: textColor,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        fontWeight: FontWeight.w300,
                       ),
-                      const TextSpan(text: ' '),
-                      TextSpan(text: label),
-
-                      // more textSpans in any case
-                      if (textSpans != null) ...textSpans!
-                    ],
-                    style: Get.textTheme.labelSmall!
-                        .copyWith(color: textColor, fontSize: 11),
+                      maxLines: 1,
+                    ),
                   ),
-                  maxLines: 2,
-                  maxFontSize: Get.textTheme.titleLarge!.fontSize!,
-                  minFontSize: Get.textTheme.titleSmall!.fontSize!,
-                ),
+
+                  // Value and label
+                  Flexible(
+                    child: AutoSizeText.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: value,
+                            style: Get.textTheme.titleLarge!.copyWith(
+                              fontSize: 30.sp,
+                              color: textColor,
+                              fontWeight: FontWeight.w900,
+                              height: 1.2,
+                            ),
+                          ),
+                          const TextSpan(text: ' '),
+                          TextSpan(text: label),
+
+                          // more textSpans in any case
+                          if (textSpans != null) ...textSpans!
+                        ],
+                        style: Get.textTheme.labelSmall!.copyWith(
+                            color: textColor,
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      maxLines: 1,
+                    ),
+                  ),
+
+                  // Child Widget
+                  if (child != null) Flexible(flex: 2, child: child!),
+                ],
               ),
+              if (icon != null)
+                Positioned(
+                  top: child != null ? 0 : null,
+                  bottom: child == null ? 0 : null,
+                  left: 0,
+                  right: 0,
+                  child: Opacity(
+                      opacity: 0.2,
+
+                      // if icon is icon data
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Icon(
+                            icon,
+                            color: textColor,
+                            size: 35.sp,
+                          ),
+                        ],
+                      )),
+                ),
             ],
           ),
         ),
