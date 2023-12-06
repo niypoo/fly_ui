@@ -71,10 +71,10 @@ class FlyCardB extends StatelessWidget {
                           TextSpan(
                             text: value,
                             style: Get.textTheme.titleLarge!.copyWith(
-                              fontSize: 25.sp,
+                              fontSize: 18.sp,
                               color: textColor,
-                              fontWeight: FontWeight.w900,
-                              height: 1.2,
+                              fontWeight: FontWeight.w800,
+                              height: 1.3,
                             ),
                           ),
                           const TextSpan(text: ' '),
@@ -85,7 +85,7 @@ class FlyCardB extends StatelessWidget {
                         ],
                         style: Get.textTheme.labelSmall!.copyWith(
                             color: textColor,
-                            fontSize: 13.sp,
+                            fontSize: 11.sp,
                             fontWeight: FontWeight.w300),
                       ),
                       maxLines: 1,
