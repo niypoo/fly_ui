@@ -98,8 +98,7 @@ class FlyCardB extends StatelessWidget {
               ),
               if (icon != null)
                 Positioned(
-                  top: child != null ? 0 : null,
-                  bottom: child == null ? 0 : null,
+                  top: 0,
                   left: 0,
                   right: 0,
                   child: Opacity(
