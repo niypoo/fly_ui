@@ -7,10 +7,14 @@ class FlyGridView extends StatelessWidget {
     required this.children,
     this.min = 1,
     this.max = 2,
+    this.mainAxisExtent = 100,
+    this.mainAxisSpacing = 10,
   }) : super(key: key);
 
   final List<Widget> children;
   final int min;
+  final double mainAxisExtent;
+  final double mainAxisSpacing;
   final int max;
 
   @override
@@ -20,10 +24,10 @@ class FlyGridView extends StatelessWidget {
       padding: EdgeInsets.only(bottom: AppConfigService.to.space!.s),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        mainAxisExtent: 100,
+        mainAxisExtent: mainAxisExtent,
         crossAxisCount: children.length == min ? min : max,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        crossAxisSpacing: mainAxisSpacing,
+        mainAxisSpacing: mainAxisSpacing,
       ),
       children: children,
     );
