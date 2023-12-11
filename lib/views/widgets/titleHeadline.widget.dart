@@ -92,7 +92,11 @@ class FlyHeadline extends StatelessWidget {
               ],
             ),
           ),
-          if (actions != null) ...actions!
+          if (actions != null) Wrap(
+            runSpacing: 5.sp,
+            spacing: 5.sp,
+            children: actions!,
+          )
         ],
       ),
     );
