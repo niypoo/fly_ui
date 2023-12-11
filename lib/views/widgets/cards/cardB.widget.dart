@@ -48,53 +48,59 @@ class FlyCardB extends StatelessWidget {
           radius: 15.sp,
           child: Stack(
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Title
-                  Flexible(
-                    child: AutoSizeText(
-                      title,
-                      style: Get.textTheme.titleMedium!.copyWith(
-                        color: textColor,
-                        fontWeight: FontWeight.w300,
+              Positioned(
+                right: 0,
+                left: 0,
+                top: 0,
+                bottom: 0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Title
+                    Flexible(
+                      child: AutoSizeText(
+                        title,
+                        style: Get.textTheme.titleMedium!.copyWith(
+                          color: textColor,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        maxLines: 1,
                       ),
-                      maxLines: 1,
                     ),
-                  ),
-
-                  // Value and label
-                  Flexible(
-                    child: AutoSizeText.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: value,
-                            style: Get.textTheme.titleLarge!.copyWith(
-                              fontSize: 18.sp,
-                              color: textColor,
-                              fontWeight: FontWeight.w800,
-                              height: 1.3,
+              
+                    // Value and label
+                    Flexible(
+                      child: AutoSizeText.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: value,
+                              style: Get.textTheme.titleLarge!.copyWith(
+                                fontSize: 18.sp,
+                                color: textColor,
+                                fontWeight: FontWeight.w800,
+                                height: 1.3,
+                              ),
                             ),
-                          ),
-                          const TextSpan(text: ' '),
-                          TextSpan(text: label),
-
-                          // more textSpans in any case
-                          if (textSpans != null) ...textSpans!
-                        ],
-                        style: Get.textTheme.labelSmall!.copyWith(
-                            color: textColor,
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w300),
+                            const TextSpan(text: ' '),
+                            TextSpan(text: label),
+              
+                            // more textSpans in any case
+                            if (textSpans != null) ...textSpans!
+                          ],
+                          style: Get.textTheme.labelSmall!.copyWith(
+                              color: textColor,
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w300),
+                        ),
+                        maxLines: 1,
                       ),
-                      maxLines: 1,
                     ),
-                  ),
-
-                  // Child Widget
-                  if (child != null) Flexible(flex: 2, child: child!),
-                ],
+              
+                    // Child Widget
+                    if (child != null) Flexible(flex: 2, child: child!),
+                  ],
+                ),
               ),
               if (icon != null)
                 Positioned(
