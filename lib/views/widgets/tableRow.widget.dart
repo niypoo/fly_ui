@@ -1,6 +1,5 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
 
@@ -28,23 +27,15 @@ class FlyTableRow extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       children: [
-        if (!disabledDivider)
+        if (disabledDivider)
           Divider(
             color: Get.iconColor!.withOpacity(0.2),
-            height: 10.sp,
-            indent: 10.sp,
-            endIndent: 10.sp,
+            height: AppConfigService.to.space!.l,
+            indent: 10,
+            endIndent: 10,
           ),
-        FlyInkWell(
-          onTap: onTap,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(children: children),
-              if (bottomHint != null) bottomHint!,
-            ],
-          ),
-        ),
+        FlyInkWell(onTap: onTap, child: Row(children: children)),
+        if (bottomHint != null) bottomHint!,
       ],
     );
   }
