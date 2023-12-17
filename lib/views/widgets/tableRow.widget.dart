@@ -35,8 +35,16 @@ class FlyTableRow extends StatelessWidget {
             indent: 10.sp,
             endIndent: 10.sp,
           ),
-        FlyInkWell(onTap: onTap, child: Row(children: children)),
-        if (bottomHint != null) bottomHint!,
+        FlyInkWell(
+          onTap: onTap,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(children: children),
+              if (bottomHint != null) bottomHint!,
+            ],
+          ),
+        ),
       ],
     );
   }
