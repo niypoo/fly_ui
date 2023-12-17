@@ -11,7 +11,6 @@ class FlyTableRow extends StatelessWidget {
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.onTap,
     this.bottomHint,
-    this.disabledDivider = false,
   }) : super(key: key);
 
   final Function? onTap;
@@ -19,7 +18,6 @@ class FlyTableRow extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
   final Widget? bottomHint;
-  final bool disabledDivider;
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +25,14 @@ class FlyTableRow extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       children: [
-        if (disabledDivider)
-          Divider(
-            color: Get.iconColor!.withOpacity(0.2),
-            height: AppConfigService.to.space!.l,
-            indent: 10,
-            endIndent: 10,
-          ),
         FlyInkWell(onTap: onTap, child: Row(children: children)),
         if (bottomHint != null) bottomHint!,
+        Divider(
+          color: Get.iconColor!.withOpacity(0.2),
+          height: AppConfigService.to.space!.l,
+          indent: 10,
+          endIndent: 10,
+        ),
       ],
     );
   }
