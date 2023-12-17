@@ -17,7 +17,7 @@ class FlySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: EdgeInsets.symmetric(vertical: 12.sp),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,20 +25,19 @@ class FlySection extends StatelessWidget {
         children: [
           Text(
             name,
-            style: Get.textTheme.titleLarge!.copyWith(
-              fontSize: 15.sp,
-            ),
+            style: Get.textTheme.titleMedium!
+                .copyWith(fontWeight: FontWeight.w500),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(10.sp),
             child: child,
           ),
           if (divider)
             Divider(
               color: Get.iconColor!.withOpacity(0.2),
-              height: 8,
-              indent: 10,
-              endIndent: 10,
+              height: 10.sp,
+              indent: 10.sp,
+              endIndent: 10.sp,
             ),
         ],
       ),
