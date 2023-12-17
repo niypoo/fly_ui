@@ -14,12 +14,14 @@ class FlyListTitleTableRow extends StatelessWidget {
     required this.title,
     this.note,
     this.color,
+    this.disabledDivider = false,
     this.onMoreActions,
   }) : super(key: key);
 
   final String title;
   final String date;
   final dynamic value;
+  final bool disabledDivider;
   final Color? color;
   final String? note;
   final Function? onMoreActions;
@@ -27,6 +29,7 @@ class FlyListTitleTableRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyTableRow(
+      disabledDivider: disabledDivider,
       bottomHint: note != null
           ? AutoSizeText(
               note!,
