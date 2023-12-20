@@ -81,12 +81,14 @@ class FlyCardB extends StatelessWidget {
                           TextSpan(text: label),
 
                           // more textSpans in any case
+                          if (textSpans != null) const TextSpan(text: ' '),
                           if (textSpans != null) ...textSpans!
                         ],
                         style: Get.textTheme.labelSmall!.copyWith(
-                            color: textColor,
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w300),
+                          color: textColor,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w300,
+                        ),
                       ),
                       maxLines: 1,
                     ),
