@@ -29,7 +29,7 @@ class FlyTableRow extends StatelessWidget {
         if (bottomHint != null) bottomHint!,
         Divider(
           color: Get.theme.cardColor,
-          height: 5.sp,
+          height: 10.sp,
           indent: 5.sp,
           endIndent: 5.sp,
         ),
