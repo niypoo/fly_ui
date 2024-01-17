@@ -31,6 +31,9 @@ class FlyMenuScreen extends StatelessWidget {
                   // header
                   if (header != null) header!,
 
+                  // padding space
+                  SizedBox(height: 20.sp),
+
                   // menu items
                   ...items,
                 ],
