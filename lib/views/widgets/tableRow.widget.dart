@@ -28,7 +28,7 @@ class FlyTableRow extends StatelessWidget {
         FlyInkWell(onTap: onTap, child: Row(children: children)),
         if (bottomHint != null) bottomHint!,
         Divider(
-          color: Get.theme.cardColor.withOpacity(0.5),
+          color: Get.theme.cardColor,
           height: 5.sp,
           indent: 5.sp,
           endIndent: 5.sp,
