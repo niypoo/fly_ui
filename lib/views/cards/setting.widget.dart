@@ -31,14 +31,16 @@ class FlySettingCard extends StatelessWidget {
         onTap: onTap as void Function()?,
         title: AutoSizeText(
           title,
-          style: Get.textTheme.labelLarge,
+          style: Get.textTheme.labelLarge!.copyWith(
+            fontSize: 14.sp,
+          ),
           maxLines: 1,
         ),
         subtitle: subtitle != null
             ? AutoSizeText(
                 subtitle!,
                 style: Get.textTheme.bodyMedium!.copyWith(
-                  fontSize: 16.sp,
+                  fontSize: 12.sp,
                 ),
               )
             : null,
