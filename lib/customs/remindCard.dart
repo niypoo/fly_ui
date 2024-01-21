@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
@@ -49,21 +50,19 @@ class FlyReminderCard extends StatelessWidget {
               ),
 
               // OPTIONS BUTTON
-              FlyIconButton(
+              FlyIconButton.scaffold(
                 onPressed: onOptionTap,
                 icon: UniconsLine.trash,
-                bgColor: Get.theme.iconTheme.color,
-                padding: const EdgeInsets.all(0),
               )
             ],
           ),
 
           if (details != null)
             Divider(
-              color: Get.iconColor!.withOpacity(0.2),
+              color: Get.iconColor!.withOpacity(0.1),
               height: AppConfigService.to.space!.l,
-              indent: 10,
-              endIndent: 10,
+              indent: 15.sp,
+              endIndent: 15.sp,
             ),
 
           // DETAILS
