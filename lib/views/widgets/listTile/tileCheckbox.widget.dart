@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
@@ -32,8 +33,8 @@ class FlyCheckboxTile extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  height: 20,
-                  width: 20,
+                  height: 20.sp,
+                  width: 20.sp,
                   child: Checkbox(
                     activeColor:
                         value ? Get.theme.cardColor : Get.theme.highlightColor,
@@ -42,11 +43,11 @@ class FlyCheckboxTile extends StatelessWidget {
                     onChanged: onTap as void Function(bool?)?,
                   ),
                 ),
-                SizedBox(width: AppConfigService.to.space!.s),
+                SizedBox(width: 10.sp),
                 Expanded(
                   child: AutoSizeText(
                     title,
-                    style: Get.textTheme.labelLarge,
+                    style: Get.textTheme.labelLarge!.copyWith(fontSize: 12.sp),
                   ),
                 )
               ],
@@ -54,8 +55,8 @@ class FlyCheckboxTile extends StatelessWidget {
 
             if (enableDivider)
               Divider(
-                color: Get.theme.primaryColor.withOpacity(0.2),
-                height: AppConfigService.to.space!.l,
+                color: Get.theme.primaryColor.withOpacity(0.1),
+                height: 10.sp,
               ),
 
             // hint if STRING OR Widget
@@ -63,13 +64,12 @@ class FlyCheckboxTile extends StatelessWidget {
               Padding(
                 padding: enableDivider
                     ? const EdgeInsets.all(0)
-                    : EdgeInsets.only(
-                        top: AppConfigService.to.space!.l,
-                      ),
+                    : EdgeInsets.only(top: 10.sp),
                 child: AutoSizeText(
                   hint!,
-                  style: Get.textTheme.bodyMedium!
-                      .copyWith(color: value ? Get.theme.primaryColor : null),
+                  style: Get.textTheme.bodyMedium!.copyWith(
+                    fontSize: 10.sp,
+                  ),
                 ),
               )
           ],

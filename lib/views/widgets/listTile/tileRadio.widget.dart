@@ -1,6 +1,6 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
@@ -38,8 +38,8 @@ class FlyRadioListTile extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  height: 20,
-                  width: 20,
+                  height: 20.sp,
+                  width: 20.sp,
                   child: Radio(
                     activeColor: Get.theme.iconTheme.color,
                     value: value,
@@ -49,13 +49,13 @@ class FlyRadioListTile extends StatelessWidget {
                 ),
 
                 // Space
-                SizedBox(width: AppConfigService.to.space!.xs),
+                SizedBox(width: 10.sp),
 
                 // text
                 Expanded(
                   child: AutoSizeText(
                     title,
-                    style: Get.textTheme.labelLarge,
+                    style: Get.textTheme.labelLarge!.copyWith(fontSize: 12.sp),
                   ),
                 )
               ],
@@ -63,8 +63,8 @@ class FlyRadioListTile extends StatelessWidget {
 
             if (enableDivider)
               Divider(
-                color: Get.iconColor!.withOpacity(0.2),
-                height: AppConfigService.to.space!.m,
+                color: Get.iconColor!.withOpacity(0.1),
+                height: 10.sp,
               ),
 
             // hint if STRING OR Widget
@@ -72,10 +72,12 @@ class FlyRadioListTile extends StatelessWidget {
               Padding(
                 padding: enableDivider
                     ? const EdgeInsets.all(0)
-                    : EdgeInsets.only(top: AppConfigService.to.space!.s),
+                    : EdgeInsets.only(top: 10.sp),
                 child: AutoSizeText(
                   hint!,
-                  style: Get.textTheme.bodyMedium,
+                  style: Get.textTheme.bodyMedium!.copyWith(
+                    fontSize: 10.sp,
+                  ),
                 ),
               )
           ],

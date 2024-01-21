@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyNote extends StatelessWidget {
@@ -26,15 +27,15 @@ class FlyNote extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // TO Fit
-        Row(),
+        const Row(),
 
         if (image != null)
           Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: AppConfigService.to.space!.m,
-            ),
+            padding: EdgeInsets.symmetric(vertical: 10.sp),
             child: image,
           ),
+
+        // NOTE
         AutoSizeText.rich(
           TextSpan(
             text: title,
@@ -42,12 +43,18 @@ class FlyNote extends StatelessWidget {
               const TextSpan(text: ', '),
               TextSpan(
                 text: note,
-                style: Get.textTheme.bodyMedium,
-              )
+                style: Get.textTheme.bodyMedium!.copyWith(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const TextSpan(text: ' '),
             ],
           ),
-          style: Get.textTheme.bodyLarge,
+          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 12.sp),
         ),
+
+        // BUTTON
         if (button != null) button!
       ],
     );
