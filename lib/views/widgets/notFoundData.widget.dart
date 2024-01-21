@@ -9,16 +9,19 @@ class FlyNotFoundData extends StatelessWidget {
     Key? key,
     this.title,
     this.icon,
+    this.enableTopMergin = true,
   }) : super(key: key);
 
   final String? title;
   final IconData? icon;
+  final bool enableTopMergin;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        if (enableTopMergin) SizedBox(height: 30.sp),
         Icon(icon ?? UniconsLine.exclamation, size: 20.sp),
         SizedBox(height: 5.sp),
         AutoSizeText(title ?? 'No data provided yet.'.tr),
