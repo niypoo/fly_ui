@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/cards/setting.widget.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +32,7 @@ class FlySettingIconCard extends StatelessWidget {
       trailing: Icon(
         icon ?? Icons.arrow_forward_ios_rounded,
         color: iconColor ?? Get.theme.iconTheme.color,
-        size: 20,
+        size: 20.sp,
       ),
     );
   }
