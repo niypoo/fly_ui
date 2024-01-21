@@ -32,7 +32,7 @@ class FlySettingIconCard extends StatelessWidget {
       trailing: Icon(
         icon ?? Icons.arrow_forward_ios_rounded,
         color: iconColor ?? Get.theme.iconTheme.color,
-        size: 20.sp,
+        size: 15.sp
       ),
     );
   }
