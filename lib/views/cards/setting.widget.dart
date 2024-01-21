@@ -32,7 +32,7 @@ class FlySettingCard extends StatelessWidget {
         title: AutoSizeText(
           title,
           style: Get.textTheme.labelLarge!.copyWith(
-            fontSize: 14.sp,
+            fontSize: 12.sp,
           ),
           maxLines: 1,
         ),
@@ -40,7 +40,7 @@ class FlySettingCard extends StatelessWidget {
             ? AutoSizeText(
                 subtitle!,
                 style: Get.textTheme.bodyMedium!.copyWith(
-                  fontSize: 12.sp,
+                  fontSize: 10.sp,
                 ),
               )
             : null,
