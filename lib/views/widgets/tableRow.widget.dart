@@ -27,6 +27,7 @@ class FlyTableRow extends StatelessWidget {
         mainAxisAlignment: mainAxisAlignment,
         crossAxisAlignment: crossAxisAlignment,
         children: [
+          SizedBox(height: 10.sp),
           Row(children: children),
           if (bottomHint != null) bottomHint!,
           Divider(
