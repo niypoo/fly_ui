@@ -23,13 +23,13 @@ class FlyTableRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: mainAxisAlignment,
-      crossAxisAlignment: crossAxisAlignment,
       children: [
         SizedBox(height: 10.sp),
         FlyInkWell(
           onTap: onTap,
           child: Column(
+            mainAxisAlignment: mainAxisAlignment,
+            crossAxisAlignment: crossAxisAlignment,
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(children: children),
