@@ -31,7 +31,7 @@ class FlyTableRow extends StatelessWidget {
             crossAxisAlignment: crossAxisAlignment,
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 10.sp),
+              SizedBox(height: 5.sp),
               Row(children: children),
               if (bottomHint != null) bottomHint!,
               SizedBox(height: 10.sp),
@@ -42,6 +42,7 @@ class FlyTableRow extends StatelessWidget {
           color: Get.theme.cardColor,
           indent: 5.sp,
           endIndent: 5.sp,
+          height: 0,
         ),
       ],
     );
