@@ -21,19 +21,22 @@ class FlyTableRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: mainAxisAlignment,
-      crossAxisAlignment: crossAxisAlignment,
-      children: [
-        FlyInkWell(onTap: onTap, child: Row(children: children)),
-        if (bottomHint != null) bottomHint!,
-        Divider(
-          color: Get.theme.cardColor,
-          height: 10.sp,
-          indent: 5.sp,
-          endIndent: 5.sp,
-        ),
-      ],
+    return FlyInkWell(
+      onTap: onTap,
+      child: Column(
+        mainAxisAlignment: mainAxisAlignment,
+        crossAxisAlignment: crossAxisAlignment,
+        children: [
+          Row(children: children),
+          if (bottomHint != null) bottomHint!,
+          Divider(
+            color: Get.theme.cardColor,
+            height: 10.sp,
+            indent: 5.sp,
+            endIndent: 5.sp,
+          ),
+        ],
+      ),
     );
   }
 }
