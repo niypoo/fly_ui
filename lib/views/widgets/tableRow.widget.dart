@@ -24,7 +24,6 @@ class FlyTableRow extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(height: 10.sp),
         FlyInkWell(
           onTap: onTap,
           child: Column(
@@ -32,14 +31,15 @@ class FlyTableRow extends StatelessWidget {
             crossAxisAlignment: crossAxisAlignment,
             mainAxisSize: MainAxisSize.min,
             children: [
+              SizedBox(height: 10.sp),
               Row(children: children),
               if (bottomHint != null) bottomHint!,
+              SizedBox(height: 10.sp),
             ],
           ),
         ),
         Divider(
           color: Get.theme.cardColor,
-          height: 10.sp,
           indent: 5.sp,
           endIndent: 5.sp,
         ),
