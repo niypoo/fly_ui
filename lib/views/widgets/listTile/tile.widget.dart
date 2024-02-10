@@ -33,7 +33,7 @@ class FlyListTile extends StatelessWidget {
           leading: leading,
           title: Text(
             title,
-            style: Get.textTheme.titleLarge,
+            style: Get.textTheme.bodyLarge,
           ),
           subtitle: subtitle is String
               ? Text(

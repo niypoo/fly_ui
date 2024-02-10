@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,10 +43,13 @@ class FlySwitchOption extends StatelessWidget {
                   maxLines: 1,
                 ),
                 if (subtitle != null)
-                  AutoSizeText(
-                    subtitle!,
-                    style: Get.textTheme.bodySmall!.copyWith(height: 1),
-                    maxLines: 2,
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.sp),
+                    child: AutoSizeText(
+                      subtitle!,
+                      style: Get.textTheme.bodySmall!.copyWith(height: 1),
+                      maxLines: 2,
+                    ),
                   ),
               ],
             ),
