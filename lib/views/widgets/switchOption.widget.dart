@@ -44,7 +44,7 @@ class FlySwitchOption extends StatelessWidget {
                 ),
                 if (subtitle != null)
                   Padding(
-                    padding: EdgeInsets.only(top: 8.sp),
+                    padding: EdgeInsets.only(top: 5.sp),
                     child: AutoSizeText(
                       subtitle!,
                       style: Get.textTheme.bodySmall!.copyWith(height: 1),
