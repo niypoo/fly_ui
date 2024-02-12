@@ -6,16 +6,16 @@ class FlyRestrictedView extends StatelessWidget {
   const FlyRestrictedView({
     super.key,
     this.condition = false,
-    required this.restrictedChild,
+    required this.child,
   });
 
   final bool condition;
-  final Widget restrictedChild;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return condition
-        ? restrictedChild
+        ? child
         : FlyContainerMessage(
             body:
                 "UI.seems that your account does not have an eligible role.".tr,

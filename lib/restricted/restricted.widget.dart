@@ -4,14 +4,14 @@ class FlyRestricted extends StatelessWidget {
   const FlyRestricted({
     super.key,
     this.condition = false,
-    required this.restrictedChild,
+    required this.child,
   });
 
   final bool condition;
-  final Widget restrictedChild;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return condition ? restrictedChild : const SizedBox.shrink();
+    return condition ? child : const SizedBox.shrink();
   }
 }
