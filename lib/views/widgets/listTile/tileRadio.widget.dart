@@ -33,54 +33,45 @@ class FlyRadioListTile extends StatelessWidget {
       onTap: () => onTap(value),
       child: FlyContainer(
         color: isSelected ? Get.theme.highlightColor : Get.theme.cardColor,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children: [
-            Row(
-              children: [
-                SizedBox(
-                  height: 20.sp,
-                  width: 20.sp,
-                  child: Radio(
-                    activeColor: Get.theme.iconTheme.color,
-                    value: value,
-                    groupValue: valueGroup,
-                    onChanged: (dynamic value) => onTap(value),
-                  ),
-                ),
-
-                // Space
-                SizedBox(width: 10.sp),
-
-                // text
-                Expanded(
-                  child: AutoSizeText(
-                    title,
-                    style: Get.textTheme.labelLarge!.copyWith(fontSize: 12.sp),
-                  ),
-                )
-              ],
+            SizedBox(
+              height: 20.sp,
+              width: 20.sp,
+              child: Radio(
+                activeColor: Get.theme.iconTheme.color,
+                value: value,
+                groupValue: valueGroup,
+                onChanged: (dynamic value) => onTap(value),
+              ),
             ),
 
-            if (enableDivider)
-              Divider(
-                color: Get.iconColor!.withOpacity(0.1),
-                height: 10.sp,
-              ),
+            // Space
+            SizedBox(width: 5.sp),
 
-            // hint if STRING OR Widget
-            if (hint != null)
-              Padding(
-                padding: enableDivider
-                    ? const EdgeInsets.all(0)
-                    : EdgeInsets.only(top: 10.sp),
-                child: AutoSizeText(
-                  hint!,
-                  style: Get.textTheme.bodyMedium!.copyWith(
-                    fontSize: 10.sp,
+            // text
+            Expanded(
+              child: Column(
+                children: [
+                  AutoSizeText(
+                    title,
+                    style: Get.textTheme.bodyLarge!.copyWith(
+                      fontSize: 12.sp,
+                    ),
                   ),
-                ),
-              )
+                  if (hint != null)
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.sp),
+                      child: AutoSizeText(
+                        hint!,
+                        style: Get.textTheme.bodyMedium!.copyWith(
+                          fontSize: 10.sp,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            )
           ],
         ),
       ),
