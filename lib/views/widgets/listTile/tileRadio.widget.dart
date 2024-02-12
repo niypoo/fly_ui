@@ -52,6 +52,8 @@ class FlyRadioListTile extends StatelessWidget {
             // text
             Expanded(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   AutoSizeText(
                     title,
