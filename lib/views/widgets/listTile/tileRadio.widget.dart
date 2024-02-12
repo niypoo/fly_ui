@@ -34,6 +34,7 @@ class FlyRadioListTile extends StatelessWidget {
       child: FlyContainer(
         color: isSelected ? Get.theme.highlightColor : Get.theme.cardColor,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
