@@ -39,7 +39,7 @@ class FlyListTile extends StatelessWidget {
               ? Text(
                   subtitle,
                   style: Get.textTheme.labelLarge!.copyWith(
-                    fontSize: 12.sp,
+                    fontSize: 9.sp,
                     fontWeight: FontWeight.bold
                   ),
                 )
@@ -47,8 +47,9 @@ class FlyListTile extends StatelessWidget {
           trailing: value is String
               ? Text(
                   value,
-                  style: Get.textTheme.labelMedium!.copyWith(
-                    fontSize: 10.sp,
+                  style: Get.textTheme.bodySmall!.copyWith(
+                    fontSize: 9.sp,
+                    fontWeight: FontWeight.w100,
                   ),
                 )
               : value,
