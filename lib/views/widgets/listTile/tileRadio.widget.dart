@@ -57,8 +57,9 @@ class FlyRadioListTile extends StatelessWidget {
                 children: [
                   AutoSizeText(
                     title,
-                    style: Get.textTheme.bodyLarge!.copyWith(
-                      fontSize: 12.sp,
+                    style: Get.textTheme.labelLarge!.copyWith(
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   if (hint != null)
@@ -66,8 +67,9 @@ class FlyRadioListTile extends StatelessWidget {
                       padding: EdgeInsets.only(top: 5.sp),
                       child: AutoSizeText(
                         hint!,
-                        style: Get.textTheme.bodyMedium!.copyWith(
-                          fontSize: 10.sp,
+                        style: Get.textTheme.bodySmall!.copyWith(
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w300,
                         ),
                       ),
                     ),

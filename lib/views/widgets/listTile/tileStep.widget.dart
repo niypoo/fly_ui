@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyListTileStep extends StatelessWidget {
@@ -34,12 +35,18 @@ class FlyListTileStep extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: Get.textTheme.labelLarge!.copyWith(fontWeight: FontWeight.bold),
+        style: Get.textTheme.labelLarge!.copyWith(
+          fontSize: 9.sp,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       subtitle: description != null
           ? Text(
               description!,
-              style: Get.textTheme.bodyMedium!.copyWith(height: 1.3),
+              style: Get.textTheme.bodySmall!.copyWith(
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w300,
+              ),
             )
           : null,
     );

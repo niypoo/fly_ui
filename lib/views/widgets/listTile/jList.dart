@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +31,8 @@ class FlyListText extends StatelessWidget {
               Expanded(
                   child: AutoSizeText(
                 title,
-                style: Get.textTheme.bodySmall!.copyWith(color: color),
+                style: Get.textTheme.labelLarge!.copyWith(
+                    color: color, fontSize: 9.sp, fontWeight: FontWeight.bold),
               )),
               Icon(
                 icon ?? Icons.arrow_forward_ios_rounded,

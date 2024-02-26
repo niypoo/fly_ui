@@ -49,7 +49,7 @@ class FlyListTile extends StatelessWidget {
                   value,
                   style: Get.textTheme.bodySmall!.copyWith(
                     fontSize: 9.sp,
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w300,
                   ),
                 )
               : value,

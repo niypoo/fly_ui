@@ -46,7 +46,10 @@ class FlyCheckboxTile extends StatelessWidget {
                 Expanded(
                   child: AutoSizeText(
                     title,
-                    style: Get.textTheme.labelLarge!.copyWith(fontSize: 12.sp),
+                    style: Get.textTheme.labelLarge!.copyWith(
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 )
               ],
@@ -66,8 +69,9 @@ class FlyCheckboxTile extends StatelessWidget {
                     : EdgeInsets.only(top: 10.sp),
                 child: AutoSizeText(
                   hint!,
-                  style: Get.textTheme.bodyMedium!.copyWith(
-                    fontSize: 10.sp,
+                  style: Get.textTheme.bodySmall!.copyWith(
+                    fontSize: 9.sp,
+                    fontWeight: FontWeight.w300,
                   ),
                 ),
               )
