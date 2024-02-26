@@ -34,15 +34,15 @@ class FlyContainerMessage extends StatelessWidget {
           Text(
             title,
             style: Get.textTheme.titleLarge!.copyWith(
-              fontSize: 12.sp,
+              fontSize: 11.sp,
             ),
             textAlign: TextAlign.center,
             maxLines: 2,
           ),
           Text(
             body,
-            style: Get.textTheme.bodyMedium!.copyWith(
-              fontSize: 10.sp,
+            style: Get.textTheme.titleSmall!.copyWith(
+              fontSize: 8.sp,
             ),
             textAlign: TextAlign.center,
           ),
