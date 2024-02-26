@@ -38,13 +38,17 @@ class FlyListTile extends StatelessWidget {
           subtitle: subtitle is String
               ? Text(
                   subtitle,
-                  style: Get.textTheme.bodyMedium,
+                  style: Get.textTheme.labelLarge!.copyWith(
+                    fontSize: 12.sp,
+                  ),
                 )
               : subtitle,
           trailing: value is String
               ? Text(
                   value,
-                  style: Get.textTheme.bodySmall,
+                  style: Get.textTheme.labelMedium!.copyWith(
+                    fontSize: 10.sp,
+                  ),
                 )
               : value,
         ),
