@@ -22,20 +22,23 @@ class FlyRestrictedView extends StatelessWidget {
             padding: EdgeInsets.only(top: 15.sp),
             child: Text.rich(
               TextSpan(
-                text: 'Sharable.$role'.tr,
                 children: [
                   TextSpan(
-                    text: ', ',
-                    style: Get.textTheme.labelLarge,
+                    text: 'Sharable.Your role is'.tr,
                   ),
+                  const TextSpan(text: ' '),
                   TextSpan(
-                    text: 'Sharable.$role role hint'.tr,
-                    style: Get.textTheme.labelSmall,
-                  )
+                    text: 'Sharable.$role'.tr,
+                    style: Get.textTheme.labelLarge!
+                        .copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  const TextSpan(text: ' , '),
+                  TextSpan(
+                    text: 'Sharable.your $role role hint'.tr,
+                  ),
                 ],
+                style: Get.textTheme.labelSmall,
               ),
-              style: Get.textTheme.labelLarge!
-                  .copyWith(fontWeight: FontWeight.bold),
             ),
           );
   }
