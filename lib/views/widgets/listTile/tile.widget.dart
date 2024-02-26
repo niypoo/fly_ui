@@ -40,6 +40,7 @@ class FlyListTile extends StatelessWidget {
                   subtitle,
                   style: Get.textTheme.labelLarge!.copyWith(
                     fontSize: 12.sp,
+                    fontWeight: FontWeight.bold
                   ),
                 )
               : subtitle,

@@ -50,7 +50,7 @@ class FlyDrawerButton extends StatelessWidget {
                   title,
                   style: Get.textTheme.labelLarge!.copyWith(
                     height: 1.3,
-                    fontSize: 12.sp,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold
                   ),
                   maxLines: 1,
@@ -61,7 +61,7 @@ class FlyDrawerButton extends StatelessWidget {
               AutoSizeText(
                 value!,
                 style: Get.textTheme.bodySmall!.copyWith(
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w100,
                   fontSize: 10.sp,
                 ),
               ),
