@@ -54,10 +54,10 @@ class FlyReminderCard extends StatelessWidget {
 
           if (details != null)
             Divider(
-              color: Get.iconColor!.withOpacity(0.1),
-              height: AppConfigService.to.space!.l,
-              indent: 15.sp,
-              endIndent: 15.sp,
+              color: Get.theme.scaffoldBackgroundColor.withOpacity(0.5),
+              height: 10.sp,
+              indent: 5.sp,
+              endIndent: 5.sp,
             ),
 
           // DETAILS
