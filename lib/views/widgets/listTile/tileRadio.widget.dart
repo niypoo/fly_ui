@@ -70,8 +70,9 @@ class FlyRadioListTile extends StatelessWidget {
               height: 20.sp,
               width: 20.sp,
               child: Radio(
-                activeColor:
-                    value ? Get.theme.primaryColor : Get.theme.cardColor,
+                activeColor: (value == valueGroup)
+                    ? Get.theme.primaryColor
+                    : Get.theme.cardColor,
                 value: value,
                 groupValue: valueGroup,
                 onChanged: (dynamic value) => onTap(value),
