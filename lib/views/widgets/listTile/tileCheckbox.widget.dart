@@ -45,9 +45,7 @@ class FlyCheckboxTile extends StatelessWidget {
                   height: 20.sp,
                   width: 20.sp,
                   child: Checkbox(
-                    activeColor: value
-                        ? Get.theme.primaryColor
-                        : Get.theme.cardColor,
+                    activeColor: Get.theme.cardColor,
                     checkColor: Get.theme.primaryColor,
                     value: value,
                     onChanged: onTap as void Function(bool?)?,
