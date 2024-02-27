@@ -25,14 +25,13 @@ class FlyContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: margin ??
-          EdgeInsets.symmetric(vertical: 2.sp),
+      margin: margin ?? EdgeInsets.all(2.sp),
       padding: padding ?? EdgeInsets.all(10.sp),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-        radius ?? 15.sp
-        ),
+        
+        borderRadius: BorderRadius.circular(radius ?? 15.sp),
         color: color ?? Get.theme.cardColor,
+        
         border: outline
             ? Border.all(
                 color: border ?? Get.theme.iconTheme.color!.withOpacity(0.2),

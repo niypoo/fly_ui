@@ -35,20 +35,6 @@ class FlyRadioListTile extends StatelessWidget {
         color: isSelected ? Get.theme.highlightColor : Get.theme.cardColor,
         child: Row(
           children: [
-            SizedBox(
-              height: 20.sp,
-              width: 20.sp,
-              child: Radio(
-                activeColor: Get.theme.iconTheme.color,
-                value: value,
-                groupValue: valueGroup,
-                onChanged: (dynamic value) => onTap(value),
-              ),
-            ),
-
-            // Space
-            SizedBox(width: 5.sp),
-
             // text
             Expanded(
               child: Column(
@@ -75,7 +61,22 @@ class FlyRadioListTile extends StatelessWidget {
                     ),
                 ],
               ),
-            )
+            ),
+
+            // Space
+            SizedBox(width: 5.sp),
+
+            SizedBox(
+              height: 20.sp,
+              width: 20.sp,
+              child: Radio(
+                activeColor:
+                    value ? Get.theme.primaryColor : Get.theme.cardColor,
+                value: value,
+                groupValue: valueGroup,
+                onChanged: (dynamic value) => onTap(value),
+              ),
+            ),
           ],
         ),
       ),

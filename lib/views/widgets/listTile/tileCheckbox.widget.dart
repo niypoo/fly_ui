@@ -31,18 +31,6 @@ class FlyCheckboxTile extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(
-                  height: 20.sp,
-                  width: 20.sp,
-                  child: Checkbox(
-                    activeColor:
-                        value ? Get.theme.cardColor : Get.theme.highlightColor,
-                    checkColor: Get.theme.iconTheme.color,
-                    value: value,
-                    onChanged: onTap as void Function(bool?)?,
-                  ),
-                ),
-                SizedBox(width: 10.sp),
                 Expanded(
                   child: AutoSizeText(
                     title,
@@ -51,7 +39,20 @@ class FlyCheckboxTile extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                )
+                ),
+                SizedBox(width: 5.sp),
+                SizedBox(
+                  height: 20.sp,
+                  width: 20.sp,
+                  child: Checkbox(
+                    activeColor: value
+                        ? Get.theme.primaryColor
+                        : Get.theme.cardColor,
+                    checkColor: Get.theme.primaryColor,
+                    value: value,
+                    onChanged: onTap as void Function(bool?)?,
+                  ),
+                ),
               ],
             ),
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:get/get.dart';
 
 class FlyInkWell extends StatelessWidget {
   const FlyInkWell({
@@ -16,6 +17,7 @@ class FlyInkWell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      splashColor: Get.theme.primaryColor.withOpacity(0.1),
       borderRadius: BorderRadius.circular(10.sp),
       onTap: () {
         if (onTap != null) onTap!();
