@@ -2,23 +2,21 @@ import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
-import 'package:unicons/unicons.dart';
 
 class FlyReminderCard extends StatelessWidget {
   const FlyReminderCard({
     Key? key,
     required this.title,
     this.icon,
-    this.onOptionTap,
+    this.actions,
     this.details,
   }) : super(key: key);
 
   final String title;
   final IconData? icon;
-  final Function? onOptionTap;
+  final List<Widget>? actions;
   final List<Widget>? details;
 
   @override
@@ -50,10 +48,7 @@ class FlyReminderCard extends StatelessWidget {
               ),
 
               // OPTIONS BUTTON
-              FlyIconButton.scaffold(
-                onPressed: onOptionTap,
-                icon: UniconsLine.trash,
-              )
+              if (actions != null) Row(children: actions!),
             ],
           ),
 
