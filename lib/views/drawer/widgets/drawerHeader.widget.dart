@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_animator/flutter_animator.dart';
+// import 'package:flutter_animator/flutter_animator.dart';
 import 'package:fly_ui/views/drawer/drawer.controller.dart';
 import 'package:fly_ui/views/drawer/widgets/drawerUserDetails.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
@@ -28,21 +28,22 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
     return Column(
       children: [
         // CLOSE BUTTON
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Obx(
-              () => SlideInDown(
-                preferences: AnimationPreferences(
-                  autoPlay: controller.status.isTrue
-                      ? AnimationPlayStates.Forward
-                      : AnimationPlayStates.Reverse,
-                ),
-                key: ValueKey(
-                    'FlyDrawerHeader-drawer-button-${controller.status.value}'),
-                child: const DrawerButton(),
-              ),
-            ),
+            // Obx(
+            //   () => SlideInDown(
+            //     preferences: AnimationPreferences(
+            //       autoPlay: controller.status.isTrue
+            //           ? AnimationPlayStates.Forward
+            //           : AnimationPlayStates.Reverse,
+            //     ),
+            //     key: ValueKey(
+            //         'FlyDrawerHeader-drawer-button-${controller.status.value}'),
+            //     child: const DrawerButton(),
+            //   ),
+            // ),
+            DrawerButton(),
           ],
         ),
 
@@ -52,7 +53,7 @@ class FlyDrawerHeader extends GetView<FlyDrawerController> {
           photoUrl: photoUrl,
           id: id,
           onTap: onTap,
-          actionButton:actionButton,
+          actionButton: actionButton,
         ),
       ],
     );

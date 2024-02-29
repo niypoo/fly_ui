@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
@@ -28,10 +27,10 @@ class FlyDrawerButton extends StatelessWidget {
     return InkWell(
       onTap: onTap as void Function()?,
       child: FlyContainer(
-        margin: EdgeInsets.only(bottom: AppConfigService.to.space!.s),
+        margin: EdgeInsets.only(bottom: 5.sp),
         padding: EdgeInsets.symmetric(
-          vertical: AppConfigService.to.space!.s,
-          horizontal: AppConfigService.to.space!.m,
+          vertical: 5.sp,
+          horizontal: 10.sp,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
         child: Row(
@@ -44,7 +43,7 @@ class FlyDrawerButton extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: AppConfigService.to.space!.s,
+                  horizontal: 5.sp,
                 ),
                 child: AutoSizeText(
                   title,
