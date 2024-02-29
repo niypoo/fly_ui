@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/layouts/landscapeView.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepBottomHint.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepHint.widget.dart';
@@ -46,6 +47,9 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
       childB: SingleChildScrollView(
         child: Column(
           children: [
+            // top Paddding
+            SizedBox(height: 15.sp),
+
             // OPTIONS
             ...children,
 
