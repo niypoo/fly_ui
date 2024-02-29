@@ -43,14 +43,14 @@ class FlyNote extends StatelessWidget {
               TextSpan(
                 text: note,
                 style: Get.textTheme.bodyMedium!.copyWith(
-                  fontSize: 12.sp,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const TextSpan(text: ' '),
             ],
           ),
-          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 12.sp),
+          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 10.sp),
         ),
 
         // BUTTON
