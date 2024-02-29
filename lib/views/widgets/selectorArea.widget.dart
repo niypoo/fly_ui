@@ -37,7 +37,7 @@ class FlySelectorArea extends StatelessWidget {
     return FlyContainer(
       color: color ?? Get.theme.cardColor,
       margin: EdgeInsets.only(bottom: 10.sp),
-      padding: EdgeInsets.all(5.sp),
+      padding: EdgeInsets.all(10.sp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
