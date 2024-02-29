@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,15 +36,15 @@ class FlySelectorArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyContainer(
       color: color ?? Get.theme.cardColor,
-      margin: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
-      padding: EdgeInsets.all(AppConfigService.to.space!.m),
+      margin: EdgeInsets.only(bottom: 10.sp),
+      padding: EdgeInsets.all(5.sp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Title
           if (title != null)
             Padding(
-              padding: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
+              padding: EdgeInsets.only(bottom: 10.sp),
               child: Row(
                 children: [
                   AutoSizeText(
@@ -57,7 +56,7 @@ class FlySelectorArea extends StatelessWidget {
             ),
 
           Wrap(
-            spacing: 10,
+            spacing: 5.sp,
             alignment: WrapAlignment.center,
             children: options.map((option) {
               // is selected
@@ -78,20 +77,6 @@ class FlySelectorArea extends StatelessWidget {
               );
             }).toList(),
           ),
-          // GridView.builder(
-          //   shrinkWrap: true,
-          //   physics: const NeverScrollableScrollPhysics(),
-          //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //     crossAxisSpacing: 5,
-          //     mainAxisSpacing: 5,
-          //     crossAxisCount: crossAxisCount ?? (context.isTablet ? 3 : 2),
-          //     mainAxisExtent: 120,
-          //   ),
-          //   itemCount: options.length,
-          //   itemBuilder: (context, index) {
-          //     final SelectorOption option = options[index];
-          //   },
-          // ),
         ],
       ),
     );
@@ -144,8 +129,7 @@ class FlySelectorOption extends StatelessWidget {
               children: [
                 if (image != null)
                   Padding(
-                    padding:
-                        EdgeInsets.only(bottom: AppConfigService.to.space!.s),
+                    padding: EdgeInsets.only(bottom: 5.sp),
                     child: image,
                   ),
 
@@ -173,7 +157,7 @@ class FlySelectorOption extends StatelessWidget {
         ),
         if (moreInformation != null)
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+            padding: EdgeInsets.symmetric(vertical: 10.sp, horizontal: 5.sp),
             child: FlyIconButton(
               bgColor: Get.theme.cardColor,
               padding: const EdgeInsets.all(0),
