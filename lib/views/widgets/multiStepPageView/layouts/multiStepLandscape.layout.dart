@@ -47,7 +47,7 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
         child: Column(
           children: [
             // top Paddding
-            const SizedBox(height: 66),
+            const SizedBox(height: 60),
 
             // OPTIONS
             ...children,
