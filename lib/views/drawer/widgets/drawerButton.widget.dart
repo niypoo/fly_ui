@@ -27,9 +27,9 @@ class FlyDrawerButton extends StatelessWidget {
     return InkWell(
       onTap: onTap as void Function()?,
       child: FlyContainer(
-        margin: EdgeInsets.only(bottom: 8.sp),
+        margin: EdgeInsets.only(bottom: 7.sp),
         padding: EdgeInsets.symmetric(
-          vertical: 8.sp,
+          vertical: 6.sp,
           horizontal: 10.sp,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
