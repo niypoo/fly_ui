@@ -165,13 +165,13 @@ class FlySelectorOption extends StatelessWidget {
         ),
         if (moreInformation != null)
           Padding(
-            padding: EdgeInsetsDirectional.only(top: 2.sp, start: 2.sp),
+            padding: EdgeInsetsDirectional.only(top: 4.sp, start: 4.sp),
             child: FlyInkWell(
               onTap: moreInformation,
               child: Icon(
                   UniconsLine.exclamation_circle,
                   color: Get.theme.primaryColor,
-                  size: 12.sp,
+                  size: 20.sp,
                 ),
             ),
           )
