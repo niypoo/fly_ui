@@ -38,6 +38,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation:
           scrolledUnderElevation, //fix matrial 3 shadow scroll
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
+      titleSpacing: titleSpacing,
       title: AutoSizeText(
         title ?? '',
         style: titleTextStyle ??
@@ -48,11 +49,18 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
         textAlign: TextAlign.start,
       ),
-      leading: leading ??
-          FlyIconButton(
-            icon: Icons.arrow_back,
-            onPressed: () => Get.back(),
-          ),
+      leading: Padding(
+        padding:  EdgeInsets.only(
+          left: 5.sp,
+          right: 5.sp,
+          bottom: 5.sp,
+        ),
+        child: leading ??
+            FlyIconButton(
+              icon: Icons.arrow_back,
+              onPressed: () => Get.back(),
+            ),
+      ),
       actions: [
         Wrap(
           spacing: 5,
