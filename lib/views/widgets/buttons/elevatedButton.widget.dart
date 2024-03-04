@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
@@ -26,8 +25,11 @@ class FlyElevatedButton extends StatelessWidget {
         margin: margin,
       );
 
-  factory FlyElevatedButton.close(
-          {String? title, Function? onPressed, EdgeInsets? margin}) =>
+  factory FlyElevatedButton.close({
+    String? title,
+    Function? onPressed,
+    EdgeInsets? margin,
+  }) =>
       FlyElevatedButton(
         color: Get.theme.cardColor,
         textColor: Get.textTheme.titleMedium!.color,
