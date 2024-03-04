@@ -69,17 +69,15 @@ class FlyElevatedButton extends StatelessWidget {
               ? color!.withOpacity(0.3)
               : Get.theme.primaryColor.withOpacity(0.3),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.sp),
+            borderRadius: BorderRadius.circular(15.sp),
           ),
-          padding: EdgeInsets.symmetric(
-            vertical: AppConfigService.to.space!.s,
-          ),
+          padding: EdgeInsets.all(5.sp),
         ),
         child: Text(
           title!,
           style: Get.textTheme.titleMedium!.copyWith(
             color: textColor,
-            fontSize: 11.sp,
+            fontSize: 13.sp,
             fontWeight: FontWeight.bold,
           ),
         ),

@@ -96,19 +96,19 @@ class FlyTextField extends StatelessWidget {
           alignLabelWithHint: alignLabelWithHint,
           filled: filled,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.sp),
+            borderRadius: BorderRadius.circular(15.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.sp),
+            borderRadius: BorderRadius.circular(15.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.sp),
+            borderRadius: BorderRadius.circular(15.sp),
             borderSide: BorderSide(
               color: borderColor ?? Get.theme.cardColor,
               width: 2.0,

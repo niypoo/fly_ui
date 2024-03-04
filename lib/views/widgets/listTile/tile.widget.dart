@@ -27,7 +27,7 @@ class FlyListTile extends StatelessWidget {
         ListTile(
           onTap: onTap as void Function()?,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.sp),
+            borderRadius: BorderRadius.circular(15.sp),
           ),
           contentPadding: const EdgeInsets.all(0),
           leading: leading,

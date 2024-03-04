@@ -112,7 +112,7 @@ class FlySelectorOption extends StatelessWidget {
     return Stack(
       children: [
         InkWell(
-          borderRadius: BorderRadius.circular(10.sp),
+          borderRadius: BorderRadius.circular(15.sp),
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
             width: 110,
