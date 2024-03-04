@@ -61,7 +61,11 @@ class FlyElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.width,
-      margin: margin ?? EdgeInsets.all(10.sp),
+      margin: margin ??
+          EdgeInsets.symmetric(
+            horizontal: 0,
+            vertical: 4.sp,
+          ),
       child: ElevatedButton(
         onPressed: onPressed as void Function()?,
         style: ElevatedButton.styleFrom(
