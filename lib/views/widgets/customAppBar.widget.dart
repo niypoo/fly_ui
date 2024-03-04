@@ -29,7 +29,7 @@ class FlyCustomAppBar extends StatelessWidget {
               onPressed: () => Get.back(),
             ),
           ),
-          Expanded(
+          Flexible(
             child: AutoSizeText(
               title ?? '',
               style: Get.textTheme.headlineMedium!.copyWith(
