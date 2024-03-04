@@ -37,21 +37,21 @@ class FlySelectorArea extends StatelessWidget {
     return FlyContainer(
       color: color ?? Get.theme.cardColor,
       margin: EdgeInsets.only(bottom: 10.sp),
-      padding: EdgeInsets.all(5.sp),
+      padding: EdgeInsets.all(10.sp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Title
           if (title != null)
             Padding(
-              padding: EdgeInsets.only(bottom: 10.sp),
+              padding: EdgeInsets.only(bottom: 8.sp),
               child: Row(
                 children: [
                   AutoSizeText(
                     title!,
                     style: Get.textTheme.labelLarge!.copyWith(
                       color: textColor,
-                      fontSize: 12.sp,
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -138,7 +138,8 @@ class FlySelectorOption extends StatelessWidget {
                   ),
 
                 // Name
-                Flexible(
+                FittedBox(
+                  fit: BoxFit.scaleDown,
                   child: AutoSizeText(
                     '${name.tr} $label',
                     style: Get.textTheme.bodyLarge,

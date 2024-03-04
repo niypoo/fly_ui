@@ -32,7 +32,7 @@ class FlyDateAndTimeContainer extends StatelessWidget {
                 child: AutoSizeText(
                   title,
                   style: Get.textTheme.labelLarge!.copyWith(
-                    fontSize: 12.sp,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

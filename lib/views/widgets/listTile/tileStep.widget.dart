@@ -36,7 +36,7 @@ class FlyListTileStep extends StatelessWidget {
       title: Text(
         title,
         style: Get.textTheme.labelLarge!.copyWith(
-          fontSize: 9.sp,
+          fontSize: 10.sp,
           fontWeight: FontWeight.bold,
         ),
       ),

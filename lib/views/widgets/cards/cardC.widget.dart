@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
@@ -107,7 +108,11 @@ class FlyCardC extends StatelessWidget {
                   ],
                 ),
                 style: titleTextStyle ??
-                    Get.textTheme.labelLarge!.copyWith(color: textColor),
+                    Get.textTheme.labelLarge!.copyWith(
+                      color: textColor,
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                 maxLines: 2,
               ),
             ],

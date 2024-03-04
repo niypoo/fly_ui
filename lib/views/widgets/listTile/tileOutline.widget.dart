@@ -34,7 +34,9 @@ class FlyListTileOutline extends StatelessWidget {
                     child: Text(
                       title.toUpperCase(),
                       style: Get.textTheme.labelLarge!.copyWith(
-                          fontSize: 9.sp, fontWeight: FontWeight.bold),
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   Text(

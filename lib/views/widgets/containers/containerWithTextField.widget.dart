@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
@@ -43,7 +42,7 @@ class FlyContainerWithTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyContainer(
       color: bgColor,
-      margin: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
+      margin: EdgeInsets.only(bottom: 10.sp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -54,7 +53,7 @@ class FlyContainerWithTextField extends StatelessWidget {
                 title,
                 style: Get.textTheme.labelLarge!.copyWith(
                   color: textColor,
-                  fontSize: 12.sp,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -64,7 +63,7 @@ class FlyContainerWithTextField extends StatelessWidget {
           if (enableDivider)
             Divider(
               color: Get.textTheme.titleSmall!.color!.withOpacity(0.1),
-              height: AppConfigService.to.space!.l,
+              height: 12.sp,
             ),
 
           if (image != null) image!,

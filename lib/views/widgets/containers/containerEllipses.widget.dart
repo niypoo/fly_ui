@@ -1,6 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
 
@@ -51,6 +52,8 @@ class _FlyContainerEllipsesState extends State<FlyContainerEllipses> {
                   widget.title,
                   style: Get.textTheme.labelLarge!.copyWith(
                     color: widget.textColor,
+                    fontSize: 10.sp,
+                  fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

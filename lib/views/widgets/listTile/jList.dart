@@ -32,7 +32,9 @@ class FlyListText extends StatelessWidget {
                   child: AutoSizeText(
                 title,
                 style: Get.textTheme.labelLarge!.copyWith(
-                    color: color, fontSize: 9.sp, fontWeight: FontWeight.bold),
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.bold,
+                ),
               )),
               Icon(
                 icon ?? Icons.arrow_forward_ios_rounded,
