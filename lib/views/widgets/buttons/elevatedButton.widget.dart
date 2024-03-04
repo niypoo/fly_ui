@@ -31,7 +31,7 @@ class FlyElevatedButton extends StatelessWidget {
     EdgeInsets? margin,
   }) =>
       FlyElevatedButton(
-        color: Get.theme.cardColor,
+        color: Get.theme.scaffoldBackgroundColor,
         textColor: Get.textTheme.titleMedium!.color,
         title: title,
         onPressed: onPressed,
