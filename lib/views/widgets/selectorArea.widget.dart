@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/models/SelectorOption.dart';
-import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/containers/continerColored.widget.dart';
+import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
@@ -166,12 +166,16 @@ class FlySelectorOption extends StatelessWidget {
         if (moreInformation != null)
           Padding(
             padding: EdgeInsetsDirectional.only(top: 2.sp, start: 2.sp),
-            child: FlyIconButton(
-              bgColor: Get.theme.primaryColor,
-              colorIcon: Get.theme.secondaryHeaderColor,
-              padding: const EdgeInsets.all(0),
-              icon: UniconsLine.exclamation,
-              onPressed: moreInformation,
+            child: FlyInkWell(
+              onTap: moreInformation,
+              child: FlyContainer(
+                color: Get.theme.primaryColor,
+                child: Icon(
+                  UniconsLine.exclamation,
+                  color: Get.theme.secondaryHeaderColor,
+                  size: 9.sp,
+                ),
+              ),
             ),
           )
       ],
