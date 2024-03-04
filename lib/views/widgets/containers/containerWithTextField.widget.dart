@@ -52,7 +52,11 @@ class FlyContainerWithTextField extends StatelessWidget {
             children: [
               AutoSizeText(
                 title,
-                style: Get.textTheme.labelLarge!.copyWith(color: textColor),
+                style: Get.textTheme.labelLarge!.copyWith(
+                  color: textColor,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
