@@ -165,9 +165,10 @@ class FlySelectorOption extends StatelessWidget {
         ),
         if (moreInformation != null)
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.sp, horizontal: 5.sp),
+            padding: EdgeInsetsDirectional.only(top: 2.sp, start: 2.sp),
             child: FlyIconButton(
-              bgColor: Get.theme.cardColor,
+              bgColor: Get.theme.primaryColor,
+              colorIcon: Get.theme.secondaryHeaderColor,
               padding: const EdgeInsets.all(0),
               icon: UniconsLine.exclamation,
               onPressed: moreInformation,
