@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
@@ -29,12 +28,12 @@ class FlySquareButton extends StatelessWidget {
       onTap: onTap,
       child: FlyContainer(
         margin: EdgeInsets.symmetric(
-          vertical: AppConfigService.to.space!.m,
-          horizontal: AppConfigService.to.space!.s,
+          vertical: 10.sp,
+          horizontal: 5.sp,
         ),
         padding: EdgeInsets.symmetric(
-          vertical: AppConfigService.to.space!.xl,
-          horizontal: AppConfigService.to.space!.m,
+          vertical: 10.sp,
+          horizontal: 5.sp,
         ),
         color: color ?? Get.theme.cardColor,
         child: Column(
@@ -42,9 +41,9 @@ class FlySquareButton extends StatelessWidget {
             Icon(
               icon,
               color: textColor,
-              size: 30,
+              size: 13.sp,
             ),
-            SizedBox(height: AppConfigService.to.space!.s),
+            SizedBox(height: 5.sp),
             AutoSizeText(
               title.tr,
               style: Get.textTheme.titleMedium!.copyWith(

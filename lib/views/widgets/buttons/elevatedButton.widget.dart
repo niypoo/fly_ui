@@ -1,7 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:get/get.dart';
 
 class FlyElevatedButton extends StatelessWidget {
@@ -37,8 +36,11 @@ class FlyElevatedButton extends StatelessWidget {
         margin: margin,
       );
 
-  factory FlyElevatedButton.primary(
-          {String? title, Function? onPressed, EdgeInsets? margin}) =>
+  factory FlyElevatedButton.primary({
+    String? title,
+    Function? onPressed,
+    EdgeInsets? margin,
+  }) =>
       FlyElevatedButton(
         color: Get.theme.primaryColor,
         textColor: Get.theme.secondaryHeaderColor,
@@ -55,29 +57,30 @@ class FlyElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyAnimatedRandomFade(
-      child: Container(
-        width: context.width,
-        margin: margin,
-        child: ElevatedButton(
-          onPressed: onPressed as void Function()?,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: color ?? Get.theme.primaryColor,
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.sp),
-            ),
-            padding: EdgeInsets.symmetric(
-              vertical: AppConfigService.to.space!.s,
-            ),
+    return Container(
+      width: context.width,
+      margin: margin ?? EdgeInsets.all(10.sp),
+      child: ElevatedButton(
+        onPressed: onPressed as void Function()?,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: color ?? Get.theme.primaryColor,
+          elevation: 0,
+          foregroundColor: color != null
+              ? color!.withOpacity(0.3)
+              : Get.theme.primaryColor.withOpacity(0.3),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.sp),
           ),
-          child: Text(
-            title!,
-            style: Get.textTheme.titleMedium!.copyWith(
-              color: textColor,
-              fontSize: 11.sp,
-              fontWeight: FontWeight.bold,
-            ),
+          padding: EdgeInsets.symmetric(
+            vertical: AppConfigService.to.space!.s,
+          ),
+        ),
+        child: Text(
+          title!,
+          style: Get.textTheme.titleMedium!.copyWith(
+            color: textColor,
+            fontSize: 11.sp,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

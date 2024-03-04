@@ -1,7 +1,5 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/animations/animatedRandomFade.widget.dart';
 import 'package:get/get.dart';
 
 class FlyElevatedIconButton extends StatelessWidget {
@@ -63,38 +61,36 @@ class FlyElevatedIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyAnimatedRandomFade(
-      child: Container(
-        width: Get.width,
-        margin: margin ??
-            EdgeInsets.symmetric(
-              vertical: AppConfigService.to.space!.s,
-            ),
-        child: ElevatedButton.icon(
-          onPressed: onPressed as void Function()?,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: bgColor ?? Get.theme.cardColor,
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.sp),
-            ),
-            padding: EdgeInsets.symmetric(
-              vertical: AppConfigService.to.space!.s,
-            ),
+    return Container(
+      width: Get.width,
+     margin: margin ?? EdgeInsets.all(10.sp),
+      child: ElevatedButton.icon(
+        onPressed: onPressed as void Function()?,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: bgColor ?? Get.theme.cardColor,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.sp),
           ),
-          label: Text(
-            title!,
-            style: Get.textTheme.titleMedium!.copyWith(
-              color: textColor,
-              fontSize: 11.sp,
-              fontWeight: FontWeight.bold,
-            ),
+          padding: EdgeInsets.symmetric(
+            vertical: 5.sp,
           ),
-          icon: Icon(
-            icon,
+          foregroundColor: bgColor != null
+              ? bgColor!.withOpacity(0.3)
+              : Get.theme.primaryColor.withOpacity(0.3),
+        ),
+        label: Text(
+          title!,
+          style: Get.textTheme.titleMedium!.copyWith(
             color: textColor,
-            size: 14.sp,
+            fontSize: 11.sp,
+            fontWeight: FontWeight.bold,
           ),
+        ),
+        icon: Icon(
+          icon,
+          color: textColor,
+          size: 14.sp,
         ),
       ),
     );

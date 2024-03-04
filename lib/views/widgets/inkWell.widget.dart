@@ -17,7 +17,7 @@ class FlyInkWell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      splashColor: Get.theme.primaryColor.withOpacity(0.4),
+      splashColor: Get.theme.primaryColor.withOpacity(0.3),
       borderRadius: BorderRadius.circular(15.sp),
       onTap: () {
         if (onTap != null) onTap!();

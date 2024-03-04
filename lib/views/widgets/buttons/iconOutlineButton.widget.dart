@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
@@ -20,14 +19,13 @@ class FlyIconOutlineButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: margin ?? EdgeInsets.only(left: AppConfigService.to.space!.xs),
+      margin: margin ?? EdgeInsets.all(10.sp),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.sp),
         border: Border.all(color: Get.theme.primaryColor),
       ),
       child: IconButton(
-        padding:
-            padding ?? EdgeInsets.only(left: AppConfigService.to.space!.xs),
+        padding: padding ?? EdgeInsets.only(left: 5.sp),
         constraints: const BoxConstraints(),
         icon: Icon(icon, size: 14.sp),
         onPressed: onPressed as void Function()?,

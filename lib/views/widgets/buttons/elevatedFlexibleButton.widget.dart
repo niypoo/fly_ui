@@ -9,7 +9,6 @@ class FlyElevatedFlexibleButton extends StatelessWidget {
     this.onPressed,
     this.color,
     this.textColor,
-    this.margin,
   }) : super(key: key);
 
   factory FlyElevatedFlexibleButton.normal({
@@ -47,13 +46,15 @@ class FlyElevatedFlexibleButton extends StatelessWidget {
   final Function? onPressed;
   final Color? color;
   final Color? textColor;
-  final EdgeInsets? margin;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed as void Function()?,
       style: ElevatedButton.styleFrom(
+        foregroundColor: color != null
+            ? color!.withOpacity(0.3)
+            : Get.theme.primaryColor.withOpacity(0.3),
         backgroundColor: color ?? Get.theme.primaryColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
