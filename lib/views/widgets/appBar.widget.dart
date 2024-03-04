@@ -16,6 +16,8 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingWidth,
     this.centerTitle = false,
     this.padding,
+    this.titleSpacing,
+    this.scrolledUnderElevation = 0.0,
   }) : super(key: key);
 
   final String? title;
@@ -25,16 +27,18 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double? leadingWidth;
   final bool centerTitle;
   final double? padding;
+  final double? titleSpacing;
+  final double? scrolledUnderElevation;
   final TextStyle? titleTextStyle;
   final PreferredSizeWidget? bottom;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      // leadingWidth: leadingWidth,
-      scrolledUnderElevation: 0.0, //fix matrial 3 shadow scroll
+      scrolledUnderElevation:
+          scrolledUnderElevation, //fix matrial 3 shadow scroll
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
-      titleSpacing: 0.0,
+      titleSpacing: titleSpacing,
       title: AutoSizeText(
         title ?? '',
         style: titleTextStyle ??
@@ -45,7 +49,6 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
         textAlign: TextAlign.start,
       ),
-      // titleSpacing: padding ?? 0,
       leading: leading ??
           FlyIconButton(
             icon: Icons.arrow_back,
@@ -61,7 +64,6 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         )
       ],
       bottom: bottom,
-      // centerTitle: centerTitle,
     );
   }
 
