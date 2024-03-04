@@ -119,8 +119,8 @@ class FlySelectorOption extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.sp),
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
-            width: 50.sp,
-            height: 60.sp,
+            width: 90.sp,
+            height: 100.sp,
             color: isSelected
                 ? selectedColor.withOpacity(0.1)
                 : Get.theme.scaffoldBackgroundColor.withOpacity(0.6),
