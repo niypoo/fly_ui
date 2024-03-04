@@ -49,7 +49,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: leading ??
           FlyIconButton(
             icon: Icons.arrow_back,
-            onPressed: Get.back,
+            onPressed: () => Get.back(),
           ),
       actions: [
         Wrap(
