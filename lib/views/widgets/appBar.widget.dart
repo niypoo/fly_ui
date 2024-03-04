@@ -40,28 +40,9 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
           scrolledUnderElevation, //fix matrial 3 shadow scroll
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
       titleSpacing: titleSpacing,
-      title: Row(
-        children: [
-          FlyIconButton(
-            icon: Icons.arrow_back,
-            onPressed: () => Get.back(),
-          ),
-          SizedBox(width: 10.sp),
-          Flexible(
-            child: AutoSizeText(
-              title ?? '',
-              style: titleTextStyle ??
-                  Get.textTheme.headlineMedium!.copyWith(
-                    fontSize: 20.sp,
-                    color: Get.theme.primaryColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-              textAlign: TextAlign.start,
-            ),
-          ),
-        ],
+      title: FlyAppBarTitle(
+        title: title,
       ),
-
       actions: [
         Wrap(
           spacing: 5,
@@ -79,5 +60,55 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize {
     return const Size.fromHeight(kToolbarHeight);
     // return  Size.fromHeight(8.h);
+  }
+}
+
+class FlyAppBarTitle extends StatelessWidget {
+  const FlyAppBarTitle({
+    super.key,
+    required this.title,
+    this.actions = const [],
+  });
+
+  final String? title;
+  final List<Widget> actions;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Padding(
+          padding: EdgeInsetsDirectional.only(end: 10.sp),
+          child: FlyIconButton(
+            icon: Icons.arrow_back,
+            onPressed: () => Get.back(),
+          ),
+        ),
+
+        Expanded(
+          child: AutoSizeText(
+            title ?? '',
+            style: Get.textTheme.headlineMedium!.copyWith(
+              fontSize: 20.sp,
+              color: Get.theme.primaryColor,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.start,
+          ),
+        ),
+
+        if(actions.isNotEmpty)
+        Padding(
+          padding: EdgeInsetsDirectional.only(start: 10.sp),
+          child: Wrap(
+            spacing: 5,
+            runSpacing: 5,
+            alignment: WrapAlignment.end,
+            runAlignment: WrapAlignment.end,
+            children: actions,
+          ),
+        )
+      ],
+    );
   }
 }
