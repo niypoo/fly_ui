@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
 
@@ -34,43 +35,38 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      scrolledUnderElevation:
-          scrolledUnderElevation, //fix matrial 3 shadow scroll
-      backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
-      titleSpacing: titleSpacing,
-      title: AutoSizeText(
-        title ?? '',
-        style: titleTextStyle ??
-            Get.textTheme.headlineMedium!.copyWith(
-              fontSize: 20.sp,
-              color: Get.theme.primaryColor,
-              fontWeight: FontWeight.bold,
-            ),
-        textAlign: TextAlign.start,
-      ),
-      leading: Padding(
-        padding:  EdgeInsets.only(
-          left: 5.sp,
-          right: 5.sp,
-          bottom: 5.sp,
+    return FlyScaffoldPadding(
+      child: AppBar(
+        scrolledUnderElevation:
+            scrolledUnderElevation, //fix matrial 3 shadow scroll
+        backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
+        titleSpacing: titleSpacing,
+        title: AutoSizeText(
+          title ?? '',
+          style: titleTextStyle ??
+              Get.textTheme.headlineMedium!.copyWith(
+                fontSize: 20.sp,
+                color: Get.theme.primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
+          textAlign: TextAlign.start,
         ),
-        child: leading ??
+        leading: leading ??
             FlyIconButton(
               icon: Icons.arrow_back,
               onPressed: () => Get.back(),
             ),
+        actions: [
+          Wrap(
+            spacing: 5,
+            runSpacing: 5,
+            alignment: WrapAlignment.end,
+            runAlignment: WrapAlignment.end,
+            children: actions,
+          )
+        ],
+        bottom: bottom,
       ),
-      actions: [
-        Wrap(
-          spacing: 5,
-          runSpacing: 5,
-          alignment: WrapAlignment.end,
-          runAlignment: WrapAlignment.end,
-          children: actions,
-        )
-      ],
-      bottom: bottom,
     );
   }
 
