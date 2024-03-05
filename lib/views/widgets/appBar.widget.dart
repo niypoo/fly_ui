@@ -16,7 +16,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingWidth,
     this.centerTitle = false,
     this.padding,
-    this.titleSpacing,
+    this.titleSpacing = 0.0,
     this.scrolledUnderElevation = 0.0,
   }) : super(key: key);
 
