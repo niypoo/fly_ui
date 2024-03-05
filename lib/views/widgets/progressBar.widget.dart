@@ -23,59 +23,59 @@ class FlyProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final TextDirection direction =
-    //     isRTL ? TextDirection.rtl : TextDirection.ltr;
+    final TextDirection direction =
+        isRTL ? TextDirection.rtl : TextDirection.ltr;
 
     return LayoutBuilder(
       builder: (context, constrain) {
         final double width = constrain.maxWidth;
-        // final Color effectColor = lightMode ? Colors.black12 : Colors.white12;
-        // final double effectHeight = height * 0.3;
-        // final double effectPosition = height * 0.2;
+        final Color effectColor = lightMode ? Colors.black12 : Colors.white12;
+        final double effectHeight = height.sp * 0.3;
+        final double effectPosition = height.sp * 0.2;
         final double progressFull = width * percentage!;
 
         return Stack(
           children: [
             FlyProgressContainer(
               color: Get.theme.cardColor,
-              height: height,
+              height: height.sp,
               width: width,
             ),
 
+            // effect
+            Positioned.directional(
+              textDirection: direction,
+              end: 10,
+              bottom: effectPosition,
+              child: FlyProgressContainer(
+                color: effectColor,
+                height: effectHeight,
+                width: 5,
+              ),
+            ),
             // // effect
-            // Positioned.directional(
-            //   textDirection: direction,
-            //   end: 10,
-            //   bottom: effectPosition,
-            //   child: FlyProgressContainer(
-            //     color: effectColor,
-            //     height: effectHeight,
-            //     width: 5,
-            //   ),
-            // ),
-            // // // effect
-            // Positioned.directional(
-            //   textDirection: direction,
-            //   end: 18,
-            //   bottom: effectPosition,
-            //   child: FlyProgressContainer(
-            //     color: effectColor,
-            //     height: effectHeight,
-            //     width: 15,
-            //   ),
-            // ),
+            Positioned.directional(
+              textDirection: direction,
+              end: 18,
+              bottom: effectPosition,
+              child: FlyProgressContainer(
+                color: effectColor,
+                height: effectHeight,
+                width: 15,
+              ),
+            ),
 
-            // // // effect
-            // Positioned.directional(
-            //   textDirection: direction,
-            //   end: 36,
-            //   bottom: effectPosition,
-            //   child: FlyProgressContainer(
-            //     color: effectColor,
-            //     height: effectHeight,
-            //     width: 15,
-            //   ),
-            // ),
+            // // effect
+            Positioned.directional(
+              textDirection: direction,
+              end: 36,
+              bottom: effectPosition,
+              child: FlyProgressContainer(
+                color: effectColor,
+                height: effectHeight,
+                width: 15,
+              ),
+            ),
 
             // progress
             if (percentage! > 0.1)
@@ -86,19 +86,19 @@ class FlyProgressBar extends StatelessWidget {
                 width: percentage! <= 0 ? 0 : progressFull,
               ),
 
-            // // effect
-            // if (percentage > 0.1)
-            //   Positioned.directional(
-            //     textDirection: direction,
-            //     start: 10,
-            //     top: effectPosition,
-            //     child: FlyProgressContainer(
-            //         color: Colors.white12,
-            //         height: effectHeight,
-            //         width: progressFull > width
-            //             ? width - 20
-            //             : progressFull - (progressFull > 30 ? 20 : 0)),
-            //   ),
+            // effect
+            if (percentage! > 0.1)
+              Positioned.directional(
+                textDirection: direction,
+                start: 10,
+                top: effectPosition,
+                child: FlyProgressContainer(
+                    color: Colors.white12,
+                    height: effectHeight,
+                    width: progressFull > width
+                        ? width - 20
+                        : progressFull - (progressFull > 30 ? 20 : 0)),
+              ),
           ],
         );
       },
