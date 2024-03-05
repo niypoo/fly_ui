@@ -87,7 +87,7 @@ class FlyProgressBar extends StatelessWidget {
               ),
 
             // effect
-            if (percentage! > 10)
+            if (percentage! > 0.1)
               Positioned.directional(
                 textDirection: direction,
                 start: 10,
