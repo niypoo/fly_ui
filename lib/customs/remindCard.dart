@@ -22,6 +22,7 @@ class FlyReminderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
+      margin: EdgeInsets.only(bottom: 6.sp),
       child: Column(
         children: [
           // title
@@ -54,7 +55,7 @@ class FlyReminderCard extends StatelessWidget {
 
           if (details != null)
             Divider(
-              color: Get.theme.scaffoldBackgroundColor.withOpacity(0.5),
+              color: Get.theme.iconTheme.color!.withOpacity(0.2),
               height: 10.sp,
               indent: 5.sp,
               endIndent: 5.sp,

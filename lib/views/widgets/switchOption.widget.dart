@@ -26,6 +26,7 @@ class FlySwitchOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
+      margin: EdgeInsets.only(bottom: 6.sp),
       color: bgColor,
       child: Row(
         children: [
