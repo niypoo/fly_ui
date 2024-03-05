@@ -3,8 +3,7 @@ import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 
 class FlyScaffoldPadding extends StatelessWidget {
-  const FlyScaffoldPadding(
-    PreferredSizeWidget? appBar, {
+  const FlyScaffoldPadding({
     Key? key,
     required this.child,
   }) : super(key: key);
