@@ -7,7 +7,7 @@ class FlyProgressBar extends StatelessWidget {
   const FlyProgressBar({
     Key? key,
     this.percentage,
-    this.height = 10,
+    this.height = 12,
     this.color,
     this.lightMode = true,
     this.linearGradient,
