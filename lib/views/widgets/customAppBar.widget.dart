@@ -10,7 +10,7 @@ class FlyCustomAppBar extends StatelessWidget {
     this.title,
     this.actions = const [],
     this.leading,
-    this.startPadding = 4,
+    this.startPadding = 0,
   }) : super(key: key);
 
   final String? title;
