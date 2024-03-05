@@ -82,22 +82,21 @@ class FlyProgressBar extends StatelessWidget {
               FlyProgressContainer(
                 linearGradient: linearGradient,
                 color: color ?? Get.theme.primaryColor,
-                height: height,
+                height: height.sp,
                 width: percentage! <= 0 ? 0 : progressFull,
               ),
 
             // effect
-            if (percentage! > 0.1)
+            if (percentage! > 10)
               Positioned.directional(
                 textDirection: direction,
                 start: 10,
                 top: effectPosition,
                 child: FlyProgressContainer(
-                    color: Colors.white12,
-                    height: effectHeight,
-                    width: progressFull > width
-                        ? width - 20
-                        : progressFull - (progressFull > 30 ? 20 : 0)),
+                  color: effectColor,
+                  height: effectHeight,
+                  width: percentage! <= 0 ? 0 : 15,
+                ),
               ),
           ],
         );
@@ -148,8 +147,7 @@ class FlyProgressContainer extends StatelessWidget {
         decoration: BoxDecoration(
           shape: circle ? BoxShape.circle : BoxShape.rectangle,
           gradient: linearGradient,
-          borderRadius:
-              circle ? null : BorderRadius.circular(15.sp),
+          borderRadius: circle ? null : BorderRadius.circular(15.sp),
           color: disabled ? Colors.grey[300] : color ?? Get.theme.cardColor,
         ),
         child: child,
