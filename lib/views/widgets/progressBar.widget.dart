@@ -50,7 +50,7 @@ class FlyProgressBar extends StatelessWidget {
               child: FlyProgressContainer(
                 color: effectColor,
                 height: effectHeight,
-                width: 7.sp,
+                width: 5,
               ),
             ),
             // // effect
@@ -61,7 +61,7 @@ class FlyProgressBar extends StatelessWidget {
               child: FlyProgressContainer(
                 color: effectColor,
                 height: effectHeight,
-                width: 11.sp,
+                width: 15,
               ),
             ),
 
@@ -73,7 +73,7 @@ class FlyProgressBar extends StatelessWidget {
               child: FlyProgressContainer(
                 color: effectColor,
                 height: effectHeight,
-                width: 15.sp,
+                width: 15,
               ),
             ),
 
@@ -93,9 +93,9 @@ class FlyProgressBar extends StatelessWidget {
                 start: 10,
                 top: effectPosition,
                 child: FlyProgressContainer(
-                  color: Colors.white10,
+                  color: Colors.white30,
                   height: effectHeight,
-                  width: percentage! <= 0 ? 0 : 18.sp,
+                  width: percentage! <= 0 ? 0 : 15,
                 ),
               ),
           ],
