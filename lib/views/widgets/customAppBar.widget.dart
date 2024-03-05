@@ -10,16 +10,18 @@ class FlyCustomAppBar extends StatelessWidget {
     this.title,
     this.actions = const [],
     this.leading,
+    this.startPadding = 4,
   }) : super(key: key);
 
   final String? title;
   final List<Widget> actions;
   final Widget? leading;
+  final double startPadding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.only(start: 4.sp),
+      padding: EdgeInsetsDirectional.only(start: startPadding.sp),
       child: Row(
         children: [
           Padding(
