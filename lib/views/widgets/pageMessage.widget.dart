@@ -27,14 +27,16 @@ class FlyContainerMessage extends StatelessWidget {
             Center(
               child: FlyImage(
                 url: image,
-                width: 20.h,
-                height: 20.h,
+                width: 40.sp,
+                height: 40.sp,
               ),
             ),
           Text(
             title,
             style: Get.textTheme.titleLarge!.copyWith(
               fontSize: 11.sp,
+              color: Get.theme.primaryColor,
+              fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
             maxLines: 2,
@@ -42,7 +44,7 @@ class FlyContainerMessage extends StatelessWidget {
           Text(
             body,
             style: Get.textTheme.titleSmall!.copyWith(
-              fontSize: 8.sp,
+              fontSize: 9.sp,
             ),
             textAlign: TextAlign.center,
           ),
