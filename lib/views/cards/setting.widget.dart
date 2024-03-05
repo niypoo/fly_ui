@@ -27,7 +27,7 @@ class FlySettingCard extends StatelessWidget {
     return FlyContainer(
       color: bgColor ?? Get.theme.cardColor,
       padding: const EdgeInsets.all(0),
-      margin: EdgeInsets.only(bottom: 5.sp),
+      margin: EdgeInsets.only(bottom: 6.sp),
       child: ListTile(
         onTap: onTap as void Function()?,
         title: AutoSizeText(
