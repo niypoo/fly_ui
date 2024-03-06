@@ -23,9 +23,6 @@ class FlyProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextDirection direction =
-        isRTL ? TextDirection.rtl : TextDirection.ltr;
-
     return LayoutBuilder(
       builder: (context, constrain) {
         final double width = constrain.maxWidth;
@@ -43,9 +40,9 @@ class FlyProgressBar extends StatelessWidget {
             ),
 
             // effect
-            Positioned.directional(
-              textDirection: direction,
-              end: 10,
+            Positioned(
+              left: isRTL ? 10 : null,
+              right: isRTL ? null : 10,
               bottom: effectPosition,
               child: FlyProgressContainer(
                 color: effectColor,
@@ -54,9 +51,9 @@ class FlyProgressBar extends StatelessWidget {
               ),
             ),
             // // effect
-            Positioned.directional(
-              textDirection: direction,
-              end: 18,
+            Positioned(
+              left: isRTL ? 18 : null,
+              right: isRTL ? null : 18,
               bottom: effectPosition,
               child: FlyProgressContainer(
                 color: effectColor,
@@ -66,9 +63,9 @@ class FlyProgressBar extends StatelessWidget {
             ),
 
             // // effect
-            Positioned.directional(
-              textDirection: direction,
-              end: 36,
+            Positioned(
+              left: isRTL ? 36 : null,
+              right: isRTL ? null : 36,
               bottom: effectPosition,
               child: FlyProgressContainer(
                 color: effectColor,
@@ -88,9 +85,9 @@ class FlyProgressBar extends StatelessWidget {
 
             // effect
             if (percentage! > 0.1)
-              Positioned.directional(
-                textDirection: direction,
-                start: 10,
+              Positioned(
+                left: isRTL ? null : 10,
+                right: isRTL ? 10 : null,
                 top: effectPosition,
                 child: FlyProgressContainer(
                   color: Colors.white30,
