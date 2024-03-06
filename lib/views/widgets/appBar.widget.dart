@@ -44,10 +44,11 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Padding(
             padding: EdgeInsetsDirectional.only(end: 10.sp),
-            child: FlyIconButton(
-              icon: Icons.arrow_back,
-              onPressed: () => Get.back(),
-            ),
+            child: leading ??
+                FlyIconButton(
+                  icon: Icons.arrow_back,
+                  onPressed: () => Get.back(),
+                ),
           ),
           Flexible(
             child: AutoSizeText(
