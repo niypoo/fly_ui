@@ -27,28 +27,22 @@ class FlySquareButton extends StatelessWidget {
     return FlyInkWell(
       onTap: onTap,
       child: FlyContainer(
-        margin: EdgeInsets.symmetric(
-          vertical: 10.sp,
-          horizontal: 5.sp,
-        ),
-        padding: EdgeInsets.symmetric(
-          vertical: 10.sp,
-          horizontal: 5.sp,
-        ),
+        margin: EdgeInsets.all(10.sp),
+        padding: EdgeInsets.all(10.sp),
         color: color ?? Get.theme.cardColor,
         child: Column(
           children: [
             Icon(
               icon,
               color: textColor,
-              size: 13.sp,
+              size: 25.sp,
             ),
             SizedBox(height: 5.sp),
             AutoSizeText(
               title.tr,
               style: Get.textTheme.titleMedium!.copyWith(
                 color: textColor,
-                fontSize: 13.sp,
+                fontSize: 12.sp,
               ),
             ),
           ],
