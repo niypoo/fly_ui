@@ -12,12 +12,14 @@ class FlyListTitleTableRow extends StatelessWidget {
     required this.date,
     required this.value,
     required this.title,
+    this.subtitle,
     this.note,
     this.color,
     this.onMoreActions,
   }) : super(key: key);
 
   final String title;
+  final String? subtitle;
   final String date;
   final dynamic value;
   final Color? color;
@@ -31,16 +33,35 @@ class FlyListTitleTableRow extends StatelessWidget {
           ? AutoSizeText(
               note!,
               maxLines: 2,
-              style: Get.textTheme.bodySmall,
-              textAlign: TextAlign.center,
+              style: Get.textTheme.bodySmall!.copyWith(
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w300,
+              ),
+              textAlign: TextAlign.start,
             )
           : null,
       children: [
         Expanded(
-          child: AutoSizeText(
-            title,
-            maxLines: 1,
-            style: Get.textTheme.bodyMedium,
+          child: Column(
+            children: [
+              AutoSizeText(
+                title,
+                maxLines: 1,
+                style: Get.textTheme.bodyLarge!.copyWith(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              if (subtitle != null)
+                AutoSizeText(
+                  subtitle!,
+                  maxLines: 2,
+                  style: Get.textTheme.bodySmall!.copyWith(
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                )
+            ],
           ),
         ),
 
@@ -53,19 +74,26 @@ class FlyListTitleTableRow extends StatelessWidget {
             child: AutoSizeText(
               value ?? '',
               maxLines: 2,
-              style: Get.textTheme.bodySmall!
-                  .copyWith(fontWeight: FontWeight.w700, color: color),
+              style: Get.textTheme.bodyMedium!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: color,
+                fontSize: 12.sp,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
 
+        const FlyListTitleLogDivider(),
+
         Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: 5.sp),
+          padding: EdgeInsets.symmetric(horizontal: 5.sp),
           child: AutoSizeText(
             date,
             maxLines: 1,
-            style: Get.textTheme.bodySmall!.copyWith(color: color),
+            style: Get.textTheme.bodySmall!.copyWith(
+              fontSize: 11.sp,
+              fontWeight: FontWeight.w300,
+            ),
             textAlign: TextAlign.center,
           ),
         ),
