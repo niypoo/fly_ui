@@ -30,25 +30,37 @@ class FlyListTitleTableRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyTableRow(
       bottomHint: note != null
-          ? AutoSizeText(
-              note!,
-              maxLines: 2,
-              style: Get.textTheme.bodySmall!.copyWith(
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.start,
+          ? Column(
+              children: [
+                Divider(
+                  color: Get.theme.cardColor,
+                  indent: 5.sp,
+                  endIndent: 5.sp,
+                  height: 2.sp,
+                ),
+                AutoSizeText(
+                  note!,
+                  maxLines: 2,
+                  style: Get.textTheme.bodySmall!.copyWith(
+                    fontSize: 9.sp,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+              ],
             )
           : null,
       children: [
         Expanded(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               AutoSizeText(
                 title,
                 maxLines: 1,
                 style: Get.textTheme.bodyLarge!.copyWith(
-                  fontSize: 12.sp,
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -75,9 +87,9 @@ class FlyListTitleTableRow extends StatelessWidget {
               value ?? '',
               maxLines: 2,
               style: Get.textTheme.bodyMedium!.copyWith(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 color: color,
-                fontSize: 12.sp,
+                fontSize: 10.sp,
               ),
               textAlign: TextAlign.center,
             ),
@@ -91,7 +103,7 @@ class FlyListTitleTableRow extends StatelessWidget {
             date,
             maxLines: 1,
             style: Get.textTheme.bodySmall!.copyWith(
-              fontSize: 11.sp,
+              fontSize: 9.sp,
               fontWeight: FontWeight.w300,
             ),
             textAlign: TextAlign.center,
@@ -107,9 +119,9 @@ class FlyListTitleTableRow extends StatelessWidget {
             constraints: const BoxConstraints(),
             padding: const EdgeInsets.all(0),
             onPressed: onMoreActions as void Function()?,
-            icon: const Icon(
+            icon: Icon(
               UniconsLine.ellipsis_v,
-              size: 20,
+              size: 20.sp,
             ),
           )
       ],
