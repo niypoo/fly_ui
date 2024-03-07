@@ -32,48 +32,51 @@ class FlyListTitleTableRow extends StatelessWidget {
       bottomHint: note != null
           ? Column(
               children: [
-                Divider(
-                  color: Get.theme.cardColor,
-                  indent: 5.sp,
-                  endIndent: 5.sp,
-                  height: 5.sp,
-                ),
-                AutoSizeText(
-                  note!,
-                  maxLines: 2,
-                  style: Get.textTheme.bodySmall!.copyWith(
-                    fontSize: 9.sp,
-                    fontWeight: FontWeight.w300,
+                if (subtitle != null)
+                  Divider(
+                    color: Get.theme.cardColor,
+                    indent: 5.sp,
+                    endIndent: 5.sp,
+                    height: 5.sp,
                   ),
-                  textAlign: TextAlign.start,
-                ),
+                if (subtitle != null)
+                  AutoSizeText(
+                    subtitle!,
+                    maxLines: 2,
+                    style: Get.textTheme.bodySmall!.copyWith(
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                if (note != null)
+                  Divider(
+                    color: Get.theme.cardColor,
+                    indent: 5.sp,
+                    endIndent: 5.sp,
+                    height: 5.sp,
+                  ),
+                if (note != null)
+                  AutoSizeText(
+                    note!,
+                    maxLines: 2,
+                    style: Get.textTheme.bodySmall!.copyWith(
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    textAlign: TextAlign.start,
+                  ),
               ],
             )
           : null,
       children: [
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              AutoSizeText(
-                title,
-                maxLines: 1,
-                style: Get.textTheme.bodyLarge!.copyWith(
-                  fontSize: 9.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              if (subtitle != null)
-                AutoSizeText(
-                  subtitle!,
-                  maxLines: 2,
-                  style: Get.textTheme.bodySmall!.copyWith(
-                    fontSize: 9.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
-                )
-            ],
+          child: AutoSizeText(
+            title,
+            maxLines: 1,
+            style: Get.textTheme.bodyLarge!.copyWith(
+              fontSize: 9.sp,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
 
@@ -121,7 +124,7 @@ class FlyListTitleTableRow extends StatelessWidget {
             onPressed: onMoreActions as void Function()?,
             icon: Icon(
               UniconsLine.ellipsis_v,
-              size: 20.sp,
+              size: 16.sp,
             ),
           )
       ],
