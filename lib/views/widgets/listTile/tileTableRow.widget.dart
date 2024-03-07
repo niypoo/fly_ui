@@ -36,7 +36,7 @@ class FlyListTitleTableRow extends StatelessWidget {
                   color: Get.theme.cardColor,
                   indent: 5.sp,
                   endIndent: 5.sp,
-                  height: 2.sp,
+                  height: 5.sp,
                 ),
                 AutoSizeText(
                   note!,
@@ -60,7 +60,7 @@ class FlyListTitleTableRow extends StatelessWidget {
                 title,
                 maxLines: 1,
                 style: Get.textTheme.bodyLarge!.copyWith(
-                  fontSize: 10.sp,
+                  fontSize: 9.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -69,7 +69,7 @@ class FlyListTitleTableRow extends StatelessWidget {
                   subtitle!,
                   maxLines: 2,
                   style: Get.textTheme.bodySmall!.copyWith(
-                    fontSize: 10.sp,
+                    fontSize: 9.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 )
@@ -89,7 +89,7 @@ class FlyListTitleTableRow extends StatelessWidget {
               style: Get.textTheme.bodyMedium!.copyWith(
                 fontWeight: FontWeight.w600,
                 color: color,
-                fontSize: 10.sp,
+                fontSize: 9.sp,
               ),
               textAlign: TextAlign.center,
             ),
