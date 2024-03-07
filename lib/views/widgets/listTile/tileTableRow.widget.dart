@@ -31,6 +31,8 @@ class FlyListTitleTableRow extends StatelessWidget {
     return FlyTableRow(
       bottomHint: note != null
           ? Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (subtitle != null)
                   Divider(
@@ -63,7 +65,6 @@ class FlyListTitleTableRow extends StatelessWidget {
                       fontSize: 9.sp,
                       fontWeight: FontWeight.w300,
                     ),
-                    textAlign: TextAlign.start,
                   ),
               ],
             )
