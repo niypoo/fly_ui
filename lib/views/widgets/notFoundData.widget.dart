@@ -22,7 +22,11 @@ class FlyNotFoundData extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         if (enableTopMergin) SizedBox(height: 30.sp),
-        Icon(icon ?? UniconsLine.exclamation, size: 20.sp),
+        Icon(
+          icon ?? UniconsLine.exclamation,
+          size: 30.sp,
+          color: Get.theme.primaryColor,
+        ),
         SizedBox(height: 5.sp),
         AutoSizeText(title ?? 'No data provided yet.'.tr),
       ],
