@@ -1,3 +1,4 @@
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/layouts/landscapeDivider.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,6 +30,30 @@ class FlyLandscapeView extends StatelessWidget {
 
         Expanded(child: childB),
       ],
+    );
+  }
+}
+
+class FlyLandscapeScrollableView extends StatelessWidget {
+  const FlyLandscapeScrollableView({
+    super.key,
+    required this.childA,
+    required this.childB,
+  });
+
+  final Widget childA;
+  final Widget childB;
+  @override
+  Widget build(BuildContext context) {
+    return FlyLandscapeView(
+      childA: SingleChildScrollView(
+        padding: EdgeInsets.only(top: 45.sp),
+        child: childA,
+      ),
+      childB: SingleChildScrollView(
+        padding: EdgeInsets.only(top: 45.sp),
+        child: childB,
+      ),
     );
   }
 }
