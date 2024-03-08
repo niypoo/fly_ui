@@ -34,6 +34,23 @@ class FlyLandscapeView extends StatelessWidget {
   }
 }
 
+class FlyLandScapeScroll extends StatelessWidget {
+  const FlyLandScapeScroll({
+    super.key,
+    required this.child,
+  });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      padding: EdgeInsets.only(top: 45.sp),
+      child: child,
+    );
+  }
+}
+
 class FlyLandscapeScrollableView extends StatelessWidget {
   const FlyLandscapeScrollableView({
     super.key,
@@ -46,12 +63,10 @@ class FlyLandscapeScrollableView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyLandscapeView(
-      childA: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 45.sp),
+      childA: FlyLandScapeScroll(
         child: childA,
       ),
-      childB: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 45.sp),
+      childB: FlyLandScapeScroll(
         child: childB,
       ),
     );
