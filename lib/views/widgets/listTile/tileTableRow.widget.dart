@@ -16,6 +16,7 @@ class FlyListTitleTableRow extends StatelessWidget {
     this.note,
     this.color,
     this.onMoreActions,
+    this.onTap,
   }) : super(key: key);
 
   final String title;
@@ -25,10 +26,12 @@ class FlyListTitleTableRow extends StatelessWidget {
   final Color? color;
   final String? note;
   final Function? onMoreActions;
+  final Function? onTap;
 
   @override
   Widget build(BuildContext context) {
     return FlyTableRow(
+      onTap: onTap,
       bottomHint: note != null
           ? Column(
               mainAxisAlignment: MainAxisAlignment.start,
