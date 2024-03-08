@@ -31,6 +31,8 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
     return FlyLandscapeView(
       childA: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title
             FlyMultiStepTitle(title: title),
