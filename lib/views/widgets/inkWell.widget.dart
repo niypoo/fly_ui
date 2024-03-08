@@ -19,9 +19,7 @@ class FlyInkWell extends StatelessWidget {
     return InkWell(
       splashColor: Get.theme.primaryColor.withOpacity(0.3),
       borderRadius: BorderRadius.circular(15.sp),
-      onTap: () {
-        if (onTap != null) onTap!();
-      },
+      onTap: onTap == null ? null : onTap!(),
       onLongPress: () {
         if (onLongPress != null) onLongPress!();
       },
