@@ -34,7 +34,7 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
       // orderBy is compulsory to enable pagination
       query: query,
       //Change types accordingly
-      itemBuilderType: PaginateBuilderType.listView,
+      itemBuilderType: itemBuilderType,
       // to fetch real-time data
       isLive: isLive,
       // per page
