@@ -48,7 +48,7 @@ class FlyOutlineButton extends StatelessWidget {
           title!,
           style: Get.textTheme.titleMedium!.copyWith(
             color: color,
-            fontSize: 13.sp,
+            fontSize: 11.sp,
           ),
         ),
     );

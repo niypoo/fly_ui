@@ -42,7 +42,7 @@ class FlySquareButton extends StatelessWidget {
               title.tr,
               style: Get.textTheme.titleSmall!.copyWith(
                 color: textColor,
-                fontSize: 10.sp,
+                fontSize: 11.sp,
               ),
             ),
           ],
