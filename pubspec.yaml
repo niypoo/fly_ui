@@ -18,7 +18,7 @@ dependencies:
   flutter_svg: ^2.0.7
   animations: ^2.0.7
   flutter_zoom_drawer: ^3.1.1
-  flutterflow_paginate_firestore: ^1.0.3+1
+  kr_paginate_firestore: ^1.0.4
 
   app_configuration_service:
     git:
