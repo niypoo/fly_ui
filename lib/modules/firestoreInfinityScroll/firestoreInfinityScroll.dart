@@ -49,9 +49,15 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
       isLive: isLive,
       // per page
       itemsPerPage: itemsPerPage,
-      onEmpty: emptyWidget,
-      initialLoader: SpinnerHelper.verticalTextSpinner(),
-      bottomLoader: SpinnerHelper.horizontalTextSpinner(),
+      onEmpty: Padding(padding: padding, child: emptyWidget),
+      initialLoader: Padding(
+        padding: padding,
+        child: SpinnerHelper.verticalTextSpinner(),
+      ),
+      bottomLoader: Padding(
+        padding: padding,
+        child: SpinnerHelper.horizontalTextSpinner(),
+      ),
     );
   }
 }
