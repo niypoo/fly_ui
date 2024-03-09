@@ -124,7 +124,7 @@ class FlyTextField extends StatelessWidget {
           suffixIcon: suffix.isEmpty
               ? null
               : Padding(
-                  padding: EdgeInsetsDirectional.only(end: 4.sp),
+                  padding: EdgeInsetsDirectional.only(end: 2.sp, start: 4.sp),
                   child: Wrap(
                     alignment: WrapAlignment.center,
                     runAlignment: WrapAlignment.center,
