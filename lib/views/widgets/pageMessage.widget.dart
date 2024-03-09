@@ -24,11 +24,14 @@ class FlyContainerMessage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (image != null)
-            Center(
-              child: FlyImage(
-                url: image,
-                width: 47.sp,
-                height: 47.sp,
+            Padding(
+              padding:  EdgeInsets.only(bottom: 10.sp),
+              child: Center(
+                child: FlyImage(
+                  url: image,
+                  width: 47.sp,
+                  height: 47.sp,
+                ),
               ),
             ),
           Text(
