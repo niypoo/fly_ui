@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:kr_paginate_firestore/paginate_firestore.dart';
 import 'package:loading_service/helpers/spinner.helper.dart';
 
@@ -26,7 +27,7 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
   Widget build(BuildContext context) {
     return KrPaginateFirestore(
       key: key,
-      padding: const EdgeInsets.only(bottom: 50),
+      padding: EdgeInsets.only(bottom: 45.sp),
       //item builder type is compulsory.
       itemBuilder: (context, documentSnapshots, index) =>
           itemBuilder(documentSnapshots[index].data(), index),
