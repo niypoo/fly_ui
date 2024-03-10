@@ -38,14 +38,14 @@ class FlySelectorArea extends StatelessWidget {
     return FlyContainer(
       color: color ?? Get.theme.cardColor,
       margin: EdgeInsets.only(bottom: 10.sp),
-      padding: EdgeInsets.all(10.sp),
+      padding: EdgeInsets.symmetric(vertical:10.sp , horizontal: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Title
           if (title != null)
             Padding(
-              padding: EdgeInsets.only(bottom: 8.sp),
+              padding: EdgeInsetsDirectional.only(bottom: 10.sp, start: 10.sp),
               child: Row(
                 children: [
                   AutoSizeText(
