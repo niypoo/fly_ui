@@ -71,7 +71,7 @@ class FlySelectorArea extends StatelessWidget {
                   spacing: 5.sp,
                   runSpacing: 5.sp,
                   children: [
-                    SizedBox(width: 10.sp),
+                    SizedBox(width: 5.sp),
                     ...options.map((option) {
                       // is selected
                       final bool isSelected =
@@ -90,7 +90,7 @@ class FlySelectorArea extends StatelessWidget {
                         onTap: () => onTap(option.name),
                       );
                     }).toList(),
-                    SizedBox(width: 10.sp),
+                    SizedBox(width: 5.sp),
                   ]),
             ),
           ),
