@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/models/SelectorOption.dart';
@@ -59,27 +60,35 @@ class FlySelectorArea extends StatelessWidget {
               ),
             ),
 
-          Wrap(
-            spacing: 5.sp,
-            alignment: WrapAlignment.center,
-            children: options.map((option) {
-              // is selected
-              final bool isSelected =
-                  describeEnum(selectedOption) == option.name;
-
-              // return widget
-              return FlySelectorOption(
-                color: color,
-                label: label,
-                selectedColor: Get.theme.colorScheme.secondary,
-                name: option.name,
-                subName: option.subName,
-                image: option.image,
-                moreInformation: option.moreInformation,
-                isSelected: isSelected,
-                onTap: () => onTap(option.name),
-              );
-            }).toList(),
+          SizedBox(
+            height: 85.sp,
+            width: double.maxFinite,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Wrap(
+                spacing: 2.sp,
+                runSpacing: 2.sp,
+                alignment: WrapAlignment.center,
+                children: options.map((option) {
+                  // is selected
+                  final bool isSelected =
+                      describeEnum(selectedOption) == option.name;
+              
+                  // return widget
+                  return FlySelectorOption(
+                    color: color,
+                    label: label,
+                    selectedColor: Get.theme.colorScheme.secondary,
+                    name: option.name,
+                    subName: option.subName,
+                    image: option.image,
+                    moreInformation: option.moreInformation,
+                    isSelected: isSelected,
+                    onTap: () => onTap(option.name),
+                  );
+                }).toList(),
+              ),
+            ),
           ),
         ],
       ),
