@@ -38,7 +38,7 @@ class FlySelectorArea extends StatelessWidget {
     return FlyContainer(
       color: color ?? Get.theme.cardColor,
       margin: EdgeInsets.only(bottom: 10.sp),
-      padding: EdgeInsets.symmetric(vertical:10.sp , horizontal: 0),
+      padding: EdgeInsets.symmetric(vertical: 10.sp, horizontal: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -66,29 +66,32 @@ class FlySelectorArea extends StatelessWidget {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Wrap(
-                runAlignment: WrapAlignment.center,
-                alignment: WrapAlignment.center,
-                spacing: 5.sp,
-                runSpacing: 5.sp,
-                children: options.map((option) {
-                  // is selected
-                  final bool isSelected =
-                      describeEnum(selectedOption) == option.name;
-              
-                  // return widget
-                  return FlySelectorOption(
-                    color: color,
-                    label: label,
-                    selectedColor: Get.theme.primaryColor,
-                    name: option.name,
-                    subName: option.subName,
-                    image: option.image,
-                    moreInformation: option.moreInformation,
-                    isSelected: isSelected,
-                    onTap: () => onTap(option.name),
-                  );
-                }).toList(),
-              ),
+                  runAlignment: WrapAlignment.center,
+                  alignment: WrapAlignment.center,
+                  spacing: 5.sp,
+                  runSpacing: 5.sp,
+                  children: [
+                    SizedBox(width: 10.sp),
+                    ...options.map((option) {
+                      // is selected
+                      final bool isSelected =
+                          describeEnum(selectedOption) == option.name;
+
+                      // return widget
+                      return FlySelectorOption(
+                        color: color,
+                        label: label,
+                        selectedColor: Get.theme.primaryColor,
+                        name: option.name,
+                        subName: option.subName,
+                        image: option.image,
+                        moreInformation: option.moreInformation,
+                        isSelected: isSelected,
+                        onTap: () => onTap(option.name),
+                      );
+                    }).toList(),
+                    SizedBox(width: 10.sp),
+                  ]),
             ),
           ),
         ],
@@ -129,7 +132,7 @@ class FlySelectorOption extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.sp),
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
-            margin:const  EdgeInsets.all(0),
+            margin: const EdgeInsets.all(0),
             width: 70.sp,
             height: 80.sp,
             color: isSelected
@@ -179,10 +182,10 @@ class FlySelectorOption extends StatelessWidget {
             child: FlyInkWell(
               onTap: moreInformation,
               child: Icon(
-                  UniconsSolid.exclamation_circle,
-                  color: Get.theme.primaryColor,
-                  size: 16.sp,
-                ),
+                UniconsSolid.exclamation_circle,
+                color: Get.theme.primaryColor,
+                size: 16.sp,
+              ),
             ),
           )
       ],
