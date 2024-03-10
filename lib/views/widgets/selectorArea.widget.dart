@@ -78,7 +78,7 @@ class FlySelectorArea extends StatelessWidget {
                   return FlySelectorOption(
                     color: color,
                     label: label,
-                    selectedColor: Get.theme.colorScheme.secondary,
+                    selectedColor: Get.theme.primaryColor,
                     name: option.name,
                     subName: option.subName,
                     image: option.image,
