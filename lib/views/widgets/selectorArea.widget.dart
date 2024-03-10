@@ -66,8 +66,8 @@ class FlySelectorArea extends StatelessWidget {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Wrap(
-                // spacing: 1.sp,
-                // runSpacing: 1.sp,
+                spacing: 5.sp,
+                runSpacing: 5.sp,
                 alignment: WrapAlignment.center,
                 children: options.map((option) {
                   // is selected
@@ -128,6 +128,7 @@ class FlySelectorOption extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.sp),
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
+            margin:const  EdgeInsets.all(0),
             width: 70.sp,
             height: 80.sp,
             color: isSelected
