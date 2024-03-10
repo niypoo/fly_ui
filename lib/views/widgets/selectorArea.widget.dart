@@ -66,9 +66,10 @@ class FlySelectorArea extends StatelessWidget {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Wrap(
+                runAlignment: WrapAlignment.center,
+                alignment: WrapAlignment.center,
                 spacing: 5.sp,
                 runSpacing: 5.sp,
-                alignment: WrapAlignment.center,
                 children: options.map((option) {
                   // is selected
                   final bool isSelected =
