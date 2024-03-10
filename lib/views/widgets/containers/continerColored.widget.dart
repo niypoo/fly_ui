@@ -29,7 +29,7 @@ class FlyContainerColored extends StatelessWidget {
     return AnimatedContainer(
       duration: AppConfigService.to.duration,
       curve: AppConfigService.to.curve,
-      margin: margin ?? EdgeInsets.all(5.sp),
+      margin: margin ?? EdgeInsets.all(2.sp),
       padding: padding ?? EdgeInsets.all(10.sp),
       height: height,
       width: width,

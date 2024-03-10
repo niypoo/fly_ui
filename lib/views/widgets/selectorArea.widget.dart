@@ -61,13 +61,13 @@ class FlySelectorArea extends StatelessWidget {
             ),
 
           SizedBox(
-            height: 85.sp,
+            height: 90.sp,
             width: double.maxFinite,
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Wrap(
-                spacing: 2.sp,
-                runSpacing: 2.sp,
+                // spacing: 1.sp,
+                // runSpacing: 1.sp,
                 alignment: WrapAlignment.center,
                 children: options.map((option) {
                   // is selected
@@ -128,7 +128,6 @@ class FlySelectorOption extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.sp),
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
-            padding: EdgeInsets.all(4.sp),
             width: 70.sp,
             height: 80.sp,
             color: isSelected
