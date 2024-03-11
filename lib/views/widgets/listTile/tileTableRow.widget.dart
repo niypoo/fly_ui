@@ -38,13 +38,6 @@ class FlyListTitleTableRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (subtitle != null && subtitle!.isNotEmpty)
-                  Divider(
-                    color: Get.theme.cardColor,
-                    indent: 5.sp,
-                    endIndent: 5.sp,
-                    height: 5.sp,
-                  ),
-                if (subtitle != null && subtitle!.isNotEmpty)
                   AutoSizeText(
                     subtitle!,
                     maxLines: 2,
@@ -52,13 +45,6 @@ class FlyListTitleTableRow extends StatelessWidget {
                       fontSize: 9.sp,
                       fontWeight: FontWeight.w500,
                     ),
-                  ),
-                if (note != null && note!.isNotEmpty)
-                  Divider(
-                    color: Get.theme.cardColor,
-                    indent: 5.sp,
-                    endIndent: 5.sp,
-                    height: 5.sp,
                   ),
                 if (note != null && note!.isNotEmpty)
                   AutoSizeText(
