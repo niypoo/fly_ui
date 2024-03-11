@@ -40,7 +40,7 @@ class FlyTableRow extends StatelessWidget {
           color: Get.theme.cardColor,
           indent: 5.sp,
           endIndent: 5.sp,
-          height: 10.sp,
+          height: 15.sp,
         ),
       ],
     );
