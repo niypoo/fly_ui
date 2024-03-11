@@ -33,7 +33,6 @@ class FlyTableRow extends StatelessWidget {
             children: [
               Row(children: children),
               if (bottomHint != null) bottomHint!,
-              SizedBox(height: 10.sp),
             ],
           ),
         ),
@@ -41,7 +40,7 @@ class FlyTableRow extends StatelessWidget {
           color: Get.theme.cardColor,
           indent: 5.sp,
           endIndent: 5.sp,
-          height: 0,
+          height: 10.sp,
         ),
       ],
     );
