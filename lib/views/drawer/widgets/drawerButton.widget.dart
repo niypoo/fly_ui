@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
+import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -24,12 +25,12 @@ class FlyDrawerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return FlyInkWell(
       onTap: onTap as void Function()?,
       child: FlyContainer(
-        margin: EdgeInsets.symmetric(horizontal: 1.sp , vertical: 2.sp),
+        margin: EdgeInsets.symmetric(vertical: 2.sp, horizontal: 2.sp),
         padding: EdgeInsets.symmetric(
-          vertical: 8.sp,
+          vertical: 6.sp,
           horizontal: 10.sp,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
