@@ -16,7 +16,7 @@ class FlyDrawerSectionTitle extends StatelessWidget {
     return Padding(
       padding:  EdgeInsetsDirectional.only(
         start: 0,
-        top: 15.sp,
+        top: 20.sp,
         bottom: 5.sp,
       ),
       child: FlyTitle(
