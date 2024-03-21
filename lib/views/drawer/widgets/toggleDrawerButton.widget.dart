@@ -6,7 +6,9 @@ import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
 class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
-  const FlyDrawerToggleButton({Key? key}) : super(key: key);
+  const FlyDrawerToggleButton({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +24,24 @@ class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
     //   ),
     // );
 
-    return const DrawerButton();
+    return const FlyDrawerButton();
   }
 }
 
-class DrawerButton extends StatelessWidget {
-  const DrawerButton({
+class FlyDrawerButton extends StatelessWidget {
+  const FlyDrawerButton({
     super.key,
+    this.isRTL = false,
   });
+
+  final bool isRTL;
 
   @override
   Widget build(BuildContext context) {
     return FlyIconButton(
-      icon: UniconsLine.bars,
+      icon: isRTL ? UniconsLine.arrow_left : UniconsLine.arrow_right,
+      colorIcon: Get.theme.scaffoldBackgroundColor,
+      bgColor: Get.theme.primaryColor,
       onPressed: FlyDrawerController.to.toggleDrawer,
     );
   }
