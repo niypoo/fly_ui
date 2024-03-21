@@ -31,15 +31,13 @@ class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
 class FlyDrawerButton extends StatelessWidget {
   const FlyDrawerButton({
     super.key,
-    this.isRTL = false,
   });
 
-  final bool isRTL;
 
   @override
   Widget build(BuildContext context) {
     return FlyIconButton(
-      icon: isRTL ? UniconsLine.arrow_left : UniconsLine.arrow_right,
+      icon: UniconsLine.bars,
       colorIcon: Get.theme.primaryColor,
       onPressed: FlyDrawerController.to.toggleDrawer,
     );
