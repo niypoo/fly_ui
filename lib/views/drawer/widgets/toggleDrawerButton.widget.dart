@@ -37,7 +37,7 @@ class FlyDrawerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyIconButton(
-      icon: UniconsSolid.bars,
+      icon: UniconsLine.bars,
       colorIcon: Get.theme.primaryColor,
       onPressed: FlyDrawerController.to.toggleDrawer,
     );
