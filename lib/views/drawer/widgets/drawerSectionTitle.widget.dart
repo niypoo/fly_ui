@@ -14,7 +14,11 @@ class FlyDrawerSectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsetsDirectional.only(
+        start: 0,
+        top: 15.sp,
+        bottom: 5.sp,
+      ),
       child: FlyTitle(
         text: title,
         textStyle: Get.textTheme.titleMedium!.copyWith(
