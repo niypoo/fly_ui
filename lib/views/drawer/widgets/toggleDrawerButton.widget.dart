@@ -40,7 +40,6 @@ class FlyDrawerButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyIconButton(
       icon: isRTL ? UniconsLine.arrow_left : UniconsLine.arrow_right,
-      bgColor: Get.theme.scaffoldBackgroundColor,
       colorIcon: Get.theme.primaryColor,
       onPressed: FlyDrawerController.to.toggleDrawer,
     );
