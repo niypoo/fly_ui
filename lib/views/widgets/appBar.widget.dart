@@ -67,8 +67,8 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
       actions: [
         Wrap(
-          spacing: 3.sp,
-          runSpacing: 3.sp,
+          spacing: 5.sp,
+          runSpacing: 5.sp,
           alignment: WrapAlignment.end,
           runAlignment: WrapAlignment.end,
           children: actions,
