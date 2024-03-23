@@ -133,6 +133,7 @@ class FlySelectorOption extends StatelessWidget {
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
             margin: const EdgeInsets.all(0),
+            padding: EdgeInsets.all(5.sp),
             width: 70.sp,
             height: 80.sp,
             color: isSelected
