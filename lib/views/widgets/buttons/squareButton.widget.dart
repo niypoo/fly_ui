@@ -27,8 +27,8 @@ class FlySquareButton extends StatelessWidget {
     return FlyInkWell(
       onTap: onTap,
       child: FlyContainer(
-        margin: EdgeInsets.symmetric(vertical: 10.sp, horizontal: 5.sp),
-        padding: EdgeInsets.all(10.sp),
+        margin: EdgeInsets.all(2.sp),
+        padding: EdgeInsets.all(6.sp),
         color: color ?? Get.theme.cardColor,
         child: Column(
           children: [
