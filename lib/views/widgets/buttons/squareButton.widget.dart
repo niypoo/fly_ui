@@ -28,7 +28,7 @@ class FlySquareButton extends StatelessWidget {
       onTap: onTap,
       child: FlyContainer(
         margin: EdgeInsets.all(2.sp),
-        padding: EdgeInsets.all(6.sp),
+        padding: EdgeInsets.all(10.sp),
         color: color ?? Get.theme.cardColor,
         child: Column(
           children: [
