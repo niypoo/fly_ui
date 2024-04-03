@@ -50,8 +50,8 @@ class FlyDrawerButton extends StatelessWidget {
                   title,
                   style: Get.textTheme.labelLarge!.copyWith(
                     height: 1.3,
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w800
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w600
                   ),
                   maxLines: 1,
                 ),
