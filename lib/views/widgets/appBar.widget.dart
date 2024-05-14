@@ -72,7 +72,8 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
           alignment: WrapAlignment.end,
           runAlignment: WrapAlignment.end,
           children: actions,
-        )
+        ),
+        SizedBox(width: context.isPhone ? 3.sw : 5.sw)
       ],
       bottom: bottom,
     );
