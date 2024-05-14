@@ -42,14 +42,14 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
       title: Row(
         children: [
-          Padding(
-            padding: EdgeInsetsDirectional.only(end: 10.sp),
-            child: leading ??
-                FlyIconButton(
+          leading ??
+              Padding(
+                padding: EdgeInsetsDirectional.only(end: 10.sp),
+                child: FlyIconButton(
                   icon: Icons.arrow_back,
                   onPressed: () => Get.back(),
                 ),
-          ),
+              ),
           Flexible(
             child: AutoSizeText(
               title ?? '',
