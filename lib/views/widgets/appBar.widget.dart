@@ -52,7 +52,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
           Flexible(
             child: AutoSizeText(
-              title ?? '',
+              title != null ? title!.toUpperCase() : '',
               style: titleTextStyle ??
                   Get.textTheme.headlineMedium!.copyWith(
                     fontSize: 20.sp,
