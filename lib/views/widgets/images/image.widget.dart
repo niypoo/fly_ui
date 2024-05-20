@@ -12,7 +12,7 @@ class FlyImage extends StatelessWidget {
     this.width,
     this.url,
     this.margin,
-    this.placeholder = 'assets/icon/icon.jpg',
+    this.placeholder = 'assets/images/placeholder.png',
     this.padding,
     this.border,
     this.actions = const [],
