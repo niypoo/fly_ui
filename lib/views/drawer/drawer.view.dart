@@ -31,7 +31,7 @@ class FlyDrawerView extends GetView<FlyDrawerController> {
       openCurve: Curves.fastOutSlowIn,
       closeCurve: Curves.bounceIn,
       menuBackgroundColor: Get.theme.cardColor,
-      shadowLayer1Color: Get.theme.scaffoldBackgroundColor.withOpacity(0.2),
+      shadowLayer1Color: Get.theme.scaffoldBackgroundColor.withOpacity(0.3),
       shadowLayer2Color: Get.theme.scaffoldBackgroundColor.withOpacity(0.1),
       isRtl: isRtl,
     );
