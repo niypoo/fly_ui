@@ -21,7 +21,7 @@ class FlyMenuScreen extends StatelessWidget {
         child: Row(
           children: [
             // as padding
-            SizedBox(width: context.isLandscape ? 5.h : 3.h),
+            SizedBox(width: context.isLandscape ? 2.h : 1.h),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
