@@ -30,8 +30,8 @@ class FlyDrawerButton extends StatelessWidget {
       child: FlyContainer(
         margin: EdgeInsets.only(bottom: 8.sp),
         padding: EdgeInsets.symmetric(
-          vertical: 7.sp,
-          horizontal: 8.sp,
+          vertical: 8.sp,
+          horizontal: 10.sp,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,
         child: Row(
@@ -50,8 +50,8 @@ class FlyDrawerButton extends StatelessWidget {
                   title,
                   style: Get.textTheme.labelLarge!.copyWith(
                     height: 1.3,
-                    fontSize: 9.sp,
-                    fontWeight: FontWeight.w700
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w800
                   ),
                   maxLines: 1,
                 ),
