@@ -11,6 +11,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
     this.onTap,
     this.photoUrl,
     this.displayName,
+    this.slug,
     this.id,
     this.actionButton,
   }) : super(key: key);
@@ -18,6 +19,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
   final Function? onTap;
   final String? photoUrl;
   final String? displayName;
+  final String? slug;
   final String? id;
   final Widget? actionButton;
 
@@ -54,6 +56,9 @@ class FlyDrawerUserDetails extends StatelessWidget {
             ],
           ),
 
+          SizedBox(
+            height: 5.sp,
+          ),
           // Display Name
           AutoSizeText(
             displayName ?? 'Guest'.tr,
@@ -63,6 +68,15 @@ class FlyDrawerUserDetails extends StatelessWidget {
             ),
             maxLines: 1,
           ),
+          // slug
+          if (slug != null)
+            AutoSizeText(
+              slug!,
+              style: Get.textTheme.labelSmall!.copyWith(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w100,
+              ),
+            ),
         ],
       ),
     );
