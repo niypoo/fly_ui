@@ -59,15 +59,7 @@ class FlyDrawerUserDetails extends StatelessWidget {
           SizedBox(
             height: 5.sp,
           ),
-          // Display Name
-          AutoSizeText(
-            displayName ?? 'Guest'.tr,
-            style: Get.textTheme.headlineMedium!.copyWith(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w900,
-            ),
-            maxLines: 1,
-          ),
+
           // slug
           if (slug != null)
             AutoSizeText(
@@ -77,6 +69,15 @@ class FlyDrawerUserDetails extends StatelessWidget {
                 fontWeight: FontWeight.w100,
               ),
             ),
+          // Display Name
+          AutoSizeText(
+            displayName ?? 'Guest'.tr,
+            style: Get.textTheme.headlineMedium!.copyWith(
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w900,
+            ),
+            maxLines: 1,
+          ),
         ],
       ),
     );
