@@ -73,8 +73,8 @@ class FlyIconButton extends StatelessWidget {
         // FlyAnimatedRandomFade(
         //   child:
         Container(
-      width: 30.sp,
-      height: 30.sp,
+      width: 27.sp,
+      height: 27.sp,
       // duration: AppConfigService.to.duration,
       // curve: AppConfigService.to.curve,
       decoration: BoxDecoration(
