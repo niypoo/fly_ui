@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
@@ -26,11 +25,7 @@ class FlyFlashMessage extends StatelessWidget {
           color: color.withOpacity(0.4),
         ),
       ),
-      padding: EdgeInsets.symmetric(
-        vertical: AppConfigService.to.space!.s,
-        horizontal: AppConfigService.to.space!.xs,
-      ),
-      margin: EdgeInsets.only(top: AppConfigService.to.space!.s),
+      margin: EdgeInsets.only(top: 5.sp),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
