@@ -25,10 +25,9 @@ class FlyFlashMessage extends StatelessWidget {
           color: color.withOpacity(0.4),
         ),
       ),
-      margin: EdgeInsets.only(top: 5.sp),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (icon != null)
             Padding(
