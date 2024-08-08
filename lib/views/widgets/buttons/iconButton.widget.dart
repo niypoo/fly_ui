@@ -91,7 +91,7 @@ class FlyIconButton extends StatelessWidget {
       ),
       child: IconButton(
         constraints: const BoxConstraints(),
-        padding: padding,
+        padding: padding ?? const EdgeInsets.all(0),
         onPressed: onPressed as void Function()?,
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
