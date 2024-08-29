@@ -1,5 +1,5 @@
-import 'package:firebase_pagination/firebase_pagination.dart';
 import 'package:flutter/material.dart';
+import 'package:kr_paginate_firestore/paginate_firestore.dart';
 import 'package:loading_service/helpers/spinner.helper.dart';
 
 class FlyFirebaseInfiniteScroll extends StatelessWidget {
@@ -12,10 +12,10 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
     this.isLive = false,
     this.shrinkWrap = false,
     this.valueKey,
-    // this.itemsCount,
+    this.itemsCount,
     this.physics,
     this.padding = const EdgeInsets.all(0),
-    // this.itemBuilderType = PaginateBuilderType.listView,
+    this.itemBuilderType = PaginateBuilderType.listView,
   });
 
   final Widget emptyWidget;
@@ -23,17 +23,17 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
   final Widget Function(dynamic data, int index) itemBuilder;
   final int itemsPerPage;
   final bool isLive;
-  // final PaginateBuilderType itemBuilderType;
+  final PaginateBuilderType itemBuilderType;
   final ValueKey? valueKey;
-  // final int? itemsCount;
+  final int? itemsCount;
   final bool shrinkWrap;
   final ScrollPhysics? physics;
   final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
-    return FirestorePagination(
-      // itemsCount: itemsCount,
+    return KrPaginateFirestore(
+      itemsCount: itemsCount,
       shrinkWrap: shrinkWrap,
       physics: physics,
       padding: padding,
@@ -44,11 +44,11 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
       // orderBy is compulsory to enable pagination
       query: query,
       //Change types accordingly
-      // itemBuilderType: itemBuilderType,
+      itemBuilderType: itemBuilderType,
       // to fetch real-time data
       isLive: isLive,
       // per page
-      limit: itemsPerPage,
+      itemsPerPage: itemsPerPage,
       onEmpty: Padding(padding: padding, child: emptyWidget),
       initialLoader: Padding(
         padding: padding,
