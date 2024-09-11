@@ -19,8 +19,8 @@ class FlyContainerCircleIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 27.sp,
-      height: 27.sp,
+      width: 30.sp,
+      height: 30.sp,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: bgColor ?? Get.theme.cardColor,
@@ -28,7 +28,7 @@ class FlyContainerCircleIcon extends StatelessWidget {
       child: Center(
         child: Icon(
           icon,
-          size: iconSize ?? 16.sp,
+          size: iconSize ?? 18.sp,
           color: colorIcon ?? Get.theme.iconTheme.color,
         ),
       ),
