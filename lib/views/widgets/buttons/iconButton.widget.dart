@@ -78,7 +78,8 @@ class FlyIconButton extends StatelessWidget {
       // duration: AppConfigService.to.duration,
       // curve: AppConfigService.to.curve,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.sp),
+        borderRadius:
+            shape == BoxShape.circle ? null : BorderRadius.circular(15.sp),
         shape: shape,
         color: onPressed == null
             ? Get.theme.cardColor
