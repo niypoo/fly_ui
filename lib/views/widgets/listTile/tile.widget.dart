@@ -43,10 +43,8 @@ class FlyListTile extends StatelessWidget {
           subtitle: subtitle is String
               ? Text(
                   subtitle,
-                  style: Get.textTheme.labelLarge!.copyWith(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w300
-                  ),
+                  style: Get.textTheme.labelLarge!
+                      .copyWith(fontSize: 10.sp, fontWeight: FontWeight.w300),
                 )
               : subtitle,
           trailing: value is String
@@ -59,7 +57,11 @@ class FlyListTile extends StatelessWidget {
                 )
               : value,
         ),
-        if (enableDivider) Divider(color: colorDivider ?? Get.theme.cardColor),
+        if (enableDivider)
+          Divider(
+            color: colorDivider ?? Get.theme.cardColor,
+            indent: 40.sp,
+          ),
       ],
     );
   }
