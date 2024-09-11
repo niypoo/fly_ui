@@ -22,9 +22,8 @@ class FlyListTileContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
+      padding: const EdgeInsets.all(0),
       child: ListTile(
-        contentPadding: const EdgeInsets.all(0),
-        minVerticalPadding: 0,
         onTap: onTap as void Function()?,
         title: Text(
           title.toUpperCase(),
