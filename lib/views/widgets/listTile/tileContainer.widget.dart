@@ -7,14 +7,14 @@ class FlyListTileContainer extends StatelessWidget {
   const FlyListTileContainer({
     Key? key,
     required this.title,
-    this.value = '',
+    this.value,
     this.onTap,
     this.trailing,
     this.leading,
   }) : super(key: key);
 
   final String title;
-  final String value;
+  final String? value;
   final Widget? trailing;
   final Widget? leading;
   final Function? onTap;
@@ -33,13 +33,15 @@ class FlyListTileContainer extends StatelessWidget {
           ),
         ),
         leading: leading,
-        subtitle: Text(
-          value,
-          style: Get.textTheme.bodySmall!.copyWith(
-            fontSize: 9.sp,
-            fontWeight: FontWeight.w300,
-          ),
-        ),
+        subtitle: value != null
+            ? Text(
+                value!,
+                style: Get.textTheme.bodySmall!.copyWith(
+                  fontSize: 9.sp,
+                  fontWeight: FontWeight.w300,
+                ),
+              )
+            : null,
         trailing: trailing,
       ),
     );
