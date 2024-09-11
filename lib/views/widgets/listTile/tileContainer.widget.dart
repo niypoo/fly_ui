@@ -23,6 +23,8 @@ class FlyListTileContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyContainer(
       child: ListTile(
+        contentPadding: const EdgeInsets.all(0),
+        minVerticalPadding: 0,
         onTap: onTap as void Function()?,
         title: Text(
           title.toUpperCase(),
