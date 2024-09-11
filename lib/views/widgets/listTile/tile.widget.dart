@@ -11,6 +11,7 @@ class FlyListTile extends StatelessWidget {
     this.subtitle,
     this.onTap,
     this.enableDivider = true,
+    this.colorDivider,
   }) : super(key: key);
 
   final Widget? leading;
@@ -18,6 +19,7 @@ class FlyListTile extends StatelessWidget {
   final dynamic value;
   final dynamic subtitle;
   final bool enableDivider;
+  final Color? colorDivider;
   final Function? onTap;
 
   @override
@@ -57,7 +59,7 @@ class FlyListTile extends StatelessWidget {
                 )
               : value,
         ),
-        if (enableDivider) Divider(color: Get.theme.cardColor),
+        if (enableDivider) Divider(color: colorDivider ?? Get.theme.cardColor),
       ],
     );
   }
