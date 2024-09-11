@@ -35,6 +35,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: centerTitle,
       automaticallyImplyLeading: false,
       scrolledUnderElevation:
           scrolledUnderElevation, //fix matrial 3 shadow scroll
@@ -59,7 +60,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
                     color: Get.theme.primaryColor,
                     fontWeight: FontWeight.bold,
                   ),
-              textAlign: TextAlign.start,
+              textAlign:centerTitle ? TextAlign.center : TextAlign.start,
             ),
           ),
         ],
