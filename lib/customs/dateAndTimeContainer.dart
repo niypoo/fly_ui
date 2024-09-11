@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
@@ -20,27 +19,24 @@ class FlyDateAndTimeContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
-      child: FlyInkWell(
-        onTap: onTap,
-        child: FlyContainer(
-          margin: const EdgeInsets.all(0),
-          child: Row(
-            children: [
-              Expanded(
-                child: AutoSizeText(
-                  title,
-                  style: Get.textTheme.labelLarge!.copyWith(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
+    return FlyInkWell(
+      onTap: onTap,
+      child: FlyContainer(
+        margin: const EdgeInsets.all(0),
+        child: Row(
+          children: [
+            Expanded(
+              child: AutoSizeText(
+                title,
+                style: Get.textTheme.labelLarge!.copyWith(
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              AutoSizeText(value, style: Get.textTheme.bodyMedium),
-              const Icon(Icons.keyboard_arrow_down_rounded),
-            ],
-          ),
+            ),
+            AutoSizeText(value, style: Get.textTheme.bodyMedium),
+            const Icon(Icons.keyboard_arrow_down_rounded),
+          ],
         ),
       ),
     );
