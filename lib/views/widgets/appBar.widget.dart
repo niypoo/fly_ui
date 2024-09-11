@@ -41,10 +41,12 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
           scrolledUnderElevation, //fix matrial 3 shadow scroll
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
       titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
+      leadingWidth: leadingWidth ?? 35.sp,
       leading: leading ??
           FlyIconButton(
             icon: Icons.arrow_back,
             onPressed: () => Get.back(),
+            shape: BoxShape.circle,
           ),
       title: AutoSizeText(
         title != null ? title!.toUpperCase() : '',
