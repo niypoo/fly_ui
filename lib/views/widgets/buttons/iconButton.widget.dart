@@ -11,6 +11,7 @@ class FlyIconButton extends StatelessWidget {
     this.colorIcon,
     this.onPressed,
     this.iconSize,
+    this.size = 30,
     this.padding,
     this.shape = BoxShape.rectangle,
   }) : super(key: key);
@@ -65,18 +66,14 @@ class FlyIconButton extends StatelessWidget {
   final Function? onPressed;
   final EdgeInsets? padding;
   final double? iconSize;
+  final double size;
   final BoxShape shape;
 
   @override
   Widget build(BuildContext context) {
-    return
-        // FlyAnimatedRandomFade(
-        //   child:
-        Container(
-      width: 27.sp,
-      height: 27.sp,
-      // duration: AppConfigService.to.duration,
-      // curve: AppConfigService.to.curve,
+    return Container(
+      width: size.sp,
+      height: size.sp,
       decoration: BoxDecoration(
         borderRadius:
             shape == BoxShape.circle ? null : BorderRadius.circular(15.sp),
@@ -106,7 +103,6 @@ class FlyIconButton extends StatelessWidget {
               : colorIcon ?? Get.theme.iconTheme.color,
         ),
       ),
-      // ),
     );
   }
 }
