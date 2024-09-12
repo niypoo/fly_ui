@@ -9,18 +9,20 @@ class FlyContainerCircleIcon extends StatelessWidget {
     this.bgColor,
     this.colorIcon,
     this.iconSize,
+    this.size = 30,
   }) : super(key: key);
 
   final Color? bgColor;
   final Color? colorIcon;
   final IconData? icon;
   final double? iconSize;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 30.sp,
-      height: 30.sp,
+      width: size.sp,
+      height: size.sp,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: bgColor ?? Get.theme.cardColor,
