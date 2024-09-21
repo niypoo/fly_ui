@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kr_paginate_firestore/paginate_firestore.dart';
 import 'package:loading_service/helpers/spinner.helper.dart';
+import 'package:paginate_firestore_plus/paginate_firestore.dart';
 
 class FlyFirebaseInfiniteScroll extends StatelessWidget {
   const FlyFirebaseInfiniteScroll({
@@ -12,7 +12,7 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
     this.isLive = false,
     this.shrinkWrap = false,
     this.valueKey,
-    this.itemsCount,
+    // this.itemsCount,
     this.physics,
     this.padding = const EdgeInsets.all(0),
     this.itemBuilderType = PaginateBuilderType.listView,
@@ -25,15 +25,15 @@ class FlyFirebaseInfiniteScroll extends StatelessWidget {
   final bool isLive;
   final PaginateBuilderType itemBuilderType;
   final ValueKey? valueKey;
-  final int? itemsCount;
+  // final int? itemsCount;
   final bool shrinkWrap;
   final ScrollPhysics? physics;
   final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
-    return KrPaginateFirestore(
-      itemsCount: itemsCount,
+    return PaginateFirestore(
+      // itemsCount: itemsCount,
       shrinkWrap: shrinkWrap,
       physics: physics,
       padding: padding,
