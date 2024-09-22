@@ -12,6 +12,7 @@ class FlyIconButton extends StatelessWidget {
     this.onPressed,
     this.iconSize,
     this.size = 30,
+    this.borderWidth = 1,
     this.padding,
     this.shape = BoxShape.rectangle,
   }) : super(key: key);
@@ -67,6 +68,7 @@ class FlyIconButton extends StatelessWidget {
   final EdgeInsets? padding;
   final double? iconSize;
   final double size;
+  final double borderWidth;
   final BoxShape shape;
 
   @override
@@ -84,7 +86,7 @@ class FlyIconButton extends StatelessWidget {
         border: onPressed == null
             ? null
             : borderColor != null
-                ? Border.all(color: borderColor!)
+                ? Border.all(color: borderColor! , width: borderWidth)
                 : null,
       ),
       child: IconButton(
