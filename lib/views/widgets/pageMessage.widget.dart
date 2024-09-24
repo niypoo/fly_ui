@@ -9,11 +9,15 @@ class FlyContainerMessage extends StatelessWidget {
     this.image,
     required this.body,
     required this.title,
+    this.icon,
+    this.actions,
   }) : super(key: key);
 
   final String title;
   final String body;
   final String? image;
+  final IconData? icon;
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
@@ -23,17 +27,28 @@ class FlyContainerMessage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
+          // IMAGE
           if (image != null)
-            Padding(
-              padding:  EdgeInsets.only(bottom: 10.sp),
-              child: Center(
-                child: FlyImage(
-                  url: image,
-                  width: 47.sp,
-                  height: 47.sp,
-                ),
+            Center(
+              child: FlyImage(
+                url: image!,
+                width: 47.sp,
+                height: 47.sp,
               ),
             ),
+          
+          // ICON
+          if (icon != null)
+            Center(
+              child: Icon(
+                icon!,
+                size: 47.sp,
+              ),
+            ),
+            
+          SizedBox(height: 10.sp),
+          
           Text(
             title,
             style: Get.textTheme.titleLarge!.copyWith(
@@ -51,6 +66,9 @@ class FlyContainerMessage extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
+          SizedBox(height: 10.sp),
+
+          if(actions!=null) ...actions!,
         ],
       ),
     );
