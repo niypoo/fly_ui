@@ -33,7 +33,6 @@ class FlyTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(padding: EdgeInsets.all(0)),
       onPressed: onTap,
       child: Text(
         title,
