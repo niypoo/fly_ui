@@ -18,8 +18,11 @@ class FlyTextButton extends StatelessWidget {
   final Color? color;
   final TextStyle? style;
 
-  factory FlyTextButton.primary(
-          String title, Function()? onTap, Function()? onLongPress) =>
+  factory FlyTextButton.primary({
+    required String title,
+    Function()? onTap,
+    Function()? onLongPress,
+  }) =>
       FlyTextButton(
         title: title,
         onTap: onTap,
@@ -30,6 +33,7 @@ class FlyTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      style: TextButton.styleFrom(padding: EdgeInsets.all(0)),
       onPressed: onTap,
       child: Text(
         title,
