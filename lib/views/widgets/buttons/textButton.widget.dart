@@ -9,12 +9,23 @@ class FlyTextButton extends StatelessWidget {
     this.onTap,
     this.onLongPress,
     this.style,
+    this.color,
   }) : super(key: key);
 
   final String title;
   final Function()? onTap;
   final Function()? onLongPress;
+  final Color? color;
   final TextStyle? style;
+
+  factory FlyTextButton.primary(
+          String title, Function()? onTap, Function()? onLongPress) =>
+      FlyTextButton(
+        title: title,
+        onTap: onTap,
+        onLongPress: onLongPress,
+        color: Get.theme.primaryColor,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +34,7 @@ class FlyTextButton extends StatelessWidget {
       child: Text(
         title,
         style: Get.textTheme.titleMedium!.copyWith(
-          color: Get.theme.primaryColor,
+          color: color,
           fontSize: 11.sp,
           fontWeight: FontWeight.bold,
         ),
