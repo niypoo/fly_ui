@@ -15,7 +15,7 @@ class FlyElevatedButton extends StatelessWidget {
   factory FlyElevatedButton.normal({
     String? title,
     Function? onPressed,
-    EdgeInsets? margin,
+    EdgeInsetsGeometry? margin,
   }) =>
       FlyElevatedButton(
         color: Get.theme.cardColor,
@@ -28,7 +28,7 @@ class FlyElevatedButton extends StatelessWidget {
   factory FlyElevatedButton.close({
     String? title,
     Function? onPressed,
-    EdgeInsets? margin,
+    EdgeInsetsGeometry? margin,
   }) =>
       FlyElevatedButton(
         color: Get.theme.scaffoldBackgroundColor,
@@ -41,7 +41,7 @@ class FlyElevatedButton extends StatelessWidget {
   factory FlyElevatedButton.primary({
     String? title,
     Function? onPressed,
-    EdgeInsets? margin,
+    EdgeInsetsGeometry? margin,
   }) =>
       FlyElevatedButton(
         color: Get.theme.primaryColor,
@@ -55,7 +55,7 @@ class FlyElevatedButton extends StatelessWidget {
   final Function? onPressed;
   final Color? color;
   final Color? textColor;
-  final EdgeInsets? margin;
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
