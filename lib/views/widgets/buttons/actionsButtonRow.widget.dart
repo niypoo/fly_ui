@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:get/get.dart';
 
 class ActionsButtonsRow extends StatelessWidget {
@@ -25,16 +24,10 @@ class ActionsButtonsRow extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: actions.map(
-            (w) {
+            (widget) {
               return Flexible(
-                flex: actions.first == w ? 2 : 1,
-                child: FlyElevatedButton.primary(
-                  title: 'Add',
-                  onPressed: () {},
-                  margin: EdgeInsetsDirectional.only(
-                    end: actions.last == w ? 0 : 5.sp,
-                  ),
-                ),
+                flex: actions.first == widget ? 2 : 1,
+                child: widget
               );
             },
           ).toList(),
