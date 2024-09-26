@@ -50,6 +50,18 @@ class FlyElevatedButton extends StatelessWidget {
         onPressed: onPressed,
         margin: margin,
       );
+  factory FlyElevatedButton.secondary({
+    String? title,
+    Function? onPressed,
+    EdgeInsetsGeometry? margin,
+  }) =>
+      FlyElevatedButton(
+        color: Get.theme.colorScheme.secondary,
+        textColor: Get.theme.secondaryHeaderColor,
+        title: title,
+        onPressed: onPressed,
+        margin: margin,
+      );
 
   final String? title;
   final Function? onPressed;
