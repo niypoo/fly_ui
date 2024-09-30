@@ -44,6 +44,7 @@ class FlyContainerMessage extends StatelessWidget {
               child: Icon(
                 icon!,
                 size: 47.sp,
+                color: Get.theme.cardColor,
               ),
             ),
             
