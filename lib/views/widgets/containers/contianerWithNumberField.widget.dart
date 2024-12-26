@@ -59,13 +59,11 @@ class FlyContainerWithNumberField extends StatelessWidget {
             ],
           ),
 
-          if (enableDivider)
+       if (enableDivider)
             Divider(
-              color: Get.textTheme.titleSmall!.color!.withOpacity(0.1),
-              height: AppConfigService.to.space!.l,
-            )
-          else
-            SizedBox(height: AppConfigService.to.space!.xs),
+              color: Get.theme.scaffoldBackgroundColor.withOpacity(0.4),
+              height: 15.sp,
+            ),
 
           if (image != null) image!,
 

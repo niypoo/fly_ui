@@ -43,11 +43,10 @@ class FlyContainerTitled extends StatelessWidget {
           ),
 
           if (enableDivider)
-            if (enableDivider)
-              Divider(
-                color: Get.textTheme.titleSmall!.color!.withOpacity(0.1),
-                height: 12.sp,
-              ),
+            Divider(
+              color: Get.theme.scaffoldBackgroundColor.withOpacity(0.4),
+              height: 15.sp,
+            ),
 
           child,
         ],
