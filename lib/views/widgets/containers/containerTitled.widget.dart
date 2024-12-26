@@ -1,7 +1,7 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/services/color.service.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
 
@@ -33,22 +33,21 @@ class FlyContainerTitled extends StatelessWidget {
             children: [
               AutoSizeText(
                 title,
-                style: Get.textTheme.titleLarge!.copyWith(
+                style: Get.textTheme.labelLarge!.copyWith(
                   color: textColor,
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
 
           if (enableDivider)
-            Divider(
-              color: textColor != null
-                  ? ColorService.colorLight(textColor!)
-                  : ColorService.primaryLight(),
-              height: AppConfigService.to.space!.l,
-            )
-          else
-            SizedBox(height: AppConfigService.to.space!.m),
+            if (enableDivider)
+              Divider(
+                color: Get.textTheme.titleSmall!.color!.withOpacity(0.1),
+                height: 12.sp,
+              ),
 
           child,
         ],
