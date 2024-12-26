@@ -22,11 +22,13 @@ class FlyContainerWithTextField extends StatelessWidget {
     this.onChangeValueTap,
     this.controller,
     this.validator,
+    this.maxLines = 2,
   }) : super(key: key);
 
   final String title;
   final String? hint;
   final String value;
+  final int maxLines;
   final Widget? image;
   final Color? bgColor;
   final Color? textColor;
@@ -80,7 +82,7 @@ class FlyContainerWithTextField extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 5.sp),
             child: FlyTextField(
-              maxLines: 2,
+              maxLines: maxLines,
               contentPaddingVertical: 10.sp,
               hintText: value,
               color: bgColor,
