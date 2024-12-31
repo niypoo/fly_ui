@@ -32,7 +32,7 @@ class FlyNotFoundData extends StatelessWidget {
           color: Get.theme.primaryColor,
         ),
         SizedBox(height: 8.sp),
-        AutoSizeText(title ?? 'No data provided yet.'.tr , style: Get.textTheme.titleLarge,),
+        AutoSizeText(title ?? 'No data provided yet.'.tr , style: Get.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),),
         if(text != null) AutoSizeText(text!, style: Get.textTheme.bodyMedium,),
       ],
     );
