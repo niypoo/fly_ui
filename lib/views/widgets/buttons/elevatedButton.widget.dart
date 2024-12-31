@@ -11,6 +11,7 @@ class FlyElevatedButton extends StatelessWidget {
     this.color,
     this.textColor,
     this.margin,
+    this.expand = false,
     this.iconAlignment = IconAlignment.start,
   }) : super(key: key);
 
@@ -20,6 +21,7 @@ class FlyElevatedButton extends StatelessWidget {
     IconData? icon,
     EdgeInsetsGeometry? margin,
     IconAlignment? iconAlignment,
+    bool expand = false,
   }) =>
       FlyElevatedButton(
         color: Get.theme.cardColor,
@@ -29,6 +31,7 @@ class FlyElevatedButton extends StatelessWidget {
         margin: margin,
         icon: icon,
         iconAlignment: iconAlignment,
+        expand: expand,
       );
 
   factory FlyElevatedButton.close({
@@ -37,6 +40,7 @@ class FlyElevatedButton extends StatelessWidget {
     EdgeInsetsGeometry? margin,
     IconData? icon,
     IconAlignment? iconAlignment,
+    bool expand = false,
   }) =>
       FlyElevatedButton(
         color: Get.theme.scaffoldBackgroundColor,
@@ -46,6 +50,7 @@ class FlyElevatedButton extends StatelessWidget {
         margin: margin,
         icon: icon,
         iconAlignment: iconAlignment,
+        expand: expand,
       );
 
   factory FlyElevatedButton.primary({
@@ -54,6 +59,7 @@ class FlyElevatedButton extends StatelessWidget {
     EdgeInsetsGeometry? margin,
     IconData? icon,
     IconAlignment? iconAlignment,
+    bool expand = false,
   }) =>
       FlyElevatedButton(
         color: Get.theme.primaryColor,
@@ -63,6 +69,7 @@ class FlyElevatedButton extends StatelessWidget {
         margin: margin,
         icon: icon,
         iconAlignment: iconAlignment,
+        expand: expand,
       );
   factory FlyElevatedButton.secondary({
     required String title,
@@ -70,6 +77,7 @@ class FlyElevatedButton extends StatelessWidget {
     EdgeInsetsGeometry? margin,
     IconData? icon,
     IconAlignment? iconAlignment,
+    bool expand = false,
   }) =>
       FlyElevatedButton(
         color: Get.theme.colorScheme.secondary,
@@ -78,6 +86,7 @@ class FlyElevatedButton extends StatelessWidget {
         onPressed: onPressed,
         margin: margin,
         iconAlignment: iconAlignment,
+        expand: expand,
       );
 
   final String title;
@@ -87,6 +96,7 @@ class FlyElevatedButton extends StatelessWidget {
   final Color? textColor;
   final IconAlignment? iconAlignment;
   final EdgeInsetsGeometry? margin;
+  final bool expand;
 
   @override
   Widget build(BuildContext context) {
@@ -114,6 +124,7 @@ class FlyElevatedButton extends StatelessWidget {
     );
 
     return Container(
+      width: expand ? Get.width : null,
       margin: margin ?? EdgeInsets.symmetric(horizontal: 0, vertical: 5.sp),
       child: icon != null
           ? ElevatedButton.icon(
