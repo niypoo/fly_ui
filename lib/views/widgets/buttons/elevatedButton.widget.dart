@@ -7,15 +7,19 @@ class FlyElevatedButton extends StatelessWidget {
     Key? key,
     required this.title,
     this.onPressed,
+    this.icon,
     this.color,
     this.textColor,
     this.margin,
+    this.iconAlignment = IconAlignment.start,
   }) : super(key: key);
 
   factory FlyElevatedButton.normal({
-    String? title,
+    required String title,
     Function? onPressed,
+    IconData? icon,
     EdgeInsetsGeometry? margin,
+    IconAlignment? iconAlignment,
   }) =>
       FlyElevatedButton(
         color: Get.theme.cardColor,
@@ -23,12 +27,16 @@ class FlyElevatedButton extends StatelessWidget {
         title: title,
         onPressed: onPressed,
         margin: margin,
+        icon: icon,
+        iconAlignment: iconAlignment,
       );
 
   factory FlyElevatedButton.close({
-    String? title,
+    required String title,
     Function? onPressed,
     EdgeInsetsGeometry? margin,
+    IconData? icon,
+    IconAlignment? iconAlignment,
   }) =>
       FlyElevatedButton(
         color: Get.theme.scaffoldBackgroundColor,
@@ -36,12 +44,16 @@ class FlyElevatedButton extends StatelessWidget {
         title: title,
         onPressed: onPressed,
         margin: margin,
+        icon: icon,
+        iconAlignment: iconAlignment,
       );
 
   factory FlyElevatedButton.primary({
-    String? title,
+    required String title,
     Function? onPressed,
     EdgeInsetsGeometry? margin,
+    IconData? icon,
+    IconAlignment? iconAlignment,
   }) =>
       FlyElevatedButton(
         color: Get.theme.primaryColor,
@@ -49,11 +61,15 @@ class FlyElevatedButton extends StatelessWidget {
         title: title,
         onPressed: onPressed,
         margin: margin,
+        icon: icon,
+        iconAlignment: iconAlignment,
       );
   factory FlyElevatedButton.secondary({
-    String? title,
+    required String title,
     Function? onPressed,
     EdgeInsetsGeometry? margin,
+    IconData? icon,
+    IconAlignment? iconAlignment,
   }) =>
       FlyElevatedButton(
         color: Get.theme.colorScheme.secondary,
@@ -61,41 +77,63 @@ class FlyElevatedButton extends StatelessWidget {
         title: title,
         onPressed: onPressed,
         margin: margin,
+        iconAlignment: iconAlignment,
       );
 
-  final String? title;
+  final String title;
+  final IconData? icon;
   final Function? onPressed;
   final Color? color;
   final Color? textColor;
+  final IconAlignment? iconAlignment;
   final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: context.width,
-      margin: margin ?? EdgeInsets.symmetric(horizontal: 0, vertical: 5.sp),
-      child: ElevatedButton(
-        onPressed: onPressed as void Function()?,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color ?? Get.theme.primaryColor,
-          elevation: 0,
-          foregroundColor: color != null
-              ? color!.withOpacity(0.3)
-              : Get.theme.primaryColor.withOpacity(0.3),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.sp),
-          ),
-          padding: EdgeInsets.all(5.sp),
-        ),
-        child: Text(
-          title!,
-          style: Get.textTheme.titleMedium!.copyWith(
-            color: textColor,
-            fontSize: 11.sp,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+    // STYLES OF THE BUTTON
+    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      backgroundColor: color ?? Get.theme.primaryColor,
+      elevation: 0,
+      foregroundColor: color != null
+          ? color!.withOpacity(0.3)
+          : Get.theme.primaryColor.withOpacity(0.3),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.sp),
       ),
+      padding: EdgeInsets.all(5.sp),
+    );
+
+    //STYLES of the title
+    final TextStyle titleStyle = Get.textTheme.titleMedium!.copyWith(
+      color: textColor,
+      fontSize: 11.sp,
+      fontWeight: FontWeight.bold,
+    );
+
+    return Container(
+      margin: margin ?? EdgeInsets.symmetric(horizontal: 0, vertical: 5.sp),
+      child: icon != null
+          ? ElevatedButton.icon(
+              onPressed: onPressed as void Function()?,
+              style: buttonStyle,
+              label: Text(
+                title,
+                style: titleStyle,
+              ),
+              icon: Icon(
+                icon,
+                color: textColor,
+                size: 14.sp,
+              ),
+            )
+          : ElevatedButton(
+              onPressed: onPressed as void Function()?,
+              style: buttonStyle,
+              child: Text(
+                title,
+                style: titleStyle,
+              ),
+            ),
     );
   }
 }
