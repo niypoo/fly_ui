@@ -8,27 +8,32 @@ class FlyNotFoundData extends StatelessWidget {
   const FlyNotFoundData({
     Key? key,
     this.title,
+    this.text,
     this.icon,
-    this.enableTopMergin = true,
+    this.marginTop = 0,
+    this.iconSize = 30,
   }) : super(key: key);
 
   final String? title;
+  final String? text;
   final IconData? icon;
-  final bool enableTopMergin;
+  final double marginTop;
+  final double iconSize;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (enableTopMergin) SizedBox(height: 30.sp),
+        SizedBox(height: marginTop),
         Icon(
           icon ?? UniconsLine.exclamation,
-          size: 30.sp,
+          size: iconSize.sp,
           color: Get.theme.primaryColor,
         ),
-        SizedBox(height: 5.sp),
-        AutoSizeText(title ?? 'No data provided yet.'.tr),
+        SizedBox(height: 8.sp),
+        AutoSizeText(title ?? 'No data provided yet.'.tr , style: Get.textTheme.titleMedium,),
+        if(text != null) AutoSizeText(text!, style: Get.textTheme.bodyMedium,),
       ],
     );
   }
