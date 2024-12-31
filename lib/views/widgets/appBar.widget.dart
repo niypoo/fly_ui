@@ -14,10 +14,10 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.bottom,
     this.backgroundColor,
     this.titleTextStyle,
-    this.leadingWidth,
+    // this.leadingWidth,
     this.centerTitle = false,
     this.padding,
-    this.titleSpacing,
+    // this.titleSpacing,
     this.scrolledUnderElevation = 0.0,
   }) : super(key: key);
 
@@ -25,19 +25,17 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget> actions;
   final Widget? leading;
   final Color? backgroundColor;
-  final double? leadingWidth;
+  // final double? leadingWidth;
   final bool centerTitle;
   final double? padding;
-  final double? titleSpacing;
+  // final double? titleSpacing;
   final double? scrolledUnderElevation;
   final TextStyle? titleTextStyle;
   final PreferredSizeWidget? bottom;
 
   @override
   Widget build(BuildContext context) {
-    print('20.sp ${20.sp}');
-    print('30.sp ${30.sp}');
-    print('40.sp ${40.sp}');
+
     return FlyScaffoldPadding(
       child: AppBar(
         centerTitle: centerTitle,
@@ -45,7 +43,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         scrolledUnderElevation: scrolledUnderElevation,
         backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
         // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-        // leadingWidth: leadingWidth ?? 20.sp,
+        leadingWidth:  38.sp,
         leading: leading ??
             FlyIconButton(
               icon: Icons.arrow_back,
