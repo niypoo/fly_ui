@@ -11,7 +11,6 @@ class FlyScaffold extends StatelessWidget {
     this.floatingActionButton,
     this.floatingActionButtonAnimator,
     this.floatingActionButtonLocation,
-    this.padding = false,
   }) : super(key: key);
 
   final Widget? appBar;
@@ -21,7 +20,6 @@ class FlyScaffold extends StatelessWidget {
   final Widget? bottomNavigationBar;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
   final FloatingActionButtonAnimator? floatingActionButtonAnimator;
-  final bool padding;
 
   factory FlyScaffold.padding({
     required Widget child,
@@ -39,14 +37,12 @@ class FlyScaffold extends StatelessWidget {
         floatingActionButton: floatingActionButton,
         floatingActionButtonLocation: floatingActionButtonLocation,
         floatingActionButtonAnimator: floatingActionButtonAnimator,
-        padding: true,
-        child: child,
+        child: FlyScaffoldPadding(child: child),
       );
 
   @override
   Widget build(BuildContext context) {
-    // SCAFFOLD
-    final Widget scaffold = Scaffold(
+    return Scaffold(
       appBar: appBar as PreferredSizeWidget?,
       backgroundColor: backgroundColor,
       body: SafeArea(
@@ -58,7 +54,5 @@ class FlyScaffold extends StatelessWidget {
       floatingActionButtonLocation: floatingActionButtonLocation,
       floatingActionButtonAnimator: floatingActionButtonAnimator,
     );
-
-    return padding ? FlyScaffoldPadding(child: scaffold) : scaffold;
   }
 }

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
 
@@ -34,41 +35,42 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      centerTitle: centerTitle,
-      automaticallyImplyLeading: false,
-      scrolledUnderElevation:
-          scrolledUnderElevation, //fix matrial 3 shadow scroll
-      backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
-      titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-      leadingWidth: leadingWidth ?? 30.sp,
-      leading: leading ??
-          FlyIconButton(
-            icon: Icons.arrow_back,
-            onPressed: () => Get.back(),
-            shape: BoxShape.circle,
-          ),
-      title: AutoSizeText(
-        title != null ? title!.toUpperCase() : '',
-        style: titleTextStyle ??
-            Get.textTheme.headlineMedium!.copyWith(
-              fontSize: 20.sp,
-              color: Get.theme.primaryColor,
-              fontWeight: FontWeight.bold,
+    return FlyScaffoldPadding(
+      child: AppBar(
+        centerTitle: centerTitle,
+        automaticallyImplyLeading: false,
+        scrolledUnderElevation: scrolledUnderElevation,
+        backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
+        // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
+        // leadingWidth: leadingWidth ?? 30.sp,
+        leading: leading ??
+            FlyIconButton(
+              icon: Icons.arrow_back,
+              onPressed: () => Get.back(),
+              shape: BoxShape.circle,
             ),
-        textAlign: TextAlign.start,
-      ),
-      actions: [
-        Wrap(
-          spacing: 5.sp,
-          runSpacing: 5.sp,
-          alignment: WrapAlignment.end,
-          runAlignment: WrapAlignment.end,
-          children: actions,
+        title: AutoSizeText(
+          title != null ? title!.toUpperCase() : '',
+          style: titleTextStyle ??
+              Get.textTheme.headlineMedium!.copyWith(
+                fontSize: 20.sp,
+                color: Get.theme.primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
+          textAlign: TextAlign.start,
         ),
-        // SizedBox(width: context.isPhone ? 3.sw : 5.sw)
-      ],
-      bottom: bottom,
+        actions: [
+          Wrap(
+            spacing: 5.sp,
+            runSpacing: 5.sp,
+            alignment: WrapAlignment.end,
+            runAlignment: WrapAlignment.end,
+            children: actions,
+          ),
+          // SizedBox(width: context.isPhone ? 3.sw : 5.sw)
+        ],
+        bottom: bottom,
+      ),
     );
   }
 
