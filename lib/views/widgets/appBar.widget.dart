@@ -35,7 +35,6 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return FlyScaffoldPadding(
       child: AppBar(
         centerTitle: centerTitle,
@@ -43,7 +42,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         scrolledUnderElevation: scrolledUnderElevation,
         backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
         // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-        leadingWidth:  38.sp,
+        leadingWidth:  33.sp,
         leading: leading ??
             FlyIconButton(
               icon: Icons.arrow_back,
@@ -54,7 +53,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
           title != null ? title!.toUpperCase() : '',
           style: titleTextStyle ??
               Get.textTheme.headlineMedium!.copyWith(
-                fontSize: 20.sp,
+                fontSize: 18.sp,
                 color: Get.theme.primaryColor,
                 fontWeight: FontWeight.bold,
               ),
