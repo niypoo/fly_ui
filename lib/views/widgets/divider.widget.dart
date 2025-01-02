@@ -9,7 +9,7 @@ class FlyDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Divider(
       height: 15.sp,
-      thickness: 2,
+      thickness: 1,
       color: Get.iconColor!.withOpacity(0.1),
       indent: 15.sp,
       endIndent: 15.sp,
