@@ -25,7 +25,6 @@ class FlyListTileInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      margin: EdgeInsets.only(bottom: 6.sp),
       color: bgColor ?? (outline? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
       outline: outline,
       child: Row(
@@ -51,8 +50,10 @@ class FlyListTileInput extends StatelessWidget {
                       style: Get.textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w300,
                         fontSize: 11.sp,
+                         height: 0,
                       ),
                       maxLines: 3,
+                      
                     ),
                   ),
               ],
