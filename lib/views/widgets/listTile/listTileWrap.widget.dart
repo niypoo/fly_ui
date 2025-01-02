@@ -28,7 +28,7 @@ class FlyListTileWrap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 10.sp),
+      padding: EdgeInsets.symmetric(vertical: 6.sp, horizontal: 10.sp),
       color: bgColor ??
           (outline ? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
       outline: outline,
