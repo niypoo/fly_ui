@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/views/widgets/divider.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,7 @@ class FlyListTileInput extends StatelessWidget {
     required this.child,
     this.subtitle,
     this.bgColor,
+    this.expandedChild,
     this.outline = false,
   }) : super(key: key);
 
@@ -21,47 +23,59 @@ class FlyListTileInput extends StatelessWidget {
   final bool outline;
   final Color? bgColor;
   final Widget child;
+  final Widget? expandedChild;
 
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
       padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 10.sp),
-      color: bgColor ?? (outline? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
+      color: bgColor ??
+          (outline ? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
       outline: outline,
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AutoSizeText(
-                  title,
-                  style: Get.textTheme.titleMedium!.copyWith(
-                    height: 1,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  maxLines: 1,
-                ),
-                if (subtitle != null)
-                  Padding(
-                    padding: EdgeInsets.only(top: 3.sp),
-                    child: AutoSizeText(
-                      subtitle!,
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AutoSizeText(
+                      title,
                       style: Get.textTheme.titleMedium!.copyWith(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 11.sp,
-                         height: 0,
+                        height: 1,
+                        fontWeight: FontWeight.w500,
                       ),
-                      maxLines: 3,
-                      
+                      maxLines: 1,
                     ),
-                  ),
-              ],
-            ),
+                    if (subtitle != null)
+                      Padding(
+                        padding: EdgeInsets.only(top: 3.sp),
+                        child: AutoSizeText(
+                          subtitle!,
+                          style: Get.textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 11.sp,
+                            height: 0,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+              const FlyListTitleLogDivider(),
+              child,
+            ],
           ),
-          const FlyListTitleLogDivider(),
-          child,
+
+
+          if(expandedChild!=null) const FlyDivider(),
+          if(expandedChild!=null) expandedChild!,
         ],
       ),
     );

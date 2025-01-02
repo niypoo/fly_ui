@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/listTile/tileInput.widget.dart';
 import 'package:get/get.dart';
 
-class FlySwitchOption extends StatelessWidget {
-  const FlySwitchOption({
+class FlySwitchTile extends StatelessWidget {
+  const FlySwitchTile({
     Key? key,
     required this.title,
     this.subtitle,
@@ -12,6 +12,7 @@ class FlySwitchOption extends StatelessWidget {
     this.onChange,
     this.color,
     this.bgColor,
+    this.expandedChild,
     this.outline = false,
   }) : super(key: key);
 
@@ -22,6 +23,7 @@ class FlySwitchOption extends StatelessWidget {
   final Color? color;
   final bool outline;
   final Color? bgColor;
+  final Widget? expandedChild;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class FlySwitchOption extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
+      expandedChild: expandedChild,
       child: CupertinoSwitch(
         value: value,
         onChanged: onChange as void Function(bool)?,
