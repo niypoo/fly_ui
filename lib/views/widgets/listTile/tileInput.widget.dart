@@ -37,9 +37,9 @@ class FlyListTileInput extends StatelessWidget {
               children: [
                 AutoSizeText(
                   title,
-                  style: Get.textTheme.titleSmall!.copyWith(
+                  style: Get.textTheme.titleMedium!.copyWith(
                     height: 1,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                   maxLines: 1,
                 ),
