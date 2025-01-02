@@ -130,8 +130,8 @@ class FlyListTitleLogDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppConfigService.to.space!.m,
-      width: 5,
+      height: 8.sp,
+      width: 5.sp,
       child: VerticalDivider(
         color: Get.iconColor!.withOpacity(0.1),
       ),
