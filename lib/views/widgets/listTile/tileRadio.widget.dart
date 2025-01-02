@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class FlyRadioListTile extends StatelessWidget {
   const FlyRadioListTile({
     Key? key,
-    required this.onTap,
+    required this.onChanged,
     required this.title,
     required this.value,
     required this.selectedValue,
@@ -17,7 +17,7 @@ class FlyRadioListTile extends StatelessWidget {
   final String title;
   final dynamic value;
   final dynamic selectedValue;
-  final Function onTap;
+  final Function onChanged;
   final String? subtitle;
   final bool outline;
   final Color? bgColor;
@@ -35,7 +35,7 @@ class FlyRadioListTile extends StatelessWidget {
             : Get.theme.cardColor,
         value: value,
         groupValue: selectedValue,
-        onChanged: (dynamic value) => onTap(value),
+        onChanged: (dynamic value) => onChanged(value),
       ),
     );
   }
