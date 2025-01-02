@@ -11,71 +11,58 @@ class FlyCheckboxTile extends StatelessWidget {
     required this.onTap,
     required this.title,
     required this.value,
-    this.hint,
-    this.enableDivider = false,
+    this.subtitle,
+    this.outline = false,
   }) : super(key: key);
 
   final String title;
+  final String? subtitle;
   final bool value;
   final Function onTap;
-  final String? hint;
-  final bool enableDivider;
+  final bool outline;
 
   @override
   Widget build(BuildContext context) {
-    return FlyInkWell(
-      onTap: () => onTap(!value),
-      child: FlyContainer(
-        color: value ? Get.theme.highlightColor : Get.theme.cardColor,
-        child: Column(
-          children: [
-            Row(
+    return FlyContainer(
+      color: value ? Get.theme.highlightColor : Get.theme.cardColor,
+      outline: outline,
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: AutoSizeText(
-                    title,
-                    style: Get.textTheme.labelLarge!.copyWith(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
+                AutoSizeText(
+                  title,
+                  style: Get.textTheme.titleSmall!.copyWith(
+                    height: 1,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  maxLines: 1,
+                ),
+                if (subtitle != null)
+                  Padding(
+                    padding: EdgeInsets.only(top: 5.sp),
+                    child: AutoSizeText(
+                      subtitle!,
+                      style: Get.textTheme.bodySmall!.copyWith(height: 1),
+                      maxLines: 2,
                     ),
                   ),
-                ),
-                SizedBox(width: 5.sp),
-                SizedBox(
-                  height: 20.sp,
-                  width: 20.sp,
-                  child: Checkbox(
-                    activeColor: Get.theme.cardColor,
-                    checkColor: Get.theme.primaryColor,
-                    value: value,
-                    onChanged: onTap as void Function(bool?)?,
-                  ),
-                ),
               ],
             ),
-
-            if (enableDivider)
-              Divider(
-                color: Get.theme.primaryColor.withOpacity(0.1),
-                height: 10.sp,
-              ),
-
-            // hint if STRING OR Widget
-            if (hint != null)
-              Padding(
-                padding: enableDivider
-                    ? const EdgeInsets.all(0)
-                    : EdgeInsets.only(top: 10.sp),
-                child: AutoSizeText(
-                  hint!,
-                  style: Get.textTheme.bodySmall!.copyWith(
-                    fontSize: 9.sp,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
-              )
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 30.sp,
+            child: Checkbox(
+              activeColor: Get.theme.cardColor,
+              checkColor: Get.theme.primaryColor,
+              value: value,
+              onChanged: onTap as void Function(bool?)?,
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -59,7 +59,7 @@ class FlySwitchOption extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 25,
+            height: 30.sp,
             child: CupertinoSwitch(
               value: value,
               onChanged: onChange as void Function(bool)?,
