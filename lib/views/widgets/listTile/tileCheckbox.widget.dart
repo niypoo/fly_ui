@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/widgets/listTile/tileInput.widget.dart';
+import 'package:fly_ui/views/widgets/listTile/listTileWrap.widget.dart';
 import 'package:get/get.dart';
 
 class FlyCheckboxTile extends StatelessWidget {
