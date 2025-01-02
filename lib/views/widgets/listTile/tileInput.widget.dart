@@ -26,7 +26,7 @@ class FlyListTileInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyContainer(
       margin: EdgeInsets.only(bottom: 6.sp),
-      color: bgColor ?? Get.theme.scaffoldBackgroundColor,
+      color: bgColor ?? (outline? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
       outline: outline,
       child: Row(
         children: [
