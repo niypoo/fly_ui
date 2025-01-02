@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +12,7 @@ class FlyCheckboxTile extends StatelessWidget {
     required this.value,
     this.subtitle,
     this.outline = false,
+    this.bgColor,
   }) : super(key: key);
 
   final String title;
@@ -20,11 +20,13 @@ class FlyCheckboxTile extends StatelessWidget {
   final bool value;
   final Function onTap;
   final bool outline;
+  final Color? bgColor;
 
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      color: value ? Get.theme.highlightColor : Get.theme.cardColor,
+      margin: EdgeInsets.only(bottom: 6.sp),
+      color: bgColor ?? Get.theme.scaffoldBackgroundColor,
       outline: outline,
       child: Row(
         children: [
