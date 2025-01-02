@@ -29,18 +29,20 @@ class FlyDropdownTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      child: DropdownButton<String>(
-        value: value,
-        elevation: 0,
-        icon: const Icon(Icons.arrow_drop_down),
-        dropdownColor: Get.theme.cardColor,
-        items: items.map((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value, style: Get.textTheme.bodySmall),
-          );
-        }).toList(),
-        onChanged: onTap as void Function(String?)?,
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          value: value,
+          elevation: 0,
+          icon: const Icon(Icons.arrow_drop_down),
+          dropdownColor: Get.theme.cardColor,
+          items: items.map((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+          onChanged: onTap as void Function(String?)?,
+        ),
       ),
     );
   }

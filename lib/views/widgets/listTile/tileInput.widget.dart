@@ -45,11 +45,14 @@ class FlyListTileInput extends StatelessWidget {
                 ),
                 if (subtitle != null)
                   Padding(
-                    padding: EdgeInsets.only(top: 5.sp),
+                    padding: EdgeInsets.only(top: 3.sp),
                     child: AutoSizeText(
                       subtitle!,
-                      style: Get.textTheme.bodySmall!.copyWith(height: 1),
-                      maxLines: 2,
+                      style: Get.textTheme.titleMedium!.copyWith(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 11.sp,
+                      ),
+                      maxLines: 3,
                     ),
                   ),
               ],
