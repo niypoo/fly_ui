@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/widgets/divider.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +13,7 @@ class FlyListTileWrap extends StatelessWidget {
     required this.child,
     this.subtitle,
     this.bgColor,
-    this.expandedChild,
+    this.expandChild,
     this.outline = false,
   }) : super(key: key);
 
@@ -23,7 +22,7 @@ class FlyListTileWrap extends StatelessWidget {
   final bool outline;
   final Color? bgColor;
   final Widget child;
-  final Widget? expandedChild;
+  final Widget? expandChild;
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +73,8 @@ class FlyListTileWrap extends StatelessWidget {
           ),
 
 
-          if(expandedChild!=null) const FlyDivider(),
-          if(expandedChild!=null) expandedChild!,
+          // if(expandChild!=null) const FlyDivider(),
+          if(expandChild!=null) expandChild!,
         ],
       ),
     );

@@ -11,7 +11,7 @@ class FlyCheckboxTile extends StatelessWidget {
     this.subtitle,
     this.outline = false,
     this.bgColor,
-    this.expandedChild,
+    this.expandChild,
   }) : super(key: key);
 
   final String title;
@@ -20,7 +20,7 @@ class FlyCheckboxTile extends StatelessWidget {
   final Function onTap;
   final bool outline;
   final Color? bgColor;
-  final Widget? expandedChild;
+  final Widget? expandChild;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class FlyCheckboxTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      expandedChild: expandedChild,
+      expandChild: expandChild,
       child: Checkbox(
         activeColor: Get.theme.cardColor,
         checkColor: Get.theme.primaryColor,

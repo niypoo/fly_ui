@@ -11,7 +11,7 @@ class FlyRadioListTile extends StatelessWidget {
     required this.selectedValue,
     this.subtitle,
     this.bgColor,
-    this.expandedChild,
+    this.expandChild,
     this.outline = false,
   }) : super(key: key);
 
@@ -22,7 +22,7 @@ class FlyRadioListTile extends StatelessWidget {
   final String? subtitle;
   final bool outline;
   final Color? bgColor;
-  final Widget? expandedChild;
+  final Widget? expandChild;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class FlyRadioListTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      expandedChild: expandedChild,
+      expandChild: expandChild,
       child: Radio(
         activeColor: (value == selectedValue)
             ? Get.theme.primaryColor

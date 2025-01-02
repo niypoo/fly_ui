@@ -12,7 +12,7 @@ class FlySwitchTile extends StatelessWidget {
     this.onChange,
     this.color,
     this.bgColor,
-    this.expandedChild,
+    this.expandChild,
     this.outline = false,
   }) : super(key: key);
 
@@ -23,7 +23,7 @@ class FlySwitchTile extends StatelessWidget {
   final Color? color;
   final bool outline;
   final Color? bgColor;
-  final Widget? expandedChild;
+  final Widget? expandChild;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class FlySwitchTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      expandedChild: expandedChild,
+      expandChild: expandChild,
       child: CupertinoSwitch(
         value: value,
         onChanged: onChange as void Function(bool)?,
