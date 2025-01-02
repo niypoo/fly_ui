@@ -37,7 +37,11 @@ class FlyListTileContainer extends StatelessWidget {
         outline: outline,
         child: Row(
           children: [
-            if (leading != null) leading!,
+            if (leading != null)
+              Padding(
+                padding: EdgeInsetsDirectional.only(end: 10.sp),
+                child: leading!,
+              ),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +71,11 @@ class FlyListTileContainer extends StatelessWidget {
               ),
             ),
             if (trailing != null) const FlyListTitleLogDivider(),
-            if (trailing != null) trailing!,
+            if (trailing != null)
+              Padding(
+                padding: EdgeInsetsDirectional.only(start: 10.sp),
+                child: trailing!,
+              ),
           ],
         ),
       ),
