@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/listTile/tileInput.widget.dart';
-import 'package:get/get.dart';
 
-class FlyCheckboxTile extends StatelessWidget {
-  const FlyCheckboxTile({
+class FlyDropdownTile extends StatelessWidget {
+  const FlyDropdownTile({
     Key? key,
-    required this.onTap,
     required this.title,
+    required this.items,
     required this.value,
+    required this.onTap,
     this.subtitle,
     this.outline = false,
     this.bgColor,
@@ -15,10 +15,11 @@ class FlyCheckboxTile extends StatelessWidget {
 
   final String title;
   final String? subtitle;
-  final bool value;
+  final String value;
   final Function onTap;
   final bool outline;
   final Color? bgColor;
+  final List<String> items;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +28,16 @@ class FlyCheckboxTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      child: Checkbox(
-        activeColor: Get.theme.cardColor,
-        checkColor: Get.theme.primaryColor,
+      child: DropdownButton<String>(
         value: value,
-        onChanged: onTap as void Function(bool?)?,
+        icon: const Icon(Icons.arrow_drop_down),
+        items: items.map((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+        onChanged: onTap as void Function(String?)?,
       ),
     );
   }
