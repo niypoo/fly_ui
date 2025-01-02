@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/listTile/tileInput.widget.dart';
 import 'package:get/get.dart';
 
@@ -29,19 +30,22 @@ class FlyDropdownTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton<String>(
-          value: value,
-          elevation: 0,
-          icon: const Icon(Icons.arrow_drop_down),
-          dropdownColor: Get.theme.cardColor,
-          items: items.map((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value, style: Get.textTheme.labelMedium),
-            );
-          }).toList(),
-          onChanged: onTap as void Function(String?)?,
+      child: Padding(
+        padding: EdgeInsetsDirectional.only(start: 10.sp),
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton<String>(
+            value: value,
+            elevation: 0,
+            icon: const Icon(Icons.arrow_drop_down),
+            dropdownColor: Get.theme.cardColor,
+            items: items.map((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value, style: Get.textTheme.labelMedium),
+              );
+            }).toList(),
+            onChanged: onTap as void Function(String?)?,
+          ),
         ),
       ),
     );
