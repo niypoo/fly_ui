@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:get/get.dart';
 
 class FlyListTileInput extends StatelessWidget {
@@ -54,7 +55,8 @@ class FlyListTileInput extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 30.sp, child: child),
+          const FlyListTitleLogDivider(),
+          SizedBox(height: 30.sp, width: 30.sp, child: child),
         ],
       ),
     );
