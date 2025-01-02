@@ -72,9 +72,14 @@ class FlyListTileWrap extends StatelessWidget {
             ],
           ),
 
-
           // if(expandChild!=null) const FlyDivider(),
-          if(expandChild!=null) expandChild!,
+          if (expandChild != null)
+            Padding(
+              padding: EdgeInsets.only(
+                top: 15.sp,
+              ),
+              child: expandChild!,
+            ),
         ],
       ),
     );
