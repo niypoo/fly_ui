@@ -73,7 +73,7 @@ class FlyListTileContainer extends StatelessWidget {
             if (trailing != null) const FlyListTitleLogDivider(),
             if (trailing != null)
               Padding(
-                padding: EdgeInsetsDirectional.only(end: 10.sp),
+                padding: EdgeInsets.symmetric(horizontal: 10.sp),
                 child: trailing!,
               ),
           ],
