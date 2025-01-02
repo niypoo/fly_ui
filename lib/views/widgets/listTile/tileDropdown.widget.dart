@@ -32,6 +32,8 @@ class FlyDropdownTile extends StatelessWidget {
       child: DropdownButton<String>(
         value: value,
         elevation: 0,
+        isDense: true,
+        isExpanded: true,
         icon: const Icon(Icons.arrow_drop_down),
         dropdownColor: Get.theme.cardColor,
         items: items.map((String value) {

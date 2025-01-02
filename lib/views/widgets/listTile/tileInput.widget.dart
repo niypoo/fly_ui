@@ -56,7 +56,7 @@ class FlyListTileInput extends StatelessWidget {
             ),
           ),
           const FlyListTitleLogDivider(),
-          SizedBox(height: 30.sp, width: 30.sp, child: child),
+          child,
         ],
       ),
     );
