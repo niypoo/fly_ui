@@ -10,7 +10,7 @@ class FlyDivider extends StatelessWidget {
     return Divider(
       height: 15.sp,
       thickness: 2,
-      color: Get.theme.cardColor,
+      color: Get.iconColor!.withOpacity(0.1),
       indent: 15.sp,
       endIndent: 15.sp,
     );
