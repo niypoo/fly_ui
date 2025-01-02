@@ -118,8 +118,8 @@ class FlyTextField extends StatelessWidget {
           labelText: labelText,
           isCollapsed: isCollapsed,
           contentPadding: EdgeInsetsDirectional.symmetric(
-            horizontal: 10.sp,
-            vertical: contentPaddingVertical ?? 10.sp,
+            horizontal: 15.sp,
+            vertical: contentPaddingVertical ?? 15.sp,
           ),
           suffixIcon: suffix.isEmpty
               ? null
