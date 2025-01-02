@@ -7,8 +7,8 @@ import 'package:fly_ui/views/widgets/divider.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:get/get.dart';
 
-class FlyListTileInput extends StatelessWidget {
-  const FlyListTileInput({
+class FlyListTileWrap extends StatelessWidget {
+  const FlyListTileWrap({
     Key? key,
     required this.title,
     required this.child,

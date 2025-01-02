@@ -6,8 +6,8 @@ import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:get/get.dart';
 
-class FlyListTileContainer extends StatelessWidget {
-  const FlyListTileContainer({
+class FlyListTile extends StatelessWidget {
+  const FlyListTile({
     Key? key,
     required this.title,
     this.value,

@@ -27,7 +27,7 @@ class FlyDropdownTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyListTileInput(
+    return FlyListTileWrap(
       title: title,
       subtitle: subtitle,
       outline: outline,
