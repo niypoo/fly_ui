@@ -14,6 +14,7 @@ class FlySwitchOption extends StatelessWidget {
     this.onChange,
     this.color,
     this.bgColor,
+    this.outline = false,
   }) : super(key: key);
 
   final String title;
@@ -21,6 +22,7 @@ class FlySwitchOption extends StatelessWidget {
   final bool value;
   final Function? onChange;
   final Color? color;
+  final bool outline;
   final Color? bgColor;
 
   @override
@@ -28,7 +30,7 @@ class FlySwitchOption extends StatelessWidget {
     return FlyContainer(
       margin: EdgeInsets.only(bottom: 6.sp),
       color: bgColor ?? Get.theme.scaffoldBackgroundColor,
-      outline: true,
+      outline: outline,
       child: Row(
         children: [
           Expanded(

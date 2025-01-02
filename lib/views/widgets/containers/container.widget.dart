@@ -33,6 +33,7 @@ class FlyContainer extends StatelessWidget {
         border: outline
             ? Border.all(
                 color: border ?? Get.theme.cardColor,
+                width: 2.0,
               )
             : null,
       ),
