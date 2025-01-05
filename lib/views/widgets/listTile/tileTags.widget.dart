@@ -6,8 +6,8 @@ import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
-class FlyCheckboxTile extends StatefulWidget {
-  const FlyCheckboxTile({
+class FlyTagsInputTile extends StatefulWidget {
+  const FlyTagsInputTile({
     Key? key,
     required this.onTap,
     required this.title,
@@ -27,10 +27,10 @@ class FlyCheckboxTile extends StatefulWidget {
   final Widget? child;
 
   @override
-  State<FlyCheckboxTile> createState() => _FlyCheckboxTileState();
+  State<FlyTagsInputTile> createState() => _FlyCheckboxTileState();
 }
 
-class _FlyCheckboxTileState extends State<FlyCheckboxTile> {
+class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   final List<String> tags = [];
 
   void addTag(String tag) {
