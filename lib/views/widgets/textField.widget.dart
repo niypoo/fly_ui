@@ -38,6 +38,7 @@ class FlyTextField extends StatelessWidget {
     this.marginTop = 0,
     this.contentPaddingVertical,
     this.isCollapsed = true,
+    this.decoration,
     this.textAlign = TextAlign.start,
     this.textAlignVertical = TextAlignVertical.center,
   }) : super(key: key);
@@ -64,6 +65,7 @@ class FlyTextField extends StatelessWidget {
   final Color? color;
   final Color? cursorColor;
   final Color? borderColor;
+  final InputDecoration? decoration;
   final TextStyle? textStyle;
   final TextInputType textInputType;
   final TextInputAction textInputAction;
@@ -92,76 +94,78 @@ class FlyTextField extends StatelessWidget {
         controller: controller,
         validator: validator,
         maxLines: maxLines,
-        decoration: InputDecoration(
-          alignLabelWithHint: alignLabelWithHint,
-          filled: filled,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.sp),
-            borderSide: BorderSide(
-              color: borderColor ?? Get.theme.cardColor,
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.sp),
-            borderSide: BorderSide(
-              color: borderColor ?? Get.theme.cardColor,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.sp),
-            borderSide: BorderSide(
-              color: borderColor ?? Get.theme.cardColor,
-              width: 2.0,
-            ),
-          ),
-          fillColor: color ?? Get.theme.scaffoldBackgroundColor,
-          labelText: labelText,
-          isCollapsed: isCollapsed,
-          contentPadding: EdgeInsetsDirectional.symmetric(
-            horizontal: 12.sp,
-            vertical: contentPaddingVertical ?? 12.sp,
-          ),
-          suffixIcon: suffix.isEmpty
-              ? null
-              : Padding(
-                  padding: EdgeInsetsDirectional.only(end: 5.sp, start: 5.sp),
-                  child: Wrap(
-                    alignment: WrapAlignment.center,
-                    runAlignment: WrapAlignment.center,
-                    runSpacing: 4.sp,
-                    spacing: 4.sp,
-                    children: suffix,
-                  ),
+        decoration: decoration ??
+            InputDecoration(
+              alignLabelWithHint: alignLabelWithHint,
+              filled: filled,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.sp),
+                borderSide: BorderSide(
+                  color: borderColor ?? Get.theme.cardColor,
                 ),
-          prefixIcon: prefix.isEmpty
-              ? null
-              : Wrap(
-                  alignment: WrapAlignment.center,
-                  runAlignment: WrapAlignment.center,
-                  children: prefix,
-                ),
-          suffixStyle: Get.textTheme.bodySmall!.copyWith(
-            color: Colors.red,
-          ),
-          prefixStyle: Get.textTheme.bodySmall!.copyWith(
-            color: Colors.red,
-          ),
-          hintText: hintText,
-          hintStyle: textStyle ??
-              Get.textTheme.titleMedium!.copyWith(
-                fontWeight: FontWeight.w300,
-                fontSize: 11.sp,
               ),
-          errorStyle: Get.textTheme.bodySmall!.copyWith(
-            color: Colors.red,
-            fontSize: 9.sp,
-            fontWeight: FontWeight.w300,
-          ),
-          labelStyle: Get.textTheme.titleSmall!.copyWith(
-            fontSize: 11.sp,
-            fontWeight: FontWeight.w300,
-          ),
-        ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.sp),
+                borderSide: BorderSide(
+                  color: borderColor ?? Get.theme.cardColor,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.sp),
+                borderSide: BorderSide(
+                  color: borderColor ?? Get.theme.cardColor,
+                  width: 2.0,
+                ),
+              ),
+              fillColor: color ?? Get.theme.scaffoldBackgroundColor,
+              labelText: labelText,
+              isCollapsed: isCollapsed,
+              contentPadding: EdgeInsetsDirectional.symmetric(
+                horizontal: 12.sp,
+                vertical: contentPaddingVertical ?? 12.sp,
+              ),
+              suffixIcon: suffix.isEmpty
+                  ? null
+                  : Padding(
+                      padding:
+                          EdgeInsetsDirectional.only(end: 5.sp, start: 5.sp),
+                      child: Wrap(
+                        alignment: WrapAlignment.center,
+                        runAlignment: WrapAlignment.center,
+                        runSpacing: 4.sp,
+                        spacing: 4.sp,
+                        children: suffix,
+                      ),
+                    ),
+              prefixIcon: prefix.isEmpty
+                  ? null
+                  : Wrap(
+                      alignment: WrapAlignment.center,
+                      runAlignment: WrapAlignment.center,
+                      children: prefix,
+                    ),
+              suffixStyle: Get.textTheme.bodySmall!.copyWith(
+                color: Colors.red,
+              ),
+              prefixStyle: Get.textTheme.bodySmall!.copyWith(
+                color: Colors.red,
+              ),
+              hintText: hintText,
+              hintStyle: textStyle ??
+                  Get.textTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 11.sp,
+                  ),
+              errorStyle: Get.textTheme.bodySmall!.copyWith(
+                color: Colors.red,
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w300,
+              ),
+              labelStyle: Get.textTheme.titleSmall!.copyWith(
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
         style: textStyle ??
             Get.textTheme.titleMedium!.copyWith(
               fontSize: 11.sp,

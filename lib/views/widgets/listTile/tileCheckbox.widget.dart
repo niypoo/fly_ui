@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
 
-class FlyCheckboxTile extends StatelessWidget {
-  const FlyCheckboxTile({
+class FlyTagsTile extends StatelessWidget {
+  const FlyTagsTile({
     Key? key,
     required this.onTap,
     required this.title,
@@ -11,7 +11,7 @@ class FlyCheckboxTile extends StatelessWidget {
     this.subtitle,
     this.outline = false,
     this.bgColor,
-    this.expandChild,
+    this.child,
   }) : super(key: key);
 
   final String title;
@@ -20,7 +20,7 @@ class FlyCheckboxTile extends StatelessWidget {
   final Function onTap;
   final bool outline;
   final Color? bgColor;
-  final Widget? expandChild;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +29,13 @@ class FlyCheckboxTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      expandChild: expandChild,
-      child: Checkbox(
+      trailing: Checkbox(
         activeColor: Get.theme.cardColor,
         checkColor: Get.theme.primaryColor,
         value: value,
         onChanged: onTap as void Function(bool?)?,
       ),
+      child: child,
     );
   }
 }

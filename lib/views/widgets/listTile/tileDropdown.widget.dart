@@ -13,7 +13,7 @@ class FlyDropdownTile extends StatelessWidget {
     this.subtitle,
     this.outline = false,
     this.bgColor,
-    this.expandChild,
+    this.child,
   }) : super(key: key);
 
   final String title;
@@ -22,7 +22,7 @@ class FlyDropdownTile extends StatelessWidget {
   final Function onTap;
   final bool outline;
   final Color? bgColor;
-  final Widget? expandChild;
+  final Widget? child;
   final List<String> items;
 
   @override
@@ -32,8 +32,7 @@ class FlyDropdownTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      expandChild:expandChild,
-      child: Padding(
+      trailing: Padding(
         padding: EdgeInsetsDirectional.only(start: 10.sp),
         child: DropdownButtonHideUnderline(
           child: DropdownButton<String>(
@@ -51,6 +50,7 @@ class FlyDropdownTile extends StatelessWidget {
           ),
         ),
       ),
+      child:child,
     );
   }
 }
