@@ -5,4 +5,6 @@ const Map<String, String> uiLoclizationAr = {
   "UI.Confirm": "تأكيد",
   "UI.Are you sure you want to delete this value?":
       "هل أنت متأكد أنك تريد حذف هذه القيمة؟",
+  "UI.Please enter a value": "الرجاء إدخال قيمة",
+  "UI.Value already exists": "القيمة موجودة بالفعل",
 };

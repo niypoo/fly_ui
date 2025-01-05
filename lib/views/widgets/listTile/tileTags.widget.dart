@@ -15,6 +15,7 @@ class FlyTagsInputTile extends StatefulWidget {
     this.outline = false,
     this.bgColor,
     this.child,
+    this.allowDuplicates = false,
   }) : super(key: key);
 
   final String title;
@@ -22,6 +23,7 @@ class FlyTagsInputTile extends StatefulWidget {
   final bool outline;
   final Color? bgColor;
   final Widget? child;
+  final bool allowDuplicates;
 
   @override
   State<FlyTagsInputTile> createState() => _FlyCheckboxTileState();
@@ -70,7 +72,16 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
         autovalidateMode: AutovalidateMode.always,
         key: _formKey,
         child: FlyTextField(
-          contentPaddingVertical: 0,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter a value'.tr;
+            }
+            if (tags.contains(value)) {
+              return 'Value already exists'.tr;
+            }
+            return null;
+          },
+          contentPaddingVertical: 6.sp,
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
               : Get.theme.cardColor,
