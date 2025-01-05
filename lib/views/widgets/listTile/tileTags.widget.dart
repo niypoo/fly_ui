@@ -49,14 +49,15 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   }
 
   Future<void> removeTag(String tag) async {
-    setState(() async {
-      // show confirmation dialog
-      final dynamic confirmation = await ConformationSheetHelper.show(
-        title: 'Confirm'.tr,
-        subTitle: 'Are you sure you want to delete this value?'.tr,
-      );
-      // skip if user cancel the confirmation
-      if (confirmation == false) return;
+    // show confirmation dialog
+    final dynamic confirmation = await ConformationSheetHelper.show(
+      title: 'Confirm'.tr,
+      subTitle: 'Are you sure you want to delete this value?'.tr,
+    );
+    // skip if user cancel the confirmation
+    if (confirmation == false) return;
+
+    setState(() {
       // remove the tag
       tags.remove(tag);
     });
@@ -113,7 +114,7 @@ class FlyChip extends StatelessWidget {
         onDeleted: onRemove,
         deleteIcon: Icon(
           UniconsLine.times,
-          size: 20.sp,
+          size: 15.sp,
         ),
         shape: RoundedRectangleBorder(
           side: const BorderSide(width: 0, color: Colors.transparent),
