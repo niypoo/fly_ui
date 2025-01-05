@@ -9,19 +9,13 @@ import 'package:unicons/unicons.dart';
 class FlyTagsInputTile extends StatefulWidget {
   const FlyTagsInputTile({
     Key? key,
-    required this.onTap,
     required this.title,
-    required this.value,
-    this.subtitle,
     this.outline = false,
     this.bgColor,
     this.child,
   }) : super(key: key);
 
   final String title;
-  final String? subtitle;
-  final bool value;
-  final Function onTap;
   final bool outline;
   final Color? bgColor;
   final Widget? child;
@@ -63,7 +57,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
         ),
       ),
       title: widget.title,
-      subtitle: widget.subtitle,
       outline: widget.outline,
       bgColor: widget.bgColor,
       trailing: FlyIconButton.primary(
