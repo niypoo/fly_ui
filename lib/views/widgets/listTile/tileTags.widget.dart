@@ -33,7 +33,7 @@ class FlyTagsInputTile extends StatefulWidget {
 
 class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   late TextEditingController _controller;
-  String? error;
+  String? validatorError;
 
   @override
   void initState() {
@@ -43,8 +43,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
 
   void addTag(String tag) {
     setState(() {
-      error = validator(tag);
-      if (error != null) return;
+      validatorError = validator(tag);
+      if (validatorError != null) return;
       widget.tags.add(tag);
       _controller.clear();
     });
@@ -91,19 +91,19 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       outline: widget.outline,
       bgColor: widget.bgColor,
       trailing: FlyIconButton.card(
-        size: 25.sp,
+        size: 20.sp,
         icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
-      child: error != null || widget.tags.isNotEmpty
+      child: validatorError != null || widget.tags.isNotEmpty
           ? Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (error != null)
+                if (validatorError != null)
                   Text(
-                    error!,
+                    validatorError!,
                     style:
                         Get.textTheme.labelSmall!.copyWith(color: Colors.red),
                   ),
