@@ -39,6 +39,8 @@ class FlyInputTileWrap extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: leading ??
@@ -79,7 +81,7 @@ class FlyInputTileWrap extends StatelessWidget {
           if (child != null)
             Padding(
               padding: EdgeInsets.only(
-                top: 15.sp,
+                top: 10.sp,
               ),
               child: child!,
             ),

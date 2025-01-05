@@ -37,9 +37,11 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
     _controller = TextEditingController();
     _formKey = GlobalKey();
     super.initState();
+    print('tags ++ $tags');
   }
 
   void addTag(String tag) {
+    print('currentState ++ ${_formKey.currentState!.validate()}');
     if (_formKey.currentState!.validate()) return;
     setState(() {
       tags.add(tag);
@@ -80,7 +82,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       child: tags.isEmpty
           ? null
           : Wrap(
-              children: tags.map((tag) => FlyChip(tag: tag)).toList(),
+              children: tags.map((tag) => FlyChip(tag: tag, onRemove: ()=>removeTag(tag),)).toList(),
             ),
     );
   }
