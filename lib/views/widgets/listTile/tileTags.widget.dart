@@ -1,5 +1,6 @@
 import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
@@ -79,7 +80,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             }
             return null;
           },
-          contentPadding: const EdgeInsets.all(0),
+          contentPadding: EdgeInsets.symmetric(vertical: 12.sp),
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
               : Get.theme.cardColor,
@@ -87,7 +88,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
           hintText: widget.placeholder,
           onFieldSubmitted: addTag,
           marginBottom: 0,
-        
         ),
       ),
       title: widget.placeholder,
