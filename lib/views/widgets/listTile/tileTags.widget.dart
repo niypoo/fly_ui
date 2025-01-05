@@ -67,16 +67,15 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
       leading: Form(
+        autovalidateMode: AutovalidateMode.always,
         key: _formKey,
         child: FlyTextField(
+          contentPaddingVertical: 0,
+          borderColor: widget.outline
+              ? Get.theme.scaffoldBackgroundColor
+              : Get.theme.cardColor,
           controller: _controller,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter some text'.tr;
-            }
-            return null;
-          },
-          hintText: 'Enter your tags',
+          hintText: widget.title,
           onFieldSubmitted: addTag,
         ),
       ),
@@ -124,7 +123,7 @@ class FlyChip extends StatelessWidget {
         backgroundColor: Get.theme.cardColor,
         labelPadding: EdgeInsets.symmetric(horizontal: 2.sp),
         label: Text(
-          'Tags',
+          tag,
           style: Get.textTheme.bodyMedium!.copyWith(
             fontWeight: FontWeight.w600,
           ),
