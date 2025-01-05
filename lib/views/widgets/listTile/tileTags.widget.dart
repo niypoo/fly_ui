@@ -11,7 +11,7 @@ class FlyTagsInputTile extends StatefulWidget {
   const FlyTagsInputTile({
     Key? key,
     required this.title,
-    this.tags = const [],
+    required this.tags,
     this.outline = false,
     this.bgColor,
     this.child,
@@ -19,7 +19,7 @@ class FlyTagsInputTile extends StatefulWidget {
   }) : super(key: key);
 
   final String title;
-  final List<String> tags;
+  final RxList<String> tags;
   final bool outline;
   final Color? bgColor;
   final Widget? child;
@@ -30,13 +30,11 @@ class FlyTagsInputTile extends StatefulWidget {
 }
 
 class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
-  List<String> tags = [];
   late TextEditingController _controller;
   late GlobalKey<FormState> _formKey;
 
   @override
   void initState() {
-    tags = widget.tags;
     _controller = TextEditingController();
     _formKey = GlobalKey();
     super.initState();
@@ -45,7 +43,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   void addTag(String tag) {
     if (!_formKey.currentState!.validate()) return;
     setState(() {
-      tags.add(tag);
+      widget.tags.add(tag);
       _controller.clear();
     });
   }
@@ -61,7 +59,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
 
     setState(() {
       // remove the tag
-      tags.remove(tag);
+      widget.tags.remove(tag);
     });
   }
 
@@ -76,7 +74,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             if (value!.isEmpty) {
               return 'Please enter a value'.tr;
             }
-            if (tags.contains(value)) {
+            if (widget.tags.contains(value)) {
               return 'Value already exists'.tr;
             }
             return null;
@@ -97,10 +95,10 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
         icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
-      child: tags.isEmpty
+      child: widget.tags.isEmpty
           ? null
           : Wrap(
-              children: tags
+              children: widget.tags
                   .map((tag) => FlyChip(
                         tag: tag,
                         onRemove: () => removeTag(tag),
