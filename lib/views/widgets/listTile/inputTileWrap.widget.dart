@@ -10,7 +10,7 @@ class FlyInputTileWrap extends StatelessWidget {
   const FlyInputTileWrap({
     Key? key,
     required this.title,
-    required this.trailing,
+    this.trailing,
     this.subtitle,
     this.bgColor,
     this.child,
@@ -22,7 +22,7 @@ class FlyInputTileWrap extends StatelessWidget {
   final String? subtitle;
   final bool outline;
   final Color? bgColor;
-  final Widget trailing;
+  final Widget? trailing;
   final Widget? child;
   final Widget? leading;
 
@@ -70,8 +70,8 @@ class FlyInputTileWrap extends StatelessWidget {
                       ],
                     ),
               ),
-              const FlyListTitleLogDivider(),
-              trailing,
+              if (trailing != null) const FlyListTitleLogDivider(),
+              if (trailing != null) trailing!,
             ],
           ),
 
