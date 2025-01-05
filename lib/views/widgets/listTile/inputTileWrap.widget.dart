@@ -41,11 +41,11 @@ class FlyInputTileWrap extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    leading ??
+                child: leading ??
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         AutoSizeText(
                           title,
                           style: Get.textTheme.titleMedium!.copyWith(
@@ -54,21 +54,21 @@ class FlyInputTileWrap extends StatelessWidget {
                           ),
                           maxLines: 1,
                         ),
-                    if (subtitle != null)
-                      Padding(
-                        padding: EdgeInsets.only(top: 3.sp),
-                        child: AutoSizeText(
-                          subtitle!,
-                          style: Get.textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 11.sp,
-                            height: 0,
+                        if (subtitle != null)
+                          Padding(
+                            padding: EdgeInsets.only(top: 3.sp),
+                            child: AutoSizeText(
+                              subtitle!,
+                              style: Get.textTheme.titleMedium!.copyWith(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 11.sp,
+                                height: 0,
+                              ),
+                              maxLines: 3,
+                            ),
                           ),
-                          maxLines: 3,
-                        ),
-                      ),
-                  ],
-                ),
+                      ],
+                    ),
               ),
               const FlyListTitleLogDivider(),
               trailing,

@@ -68,38 +68,36 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      leading: Padding(
-        padding: EdgeInsets.only(top: 6.sp),
-        child: Form(
-          autovalidateMode: AutovalidateMode.always,
-          key: _formKey,
-          child: FlyTextField(
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter a value'.tr;
-              }
-              if (widget.tags.contains(value)) {
-                return 'Value already exists'.tr;
-              }
-              return null;
-            },
-            contentPaddingVertical: 6.sp,
-            borderColor: widget.outline
-                ? Get.theme.scaffoldBackgroundColor
-                : Get.theme.cardColor,
-            controller: _controller,
-            hintText: widget.title,
-            onFieldSubmitted: addTag,
-          ),
+      leading: Form(
+        autovalidateMode: AutovalidateMode.always,
+        key: _formKey,
+        child: FlyTextField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter a value'.tr;
+            }
+            if (widget.tags.contains(value)) {
+              return 'Value already exists'.tr;
+            }
+            return null;
+          },
+          contentPaddingVertical: 6.sp,
+          borderColor: widget.outline
+              ? Get.theme.scaffoldBackgroundColor
+              : Get.theme.cardColor,
+          controller: _controller,
+          hintText: widget.title,
+          onFieldSubmitted: addTag,
         ),
       ),
       title: widget.title,
-      subtitle: widget.subtitle,
       outline: widget.outline,
       bgColor: widget.bgColor,
-      trailing: FlyIconButton.card(
-        icon: Icons.add,
-        onPressed: () => addTag(_controller.text),
+      trailing: InkWell(
+        onTap: () => addTag(_controller.text),
+        child: Icon(
+          Icons.add,
+        ),
       ),
       child: widget.tags.isEmpty
           ? null
