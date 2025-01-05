@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/widgets/listTile/listTileWrap.widget.dart';
+import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
 
 class FlyRadioListTile extends StatelessWidget {
@@ -26,7 +26,7 @@ class FlyRadioListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyListTileWrap(
+    return FlyInputTileWrap(
       title: title,
       subtitle: subtitle,
       outline: outline,

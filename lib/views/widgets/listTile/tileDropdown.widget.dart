@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/listTile/listTileWrap.widget.dart';
+import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
 
 class FlyDropdownTile extends StatelessWidget {
@@ -27,7 +27,7 @@ class FlyDropdownTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyListTileWrap(
+    return FlyInputTileWrap(
       title: title,
       subtitle: subtitle,
       outline: outline,

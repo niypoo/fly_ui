@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
+import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
 class FlyCheckboxTile extends StatelessWidget {
@@ -30,11 +31,8 @@ class FlyCheckboxTile extends StatelessWidget {
       outline: outline,
       bgColor: bgColor,
       expandChild: expandChild,
-      child: Checkbox(
-        activeColor: Get.theme.cardColor,
-        checkColor: Get.theme.primaryColor,
-        value: value,
-        onChanged: onTap as void Function(bool?)?,
+      child: FlyTextField(
+        labelText: 'Enter your tags',
       ),
     );
   }
