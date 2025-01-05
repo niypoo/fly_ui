@@ -11,6 +11,7 @@ class FlyTagsInputTile extends StatefulWidget {
   const FlyTagsInputTile({
     Key? key,
     required this.title,
+    this.subtitle,
     required this.tags,
     this.outline = false,
     this.bgColor,
@@ -19,6 +20,7 @@ class FlyTagsInputTile extends StatefulWidget {
   }) : super(key: key);
 
   final String title;
+  final String? subtitle;
   final RxList<String> tags;
   final bool outline;
   final Color? bgColor;
@@ -66,29 +68,33 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      leading: Form(
-        autovalidateMode: AutovalidateMode.always,
-        key: _formKey,
-        child: FlyTextField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter a value'.tr;
-            }
-            if (widget.tags.contains(value)) {
-              return 'Value already exists'.tr;
-            }
-            return null;
-          },
-          contentPaddingVertical: 6.sp,
-          borderColor: widget.outline
-              ? Get.theme.scaffoldBackgroundColor
-              : Get.theme.cardColor,
-          controller: _controller,
-          hintText: widget.title,
-          onFieldSubmitted: addTag,
+      leading: Padding(
+        padding: EdgeInsets.only(top: 6.sp),
+        child: Form(
+          autovalidateMode: AutovalidateMode.always,
+          key: _formKey,
+          child: FlyTextField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter a value'.tr;
+              }
+              if (widget.tags.contains(value)) {
+                return 'Value already exists'.tr;
+              }
+              return null;
+            },
+            contentPaddingVertical: 6.sp,
+            borderColor: widget.outline
+                ? Get.theme.scaffoldBackgroundColor
+                : Get.theme.cardColor,
+            controller: _controller,
+            hintText: widget.title,
+            onFieldSubmitted: addTag,
+          ),
         ),
       ),
       title: widget.title,
+      subtitle: widget.subtitle,
       outline: widget.outline,
       bgColor: widget.bgColor,
       trailing: FlyIconButton.card(
