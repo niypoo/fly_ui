@@ -42,11 +42,9 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   }
 
   void addTag(String tag) {
-
-    error = validator(tag);
-    if (error != null) return;
-
     setState(() {
+      error = validator(tag);
+      if (error != null) return;
       widget.tags.add(tag);
       _controller.clear();
     });
@@ -98,10 +96,14 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
         onPressed: () => addTag(_controller.text),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          if(error != null)
-         Text( error!, style: Get.textTheme.labelSmall!.copyWith(color: Colors.red),),
-          if (widget.tags.isEmpty)
+          if (error != null)
+            Text(
+              error!,
+              style: Get.textTheme.labelSmall!.copyWith(color: Colors.red),
+            ),
+          if (widget.tags.isNotEmpty)
             Wrap(
               children: widget.tags
                   .map((tag) => FlyChip(
