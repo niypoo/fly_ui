@@ -20,43 +20,51 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.primary({
     IconData? icon,
     Function? onPressed,
+    double? size,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.primaryColor,
         bgColor: Get.theme.primaryColor,
         colorIcon: Get.theme.secondaryHeaderColor,
         icon: icon,
+        size: size,
         onPressed: onPressed,
       );
   factory FlyIconButton.card({
     IconData? icon,
     Function? onPressed,
+    double? size,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.cardColor,
         bgColor: Get.theme.cardColor,
         icon: icon,
+        size: size,
         onPressed: onPressed,
       );
   factory FlyIconButton.scaffold({
     IconData? icon,
     Function? onPressed,
+    double? size,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.scaffoldBackgroundColor,
         bgColor: Get.theme.scaffoldBackgroundColor,
         icon: icon,
+        size: size,
         onPressed: onPressed,
       );
   factory FlyIconButton.secondary({
     IconData? icon,
     Function? onPressed,
+    double? size,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.colorScheme.secondary,
         bgColor: Get.theme.colorScheme.secondary,
         colorIcon: Get.theme.secondaryHeaderColor,
         icon: icon,
+        size: size,
         onPressed: onPressed,
       );
 
@@ -67,7 +75,7 @@ class FlyIconButton extends StatelessWidget {
   final Function? onPressed;
   final EdgeInsets? padding;
   final double? iconSize;
-  final double size;
+  final double? size;
   final double borderWidth;
   final BoxShape shape;
 
@@ -76,8 +84,8 @@ class FlyIconButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.zero,
       margin: EdgeInsets.zero,
-      width: size.sp,
-      height: size.sp,
+      width: size!.sp,
+      height: size!.sp,
       decoration: BoxDecoration(
         borderRadius:
             shape == BoxShape.circle ? null : BorderRadius.circular(15.sp),

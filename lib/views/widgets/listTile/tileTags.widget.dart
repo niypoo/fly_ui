@@ -33,17 +33,19 @@ class FlyTagsInputTile extends StatefulWidget {
 
 class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   late TextEditingController _controller;
-  late GlobalKey<FormState> _formKey;
+  String? error;
 
   @override
   void initState() {
     _controller = TextEditingController();
-    _formKey = GlobalKey();
     super.initState();
   }
 
   void addTag(String tag) {
-    if (!_formKey.currentState!.validate()) return;
+
+    error = validator(tag);
+    if (error != null) return;
+
     setState(() {
       widget.tags.add(tag);
       _controller.clear();
@@ -65,41 +67,42 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
     });
   }
 
+  String? validator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter a value'.tr;
+    }
+    if (!widget.allowDuplicates && widget.tags.contains(value)) {
+      return 'This value already exists'.tr;
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      leading: Form(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        key: _formKey,
-        child: FlyTextField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter a value'.tr;
-            }
-            if (widget.tags.contains(value)) {
-              return 'Value already exists'.tr;
-            }
-            return null;
-          },
-          contentPaddingVertical: 6.sp,
-          borderColor: widget.outline
-              ? Get.theme.scaffoldBackgroundColor
-              : Get.theme.cardColor,
-          controller: _controller,
-          hintText: widget.title,
-          onFieldSubmitted: addTag,
-        ),
+      leading: FlyTextField(
+        contentPaddingVertical: 6.sp,
+        borderColor: widget.outline
+            ? Get.theme.scaffoldBackgroundColor
+            : Get.theme.cardColor,
+        controller: _controller,
+        hintText: widget.title,
+        onFieldSubmitted: addTag,
       ),
       title: widget.title,
       outline: widget.outline,
       bgColor: widget.bgColor,
       trailing: FlyIconButton.card(
+        size: 25.sp,
         icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
-      child: widget.tags.isEmpty
-          ? null
-          : Wrap(
+      child: Column(
+        children: [
+          if(error != null)
+         Text( error!, style: Get.textTheme.labelSmall!.copyWith(color: Colors.red),),
+          if (widget.tags.isEmpty)
+            Wrap(
               children: widget.tags
                   .map((tag) => FlyChip(
                         tag: tag,
@@ -107,6 +110,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
                       ))
                   .toList(),
             ),
+        ],
+      ),
     );
   }
 }
