@@ -80,7 +80,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             }
             return null;
           },
-          contentPadding: EdgeInsets.symmetric(vertical: 12.sp),
+          contentPadding: EdgeInsets.symmetric(vertical: 6.sp),
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
               : Get.theme.cardColor,
