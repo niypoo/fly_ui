@@ -95,25 +95,30 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
         icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (error != null)
-            Text(
-              error!,
-              style: Get.textTheme.labelSmall!.copyWith(color: Colors.red),
-            ),
-          if (widget.tags.isNotEmpty)
-            Wrap(
-              children: widget.tags
-                  .map((tag) => FlyChip(
-                        tag: tag,
-                        onRemove: () => removeTag(tag),
-                      ))
-                  .toList(),
-            ),
-        ],
-      ),
+      child: error != null && widget.tags.isNotEmpty
+          ? Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (error != null)
+                  Text(
+                    error!,
+                    style:
+                        Get.textTheme.labelSmall!.copyWith(color: Colors.red),
+                  ),
+                if (widget.tags.isNotEmpty)
+                  Wrap(
+                    children: widget.tags
+                        .map((tag) => FlyChip(
+                              tag: tag,
+                              onRemove: () => removeTag(tag),
+                            ))
+                        .toList(),
+                  ),
+              ],
+            )
+          : null,
     );
   }
 }
