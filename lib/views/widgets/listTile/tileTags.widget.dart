@@ -28,13 +28,15 @@ class FlyTagsInputTile extends StatefulWidget {
 
 class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   List<String> tags = [];
+  final TextEditingController _controller = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey();
 
   onInit() {
     tags = widget.tags;
   }
 
   void addTag(String tag) {
-    if (_formKey.currentState!.isValid) return;
+    if (_formKey.currentState!.validate()) return;
     setState(() {
       tags.add(tag);
       _controller.clear();
@@ -46,9 +48,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       tags.remove(tag);
     });
   }
-
-  final TextEditingController _controller = TextEditingController();
-  final GlobalKey<FormFieldState> _formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -62,17 +61,18 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
           }
           return null;
         },
-        labelText: 'Enter your tags',
+        hintText: 'Enter your tags',
         onFieldSubmitted: addTag,
       ),
       title: widget.title,
       outline: widget.outline,
       bgColor: widget.bgColor,
-      trailing: FlyIconButton.card(
+      trailing: FlyIconButton(
+        size: 30.sp,
         icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
-      child: Wrap(
+      child: tags.isEmpty ? null :  Wrap(
         children: tags.map((tag) => FlyChip(tag: tag)).toList(),
       ),
     );
