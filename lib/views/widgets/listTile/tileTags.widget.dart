@@ -68,7 +68,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
       leading: Form(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        autovalidateMode: AutovalidateMode.onUnfocus,
         key: _formKey,
         child: FlyTextField(
           validator: (value) {
@@ -87,6 +87,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
           controller: _controller,
           hintText: widget.placeholder,
           onFieldSubmitted: addTag,
+          marginBottom: 0,
         ),
       ),
       title: widget.placeholder,
