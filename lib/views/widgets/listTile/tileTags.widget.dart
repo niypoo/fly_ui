@@ -30,12 +30,14 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   List<String> tags = [];
 
   onInit() {
-    tags =  widget.tags;
+    tags = widget.tags;
   }
 
   void addTag(String tag) {
+    if (_formKey.currentState!.isValid) return;
     setState(() {
       tags.add(tag);
+      _controller.clear();
     });
   }
 
@@ -46,32 +48,29 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   }
 
   final TextEditingController _controller = TextEditingController();
+  final GlobalKey<FormFieldState> _formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
       leading: FlyTextField(
+        key: _formKey,
+        controller: _controller,
         validator: (value) {
           if (value!.isEmpty) {
             return 'Please enter some text'.tr;
           }
           return null;
         },
-        controller: _controller,
-        decoration: const InputDecoration(
-          label: Text('Enter your tags'),
-        ),
+        labelText: 'Enter your tags',
+        onFieldSubmitted: addTag,
       ),
       title: widget.title,
       outline: widget.outline,
       bgColor: widget.bgColor,
-      trailing: FlyIconButton.primary(
+      trailing: FlyIconButton.card(
         icon: Icons.add,
-        onPressed: () {
-          if (_controller.text.isEmpty) return;
-          print('Add tags');
-          addTag(_controller.text);
-        },
+        onPressed: () => addTag(_controller.text),
       ),
       child: Wrap(
         children: tags.map((tag) => FlyChip(tag: tag)).toList(),
@@ -99,13 +98,6 @@ class FlyChip extends StatelessWidget {
       ),
       padding: EdgeInsets.all(4.sp),
       backgroundColor: Get.theme.cardColor,
-      avatar: Container(
-        width: 10.sp,
-        decoration: BoxDecoration(
-          color: Get.theme.hoverColor,
-          shape: BoxShape.circle,
-        ),
-      ),
       labelPadding: EdgeInsets.symmetric(horizontal: 2.sp),
       label: Text(
         'Tags',
