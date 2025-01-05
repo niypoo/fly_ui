@@ -10,12 +10,14 @@ class FlyTagsInputTile extends StatefulWidget {
   const FlyTagsInputTile({
     Key? key,
     required this.title,
+    this.tags = const [],
     this.outline = false,
     this.bgColor,
     this.child,
   }) : super(key: key);
 
   final String title;
+  final List<String> tags;
   final bool outline;
   final Color? bgColor;
   final Widget? child;
@@ -25,7 +27,11 @@ class FlyTagsInputTile extends StatefulWidget {
 }
 
 class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
-  final List<String> tags = [];
+  List<String> tags = [];
+
+  onInit() {
+    tags =  widget.tags;
+  }
 
   void addTag(String tag) {
     setState(() {
