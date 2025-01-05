@@ -67,7 +67,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      padding: const EdgeInsets.all(0),
       leading: Form(
         autovalidateMode: AutovalidateMode.onUnfocus,
         key: _formKey,
@@ -81,7 +80,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             }
             return null;
           },
-          contentPaddingVertical: 6.sp,
+          contentPadding: const EdgeInsets.all(0),
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
               : Get.theme.cardColor,
@@ -89,6 +88,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
           hintText: widget.placeholder,
           onFieldSubmitted: addTag,
           marginBottom: 0,
+        
         ),
       ),
       title: widget.placeholder,

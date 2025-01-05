@@ -39,6 +39,7 @@ class FlyTextField extends StatelessWidget {
     this.contentPaddingVertical,
     this.isCollapsed = true,
     this.decoration,
+    this.contentPadding,
     this.textAlign = TextAlign.start,
     this.textAlignVertical = TextAlignVertical.center,
   }) : super(key: key);
@@ -74,6 +75,7 @@ class FlyTextField extends StatelessWidget {
   final double marginBottom;
   final double marginTop;
   final double? contentPaddingVertical;
+  final EdgeInsetsGeometry? contentPadding;
 
   final TextAlign textAlign;
   final TextAlignVertical textAlignVertical;
@@ -120,7 +122,7 @@ class FlyTextField extends StatelessWidget {
               fillColor: color ?? Get.theme.scaffoldBackgroundColor,
               labelText: labelText,
               isCollapsed: isCollapsed,
-              contentPadding: EdgeInsetsDirectional.symmetric(
+              contentPadding: contentPadding ??  EdgeInsetsDirectional.symmetric(
                 horizontal: 12.sp,
                 vertical: contentPaddingVertical ?? 12.sp,
               ),
