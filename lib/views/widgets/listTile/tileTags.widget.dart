@@ -95,7 +95,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
         icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
-      child: error != null && widget.tags.isNotEmpty
+      child: error != null || widget.tags.isNotEmpty
           ? Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
