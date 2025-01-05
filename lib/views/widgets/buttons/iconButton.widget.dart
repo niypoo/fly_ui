@@ -74,6 +74,8 @@ class FlyIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.zero,
+      margin: EdgeInsets.zero,
       width: size.sp,
       height: size.sp,
       decoration: BoxDecoration(
@@ -86,12 +88,16 @@ class FlyIconButton extends StatelessWidget {
         border: onPressed == null
             ? null
             : borderColor != null
-                ? Border.all(color: borderColor! , width: borderWidth)
+                ? Border.all(color: borderColor!, width: borderWidth)
                 : null,
       ),
       child: IconButton(
-        constraints: const BoxConstraints(),
-        padding: padding ?? const EdgeInsets.all(0),
+        constraints:
+            const BoxConstraints(), // override default min size of 48px
+        style: const ButtonStyle(
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap, // the '2023' part
+        ),
+        padding: padding ?? EdgeInsets.zero,
         onPressed: onPressed as void Function()?,
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,

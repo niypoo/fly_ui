@@ -28,11 +28,15 @@ class FlyTagsInputTile extends StatefulWidget {
 
 class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   List<String> tags = [];
-  final TextEditingController _controller = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey();
+  late TextEditingController _controller;
+  late GlobalKey<FormState> _formKey;
 
-  onInit() {
+  @override
+  void initState() {
     tags = widget.tags;
+    _controller = TextEditingController();
+    _formKey = GlobalKey();
+    super.initState();
   }
 
   void addTag(String tag) {
@@ -52,29 +56,32 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      leading: FlyTextField(
+      leading: Form(
         key: _formKey,
-        controller: _controller,
-        validator: (value) {
-          if (value!.isEmpty) {
-            return 'Please enter some text'.tr;
-          }
-          return null;
-        },
-        hintText: 'Enter your tags',
-        onFieldSubmitted: addTag,
+        child: FlyTextField(
+          controller: _controller,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter some text'.tr;
+            }
+            return null;
+          },
+          hintText: 'Enter your tags',
+          onFieldSubmitted: addTag,
+        ),
       ),
       title: widget.title,
       outline: widget.outline,
       bgColor: widget.bgColor,
-      trailing: FlyIconButton(
-        size: 30.sp,
+      trailing: FlyIconButton.card(
         icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
-      child: tags.isEmpty ? null :  Wrap(
-        children: tags.map((tag) => FlyChip(tag: tag)).toList(),
-      ),
+      child: tags.isEmpty
+          ? null
+          : Wrap(
+              children: tags.map((tag) => FlyChip(tag: tag)).toList(),
+            ),
     );
   }
 }
