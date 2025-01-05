@@ -15,7 +15,6 @@ class FlyInputTileWrap extends StatelessWidget {
     this.bgColor,
     this.child,
     this.leading,
-    this.padding,
     this.outline = false,
   }) : super(key: key);
 
@@ -26,12 +25,11 @@ class FlyInputTileWrap extends StatelessWidget {
   final Widget? trailing;
   final Widget? child;
   final Widget? leading;
-  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      padding: padding ?? EdgeInsets.symmetric(vertical: 7.sp, horizontal: 10.sp),
+      padding: EdgeInsets.symmetric(vertical: 7.sp, horizontal: 10.sp),
       color: bgColor ??
           (outline ? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
       outline: outline,
