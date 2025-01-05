@@ -1,3 +1,4 @@
+import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
@@ -37,20 +38,26 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
     _controller = TextEditingController();
     _formKey = GlobalKey();
     super.initState();
-    print('tags ++ $tags');
   }
 
   void addTag(String tag) {
-    print('currentState ++ ${_formKey.currentState!.validate()}');
-    if (_formKey.currentState!.validate()) return;
+    if (!_formKey.currentState!.validate()) return;
     setState(() {
       tags.add(tag);
       _controller.clear();
     });
   }
 
-  void removeTag(String tag) {
-    setState(() {
+  Future<void> removeTag(String tag) async {
+    setState(() async {
+      // show confirmation dialog
+      final dynamic confirmation = await ConformationSheetHelper.show(
+        title: 'Confirm'.tr,
+        subTitle: 'Are you sure you want to delete this value?'.tr,
+      );
+      // skip if user cancel the confirmation
+      if (confirmation == false) return;
+      // remove the tag
       tags.remove(tag);
     });
   }
@@ -82,7 +89,12 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       child: tags.isEmpty
           ? null
           : Wrap(
-              children: tags.map((tag) => FlyChip(tag: tag, onRemove: ()=>removeTag(tag),)).toList(),
+              children: tags
+                  .map((tag) => FlyChip(
+                        tag: tag,
+                        onRemove: () => removeTag(tag),
+                      ))
+                  .toList(),
             ),
     );
   }
@@ -95,25 +107,28 @@ class FlyChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      onDeleted: onRemove,
-      deleteIcon: const Icon(
-        UniconsLine.times_circle,
-        size: 15,
-      ),
-      shape: RoundedRectangleBorder(
-        side: const BorderSide(width: 0, color: Colors.transparent),
-        borderRadius: BorderRadius.circular(15.sp),
-      ),
-      padding: EdgeInsets.all(4.sp),
-      backgroundColor: Get.theme.cardColor,
-      labelPadding: EdgeInsets.symmetric(horizontal: 2.sp),
-      label: Text(
-        'Tags',
-        style: Get.textTheme.bodyMedium!.copyWith(
-          fontWeight: FontWeight.w600,
+    return Padding(
+      padding: EdgeInsetsDirectional.only(end: 5.sp),
+      child: Chip(
+        onDeleted: onRemove,
+        deleteIcon: Icon(
+          UniconsLine.times,
+          size: 20.sp,
         ),
-      ), //Text
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(width: 0, color: Colors.transparent),
+          borderRadius: BorderRadius.circular(15.sp),
+        ),
+        padding: EdgeInsets.all(4.sp),
+        backgroundColor: Get.theme.cardColor,
+        labelPadding: EdgeInsets.symmetric(horizontal: 2.sp),
+        label: Text(
+          'Tags',
+          style: Get.textTheme.bodyMedium!.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ), //Text
+      ),
     );
   }
 }

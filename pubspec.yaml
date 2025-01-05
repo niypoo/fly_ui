@@ -29,7 +29,10 @@ dependencies:
   launch_url_helper:
     git: 
       url: git@github.com:niypoo/launch_url_helper.git
-
+  bottom_sheet_helper:
+    git: 
+      url: git@github.com:niypoo/bottom_sheet_helper.git
+      
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -66,6 +66,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  bottom_sheet_helper:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "650c88dedf3c21d23955d2a96bdeaf4443be0874"
+      url: "git@github.com:niypoo/bottom_sheet_helper.git"
+    source: git
+    version: "1.0.0+1"
   cached_network_image:
     dependency: "direct main"
     description:
