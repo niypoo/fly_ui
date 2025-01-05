@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
 
-class FlyTagsTile extends StatelessWidget {
-  const FlyTagsTile({
+class FlyCheckboxTile extends StatelessWidget {
+  const FlyCheckboxTile({
     Key? key,
     required this.onTap,
     required this.title,
