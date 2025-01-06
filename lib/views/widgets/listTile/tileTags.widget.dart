@@ -87,7 +87,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             return null;
           },
           suffix: [
-            FlyListTitleLogDivider(),
             FlyIconButton.card(
               size: 20.sp,
               icon: Icons.add,
@@ -100,7 +99,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
           controller: _controller,
           hintText: widget.placeholder,
           onFieldSubmitted: addTag,
-          contentPaddingHorizontal: 0,
         ),
       ),
       title: widget.placeholder,
