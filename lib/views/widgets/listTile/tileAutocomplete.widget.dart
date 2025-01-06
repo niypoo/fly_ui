@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/autocomplete.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 
-class FlyRadioListTile extends StatelessWidget {
-  const FlyRadioListTile({
+class FlyAutocompleteTile extends StatelessWidget {
+  const FlyAutocompleteTile({
     Key? key,
     required this.onSelected,
     required this.title,
