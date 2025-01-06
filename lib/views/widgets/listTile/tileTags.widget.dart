@@ -89,12 +89,14 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
           controller: _controller,
           hintText: widget.placeholder,
           onFieldSubmitted: addTag,
+          suffix: [
+            FlyIconButton.card(
+              size: 18.sp,
+              icon: Icons.add,
+              onPressed: () => addTag(_controller.text),
+            ),
+          ],
         ),
-      ),
-      trailing: FlyIconButton.card(
-        size: 20.sp,
-        icon: Icons.add,
-        onPressed: () => addTag(_controller.text),
       ),
       title: widget.placeholder,
       outline: widget.outline,
