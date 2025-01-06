@@ -14,6 +14,7 @@ class FlyInputTileWrap extends StatelessWidget {
     this.subtitle,
     this.bgColor,
     this.child,
+    this.childPadding = 10,
     this.outline = false,
   }) : super(key: key);
 
@@ -23,6 +24,7 @@ class FlyInputTileWrap extends StatelessWidget {
   final Color? bgColor;
   final Widget? trailing;
   final Widget? child;
+  final double? childPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +78,7 @@ class FlyInputTileWrap extends StatelessWidget {
           if (child != null)
             Padding(
               padding: EdgeInsets.only(
-                top: 10.sp,
+                top: childPadding!.sp,
               ),
               child: child!,
             ),

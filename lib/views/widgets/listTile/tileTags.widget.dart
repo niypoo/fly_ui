@@ -1,7 +1,6 @@
 import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
@@ -69,8 +68,9 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      trailing: FlyElevatedButton.primary(
-        title: 'Add'.tr,
+      trailing: FlyIconButton.card(
+        size: 20.sp,
+        icon: Icons.add,
         onPressed: () => addTag(_controller.text),
       ),
       title: widget.placeholder,
@@ -81,7 +81,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
 
           // Form
           Form(
-            autovalidateMode: AutovalidateMode.onUserInteraction,
+            autovalidateMode: AutovalidateMode.onUnfocus,
             key: _formKey,
             child: FlyTextField(
               validator: (value) {
@@ -99,11 +99,12 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
               controller: _controller,
               hintText: widget.placeholder,
               onFieldSubmitted: addTag,
+              contentPaddingHorizontal: 0,
             ),
           ),
 
           // Added Tags
-          if (widget.tags.isEmpty)
+          if (widget.tags.isNotEmpty)
             Wrap(
               children: widget.tags
                   .map((tag) => FlyChip(
