@@ -68,53 +68,53 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      trailing: FlyIconButton.card(
-        size: 20.sp,
-        icon: Icons.add,
-        onPressed: () => addTag(_controller.text),
+      padding: EdgeInsets.all(0),
+      leading: // Form
+          Form(
+        autovalidateMode: AutovalidateMode.onUnfocus,
+        key: _formKey,
+        child: FlyTextField(
+          validator: (value) {
+            if (value!.isEmpty) {
+              return 'Please enter a value'.tr;
+            }
+            if (widget.tags.contains(value)) {
+              return 'Value already exists'.tr;
+            }
+            return null;
+          },
+          prefix: [
+            FlyIconButton.card(
+              size: 20.sp,
+              icon: Icons.add,
+              onPressed: () => addTag(_controller.text),
+            ),
+          ],
+          borderColor: widget.outline
+              ? Get.theme.scaffoldBackgroundColor
+              : Get.theme.cardColor,
+          controller: _controller,
+          hintText: widget.placeholder,
+          onFieldSubmitted: addTag,
+          contentPaddingHorizontal: 0,
+        ),
       ),
       title: widget.placeholder,
       outline: widget.outline,
       bgColor: widget.bgColor,
-      child: Column(
-        children: [
-
-          // Form
-          Form(
-            autovalidateMode: AutovalidateMode.onUnfocus,
-            key: _formKey,
-            child: FlyTextField(
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter a value'.tr;
-                }
-                if (widget.tags.contains(value)) {
-                  return 'Value already exists'.tr;
-                }
-                return null;
-              },
-              borderColor: widget.outline
-                  ? Get.theme.scaffoldBackgroundColor
-                  : Get.theme.cardColor,
-              controller: _controller,
-              hintText: widget.placeholder,
-              onFieldSubmitted: addTag,
-              contentPaddingHorizontal: 0,
-            ),
-          ),
-
-          // Added Tags
-          if (widget.tags.isNotEmpty)
-            Wrap(
-              children: widget.tags
-                  .map((tag) => FlyChip(
-                        tag: tag,
-                        onRemove: () => removeTag(tag),
-                      ))
-                  .toList(),
-            ),
-        ],
-      ),
+      child: widget.tags.isNotEmpty
+          ? Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.sp),
+              child: Wrap(
+                children: widget.tags
+                    .map((tag) => FlyChip(
+                          tag: tag,
+                          onRemove: () => removeTag(tag),
+                        ))
+                    .toList(),
+              ),
+            )
+          : null,
     );
   }
 }

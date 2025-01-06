@@ -14,7 +14,8 @@ class FlyInputTileWrap extends StatelessWidget {
     this.subtitle,
     this.bgColor,
     this.child,
-    this.childPadding = 10,
+    this.leading,
+    this.padding,
     this.outline = false,
   }) : super(key: key);
 
@@ -24,12 +25,14 @@ class FlyInputTileWrap extends StatelessWidget {
   final Color? bgColor;
   final Widget? trailing;
   final Widget? child;
-  final double? childPadding;
+  final Widget? leading;
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      padding: EdgeInsets.symmetric(vertical: 7.sp, horizontal: 10.sp),
+      padding:
+          padding ?? EdgeInsets.symmetric(vertical: 7.sp, horizontal: 10.sp),
       color: bgColor ??
           (outline ? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
       outline: outline,
@@ -41,33 +44,34 @@ class FlyInputTileWrap extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AutoSizeText(
-                      title,
-                      style: Get.textTheme.titleMedium!.copyWith(
-                        height: 1,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      maxLines: 1,
-                    ),
-                    if (subtitle != null)
-                      Padding(
-                        padding: EdgeInsets.only(top: 3.sp),
-                        child: AutoSizeText(
-                          subtitle!,
+                child: leading ??
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                          title,
                           style: Get.textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 11.sp,
-                            height: 0,
+                            height: 1,
+                            fontWeight: FontWeight.w500,
                           ),
-                          maxLines: 3,
+                          maxLines: 1,
                         ),
-                      ),
-                  ],
-                ),
+                        if (subtitle != null)
+                          Padding(
+                            padding: EdgeInsets.only(top: 3.sp),
+                            child: AutoSizeText(
+                              subtitle!,
+                              style: Get.textTheme.titleMedium!.copyWith(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 11.sp,
+                                height: 0,
+                              ),
+                              maxLines: 3,
+                            ),
+                          ),
+                      ],
+                    ),
               ),
               if (trailing != null) const FlyListTitleLogDivider(),
               if (trailing != null) trailing!,
@@ -78,7 +82,7 @@ class FlyInputTileWrap extends StatelessWidget {
           if (child != null)
             Padding(
               padding: EdgeInsets.only(
-                top: childPadding!.sp,
+                top: 10.sp,
               ),
               child: child!,
             ),
