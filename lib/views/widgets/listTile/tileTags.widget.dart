@@ -70,9 +70,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
       padding: const EdgeInsets.all(0),
-      leading: // Form
-          Form(
-        autovalidateMode: AutovalidateMode.onUnfocus,
+      leading: Form(
         key: _formKey,
         child: FlyTextField(
           marginBottom: 0,

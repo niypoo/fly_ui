@@ -121,12 +121,6 @@ class FlyTextField extends StatelessWidget {
                   width: 2.0,
                 ),
               ),
-              errorBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: Get.theme.primaryColor,
-                  width: 1.0,
-                ),
-              ),
               fillColor: color ?? Get.theme.scaffoldBackgroundColor,
               labelText: labelText,
               isCollapsed: isCollapsed,
