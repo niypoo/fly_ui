@@ -14,7 +14,6 @@ class FlyInputTileWrap extends StatelessWidget {
     this.subtitle,
     this.bgColor,
     this.child,
-    this.leading,
     this.outline = false,
   }) : super(key: key);
 
@@ -24,7 +23,6 @@ class FlyInputTileWrap extends StatelessWidget {
   final Color? bgColor;
   final Widget? trailing;
   final Widget? child;
-  final Widget? leading;
 
   @override
   Widget build(BuildContext context) {
@@ -41,34 +39,33 @@ class FlyInputTileWrap extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: leading ??
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        AutoSizeText(
-                          title,
-                          style: Get.textTheme.titleMedium!.copyWith(
-                            height: 1,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          maxLines: 1,
-                        ),
-                        if (subtitle != null)
-                          Padding(
-                            padding: EdgeInsets.only(top: 3.sp),
-                            child: AutoSizeText(
-                              subtitle!,
-                              style: Get.textTheme.titleMedium!.copyWith(
-                                fontWeight: FontWeight.w300,
-                                fontSize: 11.sp,
-                                height: 0,
-                              ),
-                              maxLines: 3,
-                            ),
-                          ),
-                      ],
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AutoSizeText(
+                      title,
+                      style: Get.textTheme.titleMedium!.copyWith(
+                        height: 1,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      maxLines: 1,
                     ),
+                    if (subtitle != null)
+                      Padding(
+                        padding: EdgeInsets.only(top: 3.sp),
+                        child: AutoSizeText(
+                          subtitle!,
+                          style: Get.textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 11.sp,
+                            height: 0,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                  ],
+                ),
               ),
               if (trailing != null) const FlyListTitleLogDivider(),
               if (trailing != null) trailing!,

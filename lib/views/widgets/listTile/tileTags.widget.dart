@@ -1,6 +1,7 @@
 import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
@@ -68,38 +69,42 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      leading: Form(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        key: _formKey,
-        child: FlyTextField(
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter a value'.tr;
-            }
-            if (widget.tags.contains(value)) {
-              return 'Value already exists'.tr;
-            }
-            return null;
-          },
-          borderColor: widget.outline
-              ? Get.theme.scaffoldBackgroundColor
-              : Get.theme.cardColor,
-          controller: _controller,
-          hintText: widget.placeholder,
-          onFieldSubmitted: addTag,
-        ),
-      ),
-      trailing: FlyIconButton.card(
-        size: 18.sp,
-        icon: Icons.add,
+      trailing: FlyElevatedButton.primary(
+        title: 'Add'.tr,
         onPressed: () => addTag(_controller.text),
       ),
       title: widget.placeholder,
       outline: widget.outline,
       bgColor: widget.bgColor,
-      child: widget.tags.isEmpty
-          ? null
-          : Wrap(
+      child: Column(
+        children: [
+
+          // Form
+          Form(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            key: _formKey,
+            child: FlyTextField(
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter a value'.tr;
+                }
+                if (widget.tags.contains(value)) {
+                  return 'Value already exists'.tr;
+                }
+                return null;
+              },
+              borderColor: widget.outline
+                  ? Get.theme.scaffoldBackgroundColor
+                  : Get.theme.cardColor,
+              controller: _controller,
+              hintText: widget.placeholder,
+              onFieldSubmitted: addTag,
+            ),
+          ),
+
+          // Added Tags
+          if (widget.tags.isEmpty)
+            Wrap(
               children: widget.tags
                   .map((tag) => FlyChip(
                         tag: tag,
@@ -107,6 +112,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
                       ))
                   .toList(),
             ),
+        ],
+      ),
     );
   }
 }
