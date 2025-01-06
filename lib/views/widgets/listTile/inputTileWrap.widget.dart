@@ -79,13 +79,7 @@ class FlyInputTileWrap extends StatelessWidget {
           ),
 
           // if(expandChild!=null) const FlyDivider(),
-          if (child != null)
-            Padding(
-              padding: EdgeInsets.only(
-                top: 10.sp,
-              ),
-              child: child!,
-            ),
+          if (child != null) child!,
         ],
       ),
     );

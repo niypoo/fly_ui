@@ -4,6 +4,7 @@ import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
+import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
@@ -68,12 +69,14 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       leading: // Form
           Form(
         autovalidateMode: AutovalidateMode.onUnfocus,
         key: _formKey,
         child: FlyTextField(
+          marginBottom: 0,
+          marginTop: 0,
           validator: (value) {
             if (value!.isEmpty) {
               return 'Please enter a value'.tr;
@@ -83,7 +86,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             }
             return null;
           },
-          prefix: [
+          suffix: [
+            FlyListTitleLogDivider(),
             FlyIconButton.card(
               size: 20.sp,
               icon: Icons.add,
