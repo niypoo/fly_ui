@@ -18,24 +18,20 @@ class FlyAutocomplete extends StatefulWidget {
   final bool outline;
   final String placeholder;
   final Function(String selection) onSelected;
-  final FutureOr<Iterable<String>> Function(String) search;
+  final FutureOr<Iterable<String>> Function(String)? search;
 
   @override
   State<FlyAutocomplete> createState() => _FlyAutocompleteState();
 }
 
 class _FlyAutocompleteState extends State<FlyAutocomplete> {
-  Future? debounce;
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   void dispose() {
-    debounce == null;
     super.dispose();
   }
 
@@ -59,14 +55,11 @@ class _FlyAutocompleteState extends State<FlyAutocomplete> {
       },
       optionsBuilder: (TextEditingValue textEditingValue) async {
         // skip
-        if (textEditingValue.text == '') return const Iterable<String>.empty();
-
-        // if debounce exist
-        if (debounce != null) debounce=null;
+        if (textEditingValue.text == '' || widget.search == null) return const Iterable<String>.empty();
 
         // trigger search api after debounce
-        return Future.delayed(const Duration(milliseconds: 600),
-            () async => await widget.search(textEditingValue.text)).whenComplete((){debounce =  null;});
+          return await widget.search!(textEditingValue.text);
+        
       },
       //Add other Parameters you want.
       onSelected: widget.onSelected,
