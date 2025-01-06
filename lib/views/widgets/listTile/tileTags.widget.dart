@@ -1,6 +1,7 @@
 import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
@@ -68,7 +69,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
       leading: Form(
-        autovalidateMode: AutovalidateMode.onUnfocus,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         key: _formKey,
         child: FlyTextField(
           validator: (value) {
@@ -80,15 +81,18 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             }
             return null;
           },
-          contentPadding: EdgeInsets.symmetric(vertical: 6.sp),
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
               : Get.theme.cardColor,
           controller: _controller,
           hintText: widget.placeholder,
           onFieldSubmitted: addTag,
-          marginBottom: 0,
         ),
+      ),
+      trailing: FlyIconButton.card(
+        size: 18.sp,
+        icon: Icons.add,
+        onPressed: () => addTag(_controller.text),
       ),
       title: widget.placeholder,
       outline: widget.outline,
