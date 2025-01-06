@@ -98,7 +98,7 @@ class _FlyCheckboxTileState extends State<FlyAutocompleteTagsInputTile> {
               return const Iterable<String>.empty();
             }
 
-            return Iterable<String>.empty();
+            return widget.tags.where((t)=> t.contains(textEditingValue.text));
           },
           //Add other Parameters you want.
           onSelected: (String selection) {
