@@ -10,8 +10,8 @@ class FlyInputTileWrap extends StatelessWidget {
   const FlyInputTileWrap({
     Key? key,
     required this.title,
-    this.trailing,
     this.subtitle,
+    this.trailing,
     this.bgColor,
     this.child,
     this.leading,

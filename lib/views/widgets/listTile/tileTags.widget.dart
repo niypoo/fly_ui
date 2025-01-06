@@ -4,7 +4,6 @@ import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
-import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
@@ -16,17 +15,17 @@ class FlyTagsInputTile extends StatefulWidget {
     this.outline = false,
     this.bgColor,
     this.child,
+    this.onChange,
     this.allowDuplicates = false,
-    this.autocomplete,
   }) : super(key: key);
 
   final String placeholder;
   final RxList<String> tags;
   final bool outline;
+  final Function(List<String>)? onChange;
   final Color? bgColor;
   final Widget? child;
   final bool allowDuplicates;
-  final Future Function(String)? autocomplete;
 
   @override
   State<FlyTagsInputTile> createState() => _FlyCheckboxTileState();
@@ -84,13 +83,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             }
             return null;
           },
-          suffix: [
-            FlyIconButton.card(
-              size: 20.sp,
-              icon: Icons.add,
-              onPressed: () => addTag(_controller.text),
-            ),
-          ],
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
               : Get.theme.cardColor,
@@ -98,6 +90,11 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
           hintText: widget.placeholder,
           onFieldSubmitted: addTag,
         ),
+      ),
+      trailing: FlyIconButton.card(
+        size: 20.sp,
+        icon: Icons.add,
+        onPressed: () => addTag(_controller.text),
       ),
       title: widget.placeholder,
       outline: widget.outline,
