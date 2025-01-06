@@ -13,6 +13,7 @@ class FlyTextField extends StatelessWidget {
     this.onChanged,
     this.onEditingComplete,
     this.onFieldSubmitted,
+    this.initialValue,
     this.onSaved,
     this.onTap,
     this.validator,
@@ -52,6 +53,7 @@ class FlyTextField extends StatelessWidget {
   final Function? onEditingComplete;
   final Function? onSaved;
   final Function? onChanged;
+  final String? initialValue;
   final String? labelText;
   final String? hintText;
   final bool readOnly;
@@ -89,6 +91,7 @@ class FlyTextField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: marginBottom.sp, top: marginTop.sp),
       child: TextFormField(
+        initialValue: initialValue,
         autofocus: autoFocus,
         focusNode: focusNode,
         maxLength: maxLength,

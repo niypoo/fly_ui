@@ -10,13 +10,17 @@ class FlyAutocomplete extends StatefulWidget {
     required this.placeholder,
     required this.search,
     required this.onSelected,
+    this.initialValue,
     this.validator,
+    this.suffix = const [],
     this.outline = true,
   });
 
   final String? Function(String?)? validator;
   final bool outline;
   final String placeholder;
+  final String? initialValue;
+  final List<Widget> suffix;
   final Function(String selection) onSelected;
   final FutureOr<Iterable<String>> Function(String)? search;
 
@@ -41,8 +45,9 @@ class _FlyAutocompleteState extends State<FlyAutocomplete> {
       fieldViewBuilder:
           (context, textEditingController, focusNode, onFieldSubmitted) {
         return FlyTextField(
-          // marginBottom: 0,
-          // marginTop: 0,
+          initialValue: widget.initialValue,
+          marginBottom: 0,
+          marginTop: 0,
           validator: widget.validator,
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
@@ -51,15 +56,17 @@ class _FlyAutocompleteState extends State<FlyAutocomplete> {
           focusNode: focusNode,
           hintText: widget.placeholder,
           onFieldSubmitted: (value) => onFieldSubmitted,
+          suffix: widget.suffix,
         );
       },
       optionsBuilder: (TextEditingValue textEditingValue) async {
         // skip
-        if (textEditingValue.text == '' || widget.search == null) return const Iterable<String>.empty();
+        if (textEditingValue.text == '' || widget.search == null) {
+          return const Iterable<String>.empty();
+        }
 
         // trigger search api after debounce
-          return await widget.search!(textEditingValue.text);
-        
+        return await widget.search!(textEditingValue.text);
       },
       //Add other Parameters you want.
       onSelected: widget.onSelected,

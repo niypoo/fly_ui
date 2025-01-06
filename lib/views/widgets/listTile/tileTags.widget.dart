@@ -1,31 +1,37 @@
+import 'dart:async';
+
 import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/widgets/autocomplete.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
-import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
 class FlyTagsInputTile extends StatefulWidget {
-  const FlyTagsInputTile({
-    Key? key,
-    required this.placeholder,
-    required this.tags,
-    this.outline = false,
-    this.bgColor,
-    this.child,
-    this.onChange,
-    this.allowDuplicates = false,
-  }) : super(key: key);
+  const FlyTagsInputTile(
+      {Key? key,
+      required this.placeholder,
+      required this.tags,
+      this.outline = false,
+      this.bgColor,
+      this.initialValue,
+      this.child,
+      this.onChange,
+      this.allowDuplicates = false,
+      this.autocomplete})
+      : super(key: key);
 
   final String placeholder;
+  final String? initialValue;
   final RxList<String> tags;
   final bool outline;
-  final Function(List<String>)? onChange;
   final Color? bgColor;
   final Widget? child;
   final bool allowDuplicates;
+  final Function(List<String>)? onChange;
+  final FutureOr<Iterable<String>> Function(String)? autocomplete;
 
   @override
   State<FlyTagsInputTile> createState() => _FlyCheckboxTileState();
@@ -71,9 +77,18 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       padding: const EdgeInsets.all(0),
       leading: Form(
         key: _formKey,
-        child: FlyTextField(
-          marginBottom: 0,
-          marginTop: 0,
+        child: FlyAutocomplete(
+          initialValue: widget.initialValue,
+          placeholder: widget.placeholder,
+          search: widget.autocomplete,
+          onSelected: addTag,
+          suffix: [
+            FlyIconButton.card(
+              size: 18.sp,
+              icon: Icons.add,
+              onPressed: () => addTag(_controller.text),
+            ),
+          ],
           validator: (value) {
             if (value!.isEmpty) {
               return 'Please enter a value'.tr;
@@ -83,19 +98,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
             }
             return null;
           },
-          borderColor: widget.outline
-              ? Get.theme.scaffoldBackgroundColor
-              : Get.theme.cardColor,
-          controller: _controller,
-          hintText: widget.placeholder,
-          onFieldSubmitted: addTag,
-          suffix: [
-            FlyIconButton.card(
-              size: 18.sp,
-              icon: Icons.add,
-              onPressed: () => addTag(_controller.text),
-            ),
-          ],
         ),
       ),
       title: widget.placeholder,

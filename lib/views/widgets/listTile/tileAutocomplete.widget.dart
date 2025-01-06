@@ -8,22 +8,18 @@ class FlyAutocompleteTile extends StatelessWidget {
   const FlyAutocompleteTile({
     Key? key,
     required this.onSelected,
-    required this.title,
-    required this.value,
-    required this.selectedValue,
-    this.subtitle,
-    this.bgColor,
-    this.child,
+    required this.placeholder,
+     this.initialValue,
     this.autocomplete,
     this.validator,
+    this.bgColor,
+    this.child,
     this.outline = false,
   }) : super(key: key);
 
-  final String title;
-  final dynamic value;
-  final dynamic selectedValue;
+  final String placeholder;
+  final String? initialValue;
   final dynamic Function(String) onSelected;
-  final String? subtitle;
   final bool outline;
   final Color? bgColor;
   final Widget? child;
@@ -34,12 +30,13 @@ class FlyAutocompleteTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
       leading: FlyAutocomplete(
-        placeholder: title,
+        initialValue:initialValue,
+        placeholder: placeholder,
         search: autocomplete,
         onSelected: onSelected,
         validator: validator,
       ),
-      title: title,
+      title: placeholder,
       outline: outline,
       bgColor: bgColor,
       child: child,
