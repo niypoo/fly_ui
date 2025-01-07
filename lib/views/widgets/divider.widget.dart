@@ -11,8 +11,8 @@ class FlyDivider extends StatelessWidget {
       height: 15.sp,
       thickness: 1,
       color: Get.iconColor!.withOpacity(0.1),
-      indent: 15.sp,
-      endIndent: 15.sp,
+      indent: 5.sp,
+      endIndent: 5.sp,
     );
   }
 }
