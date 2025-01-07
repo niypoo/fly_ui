@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/autocomplete.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
+import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
 class FlyTagsInputTile extends StatefulWidget {
@@ -77,27 +77,49 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       padding: const EdgeInsets.all(0),
       leading: Form(
         key: _formKey,
-        child: FlyAutocomplete(
-          initialValue: widget.initialValue,
-          placeholder: widget.placeholder,
-          search: widget.autocomplete,
-          onSelected: addTag,
-          suffix: [
-            FlyIconButton.card(
-              size: 18.sp,
-              icon: Icons.add,
-              onPressed: () => addTag(_controller.text),
-            ),
-          ],
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please enter a value'.tr;
-            }
-            if (widget.tags.contains(value)) {
-              return 'Value already exists'.tr;
-            }
-            return null;
+        child: Autocomplete<String>(
+          fieldViewBuilder:
+              (context, textEditingController, focusNode, onFieldSubmitted) {
+            return FlyTextField(
+              initialValue: widget.initialValue,
+              marginBottom: 0,
+              marginTop: 0,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter a value'.tr;
+                }
+                if (widget.tags.contains(value)) {
+                  return 'Value already exists'.tr;
+                }
+                return null;
+              },
+              borderColor: widget.outline
+                  ? Get.theme.scaffoldBackgroundColor
+                  : Get.theme.cardColor,
+              controller: textEditingController,
+              focusNode: focusNode,
+              hintText: widget.placeholder,
+              onFieldSubmitted: (value) => onFieldSubmitted,
+              suffix: [
+                FlyIconButton.card(
+                  size: 18.sp,
+                  icon: Icons.add,
+                  onPressed: () => addTag(textEditingController.text),
+                ),
+              ],
+            );
           },
+          optionsBuilder: (TextEditingValue textEditingValue) async {
+            // skip
+            if (textEditingValue.text == '' || widget.autocomplete == null) {
+              return const Iterable<String>.empty();
+            }
+
+            // trigger search api after debounce
+            return await widget.autocomplete!(textEditingValue.text);
+          },
+          //Add other Parameters you want.
+          onSelected: addTag,
         ),
       ),
       title: widget.placeholder,
