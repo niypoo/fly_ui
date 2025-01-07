@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 

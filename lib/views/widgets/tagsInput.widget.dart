@@ -81,7 +81,16 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
                 child: FlyTextField(
                   marginBottom: widget.selectedValues.isNotEmpty ? 0 : 6,
                   color: widget.outline ? null : Get.theme.cardColor,
-                  validator: widget.validator,
+                  validator: widget.validator ??
+                      (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter a value'.tr;
+                        }
+                        if (widget.selectedValues.contains(value)) {
+                          return 'Value already exists'.tr;
+                        }
+                        return null;
+                      },
                   controller: textEditingController,
                   focusNode: focusNode,
                   hintText: widget.placeholder,
