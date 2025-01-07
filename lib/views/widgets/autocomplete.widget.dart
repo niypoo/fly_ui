@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
-class FlyAutocomplete extends StatefulWidget {
-  const FlyAutocomplete({
+class FlySelectAutocompleteInput extends StatefulWidget {
+  const FlySelectAutocompleteInput({
     super.key,
     required this.placeholder,
-    required this.search,
+    required this.autocomplete,
     required this.onSelected,
     this.initialValue,
     this.validator,
@@ -22,13 +22,13 @@ class FlyAutocomplete extends StatefulWidget {
   final String? initialValue;
   final List<Widget> suffix;
   final Function(String selection) onSelected;
-  final FutureOr<Iterable<String>> Function(String)? search;
+  final FutureOr<Iterable<String>> Function(String)? autocomplete;
 
   @override
-  State<FlyAutocomplete> createState() => _FlyAutocompleteState();
+  State<FlySelectAutocompleteInput> createState() => _FlyAutocompleteState();
 }
 
-class _FlyAutocompleteState extends State<FlyAutocomplete> {
+class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
   @override
   void initState() {
     super.initState();
@@ -49,6 +49,7 @@ class _FlyAutocompleteState extends State<FlyAutocomplete> {
           marginBottom: 0,
           marginTop: 0,
           validator: widget.validator,
+          color: widget.outline ? null : Get.theme.cardColor,
           borderColor: widget.outline
               ? Get.theme.scaffoldBackgroundColor
               : Get.theme.cardColor,
@@ -61,12 +62,12 @@ class _FlyAutocompleteState extends State<FlyAutocomplete> {
       },
       optionsBuilder: (TextEditingValue textEditingValue) async {
         // skip
-        if (textEditingValue.text == '' || widget.search == null) {
+        if (textEditingValue.text == '' || widget.autocomplete == null) {
           return const Iterable<String>.empty();
         }
 
         // trigger search api after debounce
-        return await widget.search!(textEditingValue.text);
+        return await widget.autocomplete!(textEditingValue.text);
       },
       //Add other Parameters you want.
       onSelected: widget.onSelected,

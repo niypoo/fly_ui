@@ -43,7 +43,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
 
   @override
   void initState() {
-    _controller = TextEditingController();
     _formKey = GlobalKey();
     super.initState();
   }
@@ -63,7 +62,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       subTitle: 'Are you sure you want to delete this value?'.tr,
     );
     // skip if user cancel the confirmation
-    if (confirmation == false) return;
+    if (confirmation == null || confirmation == false) return;
 
     setState(() {
       // remove the tag
@@ -78,6 +77,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
       leading: Autocomplete<String>(
         fieldViewBuilder:
             (context, textEditingController, focusNode, onFieldSubmitted) {
+          _controller = textEditingController;
           return Form(
             key: _formKey,
             child: FlyTextField(
@@ -133,7 +133,9 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
                 children: widget.tags
                     .map((tag) => FlyChip(
                           tag: tag,
-                          backgroundColor: widget.outline ? null : Get.theme.scaffoldBackgroundColor,
+                          backgroundColor: widget.outline
+                              ? null
+                              : Get.theme.scaffoldBackgroundColor,
                           onRemove: () => removeTag(tag),
                         ))
                     .toList(),
