@@ -69,12 +69,13 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
         },
         optionsViewBuilder: (context, onSelected, options) {
           return Align(
-            alignment: Alignment.topLeft,
+            alignment: Alignment.topCenter,
             child: SizedBox(
               width: constraints.maxWidth,
               child: Material(
                 elevation: 4,
                 clipBehavior: Clip.antiAlias,
+                color: Get.theme.cardColor,
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
@@ -82,7 +83,10 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: options.map((e) {
-                    return ListTile(title: Text(e));
+                    return ListTile(
+                      title: Text(e),
+                      onTap: () => onSelected(e),
+                    );
                   }).toList(),
                 ),
               ),
