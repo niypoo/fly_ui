@@ -67,27 +67,28 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
           // trigger search api after debounce
           return await widget.autocomplete!(textEditingValue.text);
         },
-        optionsViewBuilder: (context, onSelected, options) => Container(
-          width: constraints.maxWidth,
-          padding: EdgeInsets.all(5.sp),
-          decoration: BoxDecoration(
-            color: Get.theme.cardColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15.sp),
-              bottomRight: Radius.circular(15.sp),
+        optionsViewBuilder: (context, onSelected, options) {
+          return Align(
+            alignment: Alignment.topLeft,
+            child: SizedBox(
+              width: constraints.maxWidth,
+              child: Material(
+                elevation: 4,
+                clipBehavior: Clip.antiAlias,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: options.map((e) {
+                    return ListTile(title: Text(e));
+                  }).toList(),
+                ),
+              ),
             ),
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: options
-                  .map((item) => ListTile(
-                        title: Text(item),
-                        onTap: () => onSelected(item),
-                      ))
-                  .toList(),
-            ),
-          ),
-        ),
+          );
+        },
         //Add other Parameters you want.
         onSelected: widget.onSelected,
       ),
