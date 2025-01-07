@@ -133,6 +133,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
                 children: widget.tags
                     .map((tag) => FlyChip(
                           tag: tag,
+                          backgroundColor: widget.outline ? null : Get.theme.scaffoldBackgroundColor,
                           onRemove: () => removeTag(tag),
                         ))
                     .toList(),

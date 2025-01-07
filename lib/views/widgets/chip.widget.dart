@@ -1,18 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
 class FlyChip extends StatelessWidget {
-  const FlyChip({
-    super.key,
-    required this.tag,
-    this.onRemove,
-    this.avatar,
-  });
+  const FlyChip(
+      {super.key,
+      required this.tag,
+      this.onRemove,
+      this.avatar,
+      this.backgroundColor});
   final String tag;
   final Widget? avatar;
+  final Color? backgroundColor;
   final void Function()? onRemove;
 
   @override
@@ -30,7 +30,7 @@ class FlyChip extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.sp),
         ),
         padding: EdgeInsets.all(4.sp),
-        backgroundColor: Get.theme.cardColor,
+        backgroundColor: backgroundColor ?? Get.theme.cardColor,
         labelPadding: EdgeInsets.symmetric(horizontal: 2.sp),
         avatar: avatar,
         label: Text(
