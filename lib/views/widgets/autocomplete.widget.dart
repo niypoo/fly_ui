@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/restricted/restrictedView.widget.dart';
+import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
@@ -68,8 +69,7 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
       },
       optionsViewBuilder: (context, onSelected, options) => Align(
         alignment: Alignment.topLeft,
-        child: SizedBox(
-          height: 30.w,
+        child: FlyContainer(
           child: SingleChildScrollView(
             child: Column(
               children: options
