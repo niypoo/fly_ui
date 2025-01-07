@@ -75,15 +75,16 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
       padding: const EdgeInsets.all(0),
-      leading: Form(
-        key: _formKey,
-        child: Autocomplete<String>(
-          fieldViewBuilder:
-              (context, textEditingController, focusNode, onFieldSubmitted) {
-            return FlyTextField(
+      leading: Autocomplete<String>(
+        fieldViewBuilder:
+            (context, textEditingController, focusNode, onFieldSubmitted) {
+          return Form(
+            key: _formKey,
+            child: FlyTextField(
               initialValue: widget.initialValue,
               marginBottom: 0,
               marginTop: 0,
+              color: widget.outline ? null : Get.theme.cardColor,
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Please enter a value'.tr;
@@ -99,7 +100,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
               controller: textEditingController,
               focusNode: focusNode,
               hintText: widget.placeholder,
-              onFieldSubmitted: (value) => onFieldSubmitted,
+              onFieldSubmitted: addTag,
               suffix: [
                 FlyIconButton.card(
                   size: 18.sp,
@@ -107,20 +108,20 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
                   onPressed: () => addTag(textEditingController.text),
                 ),
               ],
-            );
-          },
-          optionsBuilder: (TextEditingValue textEditingValue) async {
-            // skip
-            if (textEditingValue.text == '' || widget.autocomplete == null) {
-              return const Iterable<String>.empty();
-            }
+            ),
+          );
+        },
+        optionsBuilder: (TextEditingValue textEditingValue) async {
+          // skip
+          if (textEditingValue.text == '' || widget.autocomplete == null) {
+            return const Iterable<String>.empty();
+          }
 
-            // trigger search api after debounce
-            return await widget.autocomplete!(textEditingValue.text);
-          },
-          //Add other Parameters you want.
-          onSelected: addTag,
-        ),
+          // trigger search api after debounce
+          return await widget.autocomplete!(textEditingValue.text);
+        },
+        //Add other Parameters you want.
+        onSelected: addTag,
       ),
       title: widget.placeholder,
       outline: widget.outline,

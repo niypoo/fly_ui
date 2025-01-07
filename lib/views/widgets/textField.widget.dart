@@ -48,7 +48,7 @@ class FlyTextField extends StatelessWidget {
 
   final TextEditingController? controller;
   final String? Function(String?)? validator;
-  final Function? onFieldSubmitted;
+  final void Function(String)? onFieldSubmitted;
   final Function? onTap;
   final Function? onEditingComplete;
   final Function? onSaved;
