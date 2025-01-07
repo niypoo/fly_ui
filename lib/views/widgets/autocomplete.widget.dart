@@ -50,9 +50,6 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
           marginTop: 0,
           validator: widget.validator,
           color: widget.outline ? null : Get.theme.cardColor,
-          borderColor: widget.outline
-              ? null
-              : Get.theme.cardColor,
           controller: textEditingController,
           focusNode: focusNode,
           hintText: widget.placeholder,
