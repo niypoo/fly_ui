@@ -105,7 +105,9 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
                 FlyIconButton.card(
                   size: 18.sp,
                   icon: Icons.add,
-                  onPressed: () => addTag(textEditingController.text),
+                  onPressed: textEditingController.text.trim() == ''
+                      ? null
+                      : () => addTag(textEditingController.text),
                 ),
               ],
             ),
@@ -133,7 +135,9 @@ class _FlyCheckboxTileState extends State<FlyTagsInputTile> {
                 children: widget.tags
                     .map((tag) => FlyChip(
                           tag: tag,
-                          backgroundColor: widget.outline ? null : Get.theme.scaffoldBackgroundColor,
+                          backgroundColor: widget.outline
+                              ? null
+                              : Get.theme.scaffoldBackgroundColor,
                           onRemove: () => removeTag(tag),
                         ))
                     .toList(),
