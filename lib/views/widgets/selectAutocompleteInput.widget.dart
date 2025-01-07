@@ -43,57 +43,54 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Autocomplete<String>(
-      fieldViewBuilder:
-          (context, textEditingController, focusNode, onFieldSubmitted) {
-        return FlyTextField(
-          initialValue: widget.initialValue,
-          validator: widget.validator,
-          color: widget.outline ? null : Get.theme.cardColor,
-          controller: textEditingController,
-          focusNode: focusNode,
-          hintText: widget.placeholder,
-          onFieldSubmitted: (value) => onFieldSubmitted,
-          suffix: widget.suffix,
-        );
-      },
-      optionsBuilder: (TextEditingValue textEditingValue) async {
-        // skip
-        if (textEditingValue.text == '' || widget.autocomplete == null) {
-          return const Iterable<String>.empty();
-        }
+    return LayoutBuilder(
+      builder: (context, constraints) => Autocomplete<String>(
+        fieldViewBuilder:
+            (context, textEditingController, focusNode, onFieldSubmitted) {
+          return FlyTextField(
+            initialValue: widget.initialValue,
+            validator: widget.validator,
+            color: widget.outline ? null : Get.theme.cardColor,
+            controller: textEditingController,
+            focusNode: focusNode,
+            hintText: widget.placeholder,
+            onFieldSubmitted: (value) => onFieldSubmitted,
+            suffix: widget.suffix,
+          );
+        },
+        optionsBuilder: (TextEditingValue textEditingValue) async {
+          // skip
+          if (textEditingValue.text == '' || widget.autocomplete == null) {
+            return const Iterable<String>.empty();
+          }
 
-        // trigger search api after debounce
-        return await widget.autocomplete!(textEditingValue.text);
-      },
-      optionsViewBuilder: (context, onAutoCompleteSelect, options) {
-        return Align(
-            alignment: Alignment.topLeft,
-            child: Material(
-              color: Theme.of(context).primaryColorLight,
-              elevation: 4.0,
-              // size works, when placed here below the Material widget
-              child: Container(
-                  // I have the text field wrapped in a container with
-                  // EdgeInsets.all(20) so subtract 40 from the width for the width
-                  // of the text box. You could also just use a padding widget
-                  // with EdgeInsets.only(right: 20)
-                  width: MediaQuery.of(context).size.width - 40,
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.all(8.0),
-                    itemCount: options.length,
-                    separatorBuilder: (context, i) {
-                      return Divider();
-                    },
-                    itemBuilder: (BuildContext context, int index) {
-                      // some child here
-                    },
-                  )),
-            ));
-      },
-      //Add other Parameters you want.
-      onSelected: widget.onSelected,
+          // trigger search api after debounce
+          return await widget.autocomplete!(textEditingValue.text);
+        },
+        optionsViewBuilder: (context, onSelected, options) => Container(
+          width: constraints.maxWidth,
+          padding: EdgeInsets.all(5.sp),
+          decoration: BoxDecoration(
+            color: Get.theme.cardColor,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(15.sp),
+              bottomRight: Radius.circular(15.sp),
+            ),
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: options
+                  .map((item) => ListTile(
+                        title: Text(item),
+                        onTap: () => onSelected(item),
+                      ))
+                  .toList(),
+            ),
+          ),
+        ),
+        //Add other Parameters you want.
+        onSelected: widget.onSelected,
+      ),
     );
   }
 }
