@@ -68,9 +68,7 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
           return await widget.autocomplete!(textEditingValue.text);
         },
         optionsViewBuilder: (context, onSelected, options) {
-          return Align(
-            alignment: Alignment.topCenter,
-            child: SizedBox(
+          return  SizedBox(
               width: constraints.maxWidth,
               child: Material(
                 elevation: 4,
@@ -90,7 +88,7 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
                   }).toList(),
                 ),
               ),
-            ),
+            
           );
         },
         //Add other Parameters you want.
