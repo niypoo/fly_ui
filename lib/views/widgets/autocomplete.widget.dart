@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/restricted/restrictedView.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
@@ -64,6 +66,22 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
         // trigger search api after debounce
         return await widget.autocomplete!(textEditingValue.text);
       },
+      optionsViewBuilder: (context, onSelected, options) => Align(
+        alignment: Alignment.topLeft,
+        child: SizedBox(
+          height: 30.w,
+          child: SingleChildScrollView(
+            child: Column(
+              children: options
+                  .map((item) => ListTile(
+                        title: Text(item),
+                        onTap: () => onSelected(item),
+                      ))
+                  .toList(),
+            ),
+          ),
+        ),
+      ),
       //Add other Parameters you want.
       onSelected: widget.onSelected,
     );
