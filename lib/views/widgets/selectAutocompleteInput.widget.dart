@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
@@ -66,8 +67,17 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
         return await widget.autocomplete!(textEditingValue.text);
       },
       optionsViewBuilder: (context, onSelected, options) => Align(
-        alignment: Alignment.topLeft,
-        child: FlyContainer(
+        alignment: Alignment.topCenter,
+        child: Container(
+          width: 90.w,
+          padding: EdgeInsets.all(10.sp),
+          decoration: BoxDecoration(
+            color: Get.theme.cardColor,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(15.sp),
+              bottomRight: Radius.circular(15.sp),
+            ),
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: options
