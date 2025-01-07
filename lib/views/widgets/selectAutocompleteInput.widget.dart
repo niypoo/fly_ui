@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
@@ -66,30 +65,30 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
         // trigger search api after debounce
         return await widget.autocomplete!(textEditingValue.text);
       },
-      optionsViewBuilder: (context, onSelected, options) => Align(
-        alignment: Alignment.topCenter,
-        child: Container(
-          width: 90.w,
-          padding: EdgeInsets.all(10.sp),
-          decoration: BoxDecoration(
-            color: Get.theme.cardColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15.sp),
-              bottomRight: Radius.circular(15.sp),
-            ),
+      optionsViewBuilder: (context, onSelected, options) => Container(
+        width: 90.w,
+        padding: EdgeInsets.all(10.sp),
+        decoration: BoxDecoration(
+          color: Get.theme.cardColor,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15.sp),
+            bottomRight: Radius.circular(15.sp),
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: options
-                  .map((item) => ListTile(
-                        title: Text(item),
-                        onTap: () => onSelected(item),
-                      ))
-                  .toList(),
-            ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: options
+                .map(
+                  (item) => ListTile(
+                    title: Text(item),
+                    onTap: () => onSelected(item),
+                  ),
+                )
+                .toList(),
           ),
         ),
       ),
+
       //Add other Parameters you want.
       onSelected: widget.onSelected,
     );
