@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/views/widgets/divider.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/tileTableRow.widget.dart';
 import 'package:get/get.dart';
 
@@ -78,7 +79,7 @@ class FlyInputTileWrap extends StatelessWidget {
             ],
           ),
 
-          // if(expandChild!=null) const FlyDivider(),
+          if(child!=null) const FlyDivider(),
           if (child != null) child!,
         ],
       ),

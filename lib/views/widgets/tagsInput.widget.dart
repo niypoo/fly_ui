@@ -77,6 +77,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
             return Form(
               key: _formKey,
               child: FlyTextField(
+                marginBottom: widget.selectedValues.isNotEmpty ? 0 : 6,
                 color: widget.outline ? null : Get.theme.cardColor,
                 validator: widget.validator,
                 controller: textEditingController,
@@ -100,7 +101,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
         ),
         if (widget.selectedValues.isNotEmpty)
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.sp),
+            padding: EdgeInsets.only(bottom: 6.sp),
             child: Wrap(
               children: widget.selectedValues
                   .map((tag) => FlyChip(
