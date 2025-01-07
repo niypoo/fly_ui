@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
@@ -41,60 +43,57 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => Autocomplete<String>(
-        fieldViewBuilder:
-            (context, textEditingController, focusNode, onFieldSubmitted) {
-          return FlyTextField(
-            initialValue: widget.initialValue,
-            validator: widget.validator,
-            color: widget.outline ? null : Get.theme.cardColor,
-            controller: textEditingController,
-            focusNode: focusNode,
-            hintText: widget.placeholder,
-            onFieldSubmitted: (value) => onFieldSubmitted,
-            suffix: widget.suffix,
-          );
-        },
-        optionsBuilder: (TextEditingValue textEditingValue) async {
-          // skip
-          if (textEditingValue.text == '' || widget.autocomplete == null) {
-            return const Iterable<String>.empty();
-          }
+    return Autocomplete<String>(
+      fieldViewBuilder:
+          (context, textEditingController, focusNode, onFieldSubmitted) {
+        return FlyTextField(
+          initialValue: widget.initialValue,
+          validator: widget.validator,
+          color: widget.outline ? null : Get.theme.cardColor,
+          controller: textEditingController,
+          focusNode: focusNode,
+          hintText: widget.placeholder,
+          onFieldSubmitted: (value) => onFieldSubmitted,
+          suffix: widget.suffix,
+        );
+      },
+      optionsBuilder: (TextEditingValue textEditingValue) async {
+        // skip
+        if (textEditingValue.text == '' || widget.autocomplete == null) {
+          return const Iterable<String>.empty();
+        }
 
-          // trigger search api after debounce
-          return await widget.autocomplete!(textEditingValue.text);
-        },
-        optionsViewBuilder: (context, onSelected, options) => Align(
-          alignment: Alignment.topLeft,
-          child: Material(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.0)),
-            ),
-            child: Container(
-              height: 52.0 * options.length,
-              width: constraints.biggest.width, // <-- Right here !
-              child: ListView.builder(
-                padding: EdgeInsets.zero,
-                itemCount: options.length,
-                shrinkWrap: false,
-                itemBuilder: (BuildContext context, int index) {
-                  final String option = options.elementAt(index);
-                  return InkWell(
-                    onTap: () => onSelected(option),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(option),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-        ),
-        //Add other Parameters you want.
-        onSelected: widget.onSelected,
-      ),
+        // trigger search api after debounce
+        return await widget.autocomplete!(textEditingValue.text);
+      },
+      optionsViewBuilder: (context, onAutoCompleteSelect, options) {
+        return Align(
+            alignment: Alignment.topLeft,
+            child: Material(
+              color: Theme.of(context).primaryColorLight,
+              elevation: 4.0,
+              // size works, when placed here below the Material widget
+              child: Container(
+                  // I have the text field wrapped in a container with
+                  // EdgeInsets.all(20) so subtract 40 from the width for the width
+                  // of the text box. You could also just use a padding widget
+                  // with EdgeInsets.only(right: 20)
+                  width: MediaQuery.of(context).size.width - 40,
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(8.0),
+                    itemCount: options.length,
+                    separatorBuilder: (context, i) {
+                      return Divider();
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      // some child here
+                    },
+                  )),
+            ));
+      },
+      //Add other Parameters you want.
+      onSelected: widget.onSelected,
     );
   }
 }
