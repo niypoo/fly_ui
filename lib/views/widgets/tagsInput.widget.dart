@@ -3,6 +3,7 @@ import 'package:bottom_sheet_helper/services/conformationSheet.helper.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
+import 'package:fly_ui/views/widgets/selectAutocompleteInput.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
 
@@ -70,34 +71,42 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Autocomplete<String>(
-          fieldViewBuilder:
-              (context, textEditingController, focusNode, onFieldSubmitted) {
-            _controller = textEditingController;
-            return Form(
-              key: _formKey,
-              child: FlyTextField(
-                marginBottom: widget.selectedValues.isNotEmpty ? 0 : 6,
-                color: widget.outline ? null : Get.theme.cardColor,
-                validator: widget.validator,
-                controller: textEditingController,
-                focusNode: focusNode,
-                hintText: widget.placeholder,
-                onFieldSubmitted: addTag,
-              ),
-            );
-          },
-          optionsBuilder: (TextEditingValue textEditingValue) async {
-            // skip
-            if (textEditingValue.text == '' || widget.autocomplete == null) {
-              return const Iterable<String>.empty();
-            }
+        LayoutBuilder(
+          builder: (context, constraints) => Autocomplete<String>(
+            fieldViewBuilder:
+                (context, textEditingController, focusNode, onFieldSubmitted) {
+              _controller = textEditingController;
+              return Form(
+                key: _formKey,
+                child: FlyTextField(
+                  marginBottom: widget.selectedValues.isNotEmpty ? 0 : 6,
+                  color: widget.outline ? null : Get.theme.cardColor,
+                  validator: widget.validator,
+                  controller: textEditingController,
+                  focusNode: focusNode,
+                  hintText: widget.placeholder,
+                  onFieldSubmitted: addTag,
+                ),
+              );
+            },
+            optionsBuilder: (TextEditingValue textEditingValue) async {
+              // skip
+              if (textEditingValue.text == '' || widget.autocomplete == null) {
+                return const Iterable<String>.empty();
+              }
 
-            // trigger search api after debounce
-            return await widget.autocomplete!(textEditingValue.text);
-          },
-          //Add other Parameters you want.
-          onSelected: addTag,
+              // trigger search api after debounce
+              return await widget.autocomplete!(textEditingValue.text);
+            },
+            optionsViewBuilder: (context, onSelected, options) {
+              return AutoCompleteOptionsViewBuilder(
+                  constraints: constraints,
+                  options: options,
+                  onSelected: onSelected);
+            },
+            //Add other Parameters you want.
+            onSelected: addTag,
+          ),
         ),
         if (widget.selectedValues.isNotEmpty)
           Padding(

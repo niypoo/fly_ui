@@ -68,36 +68,50 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
           return await widget.autocomplete!(textEditingValue.text);
         },
         optionsViewBuilder: (context, onSelected, options) {
-          return Align(
-            alignment: Alignment.topLeft,
-            child: SizedBox(
-              width: constraints.maxWidth,
-              child: Material(
-                elevation: 4,
-                clipBehavior: Clip.antiAlias,
-                color: Get.theme.cardColor,
-                shape:  RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10.sp),
-                    bottomRight: Radius.circular(10.sp),
-                  ),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: options.map((e) {
-                    return ListTile(
-                      title: Text(e),
-                      onTap: () => onSelected(e),
-                    );
-                  }).toList(),
-                ),
-              ),
-            ),
-          );
+          return AutoCompleteOptionsViewBuilder(constraints: constraints, options: options, onSelected: onSelected);
         },
         //Add other Parameters you want.
         onSelected: widget.onSelected,
+      ),
+    );
+  }
+}
+
+class AutoCompleteOptionsViewBuilder extends StatelessWidget {
+  const AutoCompleteOptionsViewBuilder({
+    super.key,
+    required this.constraints,
+    required this.options,
+    required this.onSelected,
+  });
+  final BoxConstraints constraints;
+  final void Function(String) onSelected;
+  final Iterable<String> options;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topLeft,
+      child: SizedBox(
+        width: constraints.maxWidth,
+        child: Material(
+          elevation: 4,
+          clipBehavior: Clip.antiAlias,
+          color: Get.theme.cardColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(15.sp)),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: options.map((e) {
+              return ListTile(
+                title: Text(e),
+                onTap: () => onSelected(e),
+              );
+            }).toList(),
+          ),
+        ),
       ),
     );
   }
