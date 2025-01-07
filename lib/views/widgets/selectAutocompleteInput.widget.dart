@@ -76,8 +76,11 @@ class _FlyAutocompleteState extends State<FlySelectAutocompleteInput> {
                 elevation: 4,
                 clipBehavior: Clip.antiAlias,
                 color: Get.theme.cardColor,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                shape:  RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10.sp),
+                    bottomRight: Radius.circular(10.sp),
+                  ),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
