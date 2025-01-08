@@ -39,7 +39,7 @@ class FlyRadioListTile extends StatelessWidget {
         groupValue: selectedValue,
         onChanged: (dynamic value) => onChanged(value),
       ),
-      child: child,
+      child: (value == selectedValue) ? child : null,
     );
   }
 }

@@ -38,7 +38,7 @@ class FlySwitchTile extends StatelessWidget {
         activeColor: color ?? Get.theme.primaryColor,
         trackColor: Colors.black26,
       ),
-      child: child,
+      child: value ? child : null,
     );
   }
 }

@@ -35,7 +35,7 @@ class FlyCheckboxTile extends StatelessWidget {
         value: value,
         onChanged: onTap as void Function(bool?)?,
       ),
-      child: child,
+      child: value ? child : null,
     );
   }
 }
