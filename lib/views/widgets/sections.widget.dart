@@ -17,7 +17,7 @@ class FlySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 12.sp),
+      padding: EdgeInsets.only(top: 15.sp),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
