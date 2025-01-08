@@ -11,7 +11,7 @@ class FlyDropdownTile extends StatelessWidget {
     required this.value,
     required this.onTap,
     this.subtitle,
-    this.outline = false,
+    this.outline = true,
     this.bgColor,
     this.child,
   }) : super(key: key);
