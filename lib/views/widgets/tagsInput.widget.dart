@@ -12,7 +12,7 @@ class FlyTagsInput extends StatefulWidget {
     Key? key,
     required this.placeholder,
     required this.selectedValues,
-    this.outline = false,
+    this.outline = true,
     this.validator,
     this.onChange,
     this.allowDuplicates = false,
