@@ -13,7 +13,7 @@ class FlySwitchTile extends StatelessWidget {
     this.color,
     this.bgColor,
     this.child,
-    this.outline = false,
+    this.outline = true,
   }) : super(key: key);
 
   final String title;

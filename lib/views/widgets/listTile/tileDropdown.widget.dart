@@ -32,7 +32,7 @@ class FlyDropdownTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      padding: EdgeInsets.symmetric(vertical: 2.sp, horizontal: 10.sp),
+      padding: EdgeInsets.symmetric(vertical: 3.sp, horizontal: 10.sp),
       trailing: Padding(
         padding: EdgeInsetsDirectional.only(start: 10.sp),
         child: DropdownButtonHideUnderline(

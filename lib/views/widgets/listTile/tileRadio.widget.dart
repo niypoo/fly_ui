@@ -12,7 +12,7 @@ class FlyRadioListTile extends StatelessWidget {
     this.subtitle,
     this.bgColor,
     this.child,
-    this.outline = false,
+    this.outline = true,
   }) : super(key: key);
 
   final String title;

@@ -9,7 +9,7 @@ class FlyCheckboxTile extends StatelessWidget {
     required this.title,
     required this.value,
     this.subtitle,
-    this.outline = false,
+    this.outline = true,
     this.bgColor,
     this.child,
   }) : super(key: key);

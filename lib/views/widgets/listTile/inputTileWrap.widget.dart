@@ -16,7 +16,7 @@ class FlyInputTileWrap extends StatelessWidget {
     this.child,
     this.leading,
     this.padding,
-    this.outline = false,
+    this.outline = true,
   }) : super(key: key);
 
   final String title;
