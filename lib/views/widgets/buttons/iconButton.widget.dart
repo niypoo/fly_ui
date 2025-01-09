@@ -20,7 +20,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.primary({
     IconData? icon,
     Function? onPressed,
-    double? size,
+    double? size = 30,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.primaryColor,
@@ -33,7 +33,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.card({
     IconData? icon,
     Function? onPressed,
-    double? size,
+    double? size = 30,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.cardColor,
@@ -45,7 +45,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.scaffold({
     IconData? icon,
     Function? onPressed,
-    double? size,
+    double? size = 30,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.scaffoldBackgroundColor,
@@ -57,7 +57,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.secondary({
     IconData? icon,
     Function? onPressed,
-    double? size,
+    double? size = 30,
   }) =>
       FlyIconButton(
         borderColor: Get.theme.colorScheme.secondary,
