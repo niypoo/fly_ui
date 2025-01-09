@@ -67,11 +67,20 @@ class FlyFileInputTile extends StatelessWidget {
       child: files.isNotEmpty
           ? Wrap(
               children: files
-                  .map((file) => FlyImage(
-                                width: 30.sp,
-                                height: 30.sp,
+                  .map((file) => FlyChip(
+                        avatar: file.image
+                            ? FlyImage(
+                                width: 20.sp,
+                                height: 20.sp,
                                 url: file.path,
-                              ))
+                              )
+                            : null,
+                        tag: file.name,
+                        backgroundColor:
+                            outline ? null : Get.theme.scaffoldBackgroundColor,
+                        onRemove:
+                            removeFile != null ? () => removeFile!(file) : null,
+                      ))
                   .toList(),
             )
           : null,
