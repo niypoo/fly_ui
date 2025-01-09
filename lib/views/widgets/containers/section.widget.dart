@@ -44,20 +44,23 @@ class _FlySectionState extends State<FlySection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          GestureDetector(
-            onTap: toggle,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  widget.title,
-                  style: Get.textTheme.titleLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14.sp,
+          Padding(
+            padding: EdgeInsets.only(bottom: 8.sp),
+            child: GestureDetector(
+              onTap: toggle,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    widget.title,
+                    style: Get.textTheme.titleLarge!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.sp,
+                    ),
                   ),
-                ),
-                const Icon(Icons.arrow_drop_down)
-              ],
+                  const Icon(Icons.arrow_drop_down)
+                ],
+              ),
             ),
           ),
 
