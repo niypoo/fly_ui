@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
-import 'package:fly_ui/views/widgets/chip.widget.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
-import 'package:get/get.dart';
+import 'package:fly_ui/views/widgets/listTile/tileContainer.widget.dart';
 import 'package:unicons/unicons.dart';
 
 /// A widget that allows users to input files.
@@ -64,26 +64,26 @@ class FlyFileInputTile extends StatelessWidget {
           onPressed: uploadFun,
         ),
       ),
-      child: files.isNotEmpty
-          ? Wrap(
-              children: files
-                  .map((file) => FlyChip(
-                        avatar: file.image
-                            ? FlyImage(
-                                width: 20.sp,
-                                height: 20.sp,
-                                url: file.path,
-                              )
-                            : null,
-                        tag: file.name,
-                        backgroundColor:
-                            outline ? null : Get.theme.scaffoldBackgroundColor,
-                        onRemove:
-                            removeFile != null ? () => removeFile!(file) : null,
-                      ))
-                  .toList(),
-            )
-          : null,
+      child: ListView.builder(
+        physics:const  NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemBuilder: (context, i) => FlyListTile(
+          leading: files[i].image
+              ? FlyImage(
+                  width: 20.sp,
+                  height: 20.sp,
+                  url: files[i].path,
+                )
+              : null,
+          title: files[i].name,
+          trailing: removeFile != null
+              ? FlyIconButton.card(
+                  icon: UniconsLine.trash,
+                  onPressed: () => removeFile!(files[i]),
+                )
+              : null,
+        ),
+      ),
     );
   }
 }
