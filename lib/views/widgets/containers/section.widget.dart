@@ -70,7 +70,7 @@ class _FlySectionState extends State<FlySection> {
                 children: widget.children,
               ),
               preferences: AnimationPreferences(
-                duration: Duration(microseconds: 100),
+                duration: Duration(milliseconds: 100),
               ),
             ),
           if (widget.divider) const FlyDivider(),
