@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/views/widgets/animations/animatedCrossFade.widget.dart';
-import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
+import 'package:fly_ui/views/widgets/animations/animatedSlide.widget.dart';
 import 'package:fly_ui/views/widgets/divider.widget.dart';
+import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
 
 class FlySection extends StatefulWidget {
@@ -47,26 +47,36 @@ class _FlySectionState extends State<FlySection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            children: [
-              Text(
-                widget.title,
-                style: Get.textTheme.titleLarge!.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14.sp,
-                ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 10.sp),
+            child: FlyInkWell(
+              onTap: toggle,
+              child: Row(
+                children: [
+                  Text(
+                    widget.title,
+                    style: Get.textTheme.titleLarge!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.sp,
+                    ),
+                  ),
+
+                  // ICON
+                  Icon(expanded ? Icons.arrow_drop_down : Icons.arrow_drop_up)
+                ],
               ),
-              FlyIconButton(onPressed: toggle, icon: Icons.arrow_drop_down),
-            ],
-          ),
-          FlyAnimatedCrossFade(
-            secondChild: Column(
-              children: widget.children,
             ),
-            firstChild: const SizedBox.shrink(),
-            crossFadeState: expanded,
           ),
-          if (widget.divider) const FlyDivider(),
+          FlyAnimatedSwitcher(
+            child1: Column(
+              children: [
+                ...widget.children,
+                if (widget.divider) const FlyDivider(),
+              ],
+            ),
+            child2: const SizedBox.shrink(),
+            crossState: expanded,
+          ),
         ],
       ),
     );
