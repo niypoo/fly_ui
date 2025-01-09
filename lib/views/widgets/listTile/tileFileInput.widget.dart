@@ -71,14 +71,15 @@ class FlyFileInputTile extends StatelessWidget {
         itemBuilder: (context, i) => FlyListTile(
           leading: files[i].image
               ? FlyImage(
-                  width: 20.sp,
-                  height: 20.sp,
+                  width: 28.sp,
+                  height: 28.sp,
                   url: files[i].path,
                 )
               : null,
           title: files[i].name,
           trailing: removeFile != null
               ? FlyIconButton.card(
+                  size: 20.sp,
                   icon: UniconsLine.trash,
                   onPressed: () => removeFile!(files[i]),
                 )
