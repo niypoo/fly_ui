@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/restricted/restrictedView.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
@@ -46,10 +48,13 @@ class FlyFileInputTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      trailing: FlyElevatedButton.normal(
-        title: 'Upload',
-        icon: UniconsLine.upload,
-        onPressed: uploadFun,
+      trailing: SizedBox(
+        height: 20.sp,
+        child: FlyElevatedButton.normal(
+          title: 'Upload',
+          icon: UniconsLine.upload,
+          onPressed: uploadFun,
+        ),
       ),
       child: files.isNotEmpty
           ? Wrap(
