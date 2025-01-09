@@ -62,6 +62,7 @@ class FlyFileInputTile extends StatelessWidget {
           title: 'Upload',
           icon: UniconsLine.upload,
           onPressed: uploadFun,
+          iconAlignment: IconAlignment.end,
         ),
       ),
       child: ListView.builder(
