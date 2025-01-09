@@ -58,7 +58,7 @@ class FlyFileInputTile extends StatelessWidget {
         child: FlyElevatedButton.normal(
           margin: const EdgeInsets.all(0),
           title: 'Upload',
-          icon: UniconsLine.trash,
+          icon: UniconsLine.upload,
           onPressed: uploadFun,
         ),
       ),
@@ -68,8 +68,8 @@ class FlyFileInputTile extends StatelessWidget {
                   .map((file) => FlyChip(
                         avatar: file.image
                             ? FlyImage(
-                                width: 28.sp,
-                                height: 28.sp,
+                                width: 30.sp,
+                                height: 30.sp,
                                 url: file.path,
                               )
                             : null,
