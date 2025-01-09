@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-// import 'package:fly_ui/views/widgets/divider.widget.dart';
+import 'package:fly_ui/views/widgets/divider.widget.dart';
 import 'package:get/get.dart';
 
 class FlySection extends StatefulWidget {
@@ -64,8 +65,8 @@ class _FlySectionState extends State<FlySection> {
             ),
           ),
 
-          if (expanded) ...widget.children,
-          // if (divider) const FlyDivider(),
+          if (expanded) FadeInDown(child: Column(children: widget.children,)),
+          if (widget.divider) const FlyDivider(),
         ],
       ),
     );
