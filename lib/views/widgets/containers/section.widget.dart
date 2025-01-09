@@ -26,8 +26,10 @@ class FlySection extends StatefulWidget {
 class _FlySectionState extends State<FlySection> {
   late bool expanded;
 
-  initStat() {
+  @override
+  void initState() {
     expanded = widget.expanded;
+    super.initState();
   }
 
   toggle() {
