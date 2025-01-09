@@ -24,7 +24,7 @@ class FlySection extends StatefulWidget {
 }
 
 class _FlySectionState extends State<FlySection> {
-  late bool expanded;
+  bool expanded = true;
 
   @override
   void initState() {
