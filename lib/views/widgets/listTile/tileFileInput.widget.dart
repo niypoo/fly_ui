@@ -68,8 +68,8 @@ class FlyFileInputTile extends StatelessWidget {
                   .map((file) => FlyChip(
                         avatar: file.image
                             ? FlyImage(
-                                width: 28,
-                                height: 28,
+                                width: 28.sp,
+                                height: 28.sp,
                                 url: file.path,
                               )
                             : null,
