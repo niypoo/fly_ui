@@ -64,8 +64,15 @@ class _FlySectionState extends State<FlySection> {
               ),
             ),
           ),
-
-          if (expanded) FadeInDown(child: Column(children: widget.children,)),
+          if (expanded)
+            FadeInDown(
+              child: Column(
+                children: widget.children,
+              ),
+              preferences: AnimationPreferences(
+                duration: Duration(microseconds: 100),
+              ),
+            ),
           if (widget.divider) const FlyDivider(),
         ],
       ),
