@@ -17,24 +17,34 @@ class FlySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Padding(
-          padding: EdgeInsets.all(4.sp),
-          child: Text(
-            title,
-            style: Get.textTheme.titleLarge!.copyWith(
-              fontWeight: FontWeight.bold,
-              fontSize: 14.sp,
+    return Padding(
+      padding: EdgeInsets.only(top: 15.sp),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.sp),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  title,
+                  style: Get.textTheme.titleLarge!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14.sp,
+                  ),
+                ),
+
+                const Icon(Icons.arrow_drop_down)
+              ],
             ),
           ),
-        ),
-        ...children,
-        if (divider) const FlyDivider(),
-      ],
+          ...children,
+          if (divider) const FlyDivider(),
+        ],
+      ),
     );
   }
 }
