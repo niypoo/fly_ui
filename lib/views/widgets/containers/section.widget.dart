@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/animations/animatedSlide.widget.dart';
 import 'package:fly_ui/views/widgets/divider.widget.dart';
@@ -49,9 +50,10 @@ class _FlySectionState extends State<FlySection> {
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 10.sp),
-            child: FlyInkWell(
+            child: GestureDetector(
               onTap: toggle,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     widget.title,
@@ -67,15 +69,17 @@ class _FlySectionState extends State<FlySection> {
               ),
             ),
           ),
-          FlyAnimatedSwitcher(
-            child1: Column(
+          FadeIn(
+            preferences: AnimationPreferences(
+                autoPlay: expanded
+                    ? AnimationPlayStates.Forward
+                    : AnimationPlayStates.Reverse),
+            child: Column(
               children: [
                 ...widget.children,
                 if (widget.divider) const FlyDivider(),
               ],
             ),
-            child2: const SizedBox.shrink(),
-            crossState: expanded,
           ),
         ],
       ),
