@@ -13,11 +13,13 @@ import 'package:unicons/unicons.dart';
 /// This widget provides a user interface for selecting and uploading files.
 /// It can be used in forms or any other place where file input is required.
 class FileInput {
+  final String id;
   final String name;
   final bool image;
   final String path;
 
   FileInput({
+    required this.id,
     required this.name,
     required this.path,
     this.image = false,
