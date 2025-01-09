@@ -1,22 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/restricted/restrictedView.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/chip.widget.dart';
+import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
 /// A widget that allows users to input files.
-/// 
+///
 /// This widget provides a user interface for selecting and uploading files.
 /// It can be used in forms or any other place where file input is required.
-class FileInput{
+class FileInput {
   final String name;
+  final bool image;
   final String path;
 
-  FileInput({required this.name, required this.path});
+  FileInput({
+    required this.name,
+    required this.path,
+    this.image = false,
+  });
 }
 
 class FlyFileInputTile extends StatelessWidget {
@@ -61,11 +66,18 @@ class FlyFileInputTile extends StatelessWidget {
           ? Wrap(
               children: files
                   .map((file) => FlyChip(
+                        avatar: file.image
+                            ? FlyImage(
+                                width: 28,
+                                height: 28,
+                                url: file.path,
+                              )
+                            : null,
                         tag: file.name,
-                        backgroundColor: outline
-                            ? null
-                            : Get.theme.scaffoldBackgroundColor,
-                        onRemove:removeFile != null ? () => removeFile!(file) : null,
+                        backgroundColor:
+                            outline ? null : Get.theme.scaffoldBackgroundColor,
+                        onRemove:
+                            removeFile != null ? () => removeFile!(file) : null,
                       ))
                   .toList(),
             )
