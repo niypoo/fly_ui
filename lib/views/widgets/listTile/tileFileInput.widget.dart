@@ -56,7 +56,7 @@ class FlyFileInputTile extends StatelessWidget {
       outline: outline,
       bgColor: bgColor,
       trailing: SizedBox(
-        height: 28.sp,
+        height: 25.sp,
         child: FlyElevatedButton.normal(
           margin: const EdgeInsets.all(0),
           title: 'Upload',
@@ -71,8 +71,8 @@ class FlyFileInputTile extends StatelessWidget {
         itemBuilder: (context, i) => FlyListTile(
           leading: files[i].image
               ? FlyImage(
-                  width: 28.sp,
-                  height: 28.sp,
+                  width: 25.sp,
+                  height: 25.sp,
                   url: files[i].path,
                 )
               : null,
