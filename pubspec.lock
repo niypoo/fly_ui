@@ -298,6 +298,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.6"
+  get_storage:
+    dependency: transitive
+    description:
+      name: get_storage
+      sha256: "39db1fffe779d0c22b3a744376e86febe4ade43bf65e06eab5af707dc84185a2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
   http:
     dependency: transitive
     description:
@@ -362,6 +370,24 @@ packages:
       ref: HEAD
       resolved-ref: "3adc35622ba75594e604390ca5bf1352f9c93994"
       url: "git@github.com:niypoo/loading_service.git"
+    source: git
+    version: "1.0.0+1"
+  local_storage_service:
+    dependency: transitive
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "17d577f0667c5c41dea7caffb7fd16d4399a0cba"
+      url: "git@github.com:niypoo/local_storage_service.git"
+    source: git
+    version: "1.0.0+1"
+  localization_service:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "1dfac38afa10deec04f9c7baa686b99bfc512097"
+      url: "git@github.com:niypoo/localization_service.git"
     source: git
     version: "1.0.0+1"
   matcher:

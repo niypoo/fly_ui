@@ -131,9 +131,12 @@ class FlyElevatedButton extends StatelessWidget {
             iconAlignment: iconAlignment ?? IconAlignment.start,
               onPressed: onPressed as void Function()?,
               style: buttonStyle,
-              label: Text(
-                title,
-                style: titleStyle,
+              label: Padding(
+                padding: EdgeInsetsDirectional.only(start: 14.sp),
+                child: Text(
+                  title,
+                  style: titleStyle,
+                ),
               ),
               icon: Icon(
                 icon,

@@ -32,6 +32,9 @@ dependencies:
   bottom_sheet_helper:
     git: 
       url: git@github.com:niypoo/bottom_sheet_helper.git
+  localization_service:
+    git: 
+      url: git@github.com:niypoo/localization_service.git
       
 dev_dependencies:
   flutter_test:

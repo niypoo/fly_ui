@@ -2,6 +2,7 @@ import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
+import 'package:localization_service/localization.service.dart';
 
 class FlyProgressBar extends StatelessWidget {
   const FlyProgressBar({
@@ -11,13 +12,12 @@ class FlyProgressBar extends StatelessWidget {
     this.color,
     this.lightMode = true,
     this.linearGradient,
-    this.isRTL = false,
   }) : super(key: key);
 
   final double? percentage;
   final double height;
   final Color? color;
-  final bool isRTL;
+
   final bool lightMode;
   final LinearGradient? linearGradient;
 
@@ -25,6 +25,7 @@ class FlyProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constrain) {
+        final bool isRTL = LocalizationService.to.isRTL;
         final double width = constrain.maxWidth;
         final Color effectColor = lightMode ? Colors.black12 : Colors.white12;
         final double effectHeight = height.sp * 0.3;
