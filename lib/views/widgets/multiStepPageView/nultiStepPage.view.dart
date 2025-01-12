@@ -17,8 +17,8 @@ class FlyMultiStepPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyScaffold.padding(
-      child: GetBuilder<MultiStepPageController>(
-        init: MultiStepPageController(),
+      child: GetBuilder<FlyMultiStepPageController>(
+        init: FlyMultiStepPageController(),
         builder: (controller) {
           return Column(
             children: [
