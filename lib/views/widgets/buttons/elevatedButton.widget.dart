@@ -110,12 +110,10 @@ class FlyElevatedButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.sp),
       ),
-      padding:EdgeInsetsDirectional.only(
-        end: 8.sp,
-        start: 1.sp,
-        top: 5.sp,
-        bottom: 5.sp
-      )
+      padding: EdgeInsets.symmetric(
+        vertical: 8.sp,
+        horizontal: 12.sp,
+      ),
     );
 
     //STYLES of the title
