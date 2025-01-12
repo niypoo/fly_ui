@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/layouts/scaffoldLayout.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.screen.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/mutliStepsProgress.widget.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +11,7 @@ class FlyMultiStepPageView extends StatelessWidget {
     required this.screens,
   }) : super(key: key);
 
-  final List<FlyMultiStepScreenView> screens;
+  final List<Widget> screens;
 
   @override
   Widget build(BuildContext context) {
