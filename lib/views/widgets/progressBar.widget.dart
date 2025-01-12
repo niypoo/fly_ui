@@ -25,7 +25,7 @@ class FlyProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constrain) {
-        final bool isRTL = LocalizationService.to.isRTL;
+        final bool isRTL = !LocalizationService.to.isRTL;
         final double width = constrain.maxWidth;
         final Color effectColor = lightMode ? Colors.black12 : Colors.white12;
         final double effectHeight = height.sp * 0.3;

@@ -110,10 +110,12 @@ class FlyElevatedButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.sp),
       ),
-      padding: EdgeInsets.symmetric(
-        vertical: 5.sp,
-        horizontal: 10.sp,
-      ),
+      padding:EdgeInsetsDirectional.only(
+        end: 8.sp,
+        start: 1.sp,
+        top: 5.sp,
+        bottom: 5.sp
+      )
     );
 
     //STYLES of the title
@@ -128,15 +130,12 @@ class FlyElevatedButton extends StatelessWidget {
       margin: margin ?? EdgeInsets.symmetric(horizontal: 0, vertical: 5.sp),
       child: icon != null
           ? ElevatedButton.icon(
-            iconAlignment: iconAlignment ?? IconAlignment.start,
+              iconAlignment: iconAlignment ?? IconAlignment.start,
               onPressed: onPressed as void Function()?,
               style: buttonStyle,
-              label: Padding(
-                padding: EdgeInsetsDirectional.only(start: 14.sp),
-                child: Text(
-                  title,
-                  style: titleStyle,
-                ),
+              label: Text(
+                title,
+                style: titleStyle,
               ),
               icon: Icon(
                 icon,
