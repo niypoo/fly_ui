@@ -59,7 +59,7 @@ class FlyMultiStepPortraitLayout extends StatelessWidget {
         ),
         // BUTTONS
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FluMultiStepPrimaryButton(
                 buttonTitle: buttonText, icon: buttonIcon, onTap: onTap),

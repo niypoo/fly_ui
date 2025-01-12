@@ -58,7 +58,7 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
 
             // BUTTONS
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 FluMultiStepPrimaryButton(buttonTitle: buttonText, onTap: onTap!),
               ],

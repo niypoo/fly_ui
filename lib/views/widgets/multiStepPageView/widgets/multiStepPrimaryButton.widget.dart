@@ -23,6 +23,7 @@ class FluMultiStepPrimaryButton extends StatelessWidget {
         title: buttonTitle,
         onPressed: onTap,
         icon: icon ?? Icons.arrow_forward_ios_rounded,
+        iconAlignment:IconAlignment.end,
       ),
     );
   }
