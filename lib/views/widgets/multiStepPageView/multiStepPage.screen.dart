@@ -3,8 +3,8 @@ import 'package:fly_ui/views/widgets/multiStepPageView/layouts/multiStepPortrait
 import 'package:fly_ui/views/widgets/multiStepPageView/layouts/multiStepLandscape.layout.dart';
 import 'package:get/get.dart';
 
-class FlyMultiStepPageView extends StatelessWidget {
-  const FlyMultiStepPageView({
+class FlyMultiStepScreenView extends StatelessWidget {
+  const FlyMultiStepScreenView({
     Key? key,
     required this.children,
     required this.onTap,
