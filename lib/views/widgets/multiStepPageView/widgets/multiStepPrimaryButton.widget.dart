@@ -35,7 +35,6 @@ class FlyMultiStepPreviousButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyElevatedButton.normal(
       icon: Icons.arrow_back_ios_rounded,
-      iconAlignment: IconAlignment.end,
       onPressed: FlyMultiStepPageController.to.back,
       title: 'Previous'.tr,
     );
