@@ -10,12 +10,13 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
   const FlyMultiStepLandscapeLayout({
     Key? key,
     required this.title,
-    required this.hint,
     required this.children,
-    required this.endHint,
-    required this.buttonTitle,
+    required this.buttonText,
     required this.onTap,
+    this.hint,
+    this.endHint,
     this.subHint,
+    this.buttonIcon,
   }) : super(key: key);
 
   final String title;
@@ -23,8 +24,9 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
   final String? subHint;
   final List<Widget> children;
   final String? endHint;
-  final String buttonTitle;
   final Function? onTap;
+  final String buttonText;
+  final IconData? buttonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,6 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
       childB: FlyLandScapeScroll(
         child: Column(
           children: [
-       
             // OPTIONS
             ...children,
 
@@ -56,7 +57,12 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
             FlyMultiStepBottomHint(endHint: endHint),
 
             // BUTTONS
-            FluMultiStepPrimaryButton(buttonTitle: buttonTitle, onTap: onTap!),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                FluMultiStepPrimaryButton(buttonTitle: buttonText, onTap: onTap!),
+              ],
+            ),
           ],
         ),
       ),

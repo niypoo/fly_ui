@@ -8,20 +8,22 @@ class FlyMultiStepScreenView extends StatelessWidget {
     Key? key,
     required this.children,
     required this.onTap,
-    required this.buttonTitle,
+    required this.buttonText,
     required this.title,
     this.hint,
+    this.buttonIcon,
     this.subHint,
     this.endHint,
   }) : super(key: key);
 
   final List<Widget> children;
-  final Function? onTap;
+  final String buttonText;
+  final Function onTap;
   final String title;
   final String? hint;
   final String? subHint;
   final String? endHint;
-  final String buttonTitle;
+  final IconData? buttonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,8 @@ class FlyMultiStepScreenView extends StatelessWidget {
             hint: hint,
             subHint: subHint,
             endHint: endHint,
-            buttonTitle: buttonTitle,
+            buttonText: buttonText,
+            buttonIcon: buttonIcon,
             onTap: onTap,
             children: children,
           )
@@ -40,7 +43,8 @@ class FlyMultiStepScreenView extends StatelessWidget {
             hint: hint,
             subHint: subHint,
             endHint: endHint,
-            buttonTitle: buttonTitle,
+            buttonText: buttonText,
+            buttonIcon: buttonIcon,
             onTap: onTap,
             children: children,
           );

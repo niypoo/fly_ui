@@ -10,12 +10,13 @@ class FlyMultiStepPortraitLayout extends StatelessWidget {
   const FlyMultiStepPortraitLayout({
     Key? key,
     required this.title,
-    required this.hint,
     required this.children,
-    required this.endHint,
-    required this.buttonTitle,
+    required this.buttonText,
     required this.onTap,
+    this.hint,
+    this.endHint,
     this.subHint,
+    this.buttonIcon,
   }) : super(key: key);
 
   final String title;
@@ -23,8 +24,9 @@ class FlyMultiStepPortraitLayout extends StatelessWidget {
   final String? subHint;
   final List<Widget> children;
   final String? endHint;
-  final String buttonTitle;
   final Function? onTap;
+  final String buttonText;
+  final IconData? buttonIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,13 @@ class FlyMultiStepPortraitLayout extends StatelessWidget {
           ),
         ),
         // BUTTONS
-        FluMultiStepPrimaryButton(buttonTitle: buttonTitle, onTap: onTap),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            FluMultiStepPrimaryButton(
+                buttonTitle: buttonText, icon: buttonIcon, onTap: onTap),
+          ],
+        ),
       ],
     );
   }
