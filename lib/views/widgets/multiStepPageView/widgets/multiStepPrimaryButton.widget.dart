@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/widgets/animations/animatedSlide.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
+import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
+import 'package:get/get.dart';
 
-class FluMultiStepPrimaryButton extends StatelessWidget {
-  const FluMultiStepPrimaryButton({
+class FlyMultiStepNextButton extends StatelessWidget {
+  const FlyMultiStepNextButton({
     Key? key,
     required this.buttonTitle,
     required this.onTap,
@@ -17,13 +18,31 @@ class FluMultiStepPrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 3.h),
-      child: FlyElevatedButton.primary(
-        title: buttonTitle,
-        onPressed: onTap,
-        icon: icon ?? Icons.arrow_forward_ios_rounded,
-        iconAlignment:IconAlignment.end,
+    return FlyElevatedButton.primary(
+      title: buttonTitle,
+      onPressed: onTap,
+      icon: icon ?? Icons.arrow_forward_ios_rounded,
+      iconAlignment: IconAlignment.end,
+    );
+  }
+}
+
+class FlyMultiStepPreviousButton extends StatelessWidget {
+  const FlyMultiStepPreviousButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlyAnimatedSwitcher(
+      key: const ValueKey('BackButton'),
+      crossState: FlyMultiStepPageController.to.step > 1,
+      child2: const SizedBox.shrink(),
+      child1: FlyElevatedButton.normal(
+        icon: Icons.arrow_back_ios_rounded,
+        iconAlignment: IconAlignment.end,
+        onPressed: FlyMultiStepPageController.to.back,
+        title: 'Previous'.tr,
       ),
     );
   }
