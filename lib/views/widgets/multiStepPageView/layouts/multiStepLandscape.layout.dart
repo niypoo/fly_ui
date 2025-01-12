@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/layouts/landscapeView.widget.dart';
+import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepBottomHint.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepHint.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepSubHint.widget.dart';
@@ -60,12 +61,14 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                if (FlyMultiStepPageController.to.step > 1)
+                  const FlyMultiStepPreviousButton(),
+                const Spacer(),
                 FlyMultiStepNextButton(
                   buttonTitle: buttonText,
-                  onTap: onTap!,
+                  icon: buttonIcon,
+                  onTap: onTap,
                 ),
-                const Spacer(),
-                const FlyMultiStepPreviousButton(),
               ],
             ),
           ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/widgets/animations/animatedSlide.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
 import 'package:get/get.dart';
@@ -34,16 +33,11 @@ class FlyMultiStepPreviousButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyAnimatedSwitcher(
-      key: const ValueKey('BackButton'),
-      crossState: FlyMultiStepPageController.to.step > 1,
-      child2: const SizedBox.shrink(),
-      child1: FlyElevatedButton.normal(
-        icon: Icons.arrow_back_ios_rounded,
-        iconAlignment: IconAlignment.end,
-        onPressed: FlyMultiStepPageController.to.back,
-        title: 'Previous'.tr,
-      ),
+    return FlyElevatedButton.normal(
+      icon: Icons.arrow_back_ios_rounded,
+      iconAlignment: IconAlignment.end,
+      onPressed: FlyMultiStepPageController.to.back,
+      title: 'Previous'.tr,
     );
   }
 }

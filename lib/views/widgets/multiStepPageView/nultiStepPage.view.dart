@@ -25,8 +25,6 @@ class FlyMultiStepPageView extends StatelessWidget {
               FlyMultiStepsProgress(
                 total: screens.length,
                 step: controller.step,
-                onTapCancel: controller.cancel,
-                onTapBack: controller.back,
               ),
 
               // Body
