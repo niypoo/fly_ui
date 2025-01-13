@@ -77,8 +77,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         LayoutBuilder(
-          builder: (context, constraints) => RawAutocomplete<String>(
-            textEditingController: _controller,
+          builder: (context, constraints) => Autocomplete<String>(
             fieldViewBuilder:
                 (context, textEditingController, focusNode, onFieldSubmitted) {
               return Form(
@@ -96,7 +95,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
                         }
                         return null;
                       },
-                  controller: textEditingController,
+                  controller: _controller,
                   focusNode: focusNode,
                   hintText: widget.placeholder,
                   onFieldSubmitted: addTag,
