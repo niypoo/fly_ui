@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/restricted/restrictedView.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
 import 'package:fly_ui/views/widgets/progressBar.widget.dart';
 import 'package:get/get.dart';
@@ -21,24 +23,28 @@ class FlyMultiStepsProgress extends StatelessWidget {
     // return widget
     return Row(
       children: [
-        Text.rich(
-          TextSpan(
-            text: 'UI.Step'.tr,
-            children: [
-              const TextSpan(text: ' '),
-              TextSpan(
-                  text: step.toString(),
-                  style: Get.textTheme.bodySmall!
-                      .copyWith(fontWeight: FontWeight.bold)),
-              const TextSpan(text: ' '),
-              TextSpan(
-                  text: 'UI.Of'.tr,
-                  style: Get.textTheme.bodySmall!
-                      .copyWith(fontWeight: FontWeight.bold)),
-              const TextSpan(text: ' '),
-              TextSpan(text: total.toString()),
-            ],
-            style: Get.textTheme.bodySmall,
+
+        Padding(
+          padding: EdgeInsetsDirectional.only(end: 5.sp),
+          child: Text.rich(
+            TextSpan(
+              text: 'UI.Step'.tr,
+              children: [
+                const TextSpan(text: ' '),
+                TextSpan(
+                    text: step.toString(),
+                    style: Get.textTheme.bodySmall!
+                        .copyWith(fontWeight: FontWeight.bold)),
+                const TextSpan(text: ' '),
+                TextSpan(
+                    text: 'UI.Of'.tr,
+                    style: Get.textTheme.bodySmall!
+                        .copyWith(fontWeight: FontWeight.bold)),
+                const TextSpan(text: ' '),
+                TextSpan(text: total.toString()),
+              ],
+              style: Get.textTheme.bodySmall!.copyWith(fontSize: 8.sp),
+            ),
           ),
         ),
 
