@@ -18,6 +18,7 @@ class FlyTagsInput extends StatefulWidget {
     this.allowDuplicates = false,
     this.autocomplete,
     this.formKey,
+    this.focusNode,
     this.controller,
   }) : super(key: key);
 
@@ -30,6 +31,7 @@ class FlyTagsInput extends StatefulWidget {
   final FutureOr<Iterable<String>> Function(String)? autocomplete;
   final GlobalKey<FormState>? formKey;
   final TextEditingController? controller;
+  final FocusNode? focusNode;
 
   @override
   State<FlyTagsInput> createState() => _FlyCheckboxTileState();
@@ -92,7 +94,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
                         return null;
                       },
                   controller: _controller,
-                  focusNode: focusNode,
+                  focusNode: widget.focusNode,
                   hintText: widget.placeholder,
                   onFieldSubmitted: addTag,
                 ),
