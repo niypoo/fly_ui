@@ -34,16 +34,16 @@ class FlyMultiStepsProgress extends StatelessWidget {
                 TextSpan(
                     text: step.toString(),
                     style: Get.textTheme.bodySmall!
-                        .copyWith(fontWeight: FontWeight.bold)),
+                        .copyWith(fontWeight: FontWeight.bold,fontSize: 10.sp)),
                 const TextSpan(text: ' '),
                 TextSpan(
                     text: 'UI.Of'.tr,
                     style: Get.textTheme.bodySmall!
-                        .copyWith(fontWeight: FontWeight.bold)),
+                        .copyWith(fontWeight: FontWeight.bold,fontSize: 10.sp)),
                 const TextSpan(text: ' '),
                 TextSpan(text: total.toString()),
               ],
-              style: Get.textTheme.bodySmall!.copyWith(fontSize: 8.sp),
+              style: Get.textTheme.bodySmall!.copyWith(fontSize: 10.sp),
             ),
           ),
         ),
