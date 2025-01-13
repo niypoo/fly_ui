@@ -17,6 +17,8 @@ class FlyTagsInput extends StatefulWidget {
     this.onChange,
     this.allowDuplicates = false,
     this.autocomplete,
+    this.formKey,
+    this.controller,
   }) : super(key: key);
 
   final String placeholder;
@@ -26,6 +28,8 @@ class FlyTagsInput extends StatefulWidget {
   final bool allowDuplicates;
   final Function(List<String>)? onChange;
   final FutureOr<Iterable<String>> Function(String)? autocomplete;
+  final GlobalKey<FormState>? formKey;
+  final TextEditingController? controller;
 
   @override
   State<FlyTagsInput> createState() => _FlyCheckboxTileState();
@@ -37,7 +41,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
 
   @override
   void initState() {
-    _formKey = GlobalKey();
+    _controller = widget.controller ?? TextEditingController();
+    _formKey = widget.formKey ?? GlobalKey();
     super.initState();
   }
 
@@ -72,10 +77,10 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         LayoutBuilder(
-          builder: (context, constraints) => Autocomplete<String>(
+          builder: (context, constraints) => RawAutocomplete<String>(
+            textEditingController: _controller,
             fieldViewBuilder:
                 (context, textEditingController, focusNode, onFieldSubmitted) {
-              _controller = textEditingController;
               return Form(
                 key: _formKey,
                 child: FlyTextField(
