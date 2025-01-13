@@ -5,6 +5,8 @@ const Map<String, String> uiLoclizationEn = {
   "UI.Confirm": "UI.Confirm",
   "UI.Are you sure you want to delete this value?":
       "UI.Are you sure you want to delete this value?",
-      "UI.Please enter a value": "UI.Please enter a value",
-      "UI.Value already exists": "UI.Value already exists",
+      "UI.Please enter a value": "Please enter a value",
+      "UI.Value already exists": "Value already exists",
+      "UI.Step": "Step",
+      "UI.Of": "Of",
 };

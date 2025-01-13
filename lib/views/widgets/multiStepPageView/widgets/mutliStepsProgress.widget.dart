@@ -21,6 +21,27 @@ class FlyMultiStepsProgress extends StatelessWidget {
     // return widget
     return Row(
       children: [
+        Text.rich(
+          TextSpan(
+            text: 'UI.Step'.tr,
+            children: [
+              const TextSpan(text: ' '),
+              TextSpan(
+                  text: step.toString(),
+                  style: Get.textTheme.bodySmall!
+                      .copyWith(fontWeight: FontWeight.bold)),
+              const TextSpan(text: ' '),
+              TextSpan(
+                  text: 'UI.Of'.tr,
+                  style: Get.textTheme.bodySmall!
+                      .copyWith(fontWeight: FontWeight.bold)),
+              const TextSpan(text: ' '),
+              TextSpan(text: total.toString()),
+            ],
+            style: Get.textTheme.bodySmall,
+          ),
+        ),
+
         // if (step <= (total - 1))
         Expanded(
           child: FadeIn(
