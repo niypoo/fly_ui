@@ -48,10 +48,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
 
   void addTag(String tag) {
     if (!_formKey.currentState!.validate()) return;
-    setState(() {
-      widget.selectedValues.add(tag);
-      _controller.clear();
-    });
+    widget.selectedValues.add(tag);
+    _controller.clear();
   }
 
   Future<void> removeTag(String tag) async {
@@ -63,10 +61,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
     // skip if user cancel the confirmation
     if (confirmation == null || confirmation == false) return;
 
-    setState(() {
-      // remove the tag
-      widget.selectedValues.remove(tag);
-    });
+    // remove the tag
+    widget.selectedValues.remove(tag);
   }
 
   @override
@@ -121,21 +117,24 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
             onSelected: addTag,
           ),
         ),
-        if (widget.selectedValues.isNotEmpty)
-          Padding(
-            padding: EdgeInsets.only(bottom: 6.sp),
-            child: Wrap(
-              children: widget.selectedValues
-                  .map((tag) => FlyChip(
-                        tag: tag,
-                        backgroundColor: widget.outline
-                            ? null
-                            : Get.theme.scaffoldBackgroundColor,
-                        onRemove: () => removeTag(tag),
-                      ))
-                  .toList(),
-            ),
-          ),
+        Obx(
+          () => widget.selectedValues.isNotEmpty
+              ? Padding(
+                  padding: EdgeInsets.only(bottom: 6.sp),
+                  child: Wrap(
+                    children: widget.selectedValues
+                        .map((tag) => FlyChip(
+                              tag: tag,
+                              backgroundColor: widget.outline
+                                  ? null
+                                  : Get.theme.scaffoldBackgroundColor,
+                              onRemove: () => removeTag(tag),
+                            ))
+                        .toList(),
+                  ),
+                )
+              : const SizedBox.shrink(),
+        )
       ],
     );
   }
