@@ -53,12 +53,6 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    _focusNode.dispose();
-    super.dispose();
-  }
-
   void addTag(String tag) {
     if (!_formKey.currentState!.validate()) return;
     widget.selectedValues.add(tag);
