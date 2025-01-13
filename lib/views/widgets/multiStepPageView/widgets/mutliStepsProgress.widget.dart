@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
-import 'package:fly_ui/restricted/restrictedView.widget.dart';
 import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
 import 'package:fly_ui/views/widgets/progressBar.widget.dart';
 import 'package:get/get.dart';
