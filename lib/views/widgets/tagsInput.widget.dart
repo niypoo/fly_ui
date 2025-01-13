@@ -19,6 +19,7 @@ class FlyTagsInput extends StatefulWidget {
     this.autocomplete,
     this.formKey,
     this.focusNode,
+    this.constantlyFocused = true,
     this.controller,
   }) : super(key: key);
 
@@ -26,6 +27,7 @@ class FlyTagsInput extends StatefulWidget {
   final RxList<String> selectedValues;
   final String? Function(String?)? validator;
   final bool outline;
+  final bool constantlyFocused;
   final bool allowDuplicates;
   final Function(List<String>)? onChange;
   final FutureOr<Iterable<String>> Function(String)? autocomplete;
@@ -40,18 +42,30 @@ class FlyTagsInput extends StatefulWidget {
 class _FlyCheckboxTileState extends State<FlyTagsInput> {
   late TextEditingController _controller;
   late GlobalKey<FormState> _formKey;
+  late FocusNode _focusNode;
 
   @override
   void initState() {
     _controller = widget.controller ?? TextEditingController();
     _formKey = widget.formKey ?? GlobalKey();
+    _focusNode = widget.focusNode ?? FocusNode();
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
   }
 
   void addTag(String tag) {
     if (!_formKey.currentState!.validate()) return;
     widget.selectedValues.add(tag);
     _controller.clear();
+    
+    // when Constantly Focused is turn on
+    if (widget.constantlyFocused) _focusNode.requestFocus();
   }
 
   Future<void> removeTag(String tag) async {
@@ -94,7 +108,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
                         return null;
                       },
                   controller: _controller,
-                  focusNode: widget.focusNode,
+                  focusNode: _focusNode,
                   hintText: widget.placeholder,
                   onFieldSubmitted: addTag,
                 ),
