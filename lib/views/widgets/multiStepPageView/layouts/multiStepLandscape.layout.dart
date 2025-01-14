@@ -59,16 +59,14 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
 
             // BUTTONS
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 if (FlyMultiStepPageController.to.step > 1)
-                  const Flexible(child: FlyMultiStepPreviousButton()),
-                Expanded(
-                  child: FlyMultiStepNextButton(
-                    buttonTitle: buttonText,
-                    icon: buttonIcon,
-                    onTap: onTap,
-                  ),
+                  const FlyMultiStepPreviousButton(),
+                FlyMultiStepNextButton(
+                  buttonTitle: buttonText,
+                  icon: buttonIcon,
+                  onTap: onTap,
                 ),
               ],
             ),
