@@ -125,7 +125,7 @@ class FlyElevatedButton extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) => SizedBox(
-        width: expand ? constraints.maxWidth : constraints.minWidth,
+        width: expand ? constraints.maxWidth : null,
         child: icon != null
             ? ElevatedButton.icon(
                 iconAlignment: iconAlignment ?? IconAlignment.start,
