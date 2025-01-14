@@ -124,41 +124,36 @@ class FlyElevatedButton extends StatelessWidget {
       fontWeight: FontWeight.bold,
     );
 
-    return LayoutBuilder(
-      builder: (context, constraints) => SizedBox(
-        width: expand ? constraints.maxWidth : null,
-        child: icon != null
-            ? ElevatedButton.icon(
-                iconAlignment: iconAlignment ?? IconAlignment.start,
-                onPressed: onPressed as void Function()?,
-                style: buttonStyle,
-                label: FittedBox(
-                  child: AutoSizeText(
-                    title,
-                    style: titleStyle,
-                    maxLines: 1,
-                  ),
-                ),
-                icon: FittedBox(
-                  child: Icon(
-                    icon,
-                    color: textColor,
-                    size: 14.sp,
-                  ),
-                ),
-              )
-            : ElevatedButton(
-                onPressed: onPressed as void Function()?,
-                style: buttonStyle,
-                child: FittedBox(
-                  child: AutoSizeText(
-                    title,
-                    style: titleStyle,
-                    maxLines: 1,
-                  ),
-                ),
+    return icon != null
+        ? ElevatedButton.icon(
+            iconAlignment: iconAlignment ?? IconAlignment.start,
+            onPressed: onPressed as void Function()?,
+            style: buttonStyle,
+            label: FittedBox(
+              child: AutoSizeText(
+                title,
+                style: titleStyle,
+                maxLines: 1,
               ),
-      ),
-    );
+            ),
+            icon: FittedBox(
+              child: Icon(
+                icon,
+                color: textColor,
+                size: 14.sp,
+              ),
+            ),
+          )
+        : ElevatedButton(
+            onPressed: onPressed as void Function()?,
+            style: buttonStyle,
+            child: FittedBox(
+              child: AutoSizeText(
+                title,
+                style: titleStyle,
+                maxLines: 1,
+              ),
+            ),
+          );
   }
 }
