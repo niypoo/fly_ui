@@ -136,8 +136,6 @@ class FlyElevatedButton extends StatelessWidget {
                   title,
                   style: titleStyle,
                   maxLines: 1,
-                  maxFontSize: 11.sp,
-                  minFontSize: 5.sp,
                 ),
                 icon: Icon(
                   icon,
@@ -152,8 +150,6 @@ class FlyElevatedButton extends StatelessWidget {
                   title,
                   style: titleStyle,
                   maxLines: 1,
-                  maxFontSize: 11.sp,
-                  minFontSize: 5.sp,
                 ),
               ),
       ),
