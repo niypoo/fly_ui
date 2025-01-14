@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
 
 class FlyElevatedButton extends StatelessWidget {
@@ -128,22 +129,10 @@ class FlyElevatedButton extends StatelessWidget {
       builder: (context, constraints) => SizedBox(
         width: expand ? constraints.maxWidth : null,
         child: icon != null
-            ? ElevatedButton.icon(
-                iconAlignment: iconAlignment ?? IconAlignment.start,
+            ? FlyIconButton.primary(
                 onPressed: onPressed as void Function()?,
-                style: buttonStyle,
-                label: AutoSizeText(
-                  title,
-                  style: titleStyle,
-                  maxLines: 1,
-                ),
-                icon: FittedBox(
-                  child: Icon(
-                    icon,
-                    color: textColor,
-                    size: 30,
-                  ),
-                ),
+                icon: icon,
+                size: 20.sp,
               )
             : ElevatedButton(
                 onPressed: onPressed as void Function()?,
