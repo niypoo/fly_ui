@@ -17,11 +17,14 @@ class FlyMultiStepNextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyElevatedButton.primary(
-      title: buttonTitle,
-      onPressed: onTap,
-      icon: icon ?? Icons.arrow_forward_ios_rounded,
-      iconAlignment: IconAlignment.end,
+    return Hero(
+      tag: const ValueKey('FlyMultiStepNextButton'),
+      child: FlyElevatedButton.primary(
+        title: buttonTitle,
+        onPressed: onTap,
+        icon: icon ?? Icons.arrow_forward_ios_rounded,
+        iconAlignment: IconAlignment.end,
+      ),
     );
   }
 }

@@ -123,32 +123,33 @@ class FlyElevatedButton extends StatelessWidget {
       fontWeight: FontWeight.bold,
     );
 
-    return Container(
-      width: expand ? Get.width : null,
-      margin: margin ?? EdgeInsets.symmetric(horizontal: 0, vertical: 5.sp),
-      child: icon != null
-          ? ElevatedButton.icon(
-              iconAlignment: iconAlignment ?? IconAlignment.start,
-              onPressed: onPressed as void Function()?,
-              style: buttonStyle,
-              label: Text(
-                title,
-                style: titleStyle,
+    return LayoutBuilder(
+      builder: (context, constraints) => SizedBox(
+        width: expand ? constraints.maxWidth : constraints.minWidth,
+        child: icon != null
+            ? ElevatedButton.icon(
+                iconAlignment: iconAlignment ?? IconAlignment.start,
+                onPressed: onPressed as void Function()?,
+                style: buttonStyle,
+                label: Text(
+                  title,
+                  style: titleStyle,
+                ),
+                icon: Icon(
+                  icon,
+                  color: textColor,
+                  size: 14.sp,
+                ),
+              )
+            : ElevatedButton(
+                onPressed: onPressed as void Function()?,
+                style: buttonStyle,
+                child: Text(
+                  title,
+                  style: titleStyle,
+                ),
               ),
-              icon: Icon(
-                icon,
-                color: textColor,
-                size: 14.sp,
-              ),
-            )
-          : ElevatedButton(
-              onPressed: onPressed as void Function()?,
-              style: buttonStyle,
-              child: Text(
-                title,
-                style: titleStyle,
-              ),
-            ),
+      ),
     );
   }
 }
