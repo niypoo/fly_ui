@@ -13,11 +13,14 @@ class FlyMultiStepTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoSizeText(
-      title,
-      style: Get.textTheme.titleLarge!.copyWith(
-        fontSize: 18.sp,
-        fontWeight: FontWeight.bold,
+    return Hero(
+      tag: const ValueKey('FlyMultiStepTitle'),
+      child: AutoSizeText(
+        title,
+        style: Get.textTheme.titleLarge!.copyWith(
+          fontSize: 18.sp,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
