@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
@@ -131,9 +132,12 @@ class FlyElevatedButton extends StatelessWidget {
                 iconAlignment: iconAlignment ?? IconAlignment.start,
                 onPressed: onPressed as void Function()?,
                 style: buttonStyle,
-                label: Text(
+                label: AutoSizeText(
                   title,
                   style: titleStyle,
+                  maxLines: 1,
+                  maxFontSize: 11.sp,
+                  minFontSize: 5.sp,
                 ),
                 icon: Icon(
                   icon,
@@ -144,9 +148,12 @@ class FlyElevatedButton extends StatelessWidget {
             : ElevatedButton(
                 onPressed: onPressed as void Function()?,
                 style: buttonStyle,
-                child: Text(
+                child: AutoSizeText(
                   title,
                   style: titleStyle,
+                  maxLines: 1,
+                  maxFontSize: 11.sp,
+                  minFontSize: 5.sp,
                 ),
               ),
       ),
