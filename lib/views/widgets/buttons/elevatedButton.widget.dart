@@ -137,13 +137,7 @@ class FlyElevatedButton extends StatelessWidget {
                   style: titleStyle,
                   maxLines: 1,
                 ),
-                icon: FittedBox(
-                  child: Icon(
-                    icon,
-                    color: textColor,
-                    size: 14.sp,
-                  ),
-                ),
+               
               )
             : ElevatedButton(
                 onPressed: onPressed as void Function()?,
