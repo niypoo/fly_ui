@@ -140,7 +140,7 @@ class FlyElevatedButton extends StatelessWidget {
                 icon: Icon(
                   icon,
                   color: textColor,
-                  size: 14.sp,
+                  size: 9.sp,
                 ),
               )
             : ElevatedButton(
