@@ -46,7 +46,7 @@ class FlyProgressBar extends StatelessWidget {
               right: isRTL ? 10 : null,
               bottom: effectPosition,
               child: FlyProgressContainer(
-                color: effectColor,
+                color: percentage! > 0.8 ? effectColor : Colors.white30,
                 height: effectHeight,
                 width: 5,
               ),
@@ -57,7 +57,7 @@ class FlyProgressBar extends StatelessWidget {
               right: isRTL ? 18 : null,
               bottom: effectPosition,
               child: FlyProgressContainer(
-                color: effectColor,
+                color: percentage! > 0.9 ? effectColor : Colors.white30,
                 height: effectHeight,
                 width: 15,
               ),
@@ -69,7 +69,7 @@ class FlyProgressBar extends StatelessWidget {
               right: isRTL ? 36 : null,
               bottom: effectPosition,
               child: FlyProgressContainer(
-                color: effectColor,
+                color: percentage! > 1 ? effectColor : Colors.white30,
                 height: effectHeight,
                 width: 15,
               ),
@@ -85,29 +85,28 @@ class FlyProgressBar extends StatelessWidget {
             ),
 
             // effect
-            if (percentage! > 0.2)
-              Positioned(
-                left: isRTL ? 10 : null,
-                right: isRTL ? null : 10,
-                top: effectPosition,
-                child: FlyProgressContainer(
-                  color: Colors.white30,
-                  height: effectHeight,
-                  width: percentage! <= 0 ? 0 : 15,
-                ),
+            Positioned(
+              left: isRTL ? 10 : null,
+              right: isRTL ? null : 10,
+              top: effectPosition,
+              child: FlyProgressContainer(
+                color: percentage! > 0.2 ? Colors.white30 : effectColor,
+                height: effectHeight,
+                width: percentage! <= 0 ? 0 : 15,
               ),
+            ),
+
             // effect
-            if (percentage! > 0.2)
-              Positioned(
-                left: isRTL ? 30 : null,
-                right: isRTL ? null : 30,
-                top: effectPosition,
-                child: FlyProgressContainer(
-                  color: Colors.white30,
-                  height: effectHeight,
-                  width: percentage! <= 0 ? 0 : 8,
-                ),
+            Positioned(
+              left: isRTL ? 30 : null,
+              right: isRTL ? null : 30,
+              top: effectPosition,
+              child: FlyProgressContainer(
+                color: percentage! > 0.2 ? Colors.white30 : effectColor,
+                height: effectHeight,
+                width: percentage! <= 0 ? 0 : 8,
               ),
+            ),
           ],
         );
       },
