@@ -97,7 +97,7 @@ class FlyProgressBar extends StatelessWidget {
                 ),
               ),
             // effect
-            if (percentage! > 0.2)
+            if (percentage! > 0.1)
               Positioned(
                 left: isRTL ? 30 : null,
                 right: isRTL ? null : 30,
