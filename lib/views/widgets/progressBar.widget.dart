@@ -85,7 +85,7 @@ class FlyProgressBar extends StatelessWidget {
             ),
 
             // effect
-            if (percentage! > 0.1)
+            if (progressFull > 25)
               Positioned(
                 left: isRTL ? 10 : null,
                 right: isRTL ? null : 10,
@@ -93,11 +93,12 @@ class FlyProgressBar extends StatelessWidget {
                 child: FlyProgressContainer(
                   color: Colors.white30,
                   height: effectHeight,
-                  width: percentage! <= 0 ? 0 : 15,
+                  width: 15,
                 ),
               ),
+
             // effect
-            if (percentage! > 0.1)
+            if (progressFull > 38)
               Positioned(
                 left: isRTL ? 30 : null,
                 right: isRTL ? null : 30,
@@ -105,7 +106,7 @@ class FlyProgressBar extends StatelessWidget {
                 child: FlyProgressContainer(
                   color: Colors.white30,
                   height: effectHeight,
-                  width: percentage! <= 0 ? 0 : 8,
+                  width: 8,
                 ),
               ),
           ],
