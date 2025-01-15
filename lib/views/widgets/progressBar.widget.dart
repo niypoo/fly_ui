@@ -76,13 +76,13 @@ class FlyProgressBar extends StatelessWidget {
             ),
 
             // progress
-            if (percentage! > 0.1)
-              FlyProgressContainer(
-                linearGradient: linearGradient,
-                color: color ?? Get.theme.primaryColor,
-                height: height.sp,
-                width: percentage! <= 0 ? 0 : progressFull,
-              ),
+            // if (percentage! > 0.1)
+            FlyProgressContainer(
+              linearGradient: linearGradient,
+              color: color ?? Get.theme.primaryColor,
+              height: height.sp,
+              width: progressFull,
+            ),
 
             // effect
             if (percentage! > 0.2)
