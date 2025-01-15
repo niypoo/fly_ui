@@ -55,7 +55,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
 
   void addTag(String tag) {
     if (!_formKey.currentState!.validate()) return;
-    widget.selectedValues.add(tag);
+    widget.selectedValues.add(tag.trim());
     _controller.clear();
     
     // when Constantly Focused is turn on
