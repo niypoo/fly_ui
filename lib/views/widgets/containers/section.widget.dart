@@ -51,7 +51,7 @@ class _FlySectionState extends State<FlySection> {
                   widget.title,
                   style: Get.textTheme.titleLarge!.copyWith(
                     fontWeight: FontWeight.bold,
-                    fontSize: 14.sp,
+                    fontSize: 11.sp,
                   ),
                 ),
                 const Icon(Icons.arrow_drop_down)
@@ -60,8 +60,11 @@ class _FlySectionState extends State<FlySection> {
           ),
           if (expanded)
             Padding(
-              padding: EdgeInsets.only(bottom: 8.sp),
+              padding: EdgeInsets.only(top: 8.sp),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: widget.children,
               ),
             ),

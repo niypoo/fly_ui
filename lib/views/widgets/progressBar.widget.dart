@@ -10,6 +10,7 @@ class FlyProgressBar extends StatelessWidget {
     this.percentage,
     this.height = 12,
     this.color,
+    this.bgColor,
     this.lightMode = true,
     this.linearGradient,
   }) : super(key: key);
@@ -17,6 +18,7 @@ class FlyProgressBar extends StatelessWidget {
   final double? percentage;
   final double height;
   final Color? color;
+  final Color? bgColor;
 
   final bool lightMode;
   final LinearGradient? linearGradient;
@@ -35,7 +37,7 @@ class FlyProgressBar extends StatelessWidget {
         return Stack(
           children: [
             FlyProgressContainer(
-              color: Get.theme.cardColor,
+              color: bgColor ?? Get.theme.cardColor,
               height: height.sp,
               width: width,
             ),
