@@ -67,8 +67,6 @@ class FlyInputTileWrap extends StatelessWidget {
                                 fontSize: 11.sp,
                                 height: 0,
                               ),
-                              maxFontSize: 11.sp,
-                              minFontSize: 8.sp,
                               maxLines: 1,
                             ),
                           ),
