@@ -38,39 +38,35 @@ class _FlySectionState extends State<FlySection> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        FlyContainer(
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 8.sp),
-                child: GestureDetector(
-                  onTap: toggle,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        widget.title,
-                        style: Get.textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14.sp,
-                        ),
-                      ),
-                      const Icon(Icons.arrow_drop_down)
-                    ],
+    return FlyContainer(
+      margin: EdgeInsets.only(bottom: 8.sp),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: toggle,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.title,
+                  style: Get.textTheme.titleLarge!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14.sp,
                   ),
                 ),
-              ),
-              if (expanded) ...widget.children,
-            ],
+                const Icon(Icons.arrow_drop_down)
+              ],
+            ),
           ),
-        ),
-        if (widget.divider) const FlyDivider(),
-      ],
+          if (expanded)
+            Padding(
+              padding: EdgeInsets.only(bottom: 8.sp),
+              child: Column(
+                children: widget.children,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
