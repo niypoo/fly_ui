@@ -11,12 +11,14 @@ class FlySection extends StatefulWidget {
     required this.children,
     this.divider = true,
     this.expanded = true,
+    this.showExpandedButton = true,
   });
 
   final String title;
   final List<Widget> children;
   final bool divider;
   final bool expanded;
+  final bool showExpandedButton;
 
   @override
   State<FlySection> createState() => _FlySectionState();
@@ -56,7 +58,7 @@ class _FlySectionState extends State<FlySection> {
                     fontSize: 11.sp,
                   ),
                 ),
-                const Icon(Icons.arrow_drop_down)
+                if (widget.showExpandedButton) const Icon(Icons.arrow_drop_down)
               ],
             ),
           ),
