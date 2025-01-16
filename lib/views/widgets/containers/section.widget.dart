@@ -63,7 +63,7 @@ class _FlySectionState extends State<FlySection> {
               padding: EdgeInsets.only(top: 8.sp),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: widget.children,
               ),
