@@ -47,7 +47,7 @@ class _FlySectionState extends State<FlySection> {
       child: Column(
         children: [
           GestureDetector(
-            onTap: toggle,
+            onTap: widget.showExpandedButton ? toggle : null,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
