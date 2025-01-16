@@ -29,9 +29,9 @@ class FlyChip extends StatelessWidget {
           side: const BorderSide(width: 0, color: Colors.transparent),
           borderRadius: BorderRadius.circular(15.sp),
         ),
-        padding: EdgeInsets.all(4.sp),
+        // padding: EdgeInsets.all(4.sp),
         backgroundColor: backgroundColor ?? Get.theme.cardColor,
-        labelPadding: EdgeInsets.symmetric(horizontal: 2.sp),
+        labelPadding: EdgeInsets.symmetric(horizontal: 4.sp),
         avatar: avatar,
         label: Text(
           tag,
