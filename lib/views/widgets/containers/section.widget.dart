@@ -39,6 +39,7 @@ class _FlySectionState extends State<FlySection> {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
+      color: Get.theme.scaffoldBackgroundColor,
       margin: EdgeInsets.only(bottom: 8.sp),
       child: Column(
         children: [

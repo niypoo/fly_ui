@@ -38,7 +38,7 @@ class FlyChip extends StatelessWidget {
           style: Get.textTheme.bodyMedium!.copyWith(
             fontWeight: FontWeight.w600,
           ),
-        ), //Text
+        ), 
       ),
     );
   }
