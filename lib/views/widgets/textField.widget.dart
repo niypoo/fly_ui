@@ -49,10 +49,10 @@ class FlyTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final void Function(String)? onFieldSubmitted;
-  final Function? onTap;
-  final Function? onEditingComplete;
-  final Function? onSaved;
-  final Function? onChanged;
+  final Function(String?)? onTap;
+  final Function(String?)? onEditingComplete;
+  final Function(String?)? onSaved;
+  final Function(String?)? onChanged;
   final String? initialValue;
   final String? labelText;
   final String? hintText;
@@ -181,7 +181,7 @@ class FlyTextField extends StatelessWidget {
             ),
         textAlign: textAlign,
         textAlignVertical: textAlignVertical,
-        onFieldSubmitted: onFieldSubmitted as void Function(String)?,
+        onFieldSubmitted: onFieldSubmitted,
         onChanged: onChanged as void Function(String)?,
         onEditingComplete: onEditingComplete as void Function()?,
         onSaved: onSaved as void Function(String?)?,

@@ -28,6 +28,7 @@ class FlySearchInput extends StatelessWidget {
           textInputAction: TextInputAction.search,
           controller: controller.searchTextController,
           onFieldSubmitted: controller.onFieldSubmitted,
+          onChanged:controller.onFieldSubmitted,
           color: Get.theme.cardColor,
           borderColor: Colors.transparent,
           hintText: placeholder,
