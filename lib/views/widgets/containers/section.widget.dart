@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
-import 'package:fly_ui/views/widgets/divider.widget.dart';
 import 'package:get/get.dart';
 
-class FlySection extends StatefulWidget {
-  const FlySection({
+class FlyExpandedSection extends StatefulWidget {
+  const FlyExpandedSection({
     super.key,
     required this.title,
     required this.children,
@@ -21,10 +20,10 @@ class FlySection extends StatefulWidget {
   final bool showExpandedButton;
 
   @override
-  State<FlySection> createState() => _FlySectionState();
+  State<FlyExpandedSection> createState() => _FlyExpandedSectionState();
 }
 
-class _FlySectionState extends State<FlySection> {
+class _FlyExpandedSectionState extends State<FlyExpandedSection> {
   bool expanded = true;
 
   @override
