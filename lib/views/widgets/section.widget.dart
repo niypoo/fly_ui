@@ -47,7 +47,7 @@ class FlySection extends StatelessWidget {
 
           if (divider)
             Divider(
-              color: Get.iconColor!.withOpacity(0.2),
+              color: Get.iconColor!.withOpacity(0.1),
               height: 10.sp,
               indent: 10.sp,
               endIndent: 10.sp,
