@@ -35,10 +35,7 @@ class FlySection extends StatelessWidget {
         children: [
           // Title
           FlyMultiStepTitle(title: title),
-          SizedBox(height: 2.sp),
-          // HINT
           FlyMultiStepHint(hint: subtitle),
-          // Sub Hint
           FlyMultiStepSubHint(subHint: hint),
           SizedBox(height: 8.sp),
 
