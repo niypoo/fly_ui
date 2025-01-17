@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
@@ -16,16 +15,10 @@ class FlyMultiStepSubHint extends StatelessWidget {
   Widget build(BuildContext context) {
     return subHint == null
         ? const SizedBox.shrink()
-        : Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: AppConfigService.to.space!.m),
-            child: AutoSizeText(
-              subHint!,
-              style: Get.textTheme.bodyMedium!.copyWith(
-                fontSize: 8.sp,
-                fontWeight: FontWeight.w300
-              ),
-            ),
+        : AutoSizeText(
+            subHint!,
+            style: Get.textTheme.bodyMedium!
+                .copyWith(fontSize: 8.sp, fontWeight: FontWeight.w300),
           );
   }
 }
