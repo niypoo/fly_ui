@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyLandscapeDivider extends StatelessWidget {
   const FlyLandscapeDivider({
@@ -11,7 +11,7 @@ class FlyLandscapeDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 8.sph,
+        width: 8.sp,
         height: 70.h,
         child: VerticalDivider(
           color: Get.theme.cardColor,
