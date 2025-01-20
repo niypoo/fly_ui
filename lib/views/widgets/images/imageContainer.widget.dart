@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyImageContainer extends StatelessWidget {
   const FlyImageContainer({

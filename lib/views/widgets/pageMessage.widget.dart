@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:get/get.dart';
 

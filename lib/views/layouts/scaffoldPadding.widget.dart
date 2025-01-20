@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
 
 class FlyScaffoldPadding extends StatelessWidget {
@@ -19,13 +19,13 @@ class FlyScaffoldPadding extends StatelessWidget {
         left: disabled
             ? 0
             : context.isPhone
-                ? 3.sw
-                : 5.sw,
+                ? 3.sph
+                : 5.sph,
         right: disabled
             ? 0
             : context.isPhone
-                ? 3.sw
-                : 5.sw,
+                ? 3.sph
+                : 5.sph,
       ),
       child: child,
     );

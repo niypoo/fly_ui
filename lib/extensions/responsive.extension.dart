@@ -1,22 +1,30 @@
-import 'package:get/get.dart';
+import 'dart:ui';
 
 extension Responsive on num {
+  
+  // handle device sizes
+  FlutterView get view => PlatformDispatcher.instance.views.first;
+  double get physicalWidth => view.physicalSize.width;
+  double get physicalHeight => view.physicalSize.height;
+  double get devicePixelRatio => view.devicePixelRatio;
+  
+  bool get isLandscape => view.physicalSize.aspectRatio > 1;
+  double get screeWidth => physicalWidth / devicePixelRatio;
+  double get screenHeight => physicalHeight / devicePixelRatio;
+
+
   /// Calculates the height depending on the device's screen size
-  double get h => this * Get.height / 100;
+  double get h => this * screenHeight / 100;
 
   /// Calculates the width depending on the device's screen size
-  double get w => this *  Get.width / 100;
+  double get w => this *  screeWidth / 100;
 
-  // split width in landscape (2 half)
-  double get sw => this *  (isLandscape ? (Get.width * 0.5) : Get.width) / 100;
+  ///Calculates the sp (Scalable Pixel Half Screen) depending on the device's screen size
+  ///This is useful in cas you split screen in landscape mode 
+  double get sph => this *  (isLandscape ? (screeWidth * 0.5) : screeWidth) / 100;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
-  double get sp => this * ((isLandscape ? Get.height : Get.width) / fontSizeDividedRation) / 100;
+  double get sp => this * ((isLandscape ? screenHeight : screeWidth) / devicePixelRatio) / 100;
 
-  // if landscape
-  bool get isLandscape => Get.context!.isLandscape;
-
-  // define what a ratio that I will divided font
-  int get fontSizeDividedRation => Get.context!.isPhone ? 3 : 5;
   
 }

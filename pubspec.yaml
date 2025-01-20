@@ -35,6 +35,9 @@ dependencies:
   localization_service:
     git: 
       url: git@github.com:niypoo/localization_service.git
+  patata_responsive:
+    git: 
+      url: git@github.com:niypoo/patata_responsive.git
       
 dev_dependencies:
   flutter_test:
