@@ -49,6 +49,8 @@ class FlySection extends StatelessWidget {
               // Title
               Expanded(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     FlyStepperTitle(title: title),
                     FlyStepperSubtitle(hint: subtitle),

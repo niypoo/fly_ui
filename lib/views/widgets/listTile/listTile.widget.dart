@@ -52,7 +52,7 @@ class FlyListTile extends StatelessWidget {
                   titleChild ??
                       AutoSizeText(
                         title,
-                        style: Get.textTheme.titleMedium,
+                        style: Get.textTheme.titleSmall,
                         maxLines: 1,
                       ),
                   if (value != null)
