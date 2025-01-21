@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/widgets.dart';
 import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
