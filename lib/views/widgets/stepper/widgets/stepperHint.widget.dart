@@ -14,9 +14,6 @@ class FlyStepperHint extends StatelessWidget {
   Widget build(BuildContext context) {
     return subHint == null
         ? const SizedBox.shrink()
-        : AutoSizeText(
-            subHint!,
-            style: Get.textTheme.bodyMedium
-          );
+        : AutoSizeText(subHint!, style: Get.textTheme.bodySmall);
   }
 }
