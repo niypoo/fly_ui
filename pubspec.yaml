@@ -17,7 +17,7 @@ dependencies:
   cached_network_image: ^3.2.3
   flutter_svg: ^2.0.7
   animations: ^2.0.7
-  flutter_zoom_drawer: ^3.1.1
+  flutter_zoom_drawer: ^3.2.0
   paginate_firestore_plus: ^1.0.1+2
   patata_responsive: ^0.0.1
 
