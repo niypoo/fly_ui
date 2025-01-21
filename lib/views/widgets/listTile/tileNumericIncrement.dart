@@ -34,6 +34,7 @@ class FlyTileNumericIncrement extends StatelessWidget {
           FlyIconButton.primary(
             icon: UniconsLine.minus,
             onPressed: decrementTap,
+            size: 20,
           ),
 
           SizedBox(width: 4.sp),
@@ -42,6 +43,7 @@ class FlyTileNumericIncrement extends StatelessWidget {
           FlyIconButton.primary(
             icon: UniconsLine.plus,
             onPressed: incrementTap,
+            size: 20,
           ),
         ],
       ),
