@@ -25,16 +25,16 @@ class FlyTileNumericIncrement extends StatelessWidget {
       title: title ?? '',
       leading: Text(
         value.toString(),
-        style: Get.textTheme.titleMedium,
+        style: Get.textTheme.titleSmall,
       ),
       trailing: Row(
         children: [
           
           // Decrement
-          FlyIconButton.primary(
+          FlyIconButton.card(
             icon: UniconsLine.minus,
             onPressed: decrementTap,
-            size: 20,
+            size: 24,
           ),
 
           SizedBox(width: 4.sp),
@@ -43,7 +43,7 @@ class FlyTileNumericIncrement extends StatelessWidget {
           FlyIconButton.primary(
             icon: UniconsLine.plus,
             onPressed: incrementTap,
-            size: 20,
+            size: 24,
           ),
         ],
       ),
