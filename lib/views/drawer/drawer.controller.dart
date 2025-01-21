@@ -4,25 +4,24 @@ import 'package:get/get.dart';
 class FlyDrawerController extends GetxController {
   static FlyDrawerController get to => Get.find();
 
-  final zoomDrawerController = ZoomDrawerController();
+  final ZoomDrawerController zoomDrawerController = ZoomDrawerController();
 
   // true = open | false = close
   final RxBool status = RxBool(false);
 
   @override
   void onInit() {
+    zoomDrawerController.stateNotifier!.addListener(
+      () async {
+        status.value =
+            zoomDrawerController.stateNotifier!.value == DrawerState.open;
+      },
+    );
     super.onInit();
   }
 
   @override
   void onReady() {
-    zoomDrawerController.stateNotifier!.addListener(
-      () async {        
-        status.value =
-            zoomDrawerController.stateNotifier!.value == DrawerState.open;
-      },
-    );
-
     super.onReady();
   }
 
