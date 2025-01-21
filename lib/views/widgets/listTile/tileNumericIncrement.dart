@@ -25,7 +25,7 @@ class FlyTileNumericIncrement extends StatelessWidget {
       title: title ?? '',
       leading: Text(
         value.toString(),
-        style: Get.textTheme.labelLarge,
+        style: Get.textTheme.titleLarge,
       ),
       trailing: Row(
         children: [
