@@ -33,12 +33,11 @@ class FlyDrawerButton extends StatelessWidget {
     super.key,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return FlyIconButton(
       icon: UniconsLine.bars,
-      onPressed: FlyDrawerController.to.toggleDrawer,
+      onPressed: () => FlyDrawerController.to.toggleDrawer(),
       shape: BoxShape.circle,
     );
   }

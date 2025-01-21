@@ -11,17 +11,18 @@ class FlyDrawerController extends GetxController {
 
   @override
   void onInit() {
-    zoomDrawerController.stateNotifier!.addListener(
-      () async {
-        status.value =
-            zoomDrawerController.stateNotifier!.value == DrawerState.open;
-      },
-    );
     super.onInit();
   }
 
   @override
   void onReady() {
+    zoomDrawerController.stateNotifier!.addListener(
+      () async {        
+        status.value =
+            zoomDrawerController.stateNotifier!.value == DrawerState.open;
+      },
+    );
+
     super.onReady();
   }
 
