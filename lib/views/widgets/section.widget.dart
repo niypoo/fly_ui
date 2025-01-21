@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:patata_responsive/patata_responsive.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepBottomHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepSubHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepTitle.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubHint.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperHint.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
 import 'package:get/get.dart';
 
 class FlySection extends StatelessWidget {
@@ -13,7 +13,9 @@ class FlySection extends StatelessWidget {
     required this.title,
     this.subtitle,
     this.hint,
+    this.action,
     this.bottomHint,
+    this.leading,
     this.divider = false,
   });
 
@@ -23,6 +25,8 @@ class FlySection extends StatelessWidget {
   final String? hint;
   final String? bottomHint;
   final bool divider;
+  final Widget? action;
+  final Widget? leading;
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +37,43 @@ class FlySection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Title
-          FlyMultiStepTitle(title: title),
-          FlyMultiStepHint(hint: subtitle),
-          FlyMultiStepSubHint(subHint: hint),
-          SizedBox(height: 8.sp),
+          Row(
+            children: [
+              // leading
+              if (leading != null)
+                Padding(
+                  padding: EdgeInsetsDirectional.only(end: 5.sp),
+                  child: leading!,
+                ),
+
+              // Title
+              Expanded(
+                child: Column(
+                  children: [
+                    FlyStepperTitle(title: title),
+                    FlyStepperSubtitle(hint: subtitle),
+                    FlyStepperHint(subHint: hint),
+                  ],
+                ),
+              ),
+
+              // Actions
+              if (action != null)
+                Padding(
+                  padding: EdgeInsetsDirectional.only(start: 5.sp),
+                  child: action!,
+                ),
+            ],
+          ),
 
           // Children
-          child,
+          Padding(
+            padding: EdgeInsets.only(top: 8.sp),
+            child: child,
+          ),
 
           // END HINT
-          FlyMultiStepBottomHint(endHint: bottomHint),
+          FlyStepperNote(endHint: bottomHint),
 
           if (divider)
             Divider(

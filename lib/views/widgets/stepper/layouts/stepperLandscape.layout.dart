@@ -1,14 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/layouts/landscapeView.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepBottomHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepSubHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepTitle.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepPrimaryButton.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubHint.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperHint.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/StepperNextButton.widget.dart';
 
-class FlyMultiStepLandscapeLayout extends StatelessWidget {
-  const FlyMultiStepLandscapeLayout({
+class FlyStepperLandscapeLayout extends StatelessWidget {
+  const FlyStepperLandscapeLayout({
     Key? key,
     required this.title,
     required this.children,
@@ -38,13 +38,13 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title
-            FlyMultiStepTitle(title: title),
+            FlyStepperTitle(title: title),
 
             // HINT
-            FlyMultiStepHint(hint: hint),
+            FlyStepperSubtitle(hint: hint),
 
             // Sub Hint
-            FlyMultiStepSubHint(subHint: subHint),
+            FlyStepperHint(subHint: subHint),
           ],
         ),
       ),
@@ -55,16 +55,16 @@ class FlyMultiStepLandscapeLayout extends StatelessWidget {
             ...children,
 
             // END HINT
-            FlyMultiStepBottomHint(endHint: endHint),
+            FlyStepperNote(endHint: endHint),
 
             // BUTTONS
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                if (FlyMultiStepPageController.to.step > 1)
+                if (FlyStepperController.to.step > 1)
                   const FlyMultiStepPreviousButton(),
                 const Spacer(),
-                FlyMultiStepNextButton(
+                FlyStepperNextButton(
                   buttonTitle: buttonText,
                   icon: buttonIcon,
                   onTap: onTap,

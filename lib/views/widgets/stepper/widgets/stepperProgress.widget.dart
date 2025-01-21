@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:patata_responsive/patata_responsive.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
+import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
 import 'package:fly_ui/views/widgets/progressBar.widget.dart';
 import 'package:get/get.dart';
 
-class FlyMultiStepsProgress extends StatelessWidget {
-  const FlyMultiStepsProgress({
+class FlyStepperProgress extends StatelessWidget {
+  const FlyStepperProgress({
     Key? key,
     required this.step,
     required this.total,
@@ -62,7 +62,7 @@ class FlyMultiStepsProgress extends StatelessWidget {
         FadeIn(
           key: const ValueKey('CancelButton'),
           child: TextButton(
-            onPressed: FlyMultiStepPageController.to.cancel,
+            onPressed: FlyStepperController.to.cancel,
             child: Text(
               'Cancel'.tr,
               style: Get.textTheme.titleSmall!.copyWith(

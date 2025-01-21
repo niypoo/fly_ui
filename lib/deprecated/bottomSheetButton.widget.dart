@@ -32,8 +32,8 @@
 //           radius: AppConfigService.to.radius,
 //           color: bgColor,
 //           padding: EdgeInsets.symmetric(
-//             vertical: AppConfigService.to.space.m,
-//             horizontal: AppConfigService.to.space.s,
+//             vertical: 8.sp,
+//             horizontal: 4.sp,
 //           ),
 //           child: Column(
 //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -40,7 +40,7 @@ class _FlyContainerEllipsesState extends State<FlyContainerEllipses> {
   Widget build(BuildContext context) {
     return FlyContainer(
       color: widget.bgColor ?? Get.theme.cardColor,
-      margin: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
+      margin: EdgeInsets.only(bottom: 8.sp),
       child: Column(
         children: [
           // Title
@@ -74,7 +74,7 @@ class _FlyContainerEllipsesState extends State<FlyContainerEllipses> {
             ],
           ),
 
-          if (ellipse) SizedBox(height: AppConfigService.to.space!.m),
+          if (ellipse) SizedBox(height: 8.sp),
 
           Visibility(visible: ellipse, child: widget.child),
         ],

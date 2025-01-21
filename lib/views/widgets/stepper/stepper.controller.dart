@@ -2,8 +2,8 @@ import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class FlyMultiStepPageController extends GetxController {
-  static FlyMultiStepPageController get to => Get.find();
+class FlyStepperController extends GetxController {
+  static FlyStepperController get to => Get.find();
 
   // properties
   int step = 1;

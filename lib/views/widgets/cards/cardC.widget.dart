@@ -62,7 +62,7 @@ class FlyCardC extends StatelessWidget {
 
                     // padding
                     if (icon != null)
-                      SizedBox(width: AppConfigService.to.space!.xs),
+                      SizedBox(width: 4.sp),
 
                     // widget
                     Flexible(

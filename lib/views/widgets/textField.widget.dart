@@ -159,26 +159,15 @@ class FlyTextField extends StatelessWidget {
                 color: Colors.red,
               ),
               hintText: hintText,
-              hintStyle: textStyle ??
-                  Get.textTheme.titleMedium!.copyWith(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 11.sp,
-                  ),
-              errorStyle: Get.textTheme.bodySmall!.copyWith(
+              hintStyle: textStyle ?? Get.textTheme.labelLarge,
+              errorStyle: Get.textTheme.labelLarge!.copyWith(
                 color: Colors.red,
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w300,
               ),
-              labelStyle: Get.textTheme.titleSmall!.copyWith(
+              labelStyle: Get.textTheme.labelLarge!.copyWith(
                 fontSize: 11.sp,
-                fontWeight: FontWeight.w300,
               ),
             ),
-        style: textStyle ??
-            Get.textTheme.titleMedium!.copyWith(
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w600,
-            ),
+        style: textStyle ?? Get.textTheme.labelLarge!.copyWith(),
         textAlign: textAlign,
         textAlignVertical: textAlignVertical,
         onFieldSubmitted: onFieldSubmitted,
@@ -208,10 +197,7 @@ class SuffixText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Get.textTheme.bodyMedium!.copyWith(
-        fontSize: 9.sp,
-        fontWeight: FontWeight.w300,
-      ),
+      style: Get.textTheme.labelMedium!,
     );
   }
 }

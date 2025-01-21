@@ -1,5 +1,5 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyGridView extends StatelessWidget {
   const FlyGridView({
@@ -21,7 +21,7 @@ class FlyGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(
       physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.only(bottom: AppConfigService.to.space!.s),
+      padding: EdgeInsets.only(bottom: 4.sp),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         mainAxisExtent: mainAxisExtent,

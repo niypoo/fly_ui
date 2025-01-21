@@ -31,16 +31,13 @@ class FlyFlashMessage extends StatelessWidget {
         children: [
           if (icon != null)
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(4.sp),
               child: Icon(icon, color: color),
             ),
           Expanded(
             child: AutoSizeText(
               text,
-              style: Get.textTheme.bodyMedium!.copyWith(
-                color: color,
-                height: 1.5,
-              ),
+              style: Get.textTheme.bodyMedium,
             ),
           ),
         ],

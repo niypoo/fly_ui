@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:helpers/color.helper.dart';
 import 'package:patata_responsive/patata_responsive.dart';
-import 'package:fly_ui/services/color.service.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
@@ -87,7 +87,7 @@ class FlyContainerWithTextField extends StatelessWidget {
               hintText: value,
               color: bgColor,
               borderColor:
-                  bgColor != null ? ColorService.colorDarken(bgColor!) : null,
+                  bgColor != null ? ColorHelper(bgColor!).darken() : null,
               validator: validator,
               controller: controller,
               suffix: [if (suffix != null) SuffixText(text: suffix!)],

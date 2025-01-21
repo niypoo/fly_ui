@@ -1,0 +1,105 @@
+// import 'package:app_configuration_service/appInfo.config.dart';
+// import 'package:auto_size_text/auto_size_text.dart';
+// import 'package:flutter/material.dart';
+// import 'package:patata_responsive/patata_responsive.dart';
+// import 'package:fly_ui/views/widgets/containers/container.widget.dart';
+// import 'package:get/get.dart';
+
+// class FlyReminderCard extends StatelessWidget {
+//   const FlyReminderCard({
+//     Key? key,
+//     required this.title,
+//     this.icon,
+//     this.actions,
+//     this.details,
+//   }) : super(key: key);
+
+//   final String title;
+//   final IconData? icon;
+//   final List<Widget>? actions;
+//   final List<Widget>? details;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return FlyContainer(
+//       margin: EdgeInsets.only(bottom: 6.sp),
+//       child: Column(
+//         children: [
+//           // title
+//           Row(
+//             children: [
+//               Expanded(
+//                 child: Row(
+//                   children: [
+//                     // ICON WITH PADDING
+//                     if (icon != null) Icon(icon),
+//                     if (icon != null)
+//                       SizedBox(width: 4.sp),
+
+//                     // TITLE
+//                     Expanded(
+//                       child: AutoSizeText(
+//                         title,
+//                         style: Get.textTheme.labelLarge,
+//                         maxLines: 1,
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+
+//               // OPTIONS BUTTON
+//               if (actions != null) Row(children: actions!),
+//             ],
+//           ),
+
+//           if (details != null)
+//             Divider(
+//               color: Get.theme.iconTheme.color!.withOpacity(0.1),
+//               height: 15.sp,
+//               indent: 10.sp,
+//               endIndent: 10.sp,
+//             ),
+
+//           // DETAILS
+//           if (details != null)
+//             Padding(
+//               padding: EdgeInsets.symmetric(
+//                   horizontal: 4.sp),
+//               child: Column(children: details!),
+//             )
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// class ReminderCardDetail extends StatelessWidget {
+//   const ReminderCardDetail({
+//     Key? key,
+//     required this.label,
+//     this.value,
+//   }) : super(key: key);
+
+//   final String label;
+//   final String? value;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         AutoSizeText(
+//           '$label : ',
+//           style: Get.textTheme.bodyLarge,
+//         ),
+//         Expanded(
+//           child: AutoSizeText(
+//             value ?? ' ',
+//             style: Get.textTheme.bodyMedium,
+//           ),
+//         )
+//       ],
+//     );
+//   }
+// }

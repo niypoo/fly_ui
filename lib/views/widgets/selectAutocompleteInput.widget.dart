@@ -105,7 +105,7 @@ class AutoCompleteOptionsViewBuilder extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: options.map((e) {
               return ListTile(
-                title: Text(e),
+                title: Text(e, style: Get.textTheme.labelLarge,),
                 onTap: () => onSelected(e),
               );
             }).toList(),

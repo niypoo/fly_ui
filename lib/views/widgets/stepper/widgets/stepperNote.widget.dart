@@ -1,11 +1,10 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/widgets.dart';
-import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 
-class FlyMultiStepBottomHint extends StatelessWidget {
-  const FlyMultiStepBottomHint({
+class FlyStepperNote extends StatelessWidget {
+  const FlyStepperNote({
     Key? key,
     required this.endHint,
   }) : super(key: key);
@@ -17,14 +16,11 @@ class FlyMultiStepBottomHint extends StatelessWidget {
     return endHint == null
         ? const SizedBox.shrink()
         : Padding(
-            padding: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
+            padding: EdgeInsets.only(bottom: 8.sp),
             child: Center(
               child: AutoSizeText(
                 endHint!,
-                style: Get.textTheme.bodySmall!.copyWith(
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.w100,
-                ),
+                style: Get.textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
             ),

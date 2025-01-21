@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
+import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
 import 'package:get/get.dart';
 
-class FlyMultiStepNextButton extends StatelessWidget {
-  const FlyMultiStepNextButton({
+class FlyStepperNextButton extends StatelessWidget {
+  const FlyStepperNextButton({
     Key? key,
     required this.buttonTitle,
     required this.onTap,
@@ -38,7 +38,7 @@ class FlyMultiStepPreviousButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyElevatedButton.normal(
       icon: Icons.arrow_back_ios_rounded,
-      onPressed: FlyMultiStepPageController.to.back,
+      onPressed: FlyStepperController.to.back,
       title: 'Previous'.tr,
     );
   }

@@ -50,11 +50,7 @@ class FlySelectorArea extends StatelessWidget {
                 children: [
                   AutoSizeText(
                     title!,
-                    style: Get.textTheme.labelLarge!.copyWith(
-                      color: textColor,
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Get.textTheme.titleSmall,
                   ),
                 ],
               ),
@@ -157,7 +153,7 @@ class FlySelectorOption extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                   child: AutoSizeText(
                     '${name.tr} $label',
-                    style: Get.textTheme.bodyLarge,
+                    style: Get.textTheme.labelLarge,
                     maxLines: 1,
                     textAlign: TextAlign.center,
                   ),
@@ -168,7 +164,7 @@ class FlySelectorOption extends StatelessWidget {
                   Flexible(
                     child: AutoSizeText(
                       subName!.tr,
-                      style: Get.textTheme.bodySmall,
+                      style: Get.textTheme.labelSmall,
                       maxLines: 1,
                       textAlign: TextAlign.center,
                     ),
@@ -185,7 +181,6 @@ class FlySelectorOption extends StatelessWidget {
               child: Icon(
                 UniconsSolid.exclamation_circle,
                 color: Get.theme.primaryColor,
-                size: 16.sp,
               ),
             ),
           )
@@ -205,8 +200,8 @@ class FlySelectorSVG extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       'assets/images/$image',
-      width: 40,
-      height: 40,
+      width: 40.sp,
+      height: 40.sp,
     );
   }
 }
@@ -222,8 +217,8 @@ class FlySelectorImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       'assets/images/$image',
-      width: 40,
-      height: 40,
+      width: 40.sp,
+      height: 40.sp,
     );
   }
 }

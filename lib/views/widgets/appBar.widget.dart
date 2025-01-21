@@ -50,16 +50,13 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
               onPressed: () => Get.back(),
               shape: BoxShape.circle,
             ),
-        title: AutoSizeText(
-          title != null ? title!.toUpperCase() : '',
-          style: titleTextStyle ??
-              Get.textTheme.headlineMedium!.copyWith(
-                fontSize: 18.sp,
-                color: Get.theme.primaryColor,
-                fontWeight: FontWeight.bold,
+        title: title == null
+            ? null
+            : AutoSizeText(
+                title!,
+                style: titleTextStyle,
+                textAlign: TextAlign.start,
               ),
-          textAlign: TextAlign.start,
-        ),
         actions: [
           Wrap(
             spacing: 5.sp,

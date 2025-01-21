@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fly_ui/views/widgets/bigPageHeadTitle.dart';
 import 'package:patata_responsive/patata_responsive.dart';
-import 'package:fly_ui/views/widgets/titleHeadline.widget.dart';
-import 'package:get/get.dart';
 
 class FlyDrawerSectionTitle extends StatelessWidget {
   final String title;
@@ -14,17 +13,12 @@ class FlyDrawerSectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsetsDirectional.only(
-        start: 0,
+      padding: EdgeInsetsDirectional.only(
         top: 20.sp,
         bottom: 5.sp,
       ),
-      child: FlyTitle(
+      child: FlyListHeadTitle(
         text: title,
-        textStyle: Get.textTheme.titleMedium!.copyWith(
-          fontWeight: FontWeight.bold,
-          fontSize: 11.sp,
-        ),
       ),
     );
   }

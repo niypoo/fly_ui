@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/layouts/scaffoldLayout.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/mutliStepsProgress.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperProgress.widget.dart';
 import 'package:get/get.dart';
 
-class FlyMultiStepPageView extends StatelessWidget {
-  const FlyMultiStepPageView({
+class FlyStepperView extends StatelessWidget {
+  const FlyStepperView({
     Key? key,
     required this.screens,
   }) : super(key: key);
@@ -16,13 +16,13 @@ class FlyMultiStepPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyScaffold.padding(
-      child: GetBuilder<FlyMultiStepPageController>(
-        init: FlyMultiStepPageController(),
+      child: GetBuilder<FlyStepperController>(
+        init: FlyStepperController(),
         builder: (controller) {
           return Column(
             children: [
               // Progress
-              FlyMultiStepsProgress(
+              FlyStepperProgress(
                 total: screens.length,
                 step: controller.step,
               ),

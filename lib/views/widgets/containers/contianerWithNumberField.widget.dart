@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:patata_responsive/patata_responsive.dart';
@@ -38,7 +37,7 @@ class FlyContainerWithNumberField extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyContainer(
       color: bgColor ?? Get.theme.cardColor,
-      margin: EdgeInsets.only(bottom: AppConfigService.to.space!.m),
+      margin: EdgeInsets.only(bottom: 8.sp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

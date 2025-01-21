@@ -1,4 +1,3 @@
-import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:patata_responsive/patata_responsive.dart';
@@ -42,10 +41,10 @@ class FlyCardA extends StatelessWidget {
         child: FlyContainer(
           margin: const EdgeInsets.all(0),
           padding: EdgeInsets.only(
-            top: AppConfigService.to.space!.m,
-            bottom: AppConfigService.to.space!.m,
-            right: AppConfigService.to.space!.s,
-            left: AppConfigService.to.space!.s,
+            top: 8.sp,
+            bottom: 8.sp,
+            right: 4.sp,
+            left: 4.sp,
           ),
           color: bgColor,
           child: Column(
@@ -78,7 +77,7 @@ class FlyCardA extends StatelessWidget {
 
                     // padding
                     if (icon != null)
-                      SizedBox(width: AppConfigService.to.space!.xs),
+                      SizedBox(width: 4.sp),
 
                     // widget
                     Flexible(

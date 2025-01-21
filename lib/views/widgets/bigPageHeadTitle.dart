@@ -6,24 +6,38 @@ class FlyPageHeadTitle extends StatelessWidget {
   const FlyPageHeadTitle({
     Key? key,
     required this.text,
-    this.textStyle,
-    this.alignment = AlignmentDirectional.centerStart,
   }) : super(key: key);
 
   final String text;
-  final TextStyle? textStyle;
-  final AlignmentDirectional alignment;
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: alignment,
-      child: AutoSizeText(
+    return  AutoSizeText(
         text,
-        style: textStyle ?? Get.textTheme.headlineLarge,
+        style: Get.textTheme.titleLarge,
         textAlign: TextAlign.start,
         maxLines: 1,
-      ),
+      
+    );
+  }
+}
+
+class FlyListHeadTitle extends StatelessWidget {
+  const FlyListHeadTitle({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return  AutoSizeText(
+        text,
+        style: Get.textTheme.titleMedium,
+        textAlign: TextAlign.start,
+        maxLines: 1,
+      
     );
   }
 }

@@ -1,10 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/widgets.dart';
-import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
 
-class FlyMultiStepTitle extends StatelessWidget {
-  const FlyMultiStepTitle({
+class FlyStepperTitle extends StatelessWidget {
+  const FlyStepperTitle({
     Key? key,
     required this.title,
   }) : super(key: key);
@@ -15,10 +14,7 @@ class FlyMultiStepTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoSizeText(
       title,
-      style: Get.textTheme.titleLarge!.copyWith(
-        fontSize: 18.sp,
-        fontWeight: FontWeight.bold,
-      ),
+      style: Get.textTheme.titleLarge,
     );
   }
 }

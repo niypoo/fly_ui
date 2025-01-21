@@ -306,6 +306,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  helpers:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "68043f8e3d933c4c2df1935de5ceae8c3f9adcbb"
+      url: "git@github.com:niypoo/helpers.git"
+    source: git
+    version: "1.0.0+1"
   http:
     dependency: transitive
     description:

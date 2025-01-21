@@ -51,10 +51,7 @@ class FlyInputTileWrap extends StatelessWidget {
                       children: [
                         AutoSizeText(
                           title,
-                          style: Get.textTheme.titleMedium!.copyWith(
-                            height: 1,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: Get.textTheme.titleSmall,
                           maxLines: 1,
                         ),
                         if (subtitle != null)
@@ -62,11 +59,7 @@ class FlyInputTileWrap extends StatelessWidget {
                             padding: EdgeInsets.only(top: 3.sp),
                             child: AutoSizeText(
                               subtitle!,
-                              style: Get.textTheme.titleMedium!.copyWith(
-                                fontWeight: FontWeight.w300,
-                                fontSize: 11.sp,
-                                height: 0,
-                              ),
+                              style: Get.textTheme.bodyMedium,
                               maxLines: 1,
                             ),
                           ),

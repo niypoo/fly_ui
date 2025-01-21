@@ -32,8 +32,8 @@
 //   Widget build(BuildContext context) {
 //     return Container(
 //       margin: EdgeInsets.symmetric(
-//         vertical: AppConfigService.to.space.l,
-//         horizontal: AppConfigService.to.space.s,
+//         vertical: 12.sp,
+//         horizontal: 4.sp,
 //       ),
 //       height: 160,
 //       child: Row(
@@ -90,7 +90,7 @@
 //           Expanded(
 //               child: Padding(
 //             padding:
-//                 EdgeInsets.symmetric(horizontal: AppConfigService.to.space.l),
+//                 EdgeInsets.symmetric(horizontal: 12.sp),
 //             child: Column(
 //               mainAxisAlignment: MainAxisAlignment.center,
 //               crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,7 +101,7 @@
 //                     color: color,
 //                   ),
 //                 ),
-//                 SizedBox(height: AppConfigService.to.space.xxs),
+//                 SizedBox(height: 4.sp),
 //                 AutoSizeText.rich(
 //                   TextSpan(
 //                     text: '${value.toStringAsFixed(0)} $label',
@@ -123,7 +123,7 @@
 //                 // Left Value
 //                 if (leftValue != null)
 //                   Padding(
-//                     padding: EdgeInsets.only(top: AppConfigService.to.space.m),
+//                     padding: EdgeInsets.only(top: 8.sp),
 //                     child: AutoSizeText(
 //                       '${leftValue.toStringAsFixed(0)} $label ${'is left'.tr}',
 //                       style: Get.textTheme.titleSmall,

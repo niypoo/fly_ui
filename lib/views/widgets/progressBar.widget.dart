@@ -150,9 +150,9 @@ class FlyProgressContainer extends StatelessWidget {
       borderRadius: BorderRadius.circular(15.sp),
       onTap: onTap as void Function()?,
       child: AnimatedContainer(
-        padding: padding ?? EdgeInsets.all(AppConfigService.to.space!.m),
+        padding: padding ?? EdgeInsets.all(5.sp),
         margin: margin ??
-            EdgeInsets.symmetric(vertical: AppConfigService.to.space!.s),
+            EdgeInsets.symmetric(vertical: 8.sp),
         height: height,
         width: width,
         duration: AppConfigService.to.duration,

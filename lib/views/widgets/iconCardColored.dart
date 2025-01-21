@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyIconCardColored extends StatelessWidget {
   const FlyIconCardColored({
@@ -16,7 +17,7 @@ class FlyIconCardColored extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      padding: const EdgeInsets.all(4),
+      padding: EdgeInsets.all(4.sp),
       color: color,
       child: Icon(icon, color: iconColor),
     );

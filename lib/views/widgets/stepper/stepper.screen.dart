@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/layouts/multiStepPortrait.layout.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/layouts/multiStepLandscape.layout.dart';
+import 'package:fly_ui/views/widgets/stepper/layouts/stepperPortrait.layout.dart';
+import 'package:fly_ui/views/widgets/stepper/layouts/stepperLandscape.layout.dart';
 import 'package:get/get.dart';
 
-class FlyMultiStepScreenView extends StatelessWidget {
-  const FlyMultiStepScreenView({
+class FlyStepperScreen extends StatelessWidget {
+  const FlyStepperScreen({
     Key? key,
     required this.children,
     required this.onTap,
@@ -28,7 +28,7 @@ class FlyMultiStepScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return context.isLandscape
-        ? FlyMultiStepLandscapeLayout(
+        ? FlyStepperLandscapeLayout(
             title: title,
             hint: hint,
             subHint: subHint,
@@ -38,7 +38,7 @@ class FlyMultiStepScreenView extends StatelessWidget {
             onTap: onTap,
             children: children,
           )
-        : FlyMultiStepPortraitLayout(
+        : FlyStepperPortraitLayout(
             title: title,
             hint: hint,
             subHint: subHint,

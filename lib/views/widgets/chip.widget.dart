@@ -21,10 +21,7 @@ class FlyChip extends StatelessWidget {
       padding: EdgeInsetsDirectional.only(end: 5.sp),
       child: Chip(
         onDeleted: onRemove,
-        deleteIcon: Icon(
-          UniconsLine.times,
-          size: 15.sp,
-        ),
+        deleteIcon: const Icon(UniconsLine.times),
         shape: RoundedRectangleBorder(
           side: const BorderSide(width: 0, color: Colors.transparent),
           borderRadius: BorderRadius.circular(15.sp),
@@ -35,10 +32,8 @@ class FlyChip extends StatelessWidget {
         avatar: avatar,
         label: Text(
           tag,
-          style: Get.textTheme.bodyMedium!.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
-        ), 
+          style: Get.textTheme.labelLarge,
+        ),
       ),
     );
   }

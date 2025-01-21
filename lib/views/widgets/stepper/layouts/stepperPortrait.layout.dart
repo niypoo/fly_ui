@@ -1,14 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:patata_responsive/patata_responsive.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/multiStepPage.controller.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepBottomHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepSubHint.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepTitle.widget.dart';
-import 'package:fly_ui/views/widgets/multiStepPageView/widgets/multiStepPrimaryButton.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubHint.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperHint.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/StepperNextButton.widget.dart';
 
-class FlyMultiStepPortraitLayout extends StatelessWidget {
-  const FlyMultiStepPortraitLayout({
+class FlyStepperPortraitLayout extends StatelessWidget {
+  const FlyStepperPortraitLayout({
     Key? key,
     required this.title,
     required this.children,
@@ -41,19 +41,19 @@ class FlyMultiStepPortraitLayout extends StatelessWidget {
                 SizedBox(height: 8.sp),
                 // Title
                 // Title
-                FlyMultiStepTitle(title: title),
+                FlyStepperTitle(title: title),
                 SizedBox(height: 2.sp),
                 // HINT
-                FlyMultiStepHint(hint: hint),
+                FlyStepperSubtitle(hint: hint),
                 // Sub Hint
-                FlyMultiStepSubHint(subHint: subHint),
+                FlyStepperHint(subHint: subHint),
                 SizedBox(height: 8.sp),
 
                 // Children
                 ...children,
 
                 // END HINT
-                FlyMultiStepBottomHint(endHint: endHint),
+                FlyStepperNote(endHint: endHint),
               ],
             ),
           ),
@@ -62,10 +62,10 @@ class FlyMultiStepPortraitLayout extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            if (FlyMultiStepPageController.to.step > 1)
+            if (FlyStepperController.to.step > 1)
               const FlyMultiStepPreviousButton(),
             const Spacer(),
-            FlyMultiStepNextButton(
+            FlyStepperNextButton(
               buttonTitle: buttonText,
               icon: buttonIcon,
               onTap: onTap,

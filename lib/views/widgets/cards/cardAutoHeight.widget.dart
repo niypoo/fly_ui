@@ -62,7 +62,7 @@ class FlyCardAutoHeight extends StatelessWidget {
               ),
 
               // padding
-              SizedBox(height: AppConfigService.to.space!.s),
+              SizedBox(height: 4.sp),
 
               // values
               Row(
@@ -79,7 +79,7 @@ class FlyCardAutoHeight extends StatelessWidget {
 
                   // padding
                   if (icon != null)
-                    SizedBox(width: AppConfigService.to.space!.xs),
+                    SizedBox(width: 4.sp),
 
                   // widget
                   Flexible(
@@ -92,7 +92,7 @@ class FlyCardAutoHeight extends StatelessWidget {
                                 Get.textTheme.titleLarge!
                                     .copyWith(color: textColor),
                           ),
-                          TextSpan(text: ' '),
+                          const TextSpan(text: ' '),
                           TextSpan(text: label, style: labelTextStyle),
 
                           // more textSpans in any case

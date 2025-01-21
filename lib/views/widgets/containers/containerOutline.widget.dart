@@ -21,11 +21,11 @@ class FlyContainerOutline extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin ??
-          EdgeInsets.symmetric(vertical: AppConfigService.to.space!.xxs),
+          EdgeInsets.symmetric(vertical: 4.sp),
       padding: padding ??
           EdgeInsets.symmetric(
-            vertical: AppConfigService.to.space!.s,
-            horizontal: AppConfigService.to.space!.m,
+            vertical: 4.sp,
+            horizontal: 8.sp,
           ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.sp),
