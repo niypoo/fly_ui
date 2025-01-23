@@ -159,15 +159,15 @@ class FlyTextField extends StatelessWidget {
                 color: Colors.red,
               ),
               hintText: hintText,
-              hintStyle: textStyle ?? Get.textTheme.labelMedium,
+              hintStyle: textStyle ?? Get.textTheme.titleSmall,
               errorStyle: Get.textTheme.labelSmall!.copyWith(
                 color: Colors.red,
               ),
-              labelStyle: Get.textTheme.bodyLarge!.copyWith(
+              labelStyle: Get.textTheme.titleSmall!.copyWith(
                 fontSize: 11.sp,
               ),
             ),
-        style: textStyle ?? Get.textTheme.bodyLarge!.copyWith(),
+        style: textStyle ?? Get.textTheme.titleSmall!.copyWith(),
         textAlign: textAlign,
         textAlignVertical: textAlignVertical,
         onFieldSubmitted: onFieldSubmitted,
