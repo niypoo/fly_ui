@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
 
 class FlyListTileStep extends StatelessWidget {
