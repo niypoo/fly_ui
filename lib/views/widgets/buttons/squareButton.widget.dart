@@ -40,7 +40,9 @@ class FlySquareButton extends StatelessWidget {
             SizedBox(height: 5.sp),
             AutoSizeText(
               title.tr,
-              style: Get.textTheme.labelLarge,
+              style: Get.textTheme.labelLarge!.copyWith(
+                color: textColor,
+              ),
             ),
           ],
         ),
