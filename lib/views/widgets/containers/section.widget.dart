@@ -52,10 +52,7 @@ class _FlyExpandedSectionState extends State<FlyExpandedSection> {
               children: [
                 Text(
                   widget.title,
-                  style: Get.textTheme.titleLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 11.sp,
-                  ),
+                  style: Get.textTheme.titleMedium,
                 ),
                 if (widget.showExpandedButton) const Icon(Icons.arrow_drop_down)
               ],
