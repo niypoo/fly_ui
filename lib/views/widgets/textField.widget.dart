@@ -152,22 +152,22 @@ class FlyTextField extends StatelessWidget {
                       runAlignment: WrapAlignment.center,
                       children: prefix,
                     ),
-              suffixStyle: Get.textTheme.bodySmall!.copyWith(
+              suffixStyle: Get.textTheme.labelSmall!.copyWith(
                 color: Colors.red,
               ),
-              prefixStyle: Get.textTheme.bodySmall!.copyWith(
+              prefixStyle: Get.textTheme.labelSmall!.copyWith(
                 color: Colors.red,
               ),
               hintText: hintText,
-              hintStyle: textStyle ?? Get.textTheme.labelLarge,
-              errorStyle: Get.textTheme.labelLarge!.copyWith(
+              hintStyle: textStyle ?? Get.textTheme.labelMedium,
+              errorStyle: Get.textTheme.labelSmall!.copyWith(
                 color: Colors.red,
               ),
-              labelStyle: Get.textTheme.labelLarge!.copyWith(
+              labelStyle: Get.textTheme.bodyLarge!.copyWith(
                 fontSize: 11.sp,
               ),
             ),
-        style: textStyle ?? Get.textTheme.labelLarge!.copyWith(),
+        style: textStyle ?? Get.textTheme.bodyLarge!.copyWith(),
         textAlign: textAlign,
         textAlignVertical: textAlignVertical,
         onFieldSubmitted: onFieldSubmitted,

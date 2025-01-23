@@ -16,7 +16,7 @@ class FlyStepperSubtitle extends StatelessWidget {
         ? const SizedBox.shrink()
         : AutoSizeText(
             hint!,
-            style: Get.textTheme.titleSmall
+            style: Get.textTheme.bodyLarge
           );
   }
 }
