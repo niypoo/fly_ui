@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:patata_responsive/patata_responsive.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
 import 'package:get/get.dart';
+import 'package:unicons/unicons.dart';
 
 class FlyExpandedSection extends StatefulWidget {
   const FlyExpandedSection({
@@ -54,7 +55,7 @@ class _FlyExpandedSectionState extends State<FlyExpandedSection> {
                   widget.title,
                   style: Get.textTheme.titleMedium,
                 ),
-                if (widget.showExpandedButton) const Icon(Icons.arrow_drop_down)
+                if (widget.showExpandedButton) const Icon(UniconsLine.direction)
               ],
             ),
           ),
