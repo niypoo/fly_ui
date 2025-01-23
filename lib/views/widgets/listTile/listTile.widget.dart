@@ -10,7 +10,6 @@ class FlyListTile extends StatelessWidget {
   const FlyListTile({
     Key? key,
     required this.title,
-    this.titleChild,
     this.value,
     this.onTap,
     this.trailing,
@@ -20,7 +19,6 @@ class FlyListTile extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  final Widget? titleChild;
   final String? value;
   final Widget? trailing;
   final Widget? leading;
@@ -49,12 +47,11 @@ class FlyListTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  titleChild ??
-                      AutoSizeText(
-                        title,
-                        style: Get.textTheme.titleSmall,
-                        maxLines: 1,
-                      ),
+                  AutoSizeText(
+                    title,
+                    style: Get.textTheme.titleSmall,
+                    maxLines: 1,
+                  ),
                   if (value != null)
                     Padding(
                       padding: EdgeInsets.only(top: 3.sp),
