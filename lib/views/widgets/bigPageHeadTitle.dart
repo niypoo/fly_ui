@@ -34,7 +34,7 @@ class FlyListHeadTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  AutoSizeText(
         text,
-        style: Get.textTheme.titleSmall,
+        style: Get.textTheme.titleMedium,
         textAlign: TextAlign.start,
         maxLines: 1,
       
