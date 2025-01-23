@@ -39,7 +39,7 @@ class FlyDrawerButton extends StatelessWidget {
             Icon(
               icon,
               color: color,
-              size: 13.sp,
+              // size: 13.sp,
             ),
             Expanded(
               child: Padding(
@@ -49,9 +49,9 @@ class FlyDrawerButton extends StatelessWidget {
                 child: AutoSizeText(
                   title,
                   style: Get.textTheme.labelLarge!.copyWith(
-                    height: 1.3,
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800
+                    // height: 1.3,
+                    // fontSize: 10.sp,
+                    // fontWeight: FontWeight.w800
                   ),
                   maxLines: 1,
                 ),
@@ -60,9 +60,9 @@ class FlyDrawerButton extends StatelessWidget {
             if (value != null)
               AutoSizeText(
                 value!,
-                style: Get.textTheme.bodySmall!.copyWith(
-                  fontWeight: FontWeight.w300,
-                  fontSize: 10.sp,
+                style: Get.textTheme.labelSmall!.copyWith(
+                  // fontWeight: FontWeight.w300,
+                  // fontSize: 10.sp,
                 ),
               ),
           ],
