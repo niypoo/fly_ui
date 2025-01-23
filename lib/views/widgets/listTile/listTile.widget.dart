@@ -60,10 +60,7 @@ class FlyListTile extends StatelessWidget {
                       padding: EdgeInsets.only(top: 3.sp),
                       child: AutoSizeText(
                         value!,
-                        style: Get.textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 11.sp,
-                        ),
+                        style: Get.textTheme.bodyMedium,
                         maxLines: 3,
                       ),
                     ),

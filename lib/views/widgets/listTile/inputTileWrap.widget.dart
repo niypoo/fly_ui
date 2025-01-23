@@ -59,7 +59,7 @@ class FlyInputTileWrap extends StatelessWidget {
                             padding: EdgeInsets.only(top: 3.sp),
                             child: AutoSizeText(
                               subtitle!,
-                              style: Get.textTheme.labelLarge,
+                              style: Get.textTheme.bodyMedium,
                               maxLines: 1,
                             ),
                           ),

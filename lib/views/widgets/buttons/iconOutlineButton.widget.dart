@@ -27,7 +27,9 @@ class FlyIconOutlineButton extends StatelessWidget {
       child: IconButton(
         padding: padding ?? EdgeInsets.only(left: 5.sp),
         constraints: const BoxConstraints(),
-        icon: Icon(icon, size: 14.sp),
+        icon: Icon(icon, 
+        // size: 14.sp
+        ),
         onPressed: onPressed as void Function()?,
         color: Get.theme.primaryColor,
       ),

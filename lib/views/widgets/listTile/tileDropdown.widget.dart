@@ -44,7 +44,7 @@ class FlyDropdownTile extends StatelessWidget {
             items: items.map((String value) {
               return DropdownMenuItem<String>(
                 value: value,
-                child: Text(value, style: Get.textTheme.labelMedium),
+                child: Text(value, style: Get.textTheme.bodyMedium),
               );
             }).toList(),
             onChanged: onTap as void Function(String?)?,

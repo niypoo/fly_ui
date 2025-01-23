@@ -117,12 +117,6 @@ class FlyElevatedButton extends StatelessWidget {
       ),
     );
 
-    //STYLES of the title
-    final TextStyle titleStyle = Get.textTheme.titleMedium!.copyWith(
-      color: textColor,
-      fontSize: 11.sp,
-      fontWeight: FontWeight.bold,
-    );
 
     return LayoutBuilder(
       builder: (context, constraints) => SizedBox(
@@ -134,13 +128,13 @@ class FlyElevatedButton extends StatelessWidget {
                 style: buttonStyle,
                 label: AutoSizeText(
                   title,
-                  style: titleStyle,
+                  style: Get.textTheme.labelLarge,
                   maxLines: 1,
                 ),
                 icon: Icon(
                   icon,
                   color: textColor,
-                  size: 14.sp,
+                  // size: 14.sp,
                 ),
               )
             : ElevatedButton(
@@ -148,7 +142,7 @@ class FlyElevatedButton extends StatelessWidget {
                 style: buttonStyle,
                 child: AutoSizeText(
                   title,
-                  style: titleStyle,
+                  style: Get.textTheme.labelLarge,
                   maxLines: 1,
                 ),
               ),

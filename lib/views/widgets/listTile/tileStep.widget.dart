@@ -30,23 +30,17 @@ class FlyListTileStep extends StatelessWidget {
         child: Center(
             child: Text(
           step,
-          style: Get.textTheme.titleLarge,
+          style: Get.textTheme.titleSmall,
         )),
       ),
       title: Text(
         title,
-        style: Get.textTheme.labelLarge!.copyWith(
-          fontSize: 10.sp,
-          fontWeight: FontWeight.bold,
-        ),
+        style: Get.textTheme.bodyMedium
       ),
       subtitle: description != null
           ? Text(
               description!,
-              style: Get.textTheme.bodySmall!.copyWith(
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w300,
-              ),
+              style: Get.textTheme.bodySmall
             )
           : null,
     );

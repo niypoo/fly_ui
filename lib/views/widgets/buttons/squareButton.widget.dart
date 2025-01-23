@@ -35,15 +35,12 @@ class FlySquareButton extends StatelessWidget {
             Icon(
               icon,
               color: textColor,
-              size: 25.sp,
+              // size: 25.sp,
             ),
             SizedBox(height: 5.sp),
             AutoSizeText(
               title.tr,
-              style: Get.textTheme.titleSmall!.copyWith(
-                color: textColor,
-                fontSize: 11.sp,
-              ),
+              style: Get.textTheme.labelLarge,
             ),
           ],
         ),

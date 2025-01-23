@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
 
 class FlyTextButton extends StatelessWidget {
@@ -36,11 +35,7 @@ class FlyTextButton extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         title,
-        style: Get.textTheme.titleMedium!.copyWith(
-          color: color,
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-        ),
+        style: Get.textTheme.labelLarge,
       ),
     );
   }

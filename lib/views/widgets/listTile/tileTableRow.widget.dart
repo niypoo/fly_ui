@@ -40,19 +40,13 @@ class FlyListTitleTableRow extends StatelessWidget {
                   AutoSizeText(
                     subtitle!,
                     maxLines: 2,
-                    style: Get.textTheme.bodySmall!.copyWith(
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: Get.textTheme.bodySmall,
                   ),
                 if (note != null && note!.isNotEmpty)
                   AutoSizeText(
                     note!,
                     maxLines: 2,
-                    style: Get.textTheme.bodySmall!.copyWith(
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.w300,
-                    ),
+                    style: Get.textTheme.labelMedium,
                   ),
               ],
             )
@@ -62,10 +56,7 @@ class FlyListTitleTableRow extends StatelessWidget {
           child: AutoSizeText(
             title,
             maxLines: 1,
-            style: Get.textTheme.bodyLarge!.copyWith(
-              fontSize: 9.sp,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Get.textTheme.titleSmall,
           ),
         ),
 
@@ -78,11 +69,7 @@ class FlyListTitleTableRow extends StatelessWidget {
             child: AutoSizeText(
               value ?? '',
               maxLines: 2,
-              style: Get.textTheme.bodyMedium!.copyWith(
-                fontWeight: FontWeight.w600,
-                color: color,
-                fontSize: 9.sp,
-              ),
+              style: Get.textTheme.labelMedium,
               textAlign: TextAlign.center,
             ),
           ),
@@ -94,10 +81,7 @@ class FlyListTitleTableRow extends StatelessWidget {
           child: AutoSizeText(
             date,
             maxLines: 1,
-            style: Get.textTheme.bodySmall!.copyWith(
-              fontSize: 9.sp,
-              fontWeight: FontWeight.w300,
-            ),
+            style: Get.textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
         ),
