@@ -55,13 +55,10 @@ class FlyInputTileWrap extends StatelessWidget {
                           maxLines: 1,
                         ),
                         if (subtitle != null)
-                          Padding(
-                            padding: EdgeInsets.only(top: 3.sp),
-                            child: AutoSizeText(
-                              subtitle!,
-                              style: Get.textTheme.bodyMedium,
-                              maxLines: 1,
-                            ),
+                          AutoSizeText(
+                            subtitle!,
+                            style: Get.textTheme.bodySmall,
+                            maxLines: 1,
                           ),
                       ],
                     ),
