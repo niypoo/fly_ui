@@ -39,7 +39,7 @@ class FlyStepperProgress extends StatelessWidget {
                 TextSpan(
                     text: total.toString(), style: Get.textTheme.labelLarge),
               ],
-              style: Get.textTheme.labelMedium,
+              style: Get.textTheme.labelSmall,
             ),
           ),
         ),
