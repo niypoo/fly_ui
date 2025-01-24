@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:fly_ui/views/widgets/listTile/listTile.widget.dart';
+import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
 
 class FlyTileDateAndTime extends StatelessWidget {
@@ -17,7 +17,7 @@ class FlyTileDateAndTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyListTile(
+    return FlyInputTileWrap(
       title: title,
       trailing: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

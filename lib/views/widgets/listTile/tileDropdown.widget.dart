@@ -32,7 +32,10 @@ class FlyDropdownTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      trailing:  DropdownButtonHideUnderline(
+      padding: EdgeInsets.symmetric(vertical: 3.sp, horizontal: 10.sp),
+      trailing: Padding(
+        padding: EdgeInsetsDirectional.only(start: 5.sp),
+        child: DropdownButtonHideUnderline(
           child: DropdownButton<String>(
             value: value,
             elevation: 0,
@@ -47,7 +50,7 @@ class FlyDropdownTile extends StatelessWidget {
             onChanged: onTap as void Function(String?)?,
           ),
         ),
- 
+      ),
       child:child,
     );
   }
