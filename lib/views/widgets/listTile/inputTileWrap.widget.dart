@@ -65,7 +65,7 @@ class FlyInputTileWrap extends StatelessWidget {
               ),
               if (trailing != null)
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 2.sp),
+                  padding: EdgeInsets.symmetric(horizontal: 4.sp),
                   child: const FlyListTitleLogDivider(),
                 ),
               if (trailing != null) trailing!,
