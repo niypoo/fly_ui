@@ -1,9 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:patata_responsive/patata_responsive.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubtitle.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperHint.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
 import 'package:get/get.dart';
 
 class FlySection extends StatelessWidget {
@@ -52,9 +50,11 @@ class FlySection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    FlyStepperTitle(title: title),
-                    FlyStepperSubtitle(hint: subtitle),
-                    FlyStepperHint(subHint: hint),
+                    AutoSizeText( title , style: Get.textTheme.titleMedium),
+                    if(subtitle != null)
+                    AutoSizeText(subtitle! , style: Get.textTheme.bodySmall,),
+                    if(hint != null)
+                    AutoSizeText(hint!, style: Get.textTheme.labelSmall,),
                   ],
                 ),
               ),
