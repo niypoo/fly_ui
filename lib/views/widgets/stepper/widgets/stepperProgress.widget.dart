@@ -22,7 +22,6 @@ class FlyStepperProgress extends StatelessWidget {
     // return widget
     return Row(
       children: [
-
         Padding(
           padding: EdgeInsetsDirectional.only(end: 5.sp),
           child: Text.rich(
@@ -31,18 +30,16 @@ class FlyStepperProgress extends StatelessWidget {
               children: [
                 const TextSpan(text: ' '),
                 TextSpan(
-                    text: step.toString(),
-                    style: Get.textTheme.bodySmall!
-                        .copyWith(fontWeight: FontWeight.bold,fontSize: 10.sp)),
+                    text: step.toString(), style: Get.textTheme.labelLarge),
                 const TextSpan(text: ' '),
                 TextSpan(
-                    text: 'UI.Of'.tr,
-                    style: Get.textTheme.bodySmall!
-                        .copyWith(fontWeight: FontWeight.bold,fontSize: 10.sp)),
+                  text: 'UI.Of'.tr,
+                ),
                 const TextSpan(text: ' '),
-                TextSpan(text: total.toString()),
+                TextSpan(
+                    text: total.toString(), style: Get.textTheme.labelLarge),
               ],
-              style: Get.textTheme.bodySmall!.copyWith(fontSize: 10.sp),
+              style: Get.textTheme.labelMedium,
             ),
           ),
         ),
