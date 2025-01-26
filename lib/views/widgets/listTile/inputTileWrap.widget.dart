@@ -49,10 +49,13 @@ class FlyInputTileWrap extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AutoSizeText(
-                          title,
-                          style: Get.textTheme.titleSmall,
-                          maxLines: 1,
+                        Hero(
+                          tag: ValueKey(title),
+                          child: AutoSizeText(
+                            title,
+                            style: Get.textTheme.titleSmall,
+                            maxLines: 1,
+                          ),
                         ),
                         if (subtitle != null)
                           AutoSizeText(
