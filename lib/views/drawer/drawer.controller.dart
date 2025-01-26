@@ -9,10 +9,6 @@ class FlyDrawerController extends GetxController {
   // true = open | false = close
   final RxBool status = RxBool(false);
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
   @override
   void onReady() {
