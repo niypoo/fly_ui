@@ -30,12 +30,10 @@ class FlyContainer extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius ?? 15.sp),
         color: color ?? Get.theme.cardColor,
-        border: outline
-            ? Border.all(
-                color: border ?? Get.theme.cardColor,
-                width: 2.0,
-              )
-            : null,
+        border: Border.all(
+          color: border ?? Get.theme.cardColor,
+          width: 2.0,
+        ),
       ),
       child: child,
     );
