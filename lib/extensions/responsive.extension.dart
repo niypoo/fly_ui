@@ -1,16 +1,11 @@
-import 'dart:ui';
+import 'package:get/get.dart';
 
 extension Responsive on num {
   
-  // handle device sizes
-  FlutterView get view => PlatformDispatcher.instance.views.first;
-  double get physicalWidth => view.physicalSize.width;
-  double get physicalHeight => view.physicalSize.height;
-  double get devicePixelRatio => view.devicePixelRatio;
-  
-  bool get isLandscape => view.physicalSize.aspectRatio > 1;
-  double get screeWidth => physicalWidth / devicePixelRatio;
-  double get screenHeight => physicalHeight / devicePixelRatio;
+  bool get isLandscape =>Get.context!.isLandscape ;
+  double get screeWidth => Get.width;
+  double get screenHeight => Get.height;
+  int get devicePixelRatio => isLandscape ? 5 : 3;
 
 
   /// Calculates the height depending on the device's screen size
