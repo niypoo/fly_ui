@@ -12,6 +12,7 @@ class FlyListTile extends StatelessWidget {
     this.trailing,
     this.leading,
     this.bgColor,
+    this.textColor,
     this.outline = false,
   }) : super(key: key);
 
@@ -22,6 +23,7 @@ class FlyListTile extends StatelessWidget {
   final Function? onTap;
   final Function? onLongPress;
   final Color? bgColor;
+  final Color? textColor;
   final bool outline;
 
   @override
@@ -36,6 +38,7 @@ class FlyListTile extends StatelessWidget {
         leading: leading,
         outline: outline,
         bgColor: bgColor,
+        textColor: textColor,
       ),
     );
   }
