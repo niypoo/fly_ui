@@ -13,6 +13,7 @@ class FlyInputTileWrap extends StatelessWidget {
     this.subtitle,
     this.trailing,
     this.bgColor,
+    this.textColor,
     this.child,
     this.leading,
     this.padding,
@@ -23,6 +24,7 @@ class FlyInputTileWrap extends StatelessWidget {
   final String? subtitle;
   final bool outline;
   final Color? bgColor;
+  final Color? textColor;
   final Widget? trailing;
   final Widget? child;
   final Widget? leading;
@@ -53,14 +55,14 @@ class FlyInputTileWrap extends StatelessWidget {
                           tag: ValueKey(title),
                           child: AutoSizeText(
                             title,
-                            style: Get.textTheme.titleSmall,
+                            style: Get.textTheme.titleSmall!.copyWith(color: textColor),
                             maxLines: 1,
                           ),
                         ),
                         if (subtitle != null)
                           AutoSizeText(
                             subtitle!,
-                            style: Get.textTheme.bodySmall,
+                            style: Get.textTheme.bodySmall!.copyWith(color: textColor),
                             maxLines: 1,
                           ),
                       ],
