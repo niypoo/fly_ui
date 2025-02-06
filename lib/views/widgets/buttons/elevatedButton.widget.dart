@@ -115,9 +115,9 @@ class FlyElevatedButton extends StatelessWidget {
         vertical: 8.sp,
         horizontal: 12.sp,
       ),
-     disabledBackgroundColor: Colors.grey[100],
-     disabledForegroundColor: Colors.grey[300],
-     disabledIconColor: Colors.grey[300],
+     disabledBackgroundColor: Colors.grey[50],
+     disabledForegroundColor: Colors.grey[100],
+     disabledIconColor: Colors.grey[100],
      disabledMouseCursor: MouseCursor.defer
     );
 
