@@ -115,6 +115,10 @@ class FlyElevatedButton extends StatelessWidget {
         vertical: 8.sp,
         horizontal: 12.sp,
       ),
+     disabledBackgroundColor: Colors.grey[100],
+     disabledForegroundColor: Colors.grey[300],
+     disabledIconColor: Colors.grey[300],
+     disabledMouseCursor: MouseCursor.defer
     );
 
     //STYLES of the title
@@ -142,6 +146,7 @@ class FlyElevatedButton extends StatelessWidget {
                 ),
               )
             : ElevatedButton(
+
                 onPressed: onPressed as void Function()?,
                 style: buttonStyle,
                 child: AutoSizeText(
