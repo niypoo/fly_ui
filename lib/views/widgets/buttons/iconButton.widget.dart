@@ -113,7 +113,7 @@ class FlyIconButton extends StatelessWidget {
         disabledColor: Colors.white60,
         icon: Icon(
           icon,
-          size: (size! - 10).sp,
+          size: (size! * 0.6).sp,
           color: onPressed == null
               ? Get.theme.iconTheme.color!.withOpacity(0.2)
               : colorIcon ?? Get.theme.iconTheme.color,
