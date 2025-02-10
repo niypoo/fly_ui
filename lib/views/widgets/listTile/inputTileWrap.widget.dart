@@ -63,7 +63,7 @@ class FlyInputTileWrap extends StatelessWidget {
                           AutoSizeText(
                             subtitle!,
                             style: Get.textTheme.bodySmall!.copyWith(color: textColor),
-                            maxLines: 1,
+                            maxLines: 2,
                           ),
                       ],
                     ),

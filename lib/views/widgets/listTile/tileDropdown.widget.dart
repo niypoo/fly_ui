@@ -19,7 +19,7 @@ class FlyDropdownTile extends StatelessWidget {
   final String title;
   final String? subtitle;
   final String value;
-  final Function onTap;
+  final void Function(String?) onTap;
   final bool outline;
   final Color? bgColor;
   final Widget? child;
@@ -45,7 +45,7 @@ class FlyDropdownTile extends StatelessWidget {
               child: Text(value, style: Get.textTheme.bodyMedium),
             );
           }).toList(),
-          onChanged: onTap as void Function(String?)?,
+          onChanged: onTap ,
         ),
       ),
       child: child,
