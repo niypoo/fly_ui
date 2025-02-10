@@ -41,9 +41,6 @@ class _FlyExpandedSectionState extends State<FlyExpandedSection> {
   @override
   Widget build(BuildContext context) {
     return FlyContainer(
-      color: Get.theme.scaffoldBackgroundColor,
-      margin: EdgeInsets.only(bottom: 8.sp),
-      padding: EdgeInsets.symmetric(vertical: 10.sp),
       child: Column(
         children: [
           GestureDetector(
