@@ -4,14 +4,17 @@ import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
 class FlyChip extends StatelessWidget {
-  const FlyChip(
-      {super.key,
-      required this.tag,
-      this.onRemove,
-      this.avatar,
-      this.backgroundColor});
+  const FlyChip({
+    super.key,
+    required this.tag,
+    this.onRemove,
+    this.avatar,
+    this.textColor,
+    this.backgroundColor,
+  });
   final String tag;
   final Widget? avatar;
+  final Color? textColor;
   final Color? backgroundColor;
   final void Function()? onRemove;
 
@@ -32,7 +35,7 @@ class FlyChip extends StatelessWidget {
         avatar: avatar,
         label: Text(
           tag,
-          style: Get.textTheme.labelLarge,
+          style: Get.textTheme.labelLarge!.copyWith(color: textColor),
         ),
       ),
     );
