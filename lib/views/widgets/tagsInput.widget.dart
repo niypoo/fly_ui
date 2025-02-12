@@ -18,9 +18,9 @@ class FlyTagsInput extends StatefulWidget {
     this.allowDuplicates = false,
     this.autocomplete,
     this.formKey,
-    this.focusNode,
+    // this.focusNode,
     this.constantlyFocused = true,
-    this.controller,
+    // this.controller,
   }) : super(key: key);
 
   final String placeholder;
@@ -32,8 +32,8 @@ class FlyTagsInput extends StatefulWidget {
   final Function(List<String>)? onChange;
   final FutureOr<Iterable<String>> Function(String)? autocomplete;
   final GlobalKey<FormState>? formKey;
-  final TextEditingController? controller;
-  final FocusNode? focusNode;
+  // final TextEditingController? controller;
+  // final FocusNode? focusNode;
 
   @override
   State<FlyTagsInput> createState() => _FlyCheckboxTileState();
@@ -42,13 +42,13 @@ class FlyTagsInput extends StatefulWidget {
 class _FlyCheckboxTileState extends State<FlyTagsInput> {
   late TextEditingController _controller;
   late GlobalKey<FormState> _formKey;
-  late FocusNode _focusNode;
+  // late FocusNode _focusNode;
 
   @override
   void initState() {
-    _controller = widget.controller ?? TextEditingController();
+    // _controller = widget.controller ?? TextEditingController();
     _formKey = widget.formKey ?? GlobalKey();
-    _focusNode = widget.focusNode ?? FocusNode();
+    // _focusNode = widget.focusNode ?? FocusNode();
 
     super.initState();
   }
@@ -59,7 +59,7 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
     _controller.clear();
     
     // when Constantly Focused is turn on
-    if (widget.constantlyFocused) _focusNode.requestFocus();
+    // if (widget.constantlyFocused) _focusNode.requestFocus();
   }
 
   Future<void> removeTag(String tag) async {
@@ -101,8 +101,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
                         }
                         return null;
                       },
-                  controller: _controller,
-                  focusNode: _focusNode,
+                  controller: textEditingController,
+                  focusNode: focusNode,
                   hintText: widget.placeholder,
                   onFieldSubmitted: addTag,
                 ),
