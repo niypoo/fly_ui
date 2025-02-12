@@ -19,7 +19,7 @@ class FlyTagsInput extends StatefulWidget {
     this.autocomplete,
     this.formKey,
     // this.focusNode,
-    this.constantlyFocused = true,
+    this.constantlyFocused = true, this.customOptions,
     // this.controller,
   }) : super(key: key);
 
@@ -30,6 +30,8 @@ class FlyTagsInput extends StatefulWidget {
   final bool constantlyFocused;
   final bool allowDuplicates;
   final Function(List<String>)? onChange;
+  final Function(TextEditingController controller, FocusNode focusNode)?
+      customOptions;
   final FutureOr<Iterable<String>> Function(String)? autocomplete;
   final GlobalKey<FormState>? formKey;
   // final TextEditingController? controller;
@@ -42,13 +44,11 @@ class FlyTagsInput extends StatefulWidget {
 class _FlyCheckboxTileState extends State<FlyTagsInput> {
   late TextEditingController _controller;
   late GlobalKey<FormState> _formKey;
-  // late FocusNode _focusNode;
+  late FocusNode _focusNode;
 
   @override
   void initState() {
-    // _controller = widget.controller ?? TextEditingController();
     _formKey = widget.formKey ?? GlobalKey();
-    // _focusNode = widget.focusNode ?? FocusNode();
 
     super.initState();
   }
@@ -57,9 +57,9 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
     if (!_formKey.currentState!.validate()) return;
     widget.selectedValues.add(tag.trim());
     _controller.clear();
-    
+
     // when Constantly Focused is turn on
-    // if (widget.constantlyFocused) _focusNode.requestFocus();
+    if (widget.constantlyFocused) _focusNode.requestFocus();
   }
 
   Future<void> removeTag(String tag) async {
@@ -86,6 +86,15 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
           builder: (context, constraints) => Autocomplete<String>(
             fieldViewBuilder:
                 (context, textEditingController, focusNode, onFieldSubmitted) {
+              //assignment controller and focus;
+              _controller = textEditingController;
+              _focusNode = focusNode;
+
+              // trigger customOptions
+              if (widget.customOptions != null) {
+                widget.customOptions!(textEditingController, _focusNode);
+              }
+
               return Form(
                 key: _formKey,
                 child: FlyTextField(
@@ -101,16 +110,14 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
                         }
                         return null;
                       },
-                  controller: textEditingController,
-                  focusNode: focusNode,
+                  controller: _controller,
+                  focusNode: _focusNode,
                   hintText: widget.placeholder,
                   onFieldSubmitted: addTag,
                 ),
               );
             },
             optionsBuilder: (TextEditingValue textEditingValue) async {
-              print('textEditingValue ${textEditingValue.text}');
-              print('autocomplete ${await widget.autocomplete!(textEditingValue.text)}');
               // skip
               if (textEditingValue.text == '' || widget.autocomplete == null) {
                 return const Iterable<String>.empty();
