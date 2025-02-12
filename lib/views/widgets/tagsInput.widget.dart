@@ -109,6 +109,8 @@ class _FlyCheckboxTileState extends State<FlyTagsInput> {
               );
             },
             optionsBuilder: (TextEditingValue textEditingValue) async {
+              print('textEditingValue ${textEditingValue.text}');
+              print('autocomplete ${await widget.autocomplete!(textEditingValue.text)}');
               // skip
               if (textEditingValue.text == '' || widget.autocomplete == null) {
                 return const Iterable<String>.empty();
