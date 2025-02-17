@@ -57,7 +57,6 @@ class FlyFileInputTile extends StatelessWidget {
       trailing: SizedBox(
         height: 30.sp,
         child: FlyElevatedButton.normal(
-          margin: const EdgeInsets.all(0),
           title: 'Upload',
           icon: UniconsLine.upload,
           onPressed: uploadFun,
