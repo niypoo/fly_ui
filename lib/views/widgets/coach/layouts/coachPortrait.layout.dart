@@ -41,7 +41,9 @@ class FlyCoachPortraitLayout extends StatelessWidget {
                 SizedBox(height: 10.sp),
                 // Children
                 ...children,
-                SizedBox(height: 8.sp),
+                // END HINT
+                FlyStepperNote(endHint: endHint),
+                SizedBox(height: 10.sp),
                 // Title
                 // Title
                 FlyStepperTitle(title: title),
@@ -49,8 +51,7 @@ class FlyCoachPortraitLayout extends StatelessWidget {
                 // HINT
                 FlyStepperSubtitle(hint: description),
 
-                // END HINT
-                FlyStepperNote(endHint: endHint),
+      
               ],
             ),
           ),

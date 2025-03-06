@@ -42,6 +42,23 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
 
             // HINT
             FlyStepperSubtitle(hint: description),
+
+            // BUTTONS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                if (dontShowAgain != null)
+                  FlyCoachDontShowButton(dontShowAgain: dontShowAgain),
+                if (FlyCoachController.to.step > 1)
+                  const FlyCoachPreviousButton(),
+                const Spacer(),
+                FlyCoachNextButton(
+                  buttonTitle: buttonText,
+                  icon: buttonIcon,
+                  onTap: onTap,
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -53,22 +70,6 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
 
             // END HINT
             FlyStepperNote(endHint: endHint),
-
-            // BUTTONS
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-               if (dontShowAgain != null)
-              FlyCoachDontShowButton(dontShowAgain: dontShowAgain),
-            if (FlyCoachController.to.step > 1) const FlyCoachPreviousButton(),
-            const Spacer(),
-            FlyCoachNextButton(
-              buttonTitle: buttonText,
-              icon: buttonIcon,
-              onTap: onTap,
-            ),
-              ],
-            ),
           ],
         ),
       ),

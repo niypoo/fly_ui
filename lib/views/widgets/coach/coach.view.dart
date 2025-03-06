@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/layouts/scaffoldLayout.widget.dart';
 import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
-// import 'package:fly_ui/views/widgets/stepper/widgets/stepperProgress.widget.dart';
+import 'package:fly_ui/views/widgets/stepper/widgets/stepperProgress.widget.dart';
 import 'package:get/get.dart';
 
 class FlyCoachView extends StatelessWidget {
@@ -19,29 +19,24 @@ class FlyCoachView extends StatelessWidget {
       child: GetBuilder<FlyCoachController>(
         init: FlyCoachController(),
         builder: (controller) {
-          return PageView(
-            controller: controller.pageController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: screens,
-          );
-          // return Column(
-          //   children: [
-          //     // Progress
-          //     FlyStepperProgress(
-          //       total: screens.length,
-          //       step: controller.step,
-          //     ),
+          return Column(
+            children: [
+              // Progress
+              FlyStepperProgress(
+                total: screens.length,
+                step: controller.step,
+              ),
 
-          //     // Body
-          //     Expanded(
-          //       child: PageView(
-          //         controller: controller.pageController,
-          //         physics: const NeverScrollableScrollPhysics(),
-          //         children: screens,
-          //       ),
-          //     ),
-          //   ],
-          // );
+              // Body
+              Expanded(
+                child: PageView(
+                  controller: controller.pageController,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: screens,
+                ),
+              ),
+            ],
+          );
         },
       ),
     );
