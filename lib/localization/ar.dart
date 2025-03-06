@@ -8,5 +8,6 @@ const Map<String, String> uiLoclizationAr = {
   "UI.Please enter a value": "الرجاء إدخال قيمة",
   "UI.Value already exists": "القيمة موجودة بالفعل",
   "UI.Of" : 'من',
-  'UI.Step': 'خطوة'
+  'UI.Step': 'خطوة',
+  "UI.Don't show again": "لا تظهر مرة أخرى",
 };

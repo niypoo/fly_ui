@@ -9,4 +9,5 @@ const Map<String, String> uiLoclizationEn = {
       "UI.Value already exists": "Value already exists",
       "UI.Step": "Step",
       "UI.Of": "Of",
+      "UI.Don't show again": "Don't show again",
 };
