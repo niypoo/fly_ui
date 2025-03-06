@@ -25,7 +25,7 @@ class FlyCoachProgress extends StatelessWidget {
           padding: EdgeInsetsDirectional.only(end: 5.sp),
           child: Text.rich(
             TextSpan(
-              text: 'UI.Step'.tr,
+              text: '',
               children: [
                 const TextSpan(text: ' '),
                 TextSpan(
