@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/layouts/landscapeView.widget.dart';
-import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachButtons.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubtitle.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/StepperNextButton.widget.dart';
-import 'package:get/get.dart';
 
 class FlyCoachLandscapeLayout extends StatelessWidget {
   const FlyCoachLandscapeLayout({
@@ -60,20 +58,15 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                if (dontShowAgain != null)
-                  FlyElevatedButton.normal(
-                    icon: Icons.do_disturb_alt_rounded,
-                    onPressed: dontShowAgain,
-                    title: "UI.Don't show again".tr,
-                  ),
-                if (FlyCoachController.to.step > 1)
-                  const FlyMultiStepPreviousButton(),
-                const Spacer(),
-                FlyStepperNextButton(
-                  buttonTitle: buttonText,
-                  icon: buttonIcon,
-                  onTap: onTap,
-                ),
+               if (dontShowAgain != null)
+              FlyCoachDontShowButton(dontShowAgain: dontShowAgain),
+            if (FlyCoachController.to.step > 1) const FlyCoachPreviousButton(),
+            const Spacer(),
+            FlyCoachNextButton(
+              buttonTitle: buttonText,
+              icon: buttonIcon,
+              onTap: onTap,
+            ),
               ],
             ),
           ],

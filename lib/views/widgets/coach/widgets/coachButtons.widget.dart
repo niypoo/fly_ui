@@ -3,8 +3,8 @@ import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
 import 'package:get/get.dart';
 
-class FlyStepperNextButton extends StatelessWidget {
-  const FlyStepperNextButton({
+class FlyCoachNextButton extends StatelessWidget {
+  const FlyCoachNextButton({
     Key? key,
     required this.buttonTitle,
     required this.onTap,
@@ -29,8 +29,8 @@ class FlyStepperNextButton extends StatelessWidget {
   }
 }
 
-class FlyMultiStepPreviousButton extends StatelessWidget {
-  const FlyMultiStepPreviousButton({
+class FlyCoachPreviousButton extends StatelessWidget {
+  const FlyCoachPreviousButton({
     Key? key,
   }) : super(key: key);
 
@@ -40,6 +40,24 @@ class FlyMultiStepPreviousButton extends StatelessWidget {
       icon: Icons.arrow_back_ios_rounded,
       onPressed: FlyStepperController.to.back,
       title: 'Previous'.tr,
+    );
+  }
+}
+
+class FlyCoachDontShowButton extends StatelessWidget {
+  const FlyCoachDontShowButton({
+    Key? key,
+    this.dontShowAgain,
+  }) : super(key: key);
+
+  final Function? dontShowAgain;
+
+  @override
+  Widget build(BuildContext context) {
+    return FlyElevatedButton.normal(
+      icon: Icons.do_disturb_alt_rounded,
+      onPressed: dontShowAgain,
+      title: "UI.Don't show again".tr,
     );
   }
 }
