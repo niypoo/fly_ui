@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/layouts/landscapeView.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
+import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubtitle.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
@@ -66,7 +66,7 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
                     onPressed: dontShowAgain,
                     title: "UI.Don't show again".tr,
                   ),
-                if (FlyStepperController.to.step > 1)
+                if (FlyCoachController.to.step > 1)
                   const FlyMultiStepPreviousButton(),
                 const Spacer(),
                 FlyStepperNextButton(
