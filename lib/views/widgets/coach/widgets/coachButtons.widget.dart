@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
+import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
 import 'package:get/get.dart';
 
 class FlyCoachNextButton extends StatelessWidget {
@@ -38,7 +38,7 @@ class FlyCoachPreviousButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyElevatedButton.normal(
       icon: Icons.arrow_back_ios_rounded,
-      onPressed: FlyStepperController.to.back,
+      onPressed: FlyCoachController.to.back,
       title: 'Previous'.tr,
     );
   }
