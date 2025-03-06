@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/layouts/scaffoldLayout.widget.dart';
 import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperProgress.widget.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachProgress.widget.dart';
 import 'package:get/get.dart';
 
 class FlyCoachView extends StatelessWidget {
@@ -22,7 +22,7 @@ class FlyCoachView extends StatelessWidget {
           return Column(
             children: [
               // Progress
-              FlyStepperProgress(
+              FlyCoachProgress(
                 total: screens.length,
                 step: controller.step,
               ),
