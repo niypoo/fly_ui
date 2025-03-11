@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
 import 'package:fly_ui/views/widgets/coach/widgets/coachButtons.widget.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachHint.widget.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachSubtitle.widget.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachTitle.widget.dart';
 import 'package:patata_responsive/patata_responsive.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubtitle.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
+
 
 class FlyCoachPortraitLayout extends StatelessWidget {
   const FlyCoachPortraitLayout({
@@ -38,18 +39,18 @@ class FlyCoachPortraitLayout extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10.sp),
+                SizedBox(height: 20.sp),
                 // Children
                 ...children,
                 // END HINT
-                FlyStepperNote(endHint: endHint),
+                FlyCoachHint(endHint: endHint),
                 SizedBox(height: 10.sp),
                 // Title
                 // Title
-                FlyStepperTitle(title: title),
+                FlyCoachTitle(title: title),
                 SizedBox(height: 2.sp),
                 // HINT
-                FlyStepperSubtitle(hint: description),
+                FlyCoachSubtitle(hint: description),
 
       
               ],

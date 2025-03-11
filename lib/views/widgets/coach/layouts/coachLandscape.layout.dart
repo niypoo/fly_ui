@@ -3,9 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:fly_ui/views/layouts/landscapeView.widget.dart';
 import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
 import 'package:fly_ui/views/widgets/coach/widgets/coachButtons.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubtitle.widget.dart';
-import 'package:fly_ui/views/widgets/stepper/widgets/stepperTitle.widget.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachHint.widget.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachSubtitle.widget.dart';
+import 'package:fly_ui/views/widgets/coach/widgets/coachTitle.widget.dart';
 
 class FlyCoachLandscapeLayout extends StatelessWidget {
   const FlyCoachLandscapeLayout({
@@ -38,10 +38,10 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title
-            FlyStepperTitle(title: title),
+            FlyCoachTitle(title: title),
 
             // HINT
-            FlyStepperSubtitle(hint: description),
+            FlyCoachSubtitle(hint: description),
 
             // BUTTONS
             Row(
@@ -69,7 +69,7 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
             ...children,
 
             // END HINT
-            FlyStepperNote(endHint: endHint),
+            FlyCoachHint(endHint: endHint),
           ],
         ),
       ),
