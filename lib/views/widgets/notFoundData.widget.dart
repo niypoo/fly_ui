@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:patata_responsive/patata_responsive.dart';
 import 'package:fly_ui/views/widgets/divider.widget.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,7 @@ class FlyNotFoundData extends StatelessWidget {
 
   final String? title;
   final String? text;
-  final IconData? icon;
+  final dynamic icon;
   final double marginTop;
   final double iconSize;
   final List<Widget> actions;
@@ -29,11 +30,14 @@ class FlyNotFoundData extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(height: marginTop),
-        Icon(
-          icon ?? UniconsLine.exclamation,
-          size: iconSize.sp,
-          color: Get.theme.primaryColor,
-        ),
+        if (icon.runtimeType == String)
+          FlyImage(url: icon)
+        else
+          Icon(
+            icon ?? UniconsLine.exclamation,
+            size: iconSize.sp,
+            color: Get.theme.primaryColor,
+          ),
         SizedBox(height: 8.sp),
         AutoSizeText(
           title ?? 'No data provided yet.'.tr,
@@ -47,7 +51,7 @@ class FlyNotFoundData extends StatelessWidget {
           ),
 
         // Actions
-        if(actions.isNotEmpty) const FlyDivider(),
+        if (actions.isNotEmpty) const FlyDivider(),
         ...actions,
       ],
     );
