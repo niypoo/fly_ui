@@ -13,11 +13,15 @@ class FlyCoachHint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// If [endHint] is null, return an empty SizedBox
+    if(endHint == null) return const SizedBox();
+
+    /// Otherwise, return a Padding widget with a Centered AutoSizeText
     return Padding(
       padding: EdgeInsets.only(bottom: 8.sp),
       child: Center(
         child: AutoSizeText(
-          endHint!,
+          endHint! ,
           style: Get.textTheme.labelMedium,
         ),
       ),
