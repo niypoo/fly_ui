@@ -31,7 +31,7 @@ class FlyNotFoundData extends StatelessWidget {
       children: [
         SizedBox(height: marginTop),
         if (icon.runtimeType == String)
-          FlyImage(url: icon)
+          FlyImage(url: icon,width: 30.w, height: 30.w)
         else
           Icon(
             icon ?? UniconsLine.exclamation,
