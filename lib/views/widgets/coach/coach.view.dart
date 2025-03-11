@@ -9,9 +9,11 @@ class FlyCoachView extends StatelessWidget {
   const FlyCoachView({
     Key? key,
     required this.screens,
+    this.progressBar = true,
   }) : super(key: key);
 
   final List<Widget> screens;
+  final bool progressBar;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +24,11 @@ class FlyCoachView extends StatelessWidget {
           return Column(
             children: [
               // Progress
-              FlyCoachProgress(
-                total: screens.length,
-                step: controller.step,
-              ),
+              if (progressBar)
+                FlyCoachProgress(
+                  total: screens.length,
+                  step: controller.step,
+                ),
 
               // Body
               Expanded(
