@@ -37,7 +37,8 @@ class FlyCoachPortraitLayout extends StatelessWidget {
         Expanded(
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 20.sp),
                 // Children
