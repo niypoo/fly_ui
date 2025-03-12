@@ -84,7 +84,8 @@ class FlyIconButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed as void Function()?,
       style: ButtonStyle(
-        // iconSize: WidgetStateProperty.all(size!.sp),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        minimumSize: const WidgetStatePropertyAll(Size.zero),
         elevation: WidgetStateProperty.all(0.0),
         shape: WidgetStateProperty.all(shape),
         padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
