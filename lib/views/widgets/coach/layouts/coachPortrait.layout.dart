@@ -15,7 +15,7 @@ class FlyCoachPortraitLayout extends StatelessWidget {
     required this.description,
     required this.buttonText,
     required this.onTap,
-    required this.dontShowAgain,
+    this.dontShowAgain,
     required this.children,
     this.endHint,
     this.buttonIcon,

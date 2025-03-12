@@ -62,8 +62,10 @@ class FlyStepperPortraitLayout extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            
             if (FlyStepperController.to.step > 1)
-              const FlyMultiStepPreviousButton(),
+              const FlyStepperPreviousButton(),
+
             const Spacer(),
             FlyStepperNextButton(
               buttonTitle: buttonText,

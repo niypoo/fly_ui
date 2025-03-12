@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
 import 'package:get/get.dart';
+import 'package:localization_service/localization.service.dart';
 
 class FlyStepperNextButton extends StatelessWidget {
   const FlyStepperNextButton({
@@ -22,24 +23,25 @@ class FlyStepperNextButton extends StatelessWidget {
       child: FlyElevatedButton.primary(
         title: buttonTitle,
         onPressed: onTap,
-        icon: icon ?? Icons.arrow_forward_ios_rounded,
-        iconAlignment: IconAlignment.end,
+        icon: icon ?? (LocalizationService.to.isRTL  ? Icons.arrow_back_ios_rounded: Icons.arrow_forward_ios_rounded),
+        iconAlignment: LocalizationService.to.isRTL ? IconAlignment.end : IconAlignment.start,
       ),
     );
   }
 }
 
-class FlyMultiStepPreviousButton extends StatelessWidget {
-  const FlyMultiStepPreviousButton({
+class FlyStepperPreviousButton extends StatelessWidget {
+  const FlyStepperPreviousButton({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return FlyElevatedButton.normal(
-      icon: Icons.arrow_back_ios_rounded,
+      iconAlignment: LocalizationService.to.isRTL ? IconAlignment.end : IconAlignment.start,
+      icon: LocalizationService.to.isRTL  ? Icons.arrow_forward_ios_rounded: Icons.arrow_back_ios_rounded,
       onPressed: FlyStepperController.to.back,
-      title: 'Previous'.tr,
+      title: 'UI.Previous'.tr,
     );
   }
 }

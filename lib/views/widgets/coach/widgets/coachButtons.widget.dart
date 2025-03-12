@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
 import 'package:get/get.dart';
+import 'package:localization_service/localization.service.dart';
 
 class FlyCoachNextButton extends StatelessWidget {
   const FlyCoachNextButton({
@@ -22,8 +23,8 @@ class FlyCoachNextButton extends StatelessWidget {
       child: FlyElevatedButton.primary(
         title: buttonTitle,
         onPressed: onTap,
-        icon: icon ?? Icons.arrow_forward_ios_rounded,
-        iconAlignment: IconAlignment.end,
+        icon: icon ?? (LocalizationService.to.isRTL  ? Icons.arrow_back_ios_rounded: Icons.arrow_forward_ios_rounded),
+        iconAlignment: LocalizationService.to.isRTL ? IconAlignment.end : IconAlignment.start,
       ),
     );
   }
@@ -37,7 +38,8 @@ class FlyCoachPreviousButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyElevatedButton.normal(
-      icon: Icons.arrow_back_ios_rounded,
+       iconAlignment: LocalizationService.to.isRTL ? IconAlignment.end : IconAlignment.start,
+      icon: LocalizationService.to.isRTL  ? Icons.arrow_forward_ios_rounded: Icons.arrow_back_ios_rounded,
       onPressed: FlyCoachController.to.back,
       title: 'Previous'.tr,
     );

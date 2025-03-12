@@ -62,7 +62,7 @@ class FlyStepperLandscapeLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 if (FlyStepperController.to.step > 1)
-                  const FlyMultiStepPreviousButton(),
+                  const FlyStepperPreviousButton(),
                 const Spacer(),
                 FlyStepperNextButton(
                   buttonTitle: buttonText,

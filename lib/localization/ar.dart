@@ -10,4 +10,5 @@ const Map<String, String> uiLoclizationAr = {
   "UI.Of" : 'من',
   'UI.Step': 'خطوة',
   "UI.Don't show again": "لا تظهر مرة أخرى",
+  "UI.Previous": "السابق",
 };
