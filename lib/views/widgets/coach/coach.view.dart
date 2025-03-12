@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/layouts/scaffoldLayout.widget.dart';
+import 'package:fly_ui/views/widgets/appBar.widget.dart';
 import 'package:fly_ui/views/widgets/coach/coach.controller.dart';
 import 'package:fly_ui/views/widgets/coach/widgets/coachProgress.widget.dart';
 import 'package:get/get.dart';
@@ -10,10 +11,12 @@ class FlyCoachView extends StatelessWidget {
     Key? key,
     required this.screens,
     this.progressBar = true,
+    this.appBar = false,
   }) : super(key: key);
 
   final List<Widget> screens;
   final bool progressBar;
+  final bool appBar;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,9 @@ class FlyCoachView extends StatelessWidget {
                   total: screens.length,
                   step: controller.step,
                 ),
+
+              // App bar
+              if (appBar) const FlyAppBar(),
 
               // Body
               Expanded(
