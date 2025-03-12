@@ -84,7 +84,7 @@ class FlyIconButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       style: ButtonStyle(
-        iconSize: WidgetStateProperty.all(size!.sp),
+        // iconSize: WidgetStateProperty.all(size!.sp),
         elevation: WidgetStateProperty.all(0.0),
         shape: WidgetStateProperty.all(shape),
         padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
@@ -101,6 +101,7 @@ class FlyIconButton extends StatelessWidget {
       ),
       child: Icon(
         icon,
+        size: size,
         color: onPressed == null
             ? Get.theme.iconTheme.color!.withOpacity(0.2)
             : colorIcon ?? Get.theme.iconTheme.color,
