@@ -82,7 +82,7 @@ class FlyIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed as void Function()?,
       style: ButtonStyle(
         // iconSize: WidgetStateProperty.all(size!.sp),
         elevation: WidgetStateProperty.all(0.0),
