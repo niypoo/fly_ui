@@ -87,7 +87,7 @@ class FlyIconButton extends StatelessWidget {
         // iconSize: WidgetStateProperty.all(size!.sp),
         elevation: WidgetStateProperty.all(0.0),
         shape: WidgetStateProperty.all(shape),
-        padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
+        padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(10.sp)),
         backgroundColor:
             WidgetStateProperty.all(bgColor ?? Get.theme.cardColor), // <-- Button color
         overlayColor: WidgetStateProperty.resolveWith<Color?>(
