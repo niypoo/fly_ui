@@ -38,7 +38,6 @@ class FlyDrawerButton extends StatelessWidget {
     return FlyIconButton(
       icon: UniconsLine.bars,
       onPressed: FlyDrawerController.to.toggleDrawer,
-      shape: BoxShape.circle,
     );
   }
 }

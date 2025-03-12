@@ -4,6 +4,7 @@ import 'package:patata_responsive/patata_responsive.dart';
 import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
+import 'package:unicons/unicons.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FlyAppBar({
@@ -46,9 +47,9 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         leadingWidth: 30.sp,
         leading: leading ??
             FlyIconButton(
-              icon: Icons.arrow_back_ios_new_rounded,
+              icon: UniconsLine.multiply,
               onPressed: () => Get.back(),
-              shape: BoxShape.circle,
+              size: 25.sp,
             ),
         title: title == null
             ? null
