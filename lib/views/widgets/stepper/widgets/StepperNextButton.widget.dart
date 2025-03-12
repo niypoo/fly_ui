@@ -38,7 +38,7 @@ class FlyStepperPreviousButton extends StatelessWidget {
     return FlyElevatedButton.normal(
       // icon: Icons.arrow_back_ios_rounded,
       onPressed: FlyStepperController.to.back,
-      title: 'Previous'.tr,
+      title: 'UI.Previous'.tr,
     );
   }
 }
