@@ -24,7 +24,7 @@ class FlyStepperNextButton extends StatelessWidget {
         title: buttonTitle,
         onPressed: onTap,
         icon: icon ?? (LocalizationService.to.isRTL  ? Icons.arrow_back_ios_rounded: Icons.arrow_forward_ios_rounded),
-        iconAlignment: LocalizationService.to.isRTL ? IconAlignment.end : IconAlignment.start,
+        iconAlignment: LocalizationService.to.isRTL ? IconAlignment.start : IconAlignment.end,
       ),
     );
   }
@@ -38,7 +38,7 @@ class FlyStepperPreviousButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyElevatedButton.normal(
-      iconAlignment: LocalizationService.to.isRTL ? IconAlignment.end : IconAlignment.start,
+      iconAlignment: LocalizationService.to.isRTL ? IconAlignment.start : IconAlignment.end,
       icon: LocalizationService.to.isRTL  ? Icons.arrow_forward_ios_rounded: Icons.arrow_back_ios_rounded,
       onPressed: FlyStepperController.to.back,
       title: 'UI.Previous'.tr,
