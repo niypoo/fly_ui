@@ -49,7 +49,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
             FlyIconButton(
               icon: UniconsLine.multiply,
               onPressed: () => Get.back(),
-              size: 25.sp,
+              size: 22.sp,
             ),
         title: title == null
             ? null
