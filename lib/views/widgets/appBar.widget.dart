@@ -44,17 +44,13 @@ const FlyAppBar({
         scrolledUnderElevation: scrolledUnderElevation,
         backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
         // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-        // leadingWidth: 28.sp,
-        leading: SizedBox(
-          width: 28.sp,
-          height: 28.sp,
-          child: leading ??
-              FlyIconButton(
-                icon: UniconsLine.multiply,
-                onPressed: () => Get.back(),
-                size: 28.sp,
-              ),
-        ),
+        leadingWidth: 25.sp,
+        leading: leading ??
+            FlyIconButton(
+              icon: UniconsLine.multiply,
+              onPressed: () => Get.back(),
+              size: 20.sp,
+            ),
         title: title == null
             ? null
             : AutoSizeText(
