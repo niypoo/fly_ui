@@ -100,16 +100,20 @@ class FlyIconButton extends StatelessWidget {
           },
         ),
       ),
-      child: LayoutBuilder(
-        builder: (context, constrain) {
-          return Icon(
-            icon,
-            size: constrain.maxWidth,
-            color: onPressed == null
-                ? Get.theme.iconTheme.color!.withOpacity(0.2)
-                : colorIcon ?? Get.theme.iconTheme.color,
-          );
-        },
+      child: SizedBox(
+        width: size!.sp,
+        height: size!.sp,
+        child: LayoutBuilder(
+          builder: (context, constrain) {
+            return Icon(
+              icon,
+              size: constrain.maxWidth,
+              color: onPressed == null
+                  ? Get.theme.iconTheme.color!.withOpacity(0.2)
+                  : colorIcon ?? Get.theme.iconTheme.color,
+            );
+          },
+        ),
       ),
     );
 
