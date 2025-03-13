@@ -54,7 +54,7 @@ class FlyCoachDontShowButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyElevatedButton.normal(
-      // icon: Icons.do_disturb_alt_rounded,
+      icon: Icons.do_disturb_alt_rounded,
       onPressed: dontShowAgain,
       title: "UI.Don't show again".tr,
     );
