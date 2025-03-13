@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const FlyAppBar({
+const FlyAppBar({
     Key? key,
     this.title,
     this.actions = const [],
@@ -17,7 +17,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.titleTextStyle,
     // this.leadingWidth,
     this.centerTitle = false,
-    this.disabledPadding = false,
+    this.disabledPadding = true,
     // this.titleSpacing,
     this.scrolledUnderElevation = 0.0,
   }) : super(key: key);
@@ -44,7 +44,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         scrolledUnderElevation: scrolledUnderElevation,
         backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
         // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-        leadingWidth: 28.sp,
+        // leadingWidth: 28.sp,
         leading: leading ??
             FlyIconButton(
               icon: UniconsLine.multiply,

@@ -34,7 +34,7 @@ class FlyCoachView extends StatelessWidget {
                 ),
 
               // App bar
-              if (appBar) const FlyAppBar(disabledPadding: true,),
+              if (appBar) const FlyAppBar(),
 
               // Body
               Expanded(
