@@ -89,8 +89,8 @@ class FlyIconButton extends StatelessWidget {
         elevation: WidgetStateProperty.all(0.0),
         shape: WidgetStateProperty.all(shape),
         padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
-        backgroundColor:
-            WidgetStateProperty.all(bgColor ?? Get.theme.cardColor), // <-- Button color
+        backgroundColor: WidgetStateProperty.all(
+            bgColor ?? Get.theme.cardColor), // <-- Button color
         overlayColor: WidgetStateProperty.resolveWith<Color?>(
           (states) {
             if (states.contains(WidgetState.pressed)) {
@@ -100,12 +100,16 @@ class FlyIconButton extends StatelessWidget {
           },
         ),
       ),
-      child: Icon(
-        icon,
-        size: (size! * 0.4).sp,
-        color: onPressed == null
-            ? Get.theme.iconTheme.color!.withOpacity(0.2)
-            : colorIcon ?? Get.theme.iconTheme.color,
+      child: LayoutBuilder(
+        builder: (context, constrain) {
+          return Icon(
+            icon,
+            size: constrain.maxWidth,
+            color: onPressed == null
+                ? Get.theme.iconTheme.color!.withOpacity(0.2)
+                : colorIcon ?? Get.theme.iconTheme.color,
+          );
+        },
       ),
     );
 
