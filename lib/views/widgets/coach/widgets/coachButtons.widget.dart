@@ -38,7 +38,7 @@ class FlyCoachPreviousButton extends StatelessWidget {
     return FlyElevatedButton.normal(
       // icon: Icons.arrow_forward_ios_rounded,
       onPressed: FlyCoachController.to.back,
-      title: 'Previous'.tr,
+      title: 'UI.Previous'.tr,
     );
   }
 }
