@@ -45,16 +45,12 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
         // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
         leadingWidth: 28.sp,
-        leading: SizedBox(
-          height: 28.sp,
-          width: 28.sp,
-          child: leading ??
-              FlyIconButton(
-                icon: UniconsLine.multiply,
-                onPressed: () => Get.back(),
-                size: 28.sp,
-              ),
-        ),
+        leading: leading ??
+            FlyIconButton(
+              icon: UniconsLine.multiply,
+              onPressed: () => Get.back(),
+              size: 28.sp,
+            ),
         title: title == null
             ? null
             : AutoSizeText(
