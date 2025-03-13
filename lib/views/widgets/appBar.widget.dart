@@ -44,12 +44,12 @@ const FlyAppBar({
         scrolledUnderElevation: scrolledUnderElevation,
         backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
         // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-        leadingWidth: 25.sp,
+        leadingWidth: 26.sp,
         leading: leading ??
             FlyIconButton(
               icon: UniconsLine.multiply,
               onPressed: () => Get.back(),
-              size: 20.sp,
+              size: 19.sp,
             ),
         title: title == null
             ? null
