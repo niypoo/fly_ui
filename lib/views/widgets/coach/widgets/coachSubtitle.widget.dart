@@ -15,7 +15,7 @@ class FlyCoachSubtitle extends StatelessWidget {
     return AutoSizeText(
       hint!,
       style: Get.textTheme.bodyLarge,
-      textAlign: TextAlign.center,
+      // textAlign: TextAlign.center,
     );
   }
 }

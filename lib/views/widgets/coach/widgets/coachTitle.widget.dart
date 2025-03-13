@@ -15,7 +15,7 @@ class FlyCoachTitle extends StatelessWidget {
     return AutoSizeText(
       title,
       style: Get.textTheme.displayLarge!.copyWith(color: Get.theme.primaryColor),
-      textAlign: TextAlign.center,
+      // textAlign: TextAlign.center,
     );
   }
 }

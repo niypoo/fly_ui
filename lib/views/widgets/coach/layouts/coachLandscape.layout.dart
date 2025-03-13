@@ -34,8 +34,8 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
     return FlyLandscapeView(
       childA: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // Title
             FlyCoachTitle(title: title),
