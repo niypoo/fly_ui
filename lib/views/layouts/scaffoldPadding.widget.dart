@@ -31,3 +31,39 @@ class FlyScaffoldPadding extends StatelessWidget {
     );
   }
 }
+
+class FlyScaffoldPreferredPadding extends StatelessWidget
+    implements PreferredSizeWidget {
+  const FlyScaffoldPreferredPadding({
+    Key? key,
+    required this.child,
+    this.disabled = false,
+  }) : super(key: key);
+
+  final Widget? child;
+  final bool disabled;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: disabled
+            ? 0
+            : context.isPhone
+                ? 3.sph
+                : 5.sph,
+        right: disabled
+            ? 0
+            : context.isPhone
+                ? 3.sph
+                : 5.sph,
+      ),
+      child: child,
+    );
+  }
+
+  @override
+  Size get preferredSize {
+    return const Size.fromHeight(kToolbarHeight);
+  }
+}
