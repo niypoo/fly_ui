@@ -20,7 +20,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.primary({
     IconData? icon,
     Function? onPressed,
-    double? size = 30,
+    double size = 30,
   }) =>
       FlyIconButton(
         // borderColor: Get.theme.primaryColor,
@@ -33,7 +33,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.card({
     IconData? icon,
     Function? onPressed,
-    double? size = 30,
+    double size = 30,
   }) =>
       FlyIconButton(
         // borderColor: Get.theme.cardColor,
@@ -45,7 +45,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.scaffold({
     IconData? icon,
     Function? onPressed,
-    double? size = 30,
+    double size = 30,
   }) =>
       FlyIconButton(
         // borderColor: Get.theme.scaffoldBackgroundColor,
@@ -57,7 +57,7 @@ class FlyIconButton extends StatelessWidget {
   factory FlyIconButton.secondary({
     IconData? icon,
     Function? onPressed,
-    double? size = 30,
+    double size = 30,
   }) =>
       FlyIconButton(
         // borderColor: Get.theme.colorScheme.secondary,
@@ -75,26 +75,26 @@ class FlyIconButton extends StatelessWidget {
   final Function? onPressed;
   final EdgeInsets? padding;
   // final double? iconSize;
-  final double? size;
+  final double size;
   // final double borderWidth;
   final CircleBorder shape;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: size!.sp,
-      height: size!.sp,
+      width: size.sp,
+      height: size.sp,
       child: ElevatedButton(
         onPressed: onPressed as void Function()?,
         style: ButtonStyle(
-          iconSize: WidgetStatePropertyAll(size!.sp),
+          iconSize: WidgetStatePropertyAll((size.sp * 0.5)),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: const WidgetStatePropertyAll(Size.zero),
           elevation: WidgetStateProperty.all(0.0),
           shape: WidgetStateProperty.all(shape),
           padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
-          backgroundColor:
-              WidgetStateProperty.all(bgColor ?? Get.theme.cardColor), // <-- Button color
+          backgroundColor: WidgetStateProperty.all(
+              bgColor ?? Get.theme.cardColor), // <-- Button color
           overlayColor: WidgetStateProperty.resolveWith<Color?>(
             (states) {
               if (states.contains(WidgetState.pressed)) {
