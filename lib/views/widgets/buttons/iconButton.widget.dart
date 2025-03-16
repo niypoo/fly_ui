@@ -81,31 +81,34 @@ class FlyIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed as void Function()?,
-      style: ButtonStyle(
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: const WidgetStatePropertyAll(Size.zero),
-        elevation: WidgetStateProperty.all(0.0),
-        shape: WidgetStateProperty.all(shape),
-        padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
-        backgroundColor:
-            WidgetStateProperty.all(bgColor ?? Get.theme.cardColor), // <-- Button color
-        overlayColor: WidgetStateProperty.resolveWith<Color?>(
-          (states) {
-            if (states.contains(WidgetState.pressed)) {
-              return Get.theme.primaryColor; // <-- Splash color
-            }
-            return null;
-          },
+    return SizedBox(
+      width: size,
+      height: size,
+      child: ElevatedButton(
+        onPressed: onPressed as void Function()?,
+        style: ButtonStyle(
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          minimumSize: const WidgetStatePropertyAll(Size.zero),
+          elevation: WidgetStateProperty.all(0.0),
+          shape: WidgetStateProperty.all(shape),
+          padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
+          backgroundColor:
+              WidgetStateProperty.all(bgColor ?? Get.theme.cardColor), // <-- Button color
+          overlayColor: WidgetStateProperty.resolveWith<Color?>(
+            (states) {
+              if (states.contains(WidgetState.pressed)) {
+                return Get.theme.primaryColor; // <-- Splash color
+              }
+              return null;
+            },
+          ),
         ),
-      ),
-      child: Icon(
-        icon,
-        size: size!.sp,
-        color: onPressed == null
-            ? Get.theme.iconTheme.color!.withOpacity(0.2)
-            : colorIcon ?? Get.theme.iconTheme.color,
+        child: Icon(
+          icon,
+          color: onPressed == null
+              ? Get.theme.iconTheme.color!.withOpacity(0.2)
+              : colorIcon ?? Get.theme.iconTheme.color,
+        ),
       ),
     );
 
