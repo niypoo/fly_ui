@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:patata_responsive/patata_responsive.dart';
-import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
+// import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
 import 'package:unicons/unicons.dart';
@@ -17,7 +17,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.titleTextStyle,
     // this.leadingWidth,
     this.centerTitle = false,
-    this.disabledPadding = true,
+    // this.disabledPadding = true,
     // this.titleSpacing,
     this.scrolledUnderElevation = 0.0,
   }) : super(key: key);
@@ -28,7 +28,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
   // final double? leadingWidth;
   final bool centerTitle;
-  final bool disabledPadding;
+  // final bool disabledPadding;
   // final double? titleSpacing;
   final double? scrolledUnderElevation;
   final TextStyle? titleTextStyle;
