@@ -31,7 +31,7 @@ class FlyScaffold extends StatelessWidget {
     FloatingActionButtonAnimator? floatingActionButtonAnimator,
   }) =>
       FlyScaffold(
-        // appBar: FlyScaffoldPreferredPadding(child: appBar)  as PreferredSizeWidget?,
+        appBar: appBar!=null ? FlyScaffoldPreferredPadding(child: appBar)  as PreferredSizeWidget? : null,
         backgroundColor: backgroundColor,
         bottomNavigationBar: bottomNavigationBar,
         floatingActionButton: floatingActionButton,
