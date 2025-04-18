@@ -145,28 +145,26 @@ class FlySelectorOption extends StatelessWidget {
                 // Image
                 if (image != null) Expanded(child: image!),
 
-                Expanded(
-                    child: Column(
-                  children: [
-                    // Name
-                    AutoSizeText(
-                      '${name.tr} $label',
-                      style: Get.textTheme.labelLarge,
-                      maxLines: 1,
-                    ),
+                // Name
+                Padding(
+                  padding: EdgeInsets.only(top: 5.sp),
+                  child: AutoSizeText(
+                    '${name.tr} $label',
+                    style: Get.textTheme.labelLarge,
+                    maxLines: 2,
+                  ),
+                ),
 
-                    // Sub Name
-                    if (subName != null && subName!.isNotEmpty)
-                      Flexible(
-                        child: AutoSizeText(
-                          subName!.tr,
-                          style: Get.textTheme.bodySmall,
-                          maxLines: 1,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                  ],
-                ))
+                // Sub Name
+                if (subName != null && subName!.isNotEmpty)
+                  Flexible(
+                    child: AutoSizeText(
+                      subName!.tr,
+                      style: Get.textTheme.bodySmall,
+                      maxLines: 1,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
               ],
             ),
           ),
