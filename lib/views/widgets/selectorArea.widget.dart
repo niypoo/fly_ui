@@ -151,7 +151,7 @@ class FlySelectorOption extends StatelessWidget {
                   child: AutoSizeText(
                     '${name.tr} $label',
                     style: Get.textTheme.labelLarge,
-                    maxLines: 2,
+                    maxLines: 1,
                   ),
                 ),
 
