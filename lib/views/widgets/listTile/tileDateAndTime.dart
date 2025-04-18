@@ -10,7 +10,7 @@ class FlyTileDateAndTime extends StatelessWidget {
     required this.value,
     required this.title,
     this.onTap,
-    this.outline = true,
+    this.outline = false,
   }) : super(key: key);
 
   final String value;
