@@ -39,7 +39,7 @@ class FlyDrawerButton extends StatelessWidget {
             Icon(
               icon,
               color: color,
-              // size: 13.sp,
+              size: 13.sp,
             ),
             Expanded(
               child: Padding(
