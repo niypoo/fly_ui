@@ -34,7 +34,7 @@ class FlyInputTileWrap extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlyContainer(
       padding:
-          padding ?? EdgeInsets.symmetric(vertical: 10.sp, horizontal: 10.sp),
+          padding ?? EdgeInsets.symmetric(vertical: 8.sp, horizontal: 8.sp),
       color: bgColor ??
           (outline ? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
       outline: outline,

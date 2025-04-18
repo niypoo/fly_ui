@@ -41,7 +41,7 @@ class FlyListTile extends StatelessWidget {
       onTap: onTap,
       child: FlyContainer(
         padding:
-            padding ?? EdgeInsets.symmetric(vertical: 10.sp, horizontal: 10.sp),
+            padding ?? EdgeInsets.symmetric(vertical: 8.sp, horizontal: 8.sp),
         color: bgColor ??
             (outline ? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
         outline: outline,
@@ -55,7 +55,7 @@ class FlyListTile extends StatelessWidget {
                 // leading
                 if (leading != null)
                   Padding(
-                    padding: EdgeInsetsDirectional.only(end: 4.sp),
+                    padding: EdgeInsetsDirectional.only(end: 5.sp),
                     child: leading,
                   ),
 
@@ -67,14 +67,14 @@ class FlyListTile extends StatelessWidget {
                     children: [
                       AutoSizeText(
                         title,
-                        style: Get.textTheme.titleSmall!
+                        style: Get.textTheme.titleMedium!
                             .copyWith(color: textColor),
                         maxLines: 1,
                       ),
                       if (value != null)
                         AutoSizeText(
                           value!,
-                          style: Get.textTheme.bodyMedium!
+                          style: Get.textTheme.bodySmall!
                               .copyWith(color: textColor),
                           maxLines: 2,
                         ),
@@ -83,7 +83,7 @@ class FlyListTile extends StatelessWidget {
                 ),
                 if (trailing != null)
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4.sp),
+                    padding: EdgeInsets.symmetric(horizontal: 5.sp),
                     child: const FlyListTitleLogDivider(),
                   ),
                 if (trailing != null) trailing!,
@@ -96,7 +96,7 @@ class FlyListTile extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.sp),
                 child: AutoSizeText(
                   bottomNote!,
-                  style: Get.textTheme.bodySmall!.copyWith(color: textColor),
+                  style: Get.textTheme.labelSmall!.copyWith(color: textColor),
                   maxLines: 3,
                 ),
               ),
