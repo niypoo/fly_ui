@@ -81,11 +81,8 @@ class FlyListTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                if (trailing != null)
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5.sp),
-                    child: const FlyListTitleLogDivider(),
-                  ),
+                if (trailing != null) const FlyListTitleLogDivider(),
+
                 if (trailing != null) trailing!,
               ],
             ),
