@@ -98,7 +98,7 @@ class FlyIconButton extends StatelessWidget {
           overlayColor: WidgetStateProperty.resolveWith<Color?>(
             (states) {
               if (states.contains(WidgetState.pressed)) {
-                return Get.theme.primaryColorLight;
+                return Get.theme.primaryColor.withValues(alpha: 0.2);
               }
               return null;
             },
