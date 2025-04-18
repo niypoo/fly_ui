@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:patata_responsive/patata_responsive.dart';
 import 'package:fly_ui/models/SelectorOption.dart';
 import 'package:fly_ui/views/widgets/containers/container.widget.dart';
@@ -128,7 +129,7 @@ class FlySelectorOption extends StatelessWidget {
           onTap: onTap as void Function()?,
           child: FlyContainerColored(
             margin: const EdgeInsets.all(0),
-            padding: EdgeInsets.all(5.sp),
+            padding: EdgeInsets.all(8.sp),
             width: 70.sp,
             height: 80.sp,
             color: isSelected
@@ -141,21 +142,14 @@ class FlySelectorOption extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (image != null)
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 5.sp),
-                    child: image,
-                  ),
+                // Image
+                if (image != null) Flexible(child: image!),
 
                 // Name
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: AutoSizeText(
-                    '${name.tr} $label',
-                    style: Get.textTheme.labelLarge,
-                    maxLines: 1,
-                    textAlign: TextAlign.center,
-                  ),
+                AutoSizeText(
+                  '${name.tr} $label',
+                  style: Get.textTheme.labelLarge,
+                  maxLines: 2,
                 ),
 
                 // Sub Name
