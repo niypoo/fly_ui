@@ -54,7 +54,7 @@ class FlyDrawerButton extends StatelessWidget {
                     // fontSize: 10.sp,
                     // fontWeight: FontWeight.w800
                   ),
-                  maxLines: 1,
+                  maxLines: 2,
                 ),
               ),
             ),
