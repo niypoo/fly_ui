@@ -35,7 +35,7 @@ class FlySearchInput extends StatelessWidget {
           hintText: placeholder,
           suffix: [
             if (suffix != null) suffix!,
-            FlyIconButton.card(
+            FlyIconButton.scaffold(
               size: 25.sp,
               onPressed: controller.searchIsEmpty.isFalse
                   ? () => controller
