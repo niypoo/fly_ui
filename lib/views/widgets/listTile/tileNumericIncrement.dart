@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
-import 'package:fly_ui/views/widgets/listTile/listTile.widget.dart';
+import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
 import 'package:patata_responsive/patata_responsive.dart';
 import 'package:unicons/unicons.dart';
@@ -21,7 +21,7 @@ class FlyTileNumericIncrement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyListTile(
+    return FlyInputTileWrap(
       title: title ?? '',
       leading: Text(
         value.toString(),

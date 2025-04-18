@@ -4,7 +4,6 @@ import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/images/image.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
-import 'package:fly_ui/views/widgets/listTile/listTile.widget.dart';
 import 'package:unicons/unicons.dart';
 
 /// A widget that allows users to input files.
@@ -67,7 +66,7 @@ class FlyFileInputTile extends StatelessWidget {
         itemCount: files.length,
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemBuilder: (context, i) => FlyListTile(
+        itemBuilder: (context, i) => FlyInputTileWrap(
           leading: files[i].image
               ? FlyImage(
                   width: 25.sp,
