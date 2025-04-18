@@ -61,29 +61,25 @@ class FlyListTile extends StatelessWidget {
 
                 // body
                 Expanded(
-                  child: leading ??
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Hero(
-                            tag: ValueKey(title),
-                            child: AutoSizeText(
-                              title,
-                              style: Get.textTheme.titleSmall!
-                                  .copyWith(color: textColor),
-                              maxLines: 1,
-                            ),
-                          ),
-                          if (value != null)
-                            AutoSizeText(
-                              value!,
-                              style: Get.textTheme.bodyMedium!
-                                  .copyWith(color: textColor),
-                              maxLines: 2,
-                            ),
-                        ],
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(
+                        title,
+                        style: Get.textTheme.titleSmall!
+                            .copyWith(color: textColor),
+                        maxLines: 1,
                       ),
+                      if (value != null)
+                        AutoSizeText(
+                          value!,
+                          style: Get.textTheme.bodyMedium!
+                              .copyWith(color: textColor),
+                          maxLines: 2,
+                        ),
+                    ],
+                  ),
                 ),
                 if (trailing != null)
                   Padding(
