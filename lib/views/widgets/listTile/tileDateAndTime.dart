@@ -10,17 +10,20 @@ class FlyTileDateAndTime extends StatelessWidget {
     required this.value,
     required this.title,
     this.onTap,
+    this.outline = true,
   }) : super(key: key);
 
   final String value;
   final String title;
   final Function? onTap;
+  final bool outline;
 
   @override
   Widget build(BuildContext context) {
     return FlyInkWell(
-      onTap:onTap,
+      onTap: onTap,
       child: FlyInputTileWrap(
+        outline: outline,
         title: title,
         trailing: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
