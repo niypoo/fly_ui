@@ -18,11 +18,15 @@ class FlyFlashMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(
+        vertical: 8.sp,
+        horizontal: 10.sp,
+      ),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(15.sp),
         border: Border.all(
-          color: color.withOpacity(0.4),
+          color: color.withValues(alpha: 0.4),
         ),
       ),
       child: Row(
