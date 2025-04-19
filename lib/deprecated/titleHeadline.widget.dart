@@ -56,8 +56,8 @@ class FlyHeadline extends StatelessWidget {
             Row(
               children: [
                 FlyImage(
-                  height: 38,
-                  width: 38,
+                  height: 25.sp,
+                  width: 25.sp,
                   url: image,
                 ),
                 SizedBox(width: 5.sp)
@@ -74,9 +74,7 @@ class FlyHeadline extends StatelessWidget {
                       ? title
                       : AutoSizeText(
                           title.toUpperCase(),
-                          style: Get.textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Get.textTheme.titleMedium,
                           maxLines: 1,
                         ),
 

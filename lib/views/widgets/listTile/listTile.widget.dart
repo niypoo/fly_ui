@@ -41,7 +41,7 @@ class FlyListTile extends StatelessWidget {
       onTap: onTap,
       child: FlyContainer(
         padding:
-            padding ?? EdgeInsets.symmetric(vertical: 5.sp, horizontal: 10.sp),
+            padding ?? EdgeInsets.symmetric(vertical: 8.sp, horizontal: 10.sp),
         color: bgColor ??
             (outline ? Get.theme.scaffoldBackgroundColor : Get.theme.cardColor),
         outline: outline,
