@@ -106,9 +106,7 @@ class FlyIconButton extends StatelessWidget {
         ),
         child: Icon(
           icon,
-          color: onPressed == null
-              ? Get.theme.iconTheme.color!.withOpacity(0.2)
-              : colorIcon ?? Get.theme.iconTheme.color,
+          color: colorIcon ?? Get.theme.iconTheme.color
         ),
       ),
     );
