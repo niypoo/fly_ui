@@ -36,7 +36,7 @@ class FlySearchInput extends StatelessWidget {
           suffix: [
             if (suffix != null) suffix!,
             FlyIconButton.scaffold(
-              size: 20.sp,
+              // size: 20.sp,
               onPressed: controller.searchIsEmpty.isFalse
                   ? () => controller
                       .onFieldSubmitted(controller.searchTextController.text)
@@ -47,7 +47,7 @@ class FlySearchInput extends StatelessWidget {
           prefix: [
             if (controller.searchIsEmpty.isFalse)
               FlyIconButton(
-                size: 20.sp,
+                // size: 20.sp,
                 onPressed: controller.onSearchFieldClear,
                 icon: UniconsLine.times,
               )
