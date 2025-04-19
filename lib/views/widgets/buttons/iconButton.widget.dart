@@ -105,7 +105,7 @@ class FlyIconButton extends StatelessWidget {
           ),
         ),
         child: Icon(
-          size: (size * 0.7).sp,
+          size: (size * 0.6).sp,
           icon,
           color: colorIcon ?? Get.theme.iconTheme.color
         ),
