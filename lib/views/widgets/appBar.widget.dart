@@ -42,7 +42,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: scrolledUnderElevation,
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
       // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-      leadingWidth: 24.sp,
+      leadingWidth: 28.sp,
       leading: Padding(
         padding:  EdgeInsets.symmetric(vertical: 5.5.sp),
         child: leading ??
