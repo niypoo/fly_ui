@@ -44,7 +44,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
       leadingWidth: 30.sp,
       leading: Padding(
-        padding:  EdgeInsets.symmetric(vertical: 5.5.sp),
+        padding:  EdgeInsets.symmetric(vertical: 2.5.sp),
         child: leading ??
             FlyIconButton(
               icon: UniconsLine.multiply,
