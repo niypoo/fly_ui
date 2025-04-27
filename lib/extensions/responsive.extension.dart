@@ -5,7 +5,7 @@ extension Responsive on num {
   bool get isTablet => Get.context!.isTablet;
   double get screeWidth => Get.width;
   double get screenHeight => Get.height;
-  double get devicePixelRatio => isTablet ? 12 : 8.34;
+  double get devicePixelRatio => isTablet ? 13.68 : 9.5076;
 
   /// Calculates the height depending on the device's screen size
   double get h => this * screenHeight / 100;
