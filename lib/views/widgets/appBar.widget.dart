@@ -37,49 +37,47 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     print('preferredSize $preferredSize');
-    return PreferredSize(
-      preferredSize: preferredSize,
-      child: AppBar(
-        centerTitle: centerTitle,
-        automaticallyImplyLeading: false,
-        scrolledUnderElevation: scrolledUnderElevation,
-        backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
-        // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-        leadingWidth: 30.sp,
-        leading: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.88.sp),
-          child: leading ??
-              FlyIconButton(
-                icon: UniconsLine.multiply,
-                onPressed: () => Get.back(),
-                // size: 19.sp,
-              ),
-        ),
-        title: title == null
-            ? null
-            : AutoSizeText(
-                title!,
-                style: titleTextStyle,
-                textAlign: TextAlign.start,
-              ),
-        actions: [
-          Wrap(
-            spacing: 5.sp,
-            runSpacing: 0,
-            alignment: WrapAlignment.end,
-            runAlignment: WrapAlignment.end,
-            children: actions,
-          ),
-          // SizedBox(width: context.isPhone ? 3.sw : 5.sw)
-        ],
-        bottom: bottom,
+    return AppBar(
+      toolbarHeight: 45.sp,
+      centerTitle: centerTitle,
+      automaticallyImplyLeading: false,
+      scrolledUnderElevation: scrolledUnderElevation,
+      backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
+      // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
+      leadingWidth: 30.sp,
+      leading: Padding(
+        padding: EdgeInsets.symmetric(vertical: 2.88.sp),
+        child: leading ??
+            FlyIconButton(
+              icon: UniconsLine.multiply,
+              onPressed: () => Get.back(),
+              // size: 19.sp,
+            ),
       ),
+      title: title == null
+          ? null
+          : AutoSizeText(
+              title!,
+              style: titleTextStyle,
+              textAlign: TextAlign.start,
+            ),
+      actions: [
+        Wrap(
+          spacing: 5.sp,
+          runSpacing: 0,
+          alignment: WrapAlignment.end,
+          runAlignment: WrapAlignment.end,
+          children: actions,
+        ),
+        // SizedBox(width: context.isPhone ? 3.sw : 5.sw)
+      ],
+      bottom: bottom,
     );
   }
 
   @override
   Size get preferredSize {
-    // return const Size.fromHeight(kToolbarHeight);
-    return Size.fromHeight(45.sp);
+    return const Size.fromHeight(kToolbarHeight);
+    // return Size.fromHeight(45.sp);
   }
 }
