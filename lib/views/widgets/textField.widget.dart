@@ -88,11 +88,9 @@ class FlyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    // Padding(
-    //   padding: EdgeInsets.only(bottom: marginBottom.sp, top: marginTop.sp),
-    //   child:
-       TextFormField(
+    return Padding(
+      padding: EdgeInsets.only(bottom: marginBottom.sp, top: marginTop.sp),
+      child: TextFormField(
         initialValue: initialValue,
         autofocus: autoFocus,
         focusNode: focusNode,
@@ -129,11 +127,11 @@ class FlyTextField extends StatelessWidget {
               fillColor: color ?? Get.theme.scaffoldBackgroundColor,
               labelText: labelText,
               isCollapsed: isCollapsed,
-              // contentPadding: contentPadding ??
-              //     EdgeInsetsDirectional.symmetric(
-              //       horizontal: contentPaddingHorizontal ?? 12.sp,
-              //       vertical: contentPaddingVertical ?? 12.sp,
-              //     ),
+              contentPadding: contentPadding ??
+                  EdgeInsetsDirectional.symmetric(
+                    horizontal: contentPaddingHorizontal ?? 12.sp,
+                    vertical: contentPaddingVertical ?? 12.sp,
+                  ),
               suffixIcon: suffix.isEmpty
                   ? null
                   : Padding(
@@ -182,7 +180,7 @@ class FlyTextField extends StatelessWidget {
         keyboardType: textInputType,
         inputFormatters: inputFormatters,
         cursorColor: cursorColor,
-      // ),
+      ),
     );
   }
 }
