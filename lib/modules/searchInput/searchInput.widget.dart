@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/modules/searchInput/abstracts/hasSearchInput.abstract.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
