@@ -36,14 +36,12 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('preferredSize $preferredSize');
     return AppBar(
       toolbarHeight: 45.sp,
       centerTitle: centerTitle,
       automaticallyImplyLeading: false,
       scrolledUnderElevation: scrolledUnderElevation,
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
-      // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
       leadingWidth: 30.sp,
       leading: Padding(
         padding: EdgeInsets.symmetric(vertical: 2.88.sp),
@@ -77,7 +75,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize {
-    return const Size.fromHeight(kToolbarHeight);
-    // return Size.fromHeight(45.sp);
+    // return const Size.fromHeight(kToolbarHeight);
+    return Size.fromHeight(45.sp);
   }
 }
