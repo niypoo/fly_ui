@@ -5,9 +5,9 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyCoachHint extends StatelessWidget {
   const FlyCoachHint({
-    Key? key,
+    super.key,
     required this.endHint,
-  }) : super(key: key);
+  });
 
   final String? endHint;
 

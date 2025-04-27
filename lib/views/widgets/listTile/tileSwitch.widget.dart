@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class FlySwitchTile extends StatelessWidget {
   const FlySwitchTile({
-    Key? key,
+    super.key,
     required this.title,
     this.subtitle,
     this.value = false,
@@ -14,7 +14,7 @@ class FlySwitchTile extends StatelessWidget {
     this.bgColor,
     this.child,
     this.outline = true,
-  }) : super(key: key);
+  });
 
   final String title;
   final String? subtitle;
@@ -35,8 +35,8 @@ class FlySwitchTile extends StatelessWidget {
       trailing: CupertinoSwitch(
         value: value,
         onChanged: onChange as void Function(bool)?,
-        activeColor: color ?? Get.theme.primaryColor,
-        trackColor: Colors.black26,
+        activeTrackColor: color ?? Get.theme.primaryColor,
+        inactiveTrackColor: Colors.black26,
       ),
       child: value ? child : null,
     );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class FlyIconButton extends StatelessWidget {
   const FlyIconButton({
-    Key? key,
+    super.key,
     this.icon,
     this.bgColor,
     // this.borderColor,
@@ -15,7 +15,7 @@ class FlyIconButton extends StatelessWidget {
     // this.borderWidth = 1,
     this.padding,
     this.shape = const CircleBorder(),
-  }) : super(key: key);
+  });
 
   factory FlyIconButton.primary({
     IconData? icon,

@@ -6,14 +6,14 @@ import 'package:get/get.dart';
 
 class FlyContainerEllipses extends StatefulWidget {
   const FlyContainerEllipses({
-    Key? key,
+    super.key,
     required this.title,
     required this.child,
     this.icon,
     this.bgColor,
     this.textColor,
     this.ellipse = false,
-  }) : super(key: key);
+  });
 
   final String title;
   final IconData? icon;

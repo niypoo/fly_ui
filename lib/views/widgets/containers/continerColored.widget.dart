@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 // TODO: merge containers in less is the best
 class FlyContainerColored extends StatelessWidget {
   const FlyContainerColored({
-    Key? key,
+    super.key,
     required this.child,
     this.color,
     this.colorBorder,
@@ -14,7 +14,7 @@ class FlyContainerColored extends StatelessWidget {
     this.height,
     this.padding,
     this.margin,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Color? color;

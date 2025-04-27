@@ -6,12 +6,12 @@ import 'package:get/get.dart';
 
 class FlyReminderCard extends StatelessWidget {
   const FlyReminderCard({
-    Key? key,
+    super.key,
     required this.title,
     this.icon,
     this.actions,
     this.details,
-  }) : super(key: key);
+  });
 
   final String title;
   final IconData? icon;
@@ -75,10 +75,10 @@ class FlyReminderCard extends StatelessWidget {
 
 class ReminderCardDetail extends StatelessWidget {
   const ReminderCardDetail({
-    Key? key,
+    super.key,
     required this.label,
     this.value,
-  }) : super(key: key);
+  });
 
   final String label;
   final String? value;

@@ -3,13 +3,13 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyGridView extends StatelessWidget {
   const FlyGridView({
-    Key? key,
+    super.key,
     required this.children,
     this.min = 1,
     this.max = 2,
     this.mainAxisExtent = 100,
     this.mainAxisSpacing = 10,
-  }) : super(key: key);
+  });
 
   final List<Widget> children;
   final int min;

@@ -7,12 +7,12 @@ import 'package:unicons/unicons.dart';
 
 class FlyTileNumericIncrement extends StatelessWidget {
   const FlyTileNumericIncrement({
-    Key? key,
+    super.key,
     this.incrementTap,
     this.decrementTap,
     required this.value,
     this.title,
-  }) : super(key: key);
+  });
 
   final Function? decrementTap;
   final Function? incrementTap;

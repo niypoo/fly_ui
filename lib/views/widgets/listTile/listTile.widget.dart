@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class FlyListTile extends StatelessWidget {
   const FlyListTile({
-    Key? key,
+    super.key,
     required this.title,
     this.value,
     this.onTap,
@@ -20,7 +20,7 @@ class FlyListTile extends StatelessWidget {
     this.padding,
     this.bottomNote,
     this.outline = false,
-  }) : super(key: key);
+  });
 
   final String title;
   final String? value;

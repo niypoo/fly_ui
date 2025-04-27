@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 
 class FlyScaffoldPadding extends StatelessWidget {
   const FlyScaffoldPadding({
-    Key? key,
+    super.key,
     required this.child,
     this.disabled = false,
-  }) : super(key: key);
+  });
 
   final Widget? child;
   final bool disabled;
@@ -35,10 +35,10 @@ class FlyScaffoldPadding extends StatelessWidget {
 class FlyScaffoldPreferredPadding extends StatelessWidget
     implements PreferredSizeWidget {
   const FlyScaffoldPreferredPadding({
-    Key? key,
+    super.key,
     required this.child,
     this.disabled = false,
-  }) : super(key: key);
+  });
 
   final Widget? child;
   final bool disabled;

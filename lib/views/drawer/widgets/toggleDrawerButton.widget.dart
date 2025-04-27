@@ -7,8 +7,8 @@ import 'package:unicons/unicons.dart';
 
 class FlyDrawerToggleButton extends GetView<FlyDrawerController> {
   const FlyDrawerToggleButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

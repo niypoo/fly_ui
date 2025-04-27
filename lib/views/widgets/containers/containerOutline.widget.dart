@@ -4,12 +4,12 @@ import 'package:get/get.dart';
 
 class FlyContainerOutline extends StatelessWidget {
   const FlyContainerOutline({
-    Key? key,
+    super.key,
     required this.child,
     this.color,
     this.padding,
     this.margin,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Color? color;

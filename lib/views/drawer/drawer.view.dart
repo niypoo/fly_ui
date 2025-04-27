@@ -10,11 +10,11 @@ class FlyDrawerView extends GetView<FlyDrawerController> {
   final bool isRtl;
 
   const FlyDrawerView({
-    Key? key,
+    super.key,
     required this.mainScreen,
     required this.menuScreen,
     this.isRtl = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

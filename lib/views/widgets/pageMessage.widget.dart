@@ -5,13 +5,13 @@ import 'package:get/get.dart';
 
 class FlyContainerMessage extends StatelessWidget {
   const FlyContainerMessage({
-    Key? key,
+    super.key,
     this.image,
     required this.body,
     required this.title,
     this.icon,
     this.actions,
-  }) : super(key: key);
+  });
 
   final String title;
   final String body;

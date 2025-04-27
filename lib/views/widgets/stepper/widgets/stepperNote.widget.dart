@@ -5,9 +5,9 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyStepperNote extends StatelessWidget {
   const FlyStepperNote({
-    Key? key,
+    super.key,
     required this.endHint,
-  }) : super(key: key);
+  });
 
   final String? endHint;
 

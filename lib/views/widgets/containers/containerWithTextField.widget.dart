@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class FlyContainerWithTextField extends StatelessWidget {
   const FlyContainerWithTextField({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     this.hint,
@@ -23,7 +23,7 @@ class FlyContainerWithTextField extends StatelessWidget {
     this.controller,
     this.validator,
     this.maxLines = 2,
-  }) : super(key: key);
+  });
 
   final String title;
   final String? hint;

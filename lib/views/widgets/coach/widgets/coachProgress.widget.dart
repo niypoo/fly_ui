@@ -6,11 +6,11 @@ import 'package:get/get.dart';
 
 class FlyCoachProgress extends StatelessWidget {
   const FlyCoachProgress({
-    Key? key,
+    super.key,
     required this.step,
     required this.total,
     this.color,
-  }) : super(key: key);
+  });
 
   final int total;
   final int step;

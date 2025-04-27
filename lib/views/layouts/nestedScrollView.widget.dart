@@ -2,11 +2,11 @@ import 'package:flutter/widgets.dart';
 
 class FlyNestedScrollView extends StatelessWidget {
   const FlyNestedScrollView({
-    Key? key,
+    super.key,
     required this.body,
     required this.headerSliverBuilder,
     this.controller,
-  }) : super(key: key);
+  });
 
   final List<Widget> headerSliverBuilder;
   final Widget body;

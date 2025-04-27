@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class FlyCardAutoHeight extends StatelessWidget {
   const FlyCardAutoHeight({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.label,
@@ -21,7 +21,7 @@ class FlyCardAutoHeight extends StatelessWidget {
     this.valueTextStyle,
     this.onLongPress,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final String title;
   final String value;

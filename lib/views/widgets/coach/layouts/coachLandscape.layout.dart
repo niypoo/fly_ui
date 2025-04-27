@@ -9,7 +9,7 @@ import 'package:fly_ui/views/widgets/coach/widgets/coachTitle.widget.dart';
 
 class FlyCoachLandscapeLayout extends StatelessWidget {
   const FlyCoachLandscapeLayout({
-    Key? key,
+    super.key,
     required this.title,
     required this.children,
     required this.buttonText,
@@ -18,7 +18,7 @@ class FlyCoachLandscapeLayout extends StatelessWidget {
     this.endHint,
     this.dontShowAgain,
     this.buttonIcon,
-  }) : super(key: key);
+  });
 
   final String title;
   final String description;

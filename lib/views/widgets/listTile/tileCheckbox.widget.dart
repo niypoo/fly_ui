@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class FlyCheckboxTile extends StatelessWidget {
   const FlyCheckboxTile({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.title,
     required this.value,
@@ -12,7 +12,7 @@ class FlyCheckboxTile extends StatelessWidget {
     this.outline = true,
     this.bgColor,
     this.child,
-  }) : super(key: key);
+  });
 
   final String title;
   final String? subtitle;

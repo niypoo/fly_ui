@@ -7,10 +7,10 @@ class FlyMenuScreen extends StatelessWidget {
   final List<Widget> items;
 
   const FlyMenuScreen({
-    Key? key,
+    super.key,
     this.header,
     this.items = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

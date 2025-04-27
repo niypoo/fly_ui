@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class FlyStepperScreen extends StatelessWidget {
   const FlyStepperScreen({
-    Key? key,
+    super.key,
     required this.children,
     required this.onTap,
     required this.buttonText,
@@ -14,7 +14,7 @@ class FlyStepperScreen extends StatelessWidget {
     this.buttonIcon,
     this.subHint,
     this.endHint,
-  }) : super(key: key);
+  });
 
   final List<Widget> children;
   final String buttonText;

@@ -8,13 +8,13 @@ import 'package:unicons/unicons.dart';
 
 class FlySquareButton extends StatelessWidget {
   const FlySquareButton({
-    Key? key,
+    super.key,
     required this.title,
     this.icon = UniconsLine.plus,
     this.color,
     this.textColor,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final String title;
   final Color? color;

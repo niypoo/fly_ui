@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class FlyElevatedButton extends StatelessWidget {
   const FlyElevatedButton({
-    Key? key,
+    super.key,
     required this.title,
     this.onPressed,
     this.icon,
@@ -13,7 +13,7 @@ class FlyElevatedButton extends StatelessWidget {
     this.textColor,
     this.expand = false,
     this.iconAlignment = IconAlignment.start,
-  }) : super(key: key);
+  });
 
   factory FlyElevatedButton.normal({
     required String title,

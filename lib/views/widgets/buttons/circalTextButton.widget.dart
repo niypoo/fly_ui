@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 
 class FlyTextCircleButton extends StatelessWidget {
   const FlyTextCircleButton({
-    Key? key,
+    super.key,
     required this.child,
     this.color,
     this.borderColor,
     this.onPressed,
     this.padding,
-  }) : super(key: key);
+  });
 
   factory FlyTextCircleButton.primary({
     required Widget child,

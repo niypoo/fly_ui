@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 class FlyCoachTitle extends StatelessWidget {
   const FlyCoachTitle({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   final String title;
 

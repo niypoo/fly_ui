@@ -5,12 +5,12 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyFloatingButton extends StatelessWidget {
   const FlyFloatingButton({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.icon,
     this.bgColor,
     this.iconColor,
-  }) : super(key: key);
+  });
 
   final Function onTap;
   final IconData icon;

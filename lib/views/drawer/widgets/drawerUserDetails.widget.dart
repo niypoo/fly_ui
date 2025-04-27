@@ -7,14 +7,14 @@ import 'package:get/get.dart';
 
 class FlyDrawerUserDetails extends StatelessWidget {
   const FlyDrawerUserDetails({
-    Key? key,
+    super.key,
     this.onTap,
     this.photoUrl,
     this.displayName,
     this.slug,
     this.id,
     this.actionButton,
-  }) : super(key: key);
+  });
 
   final Function? onTap;
   final String? photoUrl;

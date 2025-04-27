@@ -5,12 +5,12 @@ import 'package:get/get.dart';
 
 class FlyLandscapeView extends StatelessWidget {
   const FlyLandscapeView({
-    Key? key,
+    super.key,
     required this.childA,
     required this.childB,
     this.mainAxisAlignment = MainAxisAlignment.center,
     this.crossAxisAlignment = CrossAxisAlignment.center,
-  }) : super(key: key);
+  });
 
   final Widget childA;
   final Widget childB;
@@ -75,9 +75,9 @@ class FlyLandscapeScrollableView extends StatelessWidget {
 
 class FlyLandscapeCenterView extends StatelessWidget {
   const FlyLandscapeCenterView({
-    Key? key,
+    super.key,
     this.children = const [],
-  }) : super(key: key);
+  });
 
   final List<Widget> children;
 

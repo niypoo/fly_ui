@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 
 class FlyTabsBar extends StatelessWidget {
   const FlyTabsBar({
-    Key? key,
+    super.key,
     required this.tabController,
     required this.tabs,
-  }) : super(key: key);
+  });
 
   final TabController tabController;
   final List<Widget> tabs;

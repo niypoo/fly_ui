@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class FlyContainer extends StatelessWidget {
   const FlyContainer({
-    Key? key,
+    super.key,
     required this.child,
     this.color,
     this.padding,
@@ -12,7 +12,7 @@ class FlyContainer extends StatelessWidget {
     this.radius,
     this.margin,
     this.outline = false,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Color? color;

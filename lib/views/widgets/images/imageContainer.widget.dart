@@ -3,7 +3,7 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyImageContainer extends StatelessWidget {
   const FlyImageContainer({
-    Key? key,
+    super.key,
     required this.height,
     required this.width,
     this.margin,
@@ -12,7 +12,7 @@ class FlyImageContainer extends StatelessWidget {
     this.border,
     this.radius,
     required this.image,
-  }) : super(key: key);
+  });
 
   final double? height;
   final double? width;

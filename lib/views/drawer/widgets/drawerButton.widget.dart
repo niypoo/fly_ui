@@ -7,14 +7,14 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 class FlyDrawerButton extends StatelessWidget {
   const FlyDrawerButton({
-    Key? key,
+    super.key,
     required this.title,
     this.color,
     this.value,
     this.bgColor,
     this.onTap,
     this.icon,
-  }) : super(key: key);
+  });
 
   final String title;
   final String? value;

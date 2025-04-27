@@ -7,7 +7,7 @@ import 'package:unicons/unicons.dart';
 
 class FlyListTitleTableRow extends StatelessWidget {
   const FlyListTitleTableRow({
-    Key? key,
+    super.key,
     required this.date,
     required this.value,
     required this.title,
@@ -16,7 +16,7 @@ class FlyListTitleTableRow extends StatelessWidget {
     this.color,
     this.onMoreActions,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final String title;
   final String? subtitle;
@@ -107,8 +107,8 @@ class FlyListTitleTableRow extends StatelessWidget {
 
 class FlyListTitleLogDivider extends StatelessWidget {
   const FlyListTitleLogDivider({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -4,12 +4,12 @@ import 'package:get/get.dart';
 
 class FlyIconOutlineButton extends StatelessWidget {
   const FlyIconOutlineButton({
-    Key? key,
+    super.key,
     required this.icon,
     this.onPressed,
     this.margin,
     this.padding,
-  }) : super(key: key);
+  });
 
   final IconData icon;
   final Function? onPressed;

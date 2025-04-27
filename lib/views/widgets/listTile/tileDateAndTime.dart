@@ -6,12 +6,12 @@ import 'package:get/get.dart';
 
 class FlyTileDateAndTime extends StatelessWidget {
   const FlyTileDateAndTime({
-    Key? key,
+    super.key,
     required this.value,
     required this.title,
     this.onTap,
     this.outline = false,
-  }) : super(key: key);
+  });
 
   final String value;
   final String title;
