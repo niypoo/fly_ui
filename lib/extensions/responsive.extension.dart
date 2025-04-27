@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 extension Responsive on num {
   
   bool get isLandscape =>Get.context!.isLandscape ;
+  bool get isTablet =>Get.context!.isTablet; 
   double get screeWidth => Get.width;
   double get screenHeight => Get.height;
-  int get devicePixelRatio => isLandscape ? 5 : 3;
+  int get devicePixelRatio => isTablet ? 6 : 3;
 
 
   /// Calculates the height depending on the device's screen size
@@ -19,7 +20,7 @@ extension Responsive on num {
   double get sph => this *  (isLandscape ? (screeWidth * 0.5) : screeWidth) / 100;
 
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
-  double get sp => this * ((isLandscape ? screenHeight : screeWidth) / devicePixelRatio) / 100;
+  double get sp => this * (screenHeight / devicePixelRatio) / 100;
 
   
 }
