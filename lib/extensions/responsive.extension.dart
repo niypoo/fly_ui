@@ -6,7 +6,7 @@ extension Responsive on num {
   bool get isTablet =>Get.context!.isTablet; 
   double get screeWidth => Get.width;
   double get screenHeight => Get.height;
-  int get devicePixelRatio => isTablet ? 6 : 3;
+  int get devicePixelRatio => isTablet ? 12 : 3;
 
 
   /// Calculates the height depending on the device's screen size
