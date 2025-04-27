@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class FlyDropLoading extends StatefulWidget {
   const FlyDropLoading({
-    super.key,
+    Key? key,
     required this.size,
     required this.gradient,
     // this.duration,
@@ -13,7 +13,7 @@ class FlyDropLoading extends StatefulWidget {
     // this.noAnimationDegree,
     // this.curves,
     this.child,
-  });
+  }) : super(key: key);
 
   final double size;
   // final Duration? duration;

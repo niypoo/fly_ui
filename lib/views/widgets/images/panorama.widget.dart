@@ -5,9 +5,9 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyImagePanorama extends StatelessWidget {
   const FlyImagePanorama({
-    super.key,
+    Key? key,
     required this.photoUrl,
-  });
+  }) : super(key: key);
 
   final String photoUrl;
 

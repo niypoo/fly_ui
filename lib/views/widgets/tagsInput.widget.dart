@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class FlyTagsInput extends StatefulWidget {
   const FlyTagsInput({
-    super.key,
+    Key? key,
     required this.placeholder,
     required this.selectedValues,
     this.outline = true,
@@ -21,7 +21,7 @@ class FlyTagsInput extends StatefulWidget {
     // this.focusNode,
     this.constantlyFocused = true, this.customOptions,
     // this.controller,
-  });
+  }) : super(key: key);
 
   final String placeholder;
   final RxList<String> selectedValues;

@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 
 class FlyFlashMessage extends StatelessWidget {
   const FlyFlashMessage({
-    super.key,
+    Key? key,
     required this.text,
     required this.color,
     this.icon,
-  });
+  }) : super(key: key);
 
   final String text;
   final IconData? icon;

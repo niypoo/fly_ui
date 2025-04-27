@@ -5,9 +5,9 @@ import 'package:flutter_animator/flutter_animator.dart';
 
 class FlyAnimatedRandomFade extends StatefulWidget {
   const FlyAnimatedRandomFade({
-    super.key,
+    Key? key,
     required this.child,
-  });
+  }) : super(key: key);
 
   final Widget child;
 

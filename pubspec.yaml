@@ -20,8 +20,7 @@ dependencies:
   flutter_zoom_drawer: ^3.2.0
   paginate_firestore_plus: ^1.0.1+2
   patata_responsive: ^0.0.1
-  sizer: ^3.0.5
-  
+
   app_configuration_service:
     git:
       url: git@github.com:niypoo/app_configuration_service.git
@@ -44,4 +43,4 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^2.0.0

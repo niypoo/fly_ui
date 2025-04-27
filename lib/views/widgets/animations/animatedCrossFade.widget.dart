@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class FlyAnimatedCrossFade extends StatelessWidget {
   const FlyAnimatedCrossFade({
-    super.key,
+    Key? key,
     required this.secondChild,
     required this.firstChild,
     this.crossFadeState = true,
-  });
+  }) : super(key: key);
 
   final bool crossFadeState;
   final Widget firstChild;

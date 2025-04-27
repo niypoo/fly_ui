@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class FlyCardC extends StatelessWidget {
   const FlyCardC({
-    super.key,
+    Key? key,
     required this.title,
     required this.value,
     required this.label,
@@ -20,7 +20,7 @@ class FlyCardC extends StatelessWidget {
     this.titleTextStyle,
     this.onLongPress,
     this.onTap,
-  });
+  }) : super(key: key);
 
   final String title;
   final String value;

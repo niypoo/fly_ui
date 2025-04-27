@@ -26,7 +26,7 @@ class FileInput {
 
 class FlyFileInputTile extends StatelessWidget {
   const FlyFileInputTile({
-    super.key,
+    Key? key,
     required this.title,
     this.subtitle,
     this.files = const [],
@@ -35,7 +35,7 @@ class FlyFileInputTile extends StatelessWidget {
     this.bgColor,
     this.child,
     this.outline = true,
-  });
+  }) : super(key: key);
 
   final String title;
   final String? subtitle;

@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class FlyContainerWithNumberField extends StatelessWidget {
   const FlyContainerWithNumberField({
-    super.key,
+    Key? key,
     this.title,
     required this.value,
     required this.onChangeValueTap,
@@ -19,7 +19,7 @@ class FlyContainerWithNumberField extends StatelessWidget {
     this.textColor,
     this.image,
     this.checkbox,
-  });
+  }) : super(key: key);
 
   final String? title;
   final Widget? checkbox;

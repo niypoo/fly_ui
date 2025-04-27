@@ -7,9 +7,9 @@ import 'package:get/get.dart';
 
 class FlyStepperView extends StatelessWidget {
   const FlyStepperView({
-    super.key,
+    Key? key,
     required this.screens,
-  });
+  }) : super(key: key);
 
   final List<Widget> screens;
 

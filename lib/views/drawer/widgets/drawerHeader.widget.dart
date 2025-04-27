@@ -8,14 +8,14 @@ import 'package:unicons/unicons.dart';
 
 class FlyDrawerHeader extends GetView<FlyDrawerController> {
   const FlyDrawerHeader({
-    super.key,
+    Key? key,
     this.onTap,
     this.actionButton,
     this.photoUrl,
     this.displayName,
     this.slug,
     this.id,
-  });
+  }) : super(key: key);
 
   final String? photoUrl;
   final String? displayName;

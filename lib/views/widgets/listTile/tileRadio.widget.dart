@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class FlyRadioListTile extends StatelessWidget {
   const FlyRadioListTile({
-    super.key,
+    Key? key,
     required this.onChanged,
     required this.title,
     required this.value,
@@ -13,7 +13,7 @@ class FlyRadioListTile extends StatelessWidget {
     this.bgColor,
     this.child,
     this.outline = true,
-  });
+  }) : super(key: key);
 
   final String title;
   final dynamic value;

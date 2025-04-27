@@ -8,14 +8,14 @@ import 'package:unicons/unicons.dart';
 
 class FlyNotFoundData extends StatelessWidget {
   const FlyNotFoundData({
-    super.key,
+    Key? key,
     this.title,
     this.text,
     this.icon,
     this.marginTop = 0,
     this.iconSize = 30,
     this.actions = const [],
-  });
+  }) : super(key: key);
 
   final String? title;
   final String? text;

@@ -6,13 +6,13 @@ import 'package:get/get.dart';
 
 class FlyContainerTitled extends StatelessWidget {
   const FlyContainerTitled({
-    super.key,
+    Key? key,
     required this.title,
     required this.child,
     this.bgColor,
     this.textColor,
     this.enableDivider = false,
-  });
+  }) : super(key: key);
 
   final String title;
   final Color? bgColor;

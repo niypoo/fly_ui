@@ -10,7 +10,7 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyCoachPortraitLayout extends StatelessWidget {
   const FlyCoachPortraitLayout({
-    super.key,
+    Key? key,
     required this.title,
     required this.description,
     required this.buttonText,
@@ -19,7 +19,7 @@ class FlyCoachPortraitLayout extends StatelessWidget {
     required this.children,
     this.endHint,
     this.buttonIcon,
-  });
+  }) : super(key: key);
 
   final String title;
   final String description;

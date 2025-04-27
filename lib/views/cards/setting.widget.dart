@@ -6,14 +6,14 @@ import 'package:get/get.dart';
 
 class FlySettingCard extends StatelessWidget {
   const FlySettingCard({
-    super.key,
+    Key? key,
     required this.title,
     this.subtitle,
     this.trailing,
     this.onTap,
     this.bgColor,
     this.iconColor,
-  });
+  }) : super(key: key);
 
   final String title;
   final String? subtitle;

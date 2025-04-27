@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class FlyAnimatedSwitcher extends StatelessWidget {
   const FlyAnimatedSwitcher({
-    super.key,
+    Key? key,
     required this.child1,
     required this.child2,
     this.crossState = true,
     this.dx = 0,
     this.dy = -1,
-  });
+  }) : super(key: key);
 
   final Widget child1;
   final Widget child2;

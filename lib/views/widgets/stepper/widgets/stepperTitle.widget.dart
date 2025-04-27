@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 class FlyStepperTitle extends StatelessWidget {
   const FlyStepperTitle({
-    super.key,
+    Key? key,
     required this.title,
-  });
+  }) : super(key: key);
 
   final String title;
 

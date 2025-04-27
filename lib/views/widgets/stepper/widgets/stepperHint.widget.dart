@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 class FlyStepperHint extends StatelessWidget {
   const FlyStepperHint({
-    super.key,
+    Key? key,
     required this.subHint,
-  });
+  }) : super(key: key);
 
   final String? subHint;
 

@@ -5,14 +5,14 @@ import 'package:get/get.dart';
 
 class FlySettingIconCard extends StatelessWidget {
   const FlySettingIconCard({
-    super.key,
+    Key? key,
     required this.title,
     this.subtitle,
     this.icon,
     this.onTap,
     this.bgColor,
     this.iconColor,
-  });
+  }) : super(key: key);
 
   final String title;
   final String? subtitle;

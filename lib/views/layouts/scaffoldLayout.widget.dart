@@ -3,7 +3,7 @@ import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 
 class FlyScaffold extends StatelessWidget {
   const FlyScaffold({
-    super.key,
+    Key? key,
     required this.child,
     this.bottomNavigationBar,
     this.appBar,
@@ -11,7 +11,7 @@ class FlyScaffold extends StatelessWidget {
     this.floatingActionButton,
     this.floatingActionButtonAnimator,
     this.floatingActionButtonLocation,
-  });
+  }) : super(key: key);
 
   final Widget? appBar;
   final Color? backgroundColor;

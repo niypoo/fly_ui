@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 class FlyCoachSubtitle extends StatelessWidget {
   const FlyCoachSubtitle({
-    super.key,
+    Key? key,
     required this.hint,
-  });
+  }) : super(key: key);
 
   final String? hint;
 

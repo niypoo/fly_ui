@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 
 class FlyTextButton extends StatelessWidget {
   const FlyTextButton({
-    super.key,
+    Key? key,
     required this.title,
     this.onTap,
     this.onLongPress,
     this.style,
     this.color,
-  });
+  }) : super(key: key);
 
   final String title;
   final Function()? onTap;

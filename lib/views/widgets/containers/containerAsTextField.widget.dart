@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class FlyContainerAsTextField extends StatelessWidget {
   const FlyContainerAsTextField({
-    super.key,
+    Key? key,
     this.textColor,
     required this.onChangeValueTap,
     required this.value,
@@ -18,7 +18,7 @@ class FlyContainerAsTextField extends StatelessWidget {
     this.colorBorder,
     this.bgColor,
     this.disabled = false,
-  });
+  }) : super(key: key);
 
   final Function onChangeValueTap;
   final String? title;

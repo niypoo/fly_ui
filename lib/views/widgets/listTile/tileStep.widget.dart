@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 
 class FlyListTileStep extends StatelessWidget {
   const FlyListTileStep({
-    super.key,
+    Key? key,
     required this.step,
     required this.title,
     this.description,
     this.contentPadding = const EdgeInsets.all(0),
-  });
+  }) : super(key: key);
 
   final String step;
   final String title;

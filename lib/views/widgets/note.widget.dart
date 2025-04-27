@@ -5,13 +5,13 @@ import 'package:get/get.dart';
 
 class FlyNote extends StatelessWidget {
   const FlyNote({
-    super.key,
+    Key? key,
     required this.title,
     required this.note,
     this.image,
     this.button,
     this.crossAxisAlignment = CrossAxisAlignment.center,
-  });
+  }) : super(key: key);
 
   final String title;
   final String note;

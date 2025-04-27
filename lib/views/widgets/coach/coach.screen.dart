@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class FlyCoachScreen extends StatelessWidget {
   const FlyCoachScreen({
-    super.key,
+    Key? key,
     required this.children,
     required this.onTap,
     required this.buttonText,
@@ -14,7 +14,7 @@ class FlyCoachScreen extends StatelessWidget {
     this.buttonIcon,
     this.dontShowAgain,
     this.endHint,
-  });
+  }) : super(key: key);
 
   final List<Widget> children;
   final String buttonText;

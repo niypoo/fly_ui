@@ -7,11 +7,11 @@ import 'package:get/get.dart';
 
 class FlyStepperProgress extends StatelessWidget {
   const FlyStepperProgress({
-    super.key,
+    Key? key,
     required this.step,
     required this.total,
     this.color,
-  });
+  }) : super(key: key);
 
   final int total;
   final int step;

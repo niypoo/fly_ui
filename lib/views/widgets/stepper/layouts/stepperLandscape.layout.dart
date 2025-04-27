@@ -9,7 +9,7 @@ import 'package:fly_ui/views/widgets/stepper/widgets/StepperNextButton.widget.da
 
 class FlyStepperLandscapeLayout extends StatelessWidget {
   const FlyStepperLandscapeLayout({
-    super.key,
+    Key? key,
     required this.title,
     required this.children,
     required this.buttonText,
@@ -18,7 +18,7 @@ class FlyStepperLandscapeLayout extends StatelessWidget {
     this.endHint,
     this.subHint,
     this.buttonIcon,
-  });
+  }) : super(key: key);
 
   final String title;
   final String? hint;

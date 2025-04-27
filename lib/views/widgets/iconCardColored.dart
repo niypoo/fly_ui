@@ -4,11 +4,11 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyIconCardColored extends StatelessWidget {
   const FlyIconCardColored({
-    super.key,
+    Key? key,
     this.color,
     required this.icon,
     this.iconColor,
-  });
+  }) : super(key: key);
 
   final Color? color;
   final Color? iconColor;

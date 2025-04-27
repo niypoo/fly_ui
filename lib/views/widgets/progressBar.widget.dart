@@ -6,14 +6,14 @@ import 'package:localization_service/localization.service.dart';
 
 class FlyProgressBar extends StatelessWidget {
   const FlyProgressBar({
-    super.key,
+    Key? key,
     this.percentage,
     this.height = 12,
     this.color,
     this.bgColor,
     this.lightMode = true,
     this.linearGradient,
-  });
+  }) : super(key: key);
 
   final double? percentage;
   final double height;

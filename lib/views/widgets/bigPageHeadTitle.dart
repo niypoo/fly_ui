@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 class FlyPageHeadTitle extends StatelessWidget {
   const FlyPageHeadTitle({
-    super.key,
+    Key? key,
     required this.text,
-  });
+  }) : super(key: key);
 
   final String text;
 
@@ -24,9 +24,9 @@ class FlyPageHeadTitle extends StatelessWidget {
 
 class FlyListHeadTitle extends StatelessWidget {
   const FlyListHeadTitle({
-    super.key,
+    Key? key,
     required this.text,
-  });
+  }) : super(key: key);
 
   final String text;
 

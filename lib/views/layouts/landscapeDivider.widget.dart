@@ -4,8 +4,8 @@ import 'package:patata_responsive/patata_responsive.dart';
 
 class FlyLandscapeDivider extends StatelessWidget {
   const FlyLandscapeDivider({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

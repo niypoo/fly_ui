@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 
 class FlyCoachView extends StatelessWidget {
   const FlyCoachView({
-    super.key,
+    Key? key,
     required this.screens,
     this.progressBar = true,
     this.appBar = false,
-  });
+  }) : super(key: key);
 
   final List<Widget> screens;
   final bool progressBar;

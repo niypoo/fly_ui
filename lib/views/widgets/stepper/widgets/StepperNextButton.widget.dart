@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 
 class FlyStepperNextButton extends StatelessWidget {
   const FlyStepperNextButton({
-    super.key,
+    Key? key,
     required this.buttonTitle,
     required this.onTap,
     this.icon,
-  });
+  }) : super(key: key);
 
   final String buttonTitle;
   final Function? onTap;
@@ -30,8 +30,8 @@ class FlyStepperNextButton extends StatelessWidget {
 
 class FlyStepperPreviousButton extends StatelessWidget {
   const FlyStepperPreviousButton({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

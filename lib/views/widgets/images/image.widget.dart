@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class FlyImage extends StatelessWidget {
   const FlyImage({
-    super.key,
+    Key? key,
     this.height,
     this.width,
     this.url,
@@ -17,7 +17,7 @@ class FlyImage extends StatelessWidget {
     this.border,
     this.actions = const [],
     this.radius,
-  });
+  }) : super(key: key);
 
   final double? height;
   final double? width;

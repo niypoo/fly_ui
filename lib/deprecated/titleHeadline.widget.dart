@@ -6,11 +6,11 @@ import 'package:get/get.dart';
 
 class FlyTitle extends StatelessWidget {
   const FlyTitle({
-    super.key,
+    Key? key,
     required this.text,
     this.textStyle,
     this.alignment = AlignmentDirectional.centerStart,
-  });
+  }) : super(key: key);
 
   final String text;
   final TextStyle? textStyle;
@@ -32,13 +32,13 @@ class FlyTitle extends StatelessWidget {
 
 class FlyHeadline extends StatelessWidget {
   const FlyHeadline({
-    super.key,
+    Key? key,
     this.title,
     this.subtitle,
     this.image,
     this.actions,
     this.padding,
-  });
+  }) : super(key: key);
 
   final dynamic title;
   final dynamic subtitle;

@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 
 class FlyContainerCircleIcon extends StatelessWidget {
   const FlyContainerCircleIcon({
-    super.key,
+    Key? key,
     this.icon,
     this.bgColor,
     this.colorIcon,
     this.iconSize,
     this.size = 30,
-  });
+  }) : super(key: key);
 
   final Color? bgColor;
   final Color? colorIcon;

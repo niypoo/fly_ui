@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class FlyInputTileWrap extends StatelessWidget {
   const FlyInputTileWrap({
-    super.key,
+    Key? key,
     required this.title,
     this.subtitle,
     this.trailing,
@@ -18,7 +18,7 @@ class FlyInputTileWrap extends StatelessWidget {
     this.leading,
     this.padding,
     this.outline = true,
-  });
+  }) : super(key: key);
 
   final String title;
   final String? subtitle;

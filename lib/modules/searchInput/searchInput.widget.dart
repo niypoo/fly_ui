@@ -8,12 +8,12 @@ import 'package:unicons/unicons.dart';
 
 class FlySearchInput extends StatelessWidget {
   const FlySearchInput({
-    super.key,
+    Key? key,
     required this.controller,
     required this.placeholder,
     this.suffix,
     this.textInputType = TextInputType.text,
-  });
+  }) : super(key: key);
 
   final HasSearchInput controller;
   final String placeholder;

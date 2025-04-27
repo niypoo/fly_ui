@@ -13,7 +13,7 @@ import 'package:unicons/unicons.dart';
 
 class FlySelectorArea extends StatelessWidget {
   const FlySelectorArea({
-    super.key,
+    Key? key,
     required this.options,
     required this.onTap,
     this.label = '',
@@ -22,7 +22,7 @@ class FlySelectorArea extends StatelessWidget {
     this.textColor,
     this.title,
     this.crossAxisCount,
-  });
+  }) : super(key: key);
 
   final int? crossAxisCount;
   final String label;
@@ -85,7 +85,7 @@ class FlySelectorArea extends StatelessWidget {
                         isSelected: isSelected,
                         onTap: () => onTap(option.name),
                       );
-                    }),
+                    }).toList(),
                     SizedBox(width: 5.sp),
                   ]),
             ),
@@ -98,7 +98,7 @@ class FlySelectorArea extends StatelessWidget {
 
 class FlySelectorOption extends StatelessWidget {
   const FlySelectorOption({
-    super.key,
+    Key? key,
     required this.color,
     required this.selectedColor,
     required this.name,
@@ -108,7 +108,7 @@ class FlySelectorOption extends StatelessWidget {
     this.moreInformation,
     this.label,
     this.subName,
-  });
+  }) : super(key: key);
 
   final Color? color;
   final Color selectedColor;
@@ -187,9 +187,9 @@ class FlySelectorOption extends StatelessWidget {
 
 class FlySelectorSVG extends StatelessWidget {
   const FlySelectorSVG({
-    super.key,
+    Key? key,
     required this.image,
-  });
+  }) : super(key: key);
 
   final String image;
   @override
@@ -204,9 +204,9 @@ class FlySelectorSVG extends StatelessWidget {
 
 class FlySelectorImage extends StatelessWidget {
   const FlySelectorImage({
-    super.key,
+    Key? key,
     required this.image,
-  });
+  }) : super(key: key);
 
   final String image;
   @override

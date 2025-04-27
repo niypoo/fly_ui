@@ -3,11 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class FlyImageSVG extends StatelessWidget {
   const FlyImageSVG({
-    super.key,
+    Key? key,
     this.path,
     this.height = 50,
     this.width = 50,
-  });
+  }) : super(key: key);
 
   final String? path;
   final double height;

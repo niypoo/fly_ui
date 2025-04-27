@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 
 class FlyInkWell extends StatelessWidget {
   const FlyInkWell({
-    super.key,
+    Key? key,
     required this.child,
     this.onTap,
     this.onLongPress,
-  });
+  }) : super(key: key);
 
   final Function? onTap;
   final Function? onLongPress;

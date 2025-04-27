@@ -5,13 +5,13 @@ import 'package:get/get.dart';
 
 class FlyTableRow extends StatelessWidget {
   const FlyTableRow({
-    super.key,
+    Key? key,
     required this.children,
     this.mainAxisAlignment = MainAxisAlignment.center,
     this.crossAxisAlignment = CrossAxisAlignment.start,
     this.onTap,
     this.bottomHint,
-  });
+  }) : super(key: key);
 
   final Function? onTap;
   final List<Widget> children;

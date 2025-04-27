@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 
 class FlyOutlineButton extends StatelessWidget {
   const FlyOutlineButton({
-    super.key,
+    Key? key,
     required this.title,
     this.onPressed,
     this.color,
-  });
+  }) : super(key: key);
 
   factory FlyOutlineButton.secondary(
           {String? title, Function? onPressed, EdgeInsets? margin}) =>

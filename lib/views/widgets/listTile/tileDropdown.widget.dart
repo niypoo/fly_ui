@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class FlyDropdownTile extends StatelessWidget {
   const FlyDropdownTile({
-    super.key,
+    Key? key,
     required this.title,
     required this.items,
     required this.value,
@@ -14,7 +14,7 @@ class FlyDropdownTile extends StatelessWidget {
     this.outline = true,
     this.bgColor,
     this.child,
-  });
+  }) : super(key: key);
 
   final String title;
   final String? subtitle;
