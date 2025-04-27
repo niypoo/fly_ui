@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:patata_responsive/patata_responsive.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
 import 'package:fly_ui/views/widgets/progressBar.widget.dart';
 import 'package:get/get.dart';

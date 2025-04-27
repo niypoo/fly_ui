@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
-import 'package:patata_responsive/patata_responsive.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 
 class FlyFloatingButton extends StatelessWidget {
   const FlyFloatingButton({

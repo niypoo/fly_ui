@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:fly_ui/views/widgets/listTile/inputTileWrap.widget.dart';
 import 'package:get/get.dart';
-import 'package:patata_responsive/patata_responsive.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:unicons/unicons.dart';
 
 class FlyTileNumericIncrement extends StatelessWidget {

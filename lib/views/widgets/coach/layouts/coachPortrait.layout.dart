@@ -5,7 +5,7 @@ import 'package:fly_ui/views/widgets/coach/widgets/coachButtons.widget.dart';
 import 'package:fly_ui/views/widgets/coach/widgets/coachHint.widget.dart';
 import 'package:fly_ui/views/widgets/coach/widgets/coachSubtitle.widget.dart';
 import 'package:fly_ui/views/widgets/coach/widgets/coachTitle.widget.dart';
-import 'package:patata_responsive/patata_responsive.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 
 
 class FlyCoachPortraitLayout extends StatelessWidget {

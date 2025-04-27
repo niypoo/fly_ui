@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:patata_responsive/patata_responsive.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/stepper/stepper.controller.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperNote.widget.dart';
 import 'package:fly_ui/views/widgets/stepper/widgets/stepperSubtitle.widget.dart';
