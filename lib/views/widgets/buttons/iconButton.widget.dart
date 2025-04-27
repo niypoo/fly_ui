@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'package:patata_responsive/patata_responsive.dart';
+import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
 
 class FlyIconButton extends StatelessWidget {
   const FlyIconButton({
-    super.key,
+    Key? key,
     this.icon,
     this.bgColor,
     // this.borderColor,
@@ -15,7 +15,7 @@ class FlyIconButton extends StatelessWidget {
     // this.borderWidth = 1,
     this.padding,
     this.shape = const CircleBorder(),
-  });
+  }) : super(key: key);
 
   factory FlyIconButton.primary({
     IconData? icon,
@@ -81,21 +81,18 @@ class FlyIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    // SizedBox(
-    //   width: size.sp,
-    //   height: size.sp,
-    //   child: 
-      
-      ElevatedButton(
+    return SizedBox(
+      width: size.sp,
+      height: size.sp,
+      child: ElevatedButton(
         onPressed: onPressed as void Function()?,
         style: ButtonStyle(
-          // iconSize: WidgetStatePropertyAll((size.sp * 0.62)),
+          iconSize: WidgetStatePropertyAll((size.sp * 0.62)),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: const WidgetStatePropertyAll(Size.zero),
           elevation: WidgetStateProperty.all(0.0),
           shape: WidgetStateProperty.all(shape),
-          padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5)),
+          padding: WidgetStateProperty.all(padding ?? EdgeInsets.all(5.sp)),
           backgroundColor: WidgetStateProperty.all(
               bgColor ?? Get.theme.cardColor), // <-- Button color
           overlayColor: WidgetStateProperty.resolveWith<Color?>(
@@ -108,11 +105,11 @@ class FlyIconButton extends StatelessWidget {
           ),
         ),
         child: Icon(
-          // size: (size * 0.6).sp,
+          size: (size * 0.6).sp,
           icon,
           color: colorIcon ?? Get.theme.iconTheme.color
         ),
-      // ),
+      ),
     );
 
     // return Container(
