@@ -39,6 +39,7 @@ class FlyScaffoldPreferredPadding extends StatelessWidget
 
   @override
   Size get preferredSize {
-    return const Size.fromHeight(kToolbarHeight);
+    // return const Size.fromHeight(kToolbarHeight);
+    return  Size.fromHeight(45.sp);
   }
 }
