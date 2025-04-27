@@ -43,7 +43,7 @@ extension Responsive on num {
       return 1.0 + (physicalWidth - 360) * (1.2 - 1.0) / (720 - 360);
     } else if (physicalWidth <= 1440) {
       // Linear interpolation between (720, 1.2) and (1440, 1.3)
-      return 1.3 + (physicalWidth - 720) * (1.3 - 1.2) / (1440 - 720);
+      return 1.4 + (physicalWidth - 720) * (1.3 - 1.2) / (1440 - 720);
     } else if (physicalWidth <= 2160) {
       // Linear interpolation between (1440, 1.3) and (2160, 1.8)
       return 1.3 + (physicalWidth - 1440) * (1.8 - 1.3) / (2160 - 1440);
