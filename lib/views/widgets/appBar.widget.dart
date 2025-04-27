@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:patata_responsive/patata_responsive.dart';
+// import 'package:patata_responsive/patata_responsive.dart';
 // import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
@@ -42,16 +42,25 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: scrolledUnderElevation,
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
       // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-      leadingWidth: 30.sp,
-      leading: Padding(
-        padding:  EdgeInsets.symmetric(vertical: 2.88.sp),
-        child: leading ??
+      // leadingWidth: 30.sp,
+      leading: 
+      Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          leading ??
             FlyIconButton(
               icon: UniconsLine.multiply,
               onPressed: () => Get.back(),
               // size: 19.sp,
             ),
+        ],
       ),
+      // Padding(
+      //   padding:  EdgeInsets.symmetric(vertical: 2.88.sp),
+      //   child: 
+        
+      // ),
       title: title == null
           ? null
           : AutoSizeText(
@@ -61,7 +70,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
       actions: [
         Wrap(
-          spacing: 5.sp,
+          spacing: 5,
           runSpacing: 0,
           alignment: WrapAlignment.end,
           runAlignment: WrapAlignment.end,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:patata_responsive/patata_responsive.dart';
+// import 'package:patata_responsive/patata_responsive.dart';
 import 'package:get/get.dart';
 
 class FlyTextField extends StatelessWidget {
@@ -88,9 +88,11 @@ class FlyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: marginBottom.sp, top: marginTop.sp),
-      child: TextFormField(
+    return 
+    // Padding(
+    //   padding: EdgeInsets.only(bottom: marginBottom.sp, top: marginTop.sp),
+    //   child:
+       TextFormField(
         initialValue: initialValue,
         autofocus: autoFocus,
         focusNode: focusNode,
@@ -106,19 +108,19 @@ class FlyTextField extends StatelessWidget {
               alignLabelWithHint: alignLabelWithHint,
               filled: filled,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15.sp),
+                borderRadius: BorderRadius.circular(15),
                 borderSide: BorderSide(
                   color: borderColor ?? Get.theme.cardColor,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15.sp),
+                borderRadius: BorderRadius.circular(15),
                 borderSide: BorderSide(
                   color: borderColor ?? Get.theme.cardColor,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15.sp),
+                borderRadius: BorderRadius.circular(15),
                 borderSide: BorderSide(
                   color: borderColor ?? Get.theme.cardColor,
                   width: 2.0,
@@ -127,24 +129,26 @@ class FlyTextField extends StatelessWidget {
               fillColor: color ?? Get.theme.scaffoldBackgroundColor,
               labelText: labelText,
               isCollapsed: isCollapsed,
-              contentPadding: contentPadding ??
-                  EdgeInsetsDirectional.symmetric(
-                    horizontal: contentPaddingHorizontal ?? 12.sp,
-                    vertical: contentPaddingVertical ?? 12.sp,
-                  ),
+              // contentPadding: contentPadding ??
+              //     EdgeInsetsDirectional.symmetric(
+              //       horizontal: contentPaddingHorizontal ?? 12.sp,
+              //       vertical: contentPaddingVertical ?? 12.sp,
+              //     ),
               suffixIcon: suffix.isEmpty
                   ? null
-                  : Padding(
-                      padding:
-                          EdgeInsetsDirectional.only(end: 5.sp, start: 5.sp),
-                      child: Wrap(
+                  : 
+                  // Padding(
+                  //     padding:
+                  //         EdgeInsetsDirectional.only(end: 5.sp, start: 5.sp),
+                  //     child: 
+                      Wrap(
                         alignment: WrapAlignment.center,
                         runAlignment: WrapAlignment.center,
-                        runSpacing: 4.sp,
-                        spacing: 4.sp,
+                        runSpacing: 5,
+                        spacing: 5,
                         children: suffix,
                       ),
-                    ),
+                    // ),
               prefixIcon: prefix.isEmpty
                   ? null
                   : Wrap(
@@ -164,7 +168,7 @@ class FlyTextField extends StatelessWidget {
                 color: Colors.red,
               ),
               labelStyle: Get.textTheme.titleSmall!.copyWith(
-                fontSize: 11.sp,
+                // fontSize: 11.sp,
               ),
             ),
         style: textStyle ?? Get.textTheme.titleSmall!.copyWith(),
@@ -180,7 +184,7 @@ class FlyTextField extends StatelessWidget {
         keyboardType: textInputType,
         inputFormatters: inputFormatters,
         cursorColor: cursorColor,
-      ),
+      // ),
     );
   }
 }
