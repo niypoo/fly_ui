@@ -53,7 +53,7 @@ extension Responsive on num {
     } else if (physicalWidth > 1080 && physicalWidth <= 1440) {
       return 1.7;
     } else if (physicalWidth > 1440 && physicalWidth <= 2160) {
-      return 1.8;
+      return 2.0;
     } else if (physicalWidth > 2160 && physicalWidth <= 2880) {
       return 1.9;
     } else if (physicalWidth > 2880 && physicalWidth <= 4320) {
