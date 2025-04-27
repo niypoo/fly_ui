@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 // import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
-// import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
+import 'package:fly_ui/views/widgets/buttons/iconButton.widget.dart';
 import 'package:get/get.dart';
-// import 'package:sizer/sizer.dart';
-// import 'package:unicons/unicons.dart';
+import 'package:sizer/sizer.dart';
+import 'package:unicons/unicons.dart';
 
 class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FlyAppBar({
@@ -42,16 +42,16 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: scrolledUnderElevation,
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
       // titleSpacing: titleSpacing ?? (context.isPhone ? 3.sw : 5.sw),
-      // leadingWidth: 30.sp,
-      // leading: Padding(
-      //   padding: EdgeInsets.symmetric(vertical: 2.88.sp),
-      //   child: leading ??
-      //       FlyIconButton(
-      //         icon: UniconsLine.multiply,
-      //         onPressed: () => Get.back(),
-      //         // size: 19.sp,
-      //       ),
-      // ),
+      leadingWidth: 30.sp,
+      leading: Padding(
+        padding:  EdgeInsets.symmetric(vertical: 2.88.sp),
+        child: leading ??
+            FlyIconButton(
+              icon: UniconsLine.multiply,
+              onPressed: () => Get.back(),
+              // size: 19.sp,
+            ),
+      ),
       title: title == null
           ? null
           : AutoSizeText(
@@ -59,17 +59,16 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
               style: titleTextStyle,
               textAlign: TextAlign.start,
             ),
-      actions: actions,
-      // [
-      //   Wrap(
-      //     spacing: 5.sp,
-      //     runSpacing: 0,
-      //     alignment: WrapAlignment.end,
-      //     runAlignment: WrapAlignment.end,
-      //     children: actions,
-      //   ),
-      //   // SizedBox(width: context.isPhone ? 3.sw : 5.sw)
-      // ],
+      actions: [
+        Wrap(
+          spacing: 5.sp,
+          runSpacing: 0,
+          alignment: WrapAlignment.end,
+          runAlignment: WrapAlignment.end,
+          children: actions,
+        ),
+        // SizedBox(width: context.isPhone ? 3.sw : 5.sw)
+      ],
       bottom: bottom,
     );
   }
