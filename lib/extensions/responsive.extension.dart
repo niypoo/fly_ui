@@ -1,12 +1,26 @@
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+import 'dart:ui';
 
 extension Responsive on num {
-  bool get isLandscape => Get.context!.isLandscape;
-  bool get isTablet => Get.context!.isTablet;
-  double get screeWidth => Get.width;
-  double get screenHeight => Get.height;
-  double get devicePixelRatio => isTablet ? 13.68 : 9.5076;
+  /// handle device sizes
+  FlutterView get view => PlatformDispatcher.instance.views.first;
+
+  /// define a get device width
+  double get physicalWidth => view.physicalSize.width;
+
+  /// define a get device height
+  double get physicalHeight => view.physicalSize.height;
+
+  /// define a get device ratio
+  double get devicePixelRatio => view.devicePixelRatio;
+
+  /// define a get is landscape mode
+  bool get isLandscape => view.physicalSize.aspectRatio > 1;
+
+  /// define a get screen width
+  double get screeWidth => physicalWidth / devicePixelRatio;
+
+  /// define a get screen height
+  double get screenHeight => physicalHeight / devicePixelRatio;
 
   /// Calculates the height depending on the device's screen size
   double get h => this * screenHeight / 100;
@@ -22,45 +36,44 @@ extension Responsive on num {
   double get sp => this * getScalingFactor();
 
   double getScalingFactor() {
-    double screenWidth = View.of(Get.context!).physicalSize.width;
-    if (screenWidth <= 360) {
+    if (physicalWidth <= 360) {
       return 1.0;
-    } else if (screenWidth > 360 && screenWidth <= 411) {
+    } else if (physicalWidth > 360 && physicalWidth <= 411) {
       return 1.1;
-    } else if (screenWidth > 411 && screenWidth <= 480) {
+    } else if (physicalWidth > 411 && physicalWidth <= 480) {
       return 1.2;
-    } else if (screenWidth > 480 && screenWidth <= 540) {
+    } else if (physicalWidth > 480 && physicalWidth <= 540) {
       return 1.3;
-    } else if (screenWidth > 540 && screenWidth <= 600) {
+    } else if (physicalWidth > 540 && physicalWidth <= 600) {
       return 1.4;
-    } else if (screenWidth > 600 && screenWidth <= 720) {
+    } else if (physicalWidth > 600 && physicalWidth <= 720) {
       return 1.5;
-    } else if (screenWidth > 720 && screenWidth <= 1080) {
+    } else if (physicalWidth > 720 && physicalWidth <= 1080) {
       return 1.6;
-    } else if (screenWidth > 1080 && screenWidth <= 1440) {
+    } else if (physicalWidth > 1080 && physicalWidth <= 1440) {
       return 1.7;
-    } else if (screenWidth > 1440 && screenWidth <= 2160) {
+    } else if (physicalWidth > 1440 && physicalWidth <= 2160) {
       return 1.8;
-    } else if (screenWidth > 2160 && screenWidth <= 2880) {
+    } else if (physicalWidth > 2160 && physicalWidth <= 2880) {
       return 1.9;
-    } else if (screenWidth > 2880 && screenWidth <= 4320) {
+    } else if (physicalWidth > 2880 && physicalWidth <= 4320) {
       return 2.0;
-    } else if (screenWidth > 4320 && screenWidth <= 5760) {
+    } else if (physicalWidth > 4320 && physicalWidth <= 5760) {
       return 2.2;
-    } else if (screenWidth > 5760 && screenWidth <= 8640) {
+    } else if (physicalWidth > 5760 && physicalWidth <= 8640) {
       return 2.4;
-    } else if (screenWidth > 8640 && screenWidth <= 11520) {
+    } else if (physicalWidth > 8640 && physicalWidth <= 11520) {
       return 2.6;
-    } else if (screenWidth > 11520 && screenWidth <= 17280) {
+    } else if (physicalWidth > 11520 && physicalWidth <= 17280) {
       return 2.8;
-    } else if (screenWidth > 17280 && screenWidth <= 23040) {
+    } else if (physicalWidth > 17280 && physicalWidth <= 23040) {
       return 3.0;
-    } else if (screenWidth > 23040 && screenWidth <= 34560) {
+    } else if (physicalWidth > 23040 && physicalWidth <= 34560) {
       return 3.5;
-    } else if (screenWidth > 34560 && screenWidth <= 46080) {
+    } else if (physicalWidth > 34560 && physicalWidth <= 46080) {
       return 4.0;
     }
-    
+
     return 2.0; // Default scaling factor
   }
 }
