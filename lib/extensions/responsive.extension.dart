@@ -28,13 +28,14 @@ extension Responsive on num {
   /// Calculates the width depending on the device's screen size
   double get w => this * screeWidth / 100;
 
-  ///Calculates the sp (Scalable Pixel Half Screen) depending on the device's screen size
   ///This is useful in cas you split screen in landscape mode
-  double get sph => isLandscape ? (this).sp * 0.5 : (this).sp;
+  /// Calculates the sp (Scalable Pixel) depending on the device's screen size
+  double get dp => this * getScalingFactor();
+
+  ///Calculates the sp (Scalable Pixel Half Screen) depending on the device's screen size
+  double get sp => (this * getScalingFactor()) * (isLandscape ? 0.5 : 1.0);
 
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
-  double get sp => this * getScalingFactor();
-
   double getScalingFactor() {
     if (physicalWidth <= 360) {
       return 1.0;
