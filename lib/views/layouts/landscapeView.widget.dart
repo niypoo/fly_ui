@@ -1,6 +1,7 @@
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/layouts/landscapeDivider.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/views/layouts/scaffoldPadding.widget.dart';
 import 'package:get/get.dart';
 
 class FlyLandscapeView extends StatelessWidget {
@@ -23,12 +24,12 @@ class FlyLandscapeView extends StatelessWidget {
       crossAxisAlignment: crossAxisAlignment,
       mainAxisAlignment: mainAxisAlignment,
       children: [
-        Expanded(child: childA),
+        Expanded(child: FlyScaffoldPadding(child: childA)),
 
         // divider
         const FlyLandscapeDivider(),
 
-        Expanded(child: childB),
+        Expanded(child: FlyScaffoldPadding(child: childB)),
       ],
     );
   }
@@ -83,11 +84,7 @@ class FlyLandscapeCenterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: 0.1 * Get.width,
-        right: 0.1 * Get.width,
-      ),
+    return FlyScaffoldPadding(
       child: SingleChildScrollView(
         padding: EdgeInsets.only(
           top: 0.1 * Get.width,
