@@ -30,7 +30,7 @@ class FlyDrawerButton extends StatelessWidget {
       child: FlyContainer(
         margin: EdgeInsets.only(bottom: 8.sp),
         padding: EdgeInsets.symmetric(
-          vertical: 8.sp,
+          vertical: 6.sp,
           horizontal: 10.sp,
         ),
         color: bgColor ?? Get.theme.scaffoldBackgroundColor,

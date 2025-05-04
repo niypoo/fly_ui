@@ -19,7 +19,7 @@ class FlyFlashMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        vertical: 8.sp,
+        vertical: 6.sp,
         horizontal: 10.sp,
       ),
       decoration: BoxDecoration(
