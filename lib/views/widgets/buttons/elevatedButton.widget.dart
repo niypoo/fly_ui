@@ -102,7 +102,7 @@ class FlyElevatedButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.sp),
       ),
       padding: EdgeInsets.symmetric(
-        vertical: 6.sp,
+        vertical: 8.sp,
         horizontal: 12.sp,
       ),
      disabledBackgroundColor: Colors.grey[50],
