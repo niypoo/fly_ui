@@ -13,7 +13,6 @@ class FlySwitchTile extends StatelessWidget {
     this.color,
     this.bgColor,
     this.child,
-    this.leading,
     this.outline = true,
   }) : super(key: key);
 
@@ -25,7 +24,7 @@ class FlySwitchTile extends StatelessWidget {
   final bool outline;
   final Color? bgColor;
   final Widget? child;
-  final Widget? leading;
+
   @override
   Widget build(BuildContext context) {
     return FlyInputTileWrap(
@@ -33,7 +32,6 @@ class FlySwitchTile extends StatelessWidget {
       subtitle: subtitle,
       outline: outline,
       bgColor: bgColor,
-      leading: leading,
       trailing: CupertinoSwitch(
         value: value,
         onChanged: onChange as void Function(bool)?,
