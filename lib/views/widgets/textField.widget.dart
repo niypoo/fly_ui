@@ -194,8 +194,8 @@ InputDecoration flyTextFieldStyle({
     isCollapsed: isCollapsed,
     contentPadding: contentPadding ??
         EdgeInsetsDirectional.symmetric(
-          horizontal: contentPaddingHorizontal ?? 12.sp,
-          vertical: contentPaddingVertical ?? 12.sp,
+          horizontal: contentPaddingHorizontal ?? 16.sp,
+          vertical: contentPaddingVertical ?? 16.sp,
         ),
     suffixIcon: suffix.isEmpty
         ? null
