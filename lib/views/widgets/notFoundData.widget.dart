@@ -26,34 +26,42 @@ class FlyNotFoundData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SizedBox(height: marginTop),
-        if (icon.runtimeType == String)
-          FlyImage(url: icon,width: 30.w, height: 30.w)
-        else
-          Icon(
-            icon ?? UniconsLine.exclamation,
-            size: iconSize.sp,
-            color: Get.theme.primaryColor,
-          ),
-        SizedBox(height: 8.sp),
-        AutoSizeText(
-          title ?? 'No data provided yet.'.tr,
-          style:
-              Get.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-        ),
-        if (text != null)
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 10.sp,
+        vertical: 24.sp,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(height: marginTop),
+          if (icon.runtimeType == String)
+            FlyImage(url: icon, width: 30.w, height: 30.w)
+          else
+            Icon(
+              icon ?? UniconsLine.exclamation,
+              size: iconSize.sp,
+              color: Get.theme.primaryColor,
+            ),
+          SizedBox(height: 8.sp),
           AutoSizeText(
-            text!,
-            style: Get.textTheme.bodyMedium,
+            title ?? 'No data provided yet.'.tr,
+            style: Get.textTheme.titleMedium!
+                .copyWith(fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
+          if (text != null)
+            AutoSizeText(
+              text!,
+              style: Get.textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
 
-        // Actions
-        if (actions.isNotEmpty) const FlyDivider(),
-        ...actions,
-      ],
+          // Actions
+          if (actions.isNotEmpty) const FlyDivider(),
+          ...actions,
+        ],
+      ),
     );
   }
 }
