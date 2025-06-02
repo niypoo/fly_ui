@@ -121,7 +121,7 @@ class FlyElevatedButton extends StatelessWidget {
         width: expand ? constraints.maxWidth : null,
         child: icon != null
             ? ElevatedButton.icon(
-                iconAlignment: iconAlignment ?? IconAlignment.start,
+                iconAlignment: iconAlignment ?? IconAlignment.end,
                 onPressed: onPressed as void Function()?,
                 style: buttonStyle,
                 label: AutoSizeText(
