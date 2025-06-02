@@ -30,21 +30,6 @@ class FlyIconButton extends StatelessWidget {
         size: size,
         onPressed: onPressed,
       );
-
-  factory FlyIconButton.outline({
-    IconData? icon,
-    Function? onPressed,
-    double size = 30,
-  }) =>
-      FlyIconButton(
-        // borderColor: Get.theme.primaryColor,
-        bgColor: Get.theme.scaffoldBackgroundColor,
-        colorIcon: Get.theme.cardColor,
-        icon: icon,
-        size: size,
-        onPressed: onPressed,
-      );
-
   factory FlyIconButton.card({
     IconData? icon,
     Function? onPressed,
@@ -120,9 +105,10 @@ class FlyIconButton extends StatelessWidget {
           ),
         ),
         child: Icon(
-            size: (size * 0.6).sp,
-            icon,
-            color: colorIcon ?? Get.theme.iconTheme.color),
+          size: (size * 0.6).sp,
+          icon,
+          color: colorIcon ?? Get.theme.iconTheme.color
+        ),
       ),
     );
 
