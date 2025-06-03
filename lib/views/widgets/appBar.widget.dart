@@ -15,7 +15,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.bottom,
     this.backgroundColor,
     this.titleTextStyle,
-    // this.leadingWidth,
+    this.leadingWidth,
     this.centerTitle = false,
     // this.disabledPadding = true,
     // this.titleSpacing,
@@ -26,7 +26,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget> actions;
   final Widget? leading;
   final Color? backgroundColor;
-  // final double? leadingWidth;
+  final double? leadingWidth;
   final bool centerTitle;
   // final bool disabledPadding;
   // final double? titleSpacing;
@@ -42,7 +42,7 @@ class FlyAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       scrolledUnderElevation: scrolledUnderElevation,
       backgroundColor: backgroundColor ?? Get.theme.scaffoldBackgroundColor,
-      leadingWidth: 30.sp,
+      leadingWidth: leadingWidth ?? 30.sp,
       leading: Padding(
         padding: EdgeInsets.symmetric(vertical: 2.88.sp),
         child: leading ??
