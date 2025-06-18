@@ -22,7 +22,7 @@ class FlyNestedScrollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlyScaffold.padding(
-      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: Wrap(spacing: 5.sp, children: floatingActionButton),
       child: FlyNestedScrollView(
         body: SingleChildScrollView(
