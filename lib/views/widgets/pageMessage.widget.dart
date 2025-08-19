@@ -10,11 +10,13 @@ class FlyContainerMessage extends StatelessWidget {
     required this.body,
     required this.title,
     this.icon,
+    this.hint,
     this.actions,
   }) : super(key: key);
 
   final String title;
   final String body;
+  final String? hint;
   final String? image;
   final IconData? icon;
   final List<Widget>? actions;
@@ -27,7 +29,6 @@ class FlyContainerMessage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
           // IMAGE
           if (image != null)
             Center(
@@ -37,7 +38,7 @@ class FlyContainerMessage extends StatelessWidget {
                 height: 47.sp,
               ),
             ),
-          
+
           // ICON
           if (icon != null)
             Center(
@@ -47,13 +48,12 @@ class FlyContainerMessage extends StatelessWidget {
                 color: Get.theme.cardColor,
               ),
             ),
-            
+
           SizedBox(height: 10.sp),
-          
+
           Text(
             title,
             style: Get.textTheme.titleLarge!.copyWith(
-              fontSize: 11.sp,
               color: Get.theme.primaryColor,
               fontWeight: FontWeight.bold,
             ),
@@ -62,14 +62,22 @@ class FlyContainerMessage extends StatelessWidget {
           ),
           Text(
             body,
-            style: Get.textTheme.titleSmall!.copyWith(
-              fontSize: 9.sp,
-            ),
+            style: Get.textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
+
+          if (hint != null)
+            Padding(
+              padding: EdgeInsets.only(top: 16.sp),
+              child: Text(
+                hint!,
+                style: Get.textTheme.bodySmall,
+                textAlign: TextAlign.center,
+              ),
+            ),
           SizedBox(height: 10.sp),
 
-          if(actions!=null) ...actions!,
+          if (actions != null) ...actions!,
         ],
       ),
     );
